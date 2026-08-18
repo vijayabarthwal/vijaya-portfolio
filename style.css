@@ -183,7 +183,7 @@ footer {
 }
 
 .skill {
-  background: #ffffff;
+  background: #1e293b;
   padding: 25px;
   border-radius: 18px;
   border: 1px solid #e5e7eb;
@@ -244,5 +244,5 @@ footer {
 /* Fix Skills Text Visibility */
 .skill h3,
 .skill p {
-    color: #111827;
+    color: #e2e8f0;
 }
