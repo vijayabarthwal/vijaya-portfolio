@@ -77,6 +77,8 @@ main {
     font-size: clamp(45px, 8vw, 80px);
     line-height: 1.1;
     margin-bottom: 15px;
+    letter-spacing: -1px;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
 }
 
 .hero h2 {
