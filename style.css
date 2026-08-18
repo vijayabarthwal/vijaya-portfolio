@@ -154,20 +154,27 @@ section p {
 .project {
     background: #1e293b;
     border: 1px solid #334155;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
-
+.project:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
 .project h3 {
     color: #38bdf8;
-    margin-bottom: 10px;
-    font-size: 22px;
+    margin-bottom: 14px;
+    font-size: 24px;
+    letter-spacing: 0.3px;
 }
 
 .project span {
-    color: #94a3b8;
-    font-size: 14px;
+    color: #b8c4d6;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 footer {
