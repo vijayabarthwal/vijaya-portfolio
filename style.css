@@ -240,4 +240,9 @@ footer {
     section {
         padding: 60px 0;
     }
+
+/* Fix Skills Text Visibility */
+.skill h3,
+.skill p {
+    color: #111827;
 }
