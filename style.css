@@ -268,3 +268,148 @@ footer {
 .skill p {
     color: #cbd5e1;
 }
+/* ===== SOFT PROFESSIONAL THEME ===== */
+
+body {
+    background: #121826 !important;
+    color: #d9e2ef !important;
+}
+
+header {
+    background: #151d2d !important;
+    border-bottom: 1px solid #2c394d !important;
+}
+
+.logo {
+    color: #9bb7d4 !important;
+}
+
+.nav-links a {
+    color: #c7d2e0 !important;
+}
+
+.nav-links a:hover {
+    color: #b8c9df !important;
+}
+
+/* Hero */
+.intro {
+    color: #9bb7d4 !important;
+}
+
+.hero h1 {
+    color: #e8edf4 !important;
+    text-shadow: none !important;
+}
+
+.hero h2 {
+    color: #aebfd3 !important;
+}
+
+.hero-text {
+    color: #bdc9d8 !important;
+}
+
+/* Buttons */
+.button {
+    background: #8faac5 !important;
+    color: #121826 !important;
+    box-shadow: 0 6px 18px rgba(143, 170, 197, 0.18) !important;
+}
+
+.button:hover {
+    background: #a7bdd3 !important;
+    color: #121826 !important;
+    box-shadow: 0 8px 22px rgba(143, 170, 197, 0.24) !important;
+}
+
+/* General section headings */
+section h2 {
+    color: #dce6f1 !important;
+}
+
+/* Section paragraphs */
+section p {
+    color: #b9c6d5 !important;
+}
+
+/* Skills section */
+#skills h2 {
+    color: #dce6f1 !important;
+}
+
+.skill {
+    background: #1b2637 !important;
+    border: 1px solid #354358 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16) !important;
+}
+
+.skill:hover {
+    border-color: #8faac5 !important;
+    box-shadow: 0 10px 26px rgba(143, 170, 197, 0.14) !important;
+}
+
+.skill h3 {
+    color: #a9c0d8 !important;
+}
+
+.skill p {
+    color: #bdc9d8 !important;
+}
+
+/* Projects */
+.project {
+    background: #1b2637 !important;
+    border: 1px solid #354358 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16) !important;
+}
+
+.project:hover {
+    border-color: #8faac5 !important;
+    box-shadow: 0 10px 28px rgba(143, 170, 197, 0.14) !important;
+}
+
+.project h3 {
+    color: #a9c0d8 !important;
+}
+
+.project p,
+.project span {
+    color: #bdc9d8 !important;
+}
+
+/* Project links */
+.project a {
+    color: #a9c0d8 !important;
+}
+
+.project a:hover {
+    color: #d5e1ed !important;
+}
+
+/* Footer */
+footer {
+    background: #151d2d !important;
+    color: #9eacbd !important;
+}
+
+/* Smooth scrolling and cleaner transitions */
+* {
+    transition: background-color 0.25s ease,
+                border-color 0.25s ease,
+                color 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+}
+
+/* Mobile readability */
+@media (max-width: 700px) {
+    section h2 {
+        color: #dce6f1 !important;
+    }
+
+    .skill h3,
+    .project h3 {
+        color: #a9c0d8 !important;
+    }
+}
