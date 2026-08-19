@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Portfolio Website | Vijaya Barthwal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 18px 8%;
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #38bdf8;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 8%;
+        }
+
+        .hero {
+            padding-bottom: 30px;
+        }
+
+        .label {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 12px 0;
+            color: #f8fafc;
+            font-size: clamp(36px, 7vw, 60px);
+            line-height: 1.15;
+        }
+
+        .hero-text {
+            max-width: 800px;
+            font-size: 20px;
+            color: #cbd5e1;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        section {
+            margin-top: 65px;
+        }
+
+        h2 {
+            margin-bottom: 18px;
+            color: #38bdf8;
+            font-size: 30px;
+        }
+
+        .card {
+            padding: 26px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            margin-top: 18px;
+        }
+
+        .card strong {
+            color: #f8fafc;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .tech {
+            padding: 8px 14px;
+            border: 1px solid #475569;
+            border-radius: 20px;
+            color: #e2e8f0;
+            background: #172033;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 30px 8%;
+            text-align: center;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 16px 6%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .back-link {
+                font-size: 14px;
+            }
+
+            main {
+                padding: 50px 6%;
+            }
+
+            .hero-text {
+                font-size: 18px;
+            }
+
+            .challenge-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">Vijaya.</a>
+        <a class="back-link" href="index.html">← Back to Portfolio</a>
+    </nav>
+</header>
+
+<main>
+
+    <div class="hero">
+        <div class="label">Project Case Study</div>
+
+        <h1>Personal Portfolio Website</h1>
+
+        <p class="hero-text">
+            A responsive personal portfolio website designed and developed
+            to showcase my education, skills, learning journey, practical
+            projects, and professional growth.
+        </p>
+
+        <div class="buttons">
+            <a class="button"
+               href="https://vijayabarthwal.github.io/vijaya-portfolio/"
+               target="_blank">
+                View Live Website
+            </a>
+
+            <a class="button secondary"
+               href="https://github.com/vijayabarthwal/vijaya-portfolio"
+               target="_blank">
+                View Source Code
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <h2>🎯 Project Goal</h2>
+
+        <div class="card">
+            <p>
+                I wanted to create a professional online presence where I
+                could bring my business education and growing digital skills
+                together in one place.
+            </p>
+
+            <p>
+                The goal was to build a website that could introduce me to
+                recruiters, showcase my practical work, and demonstrate my
+                ability to learn and apply web technologies.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>💡 The Challenge</h2>
+
+        <div class="card">
+            <p>
+                As a beginner building my professional profile, I needed a
+                way to present my skills and learning journey without relying
+                only on a traditional resume.
+            </p>
+
+            <p>
+                I also wanted the website to be simple to navigate, visually
+                professional, responsive across devices, and easy to update
+                as I completed new projects.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🛠️ My Approach</h2>
+
+        <div class="challenge-grid">
+
+            <div class="card">
+                <strong>1. Planned the structure</strong>
+                <p>
+                    Organized the website into clear sections for my
+                    introduction, education, skills, learning areas,
+                    projects, and contact information.
+                </p>
+            </div>
+
+            <div class="card">
+                <strong>2. Built the interface</strong>
+                <p>
+                    Created the page structure with HTML and developed the
+                    visual layout and responsive styling with CSS.
+                </p>
+            </div>
+
+            <div class="card">
+                <strong>3. Added project information</strong>
+                <p>
+                    Presented practical projects and learning areas in a
+                    format that is easy for visitors and recruiters to scan.
+                </p>
+            </div>
+
+            <div class="card">
+                <strong>4. Published and tested</strong>
+                <p>
+                    Used GitHub to manage the project and GitHub Pages to
+                    publish the website online. I also reviewed the live
+                    website and corrected issues during development.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>💻 Technologies Used</h2>
+
+        <div class="card">
+            <p>
+                The project was built using the following technologies and
+                tools:
+            </p>
+
+            <div class="tech-list">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">GitHub</span>
+                <span class="tech">GitHub Pages</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🧩 Challenges & Problem Solving</h2>
+
+        <div class="card">
+            <p>
+                One of the important parts of this project was learning to
+                identify and correct problems rather than simply building
+                the first version and stopping there.
+            </p>
+
+            <p>
+                During development, I tested the live website, reviewed
+                changes before committing them to GitHub, and corrected
+                issues when they appeared.
+            </p>
+
+            <p>
+                This helped me develop a more careful workflow:
+                <span class="highlight">
+                    build → test → identify the issue → fix → verify
+                </span>.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>📚 What I Learned</h2>
+
+        <div class="card">
+            <p>
+                This project gave me practical experience with website
+                structure, responsive styling, GitHub repositories,
+                version-controlled changes, and publishing a live website.
+            </p>
+
+            <p>
+                More importantly, I learned how to turn an idea into a
+                working digital product and improve it through testing and
+                iteration.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🚀 Outcome</h2>
+
+        <div class="card">
+            <p>
+                The finished website provides me with a professional online
+                portfolio that I can continue updating as I build more
+                practical projects and develop new skills.
+            </p>
+
+            <p>
+                It also serves as my first documented web development
+                project and a foundation for building a stronger project
+                portfolio.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔗 Project Links</h2>
+
+        <div class="buttons">
+            <a class="button"
+               href="https://vijayabarthwal.github.io/vijaya-portfolio/"
+               target="_blank">
+                Live Website
+            </a>
+
+            <a class="button secondary"
+               href="https://github.com/vijayabarthwal/vijaya-portfolio"
+               target="_blank">
+                GitHub Repository
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Vijaya Barthwal · Built while learning and growing.
+</footer>
+
+</body>
+</html>
