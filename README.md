@@ -28,7 +28,7 @@ A responsive personal portfolio website created to showcase my skills, learning 
 
 Technologies: HTML • CSS • JavaScript
 
-🔗 Live Portfolio: "View My Portfolio" (YOUR-LIVE-PORTFOLIO-LINK)
+🔗 Live Portfolio: "View My Portfolio" (https://vijayabarthwal.github.io/vijaya-portfolio/)
 
 📚 Currently Learning
 
