@@ -6,7 +6,7 @@ I am a BBA graduate currently pursuing my MBA, and I am building practical skill
 
 This repository showcases the projects, experiments, and skills I develop while learning and growing professionally.
 
-##🚀 About This Portfolio
+## 🚀 About This Portfolio
 
 This portfolio is a collection of my practical work and learning projects.
 
@@ -19,17 +19,17 @@ I am focused on:
 - 🛠️ Digital tools
 - 📚 Continuous learning and practical projects
 
-##📂 Projects
+## 📂 Projects
 
 More projects will be added as I continue learning and building.
 
 Each project is created to practice real-world skills and demonstrate what I can do.
 
-##🎯 Current Goal
+## 🎯 Current Goal
 
 My goal is to build a strong beginner portfolio that demonstrates my ability to learn new technologies, solve problems, create practical projects, and continuously improve.
 
-##📌 About Me
+## 📌 About Me
 
 - 🎓 BBA Graduate
 - 🎓 Currently pursuing MBA
