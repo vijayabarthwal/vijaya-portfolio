@@ -1,43 +1,66 @@
-# Vijaya Barthwal
+# 👋 Hi, I'm Vijaya Barthwal
 
-Welcome to my personal portfolio and learning journey! 👋
+🌱 Aspiring Digital Professional | AI • Automation • Web Development
 
-I am a BBA graduate currently pursuing my MBA, and I am building practical skills in AI, automation, web technologies, graphic design, and digital tools.
+Welcome to my GitHub portfolio! This repository represents my practical learning journey as I build skills, projects, and real-world experience across technology and digital tools.
 
-This repository showcases the projects, experiments, and skills I develop while learning and growing professionally.
+👩‍💻 About Me
 
-## 🚀 About This Portfolio
+I am a BBA graduate currently pursuing my MBA and developing practical skills in AI, automation, web technologies, graphic design, and digital tools.
 
-This portfolio is a collection of my practical work and learning projects.
+I enjoy learning by building real projects and experimenting with new technologies. My goal is to turn what I learn into practical work that demonstrates my skills and continuous growth.
 
-I am focused on:
+🛠️ Skills & Technologies
 
-- 🤖 AI and AI tools
-- ⚙️ Automation and workflows
-- 💻 HTML, CSS, and JavaScript
-- 🎨 Graphic design and visual creativity
-- 🛠️ Digital tools
-- 📚 Continuous learning and practical projects
+- 🌐 HTML, CSS & JavaScript
+- 🤖 AI tools and AI-assisted workflows
+- ⚙️ Automation and workflow building
+- 🔧 Git & GitHub
+- 🎨 Basic graphic design
+- 💻 Web development fundamentals
+- 📱 Digital productivity tools
 
-## 📂 Projects
+🚀 Projects
 
-More projects will be added as I continue learning and building.
+🌐 Personal Portfolio Website
 
-Each project is created to practice real-world skills and demonstrate what I can do.
+A responsive personal portfolio website created to showcase my skills, learning journey, and practical projects.
 
-## 🎯 Current Goal
+Technologies: HTML • CSS • JavaScript
 
-My goal is to build a strong beginner portfolio that demonstrates my ability to learn new technologies, solve problems, create practical projects, and continuously improve.
+🔗 Live Portfolio: "View My Portfolio" (YOUR-LIVE-PORTFOLIO-LINK)
 
-## 📌 About Me
+📚 Currently Learning
 
-- 🎓 BBA Graduate
-- 🎓 Currently pursuing MBA
-- 💻 Learning web technologies
-- 🤖 Exploring AI and automation
-- 🎨 Exploring graphic design
-- 🚀 Building practical projects
+I am continuously developing my skills in:
+
+- Artificial Intelligence and AI tools
+- Automation and workflow design
+- Web development
+- Git & GitHub
+- Digital tools and productivity
+- Practical project development
+
+🎯 Career Goal
+
+I am looking for opportunities where I can apply my skills, learn from real-world projects, and grow professionally while contributing to a team.
+
+I am particularly interested in opportunities involving AI, technology, automation, digital tools, and practical problem-solving.
+
+📂 About This Repository
+
+This repository is a growing collection of my:
+
+- 💻 Practical projects
+- 🧪 Experiments
+- 📚 Learning work
+- 🛠️ Technical skills
+- 🚀 Future projects
+
+More projects and improvements will be added as I continue learning and building.
 
 ---
 
-⭐ Thanks for visiting my portfolio!
+⭐ Thanks for visiting my profile!
+
+Feel free to explore my projects and follow my learning journey.
