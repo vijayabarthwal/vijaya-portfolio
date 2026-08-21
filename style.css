@@ -263,12 +263,12 @@ footer {
         padding: 70px 0;
     }
 
-/* Fix Skills Text Visibility */
+
 .skill h3,
 .skill p {
     color: #cbd5e1;
 }
-/* ===== SOFT PROFESSIONAL THEME ===== */
+
 
 body {
     background: #121826 !important;
@@ -292,7 +292,7 @@ header {
     color: #b8c9df !important;
 }
 
-/* Hero */
+
 .intro {
     color: #9bb7d4 !important;
 }
@@ -310,7 +310,7 @@ header {
     color: #bdc9d8 !important;
 }
 
-/* Buttons */
+
 .button {
     background: #8faac5 !important;
     color: #121826 !important;
@@ -323,17 +323,15 @@ header {
     box-shadow: 0 8px 22px rgba(143, 170, 197, 0.24) !important;
 }
 
-/* General section headings */
 section h2 {
     color: #dce6f1 !important;
 }
 
-/* Section paragraphs */
 section p {
     color: #b9c6d5 !important;
 }
 
-/* Skills section */
+
 #skills h2 {
     color: #dce6f1 !important;
 }
@@ -357,7 +355,7 @@ section p {
     color: #bdc9d8 !important;
 }
 
-/* Projects */
+
 .project {
     background: #1b2637 !important;
     border: 1px solid #354358 !important;
@@ -378,7 +376,7 @@ section p {
     color: #bdc9d8 !important;
 }
 
-/* Project links */
+
 .project a {
     color: #a9c0d8 !important;
 }
@@ -397,13 +395,13 @@ section p {
     display: inline-block;
     width: fit-content;
 }
-/* Footer */
+
 footer {
     background: #151d2d !important;
     color: #9eacbd !important;
 }
 
-/* Smooth scrolling and cleaner transitions */
+
 * {
     transition: background-color 0.25s ease,
                 border-color 0.25s ease,
@@ -412,7 +410,7 @@ footer {
                 transform 0.25s ease;
 }
 
-/* Mobile readability */
+
 @media (max-width: 700px) {
     section h2 {
         color: #dce6f1 !important;
@@ -431,7 +429,6 @@ footer {
     margin: 0 auto 20px;
     border-radius: 12px;
 }
-/* ===== LIGHT PROFESSIONAL THEME ===== */
 
 body {
     background: #f1f2f0 !important;
@@ -531,7 +528,6 @@ footer {
     color: #718096 !important;
     border-top: 1px solid #e3e8ef;
 }
-/* ===== STRONG HEADINGS ===== */
 
 section h2,
 section h3,
@@ -544,24 +540,24 @@ section h3,
 section h2 {
     text-shadow: none !important;
 }
-/* ===== FINAL PORTFOLIO VISUAL FIX ===== */
+/* ==
 
 body {
     background: #f1efe9 !important;
     color: #374151 !important;
 }
 
-/* Hero */
+
 .hero {
     background: #f1efe9 !important;
 }
 
-/* Hero introduction */
+
 .intro {
     color: #111827 !important;
 }
 
-/* Learning section headings */
+
 section h2,
 section h2 strong,
 #learning h2,
@@ -570,7 +566,7 @@ section h2 strong,
     font-weight: 700 !important;
 }
 
-/* Learning text */
+
 section p {
     color: #374151;
 }
@@ -578,7 +574,7 @@ section p {
 #what-im-learning h2 {
     color: #111827 !important;
 }
-/* Fix section headings */
+
 h2 {
     color: #111827 !important;
 }
