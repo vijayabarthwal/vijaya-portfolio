@@ -434,8 +434,8 @@ footer {
 /* ===== LIGHT PROFESSIONAL THEME ===== */
 
 body {
-    background: #f6f8fb !important;
-    color: #243447 !important;
+    background: #f1f2f0 !important;
+    color: #111827 !important;
 }
 
 header {
@@ -530,4 +530,17 @@ footer {
     background: #ffffff !important;
     color: #718096 !important;
     border-top: 1px solid #e3e8ef;
+}
+/* ===== STRONG HEADINGS ===== */
+
+section h2,
+section h3,
+.skill h3,
+.project h3 {
+    color: #111827 !important;
+    font-weight: 700 !important;
+}
+
+section h2 {
+    text-shadow: none !important;
 }
