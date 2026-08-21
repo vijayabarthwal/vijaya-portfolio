@@ -578,3 +578,7 @@ section p {
 #what-im-learning h2 {
     color: #111827 !important;
 }
+/* Fix section headings */
+h2 {
+    color: #111827 !important;
+}
