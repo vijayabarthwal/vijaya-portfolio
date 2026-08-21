@@ -487,11 +487,11 @@ header {
 }
 
 section h2 {
-    color: #1e3a5f !important;
+    color:#1f2937  !important;
 }
 
 section p {
-    color: #5d6b7c !important;
+    color:#374151 !important;
 }
 
 .skill,
@@ -527,7 +527,7 @@ section p {
 }
 
 footer {
-    background: #ffffff !important;
+    background:#f1efe9  !important;
     color: #718096 !important;
     border-top: 1px solid #e3e8ef;
 }
