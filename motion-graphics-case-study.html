@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Motion Graphics Project | Vijaya Barthwal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 18px 8%;
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #38bdf8;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 8%;
+        }
+
+        .hero {
+            padding-bottom: 30px;
+        }
+
+        .label {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 12px 0;
+            color: #f8fafc;
+            font-size: clamp(36px, 7vw, 60px);
+            line-height: 1.15;
+        }
+
+        .hero-text {
+            max-width: 800px;
+            font-size: 20px;
+            color: #cbd5e1;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        section {
+            margin-top: 65px;
+        }
+
+        h2 {
+            margin-bottom: 18px;
+            color: #38bdf8;
+            font-size: 30px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 0;
+        }
+
+        .card {
+            padding: 26px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            margin-top: 18px;
+        }
+
+        .card strong {
+            color: #f8fafc;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .video-card {
+            padding: 24px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            margin-top: 22px;
+        }
+
+        .video-card video {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+            background: #020617;
+            margin-top: 18px;
+        }
+
+        .video-description {
+            margin-bottom: 0;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .tech {
+            padding: 8px 14px;
+            border: 1px solid #475569;
+            border-radius: 20px;
+            color: #e2e8f0;
+            background: #172033;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding: 30px 8%;
+            text-align: center;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 16px 6%;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .back-link {
+                font-size: 14px;
+            }
+
+            main {
+                padding: 50px 6%;
+            }
+
+            .hero-text {
+                font-size: 18px;
+            }
+
+            .challenge-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                margin-top: 50px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .card,
+            .video-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="../index.html">Vijaya.</a>
+        <a class="back-link" href="../index.html">← Back to Portfolio</a>
+    </nav>
+</header>
+
+<main>
+
+    <div class="hero">
+        <div class="label">Project Case Study</div>
+
+        <h1>Motion Graphics Project</h1>
+
+        <p class="hero-text">
+            A creative motion graphics project focused on introducing a
+            fictional digital product through short, engaging videos.
+            The project combines visual storytelling, typography,
+            transitions, timing, and product-focused communication.
+        </p>
+
+        <div class="buttons">
+            <a class="button" href="../index.html">
+                Back to Portfolio
+            </a>
+        </div>
+    </div>
+
+
+    <section>
+        <h2>🎯 Project Goal</h2>
+
+        <div class="card">
+            <p>
+                The goal of this project was to create professional-looking
+                motion graphics content that could introduce a digital
+                product in a clear, engaging, and visually appealing way.
+            </p>
+
+            <p>
+                I wanted to practice turning a simple product concept into
+                short-form visual content while focusing on pacing,
+                typography, transitions, and storytelling.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>💡 The Challenge</h2>
+
+        <div class="card">
+            <p>
+                The main challenge was communicating the product idea
+                effectively within a short video format while keeping the
+                visuals easy to understand and engaging.
+            </p>
+
+            <p>
+                I also needed to balance text, movement, timing, and visual
+                elements so that the videos felt structured rather than
+                simply placing animations on screen.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>🎬 Creative Approach</h2>
+
+        <div class="challenge-grid">
+
+            <div class="card">
+                <strong>1. Defined the message</strong>
+                <p>
+                    Started with the main product idea and identified the
+                    information that needed to be communicated clearly.
+                </p>
+            </div>
+
+            <div class="card">
+                <strong>2. Planned the visual flow</strong>
+                <p>
+                    Organized the content into a logical sequence so that
+                    each scene could contribute to the overall story.
+                </p>
+            </div>
+
+            <div class="card">
+                <strong>3. Built the motion</strong>
+                <p>
+                    Used movement, transitions, typography, and timing to
+                    create a more engaging visual experience.
+                </p>
+            </div>
+
+            <div class="card">
+                <strong>4. Refined the final videos</strong>
+                <p>
+                    Reviewed the completed videos and refined the pacing,
+                    visual consistency, and overall presentation.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <h2>🎥 Final Videos</h2>
+
+        <div class="video-card">
+            <h3>Video 01 — Product Introduction</h3>
+
+            <p>
+                A short introductory video designed to present the product,
+                communicate its purpose, and give viewers a quick
+                understanding of the concept.
+            </p>
+
+            <video controls playsinline preload="metadata">
+                <source
+                    src="motion-graphics-product-introduction.mp4"
+                    type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </div>
+
+
+        <div class="video-card">
+            <h3>Video 02 — Motion Graphics Showcase</h3>
+
+            <p>
+                A second creative video developed as part of the project,
+                focusing on visual storytelling, motion, transitions, and
+                presenting the product concept in an engaging format.
+            </p>
+
+            <video controls playsinline preload="metadata">
+                <source
+                    src="motion-graphics-showcase.mp4"
+                    type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </div>
+
+    </section>
+
+
+    <section>
+        <h2>🛠️ Tools Used</h2>
+
+        <div class="card">
+            <p>
+                The project was created using the following tools and
+                techniques:
+            </p>
+
+            <div class="tech-list">
+                <span class="tech">VN Video Editor</span>
+                <span class="tech">Motion Graphics</span>
+                <span class="tech">Video Editing</span>
+                <span class="tech">Typography</span>
+                <span class="tech">Visual Storytelling</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>✨ Skills Demonstrated</h2>
+
+        <div class="card">
+            <p>
+                This project demonstrates my ability to create short-form
+                visual content, structure a video around a message, work
+                with typography and transitions, and use motion to support
+                communication.
+            </p>
+
+            <p>
+                It also demonstrates attention to pacing, visual
+                consistency, and presentation.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>📚 What I Learned</h2>
+
+        <div class="card">
+            <p>
+                This project helped me better understand how motion can be
+                used to communicate an idea rather than simply decorate a
+                video.
+            </p>
+
+            <p>
+                I gained practical experience in planning scenes, managing
+                timing, combining text with movement, and refining a video
+                through review and iteration.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>🚀 Outcome</h2>
+
+        <div class="card">
+            <p>
+                The completed project resulted in two finished motion
+                graphics videos that demonstrate my growing ability to
+                create professional digital content.
+            </p>
+
+            <p>
+                These videos are now part of my portfolio as practical
+                examples of my motion graphics and video-editing work.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>🔗 Project Links</h2>
+
+        <div class="buttons">
+            <a class="button" href="../index.html">
+                View Portfolio
+            </a>
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 Vijaya Barthwal · Built while learning and growing.
+</footer>
+
+</body>
+</html>
