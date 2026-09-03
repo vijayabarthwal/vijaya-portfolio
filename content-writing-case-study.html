@@ -28,15 +28,11 @@
         .page {
             max-width: 1000px;
             margin: auto;
-            padding: 35px 24px 60px;
+            padding: 35px 24px 70px;
         }
 
-        /* Back Link */
-
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            display: inline-block;
             margin-bottom: 30px;
             color: #2563eb;
             text-decoration: none;
@@ -48,11 +44,7 @@
             color: #1d4ed8;
         }
 
-        /* Hero */
-
         .hero {
-            position: relative;
-            overflow: hidden;
             background: linear-gradient(135deg, #172033, #263b5a);
             color: #ffffff;
             padding: 65px 55px;
@@ -61,21 +53,7 @@
             box-shadow: 0 18px 45px rgba(30, 58, 95, 0.18);
         }
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.06);
-            right: -70px;
-            top: -70px;
-        }
-
         .eyebrow {
-            position: relative;
-            z-index: 1;
-            display: inline-block;
             color: #bfdbfe;
             font-size: 13px;
             font-weight: 700;
@@ -85,8 +63,6 @@
         }
 
         .hero h1 {
-            position: relative;
-            z-index: 1;
             max-width: 760px;
             font-size: clamp(40px, 7vw, 68px);
             line-height: 1.08;
@@ -95,15 +71,11 @@
         }
 
         .hero-description {
-            position: relative;
-            z-index: 1;
             max-width: 700px;
             color: #dbeafe;
             font-size: 19px;
             line-height: 1.7;
         }
-
-        /* Main Content */
 
         .article {
             background: #ffffff;
@@ -145,8 +117,6 @@
             margin-bottom: 25px;
         }
 
-        /* Pull Quotes */
-
         .pull-quote {
             margin: 40px 0;
             padding: 28px 30px;
@@ -165,10 +135,7 @@
             color: #718096;
             font-size: 13px;
             font-weight: 600;
-            letter-spacing: 0.5px;
         }
-
-        /* Final Highlight */
 
         .final-thought {
             margin-top: 45px;
@@ -186,8 +153,6 @@
             margin: 0;
         }
 
-        /* Skills */
-
         .skills {
             margin-top: 50px;
             padding-top: 35px;
@@ -200,3 +165,301 @@
             gap: 10px;
             margin-top: 18px;
         }
+
+        .skill {
+            background: #eef4ff;
+            color: #1e40af;
+            padding: 9px 15px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding: 22px 16px 50px;
+            }
+
+            .hero {
+                padding: 45px 28px;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .article {
+                padding: 32px 24px;
+                border-radius: 20px;
+            }
+
+            .article h2 {
+                font-size: 27px;
+            }
+
+            .intro {
+                font-size: 17px;
+            }
+
+            .essay p {
+                font-size: 16px;
+                line-height: 1.85;
+            }
+
+            .pull-quote {
+                font-size: 19px;
+                padding: 23px;
+            }
+
+            .final-thought {
+                padding: 28px 20px;
+            }
+
+            .final-thought p {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <a href="index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+        <header class="hero">
+
+            <div class="eyebrow">
+                Content Writing • Personal Essay
+            </div>
+
+            <h1>
+                You Are Never Ready — And That's Okay
+            </h1>
+
+            <p class="hero-description">
+                An original personal essay about uncertainty, learning,
+                making thoughtful choices, and growing through experience.
+            </p>
+
+        </header>
+
+        <main class="article">
+
+            <div class="section-label">
+                About This Piece
+            </div>
+
+            <h2>
+                Learning Before Feeling Ready
+            </h2>
+
+            <p class="intro">
+                We often wait for the right moment before doing something
+                important. But sometimes, the right moment is simply the
+                moment when we decide to learn.
+            </p>
+
+            <div class="section-label">
+                The Essay
+            </div>
+
+            <div class="essay">
+
+                <p>
+                    We often wait for the right moment before doing something important.
+                    We tell ourselves that we need more knowledge, more confidence,
+                    more experience, or simply more time. We think that one day we will
+                    wake up and finally feel ready.
+                </p>
+
+                <p>
+                    But I have started to believe that this moment may never come.
+                </p>
+
+                <p>
+                    A person is never completely ready for everything. There is always
+                    something more to learn, understand, practice, or improve. For me,
+                    learning is not something that should begin after we feel ready.
+                    Sometimes, learning is exactly what helps us become ready.
+                </p>
+
+                <p>
+                    I experienced this myself after completing my BBA.
+                </p>
+
+                <p>
+                    After graduation, I saw many people around me taking different paths.
+                    Some started jobs immediately. Some changed jobs and moved into
+                    different roles. Others prepared for government examinations or
+                    started working toward different goals. Watching all of this made
+                    me think about my own future.
+                </p>
+
+                <p>
+                    At first, getting a job immediately after graduation seemed like
+                    the obvious choice. After all, starting a career early has its own
+                    advantages. But instead of simply following what everyone else was
+                    doing, I started observing the people around me and thinking about
+                    their experiences.
+                </p>
+
+                <p>
+                    I asked myself questions.
+                </p>
+
+                <p>
+                    What was it like for someone who started working immediately after
+                    graduation? How was their experience different from someone who
+                    continued studying? What skills were they developing? What did they
+                    enjoy about their work? What challenges did they face? And most
+                    importantly, what kind of path would help me grow?
+                </p>
+
+                <p>
+                    Eventually, I decided to pursue an MBA.
+                </p>
+
+                <p>
+                    It wasn't because I thought an MBA would magically guarantee me
+                    a better job. It was because I felt there was still more for me
+                    to learn.
+                </p>
+
+                <p>
+                    I wanted more knowledge, more exposure, and the opportunity to
+                    develop skills while learning from professors and the people
+                    around me. I wanted to understand not only what I wanted to do,
+                    but also why I wanted to do it.
+                </p>
+
+                <p>
+                    That experience changed the way I think about being “ready.”
+                </p>
+
+                <p>
+                    I realized that I wasn't necessarily feeling ready to enter the
+                    next stage of my career. But I was ready to learn.
+                </p>
+
+                <div class="pull-quote">
+                    Sometimes, learning is exactly what helps us become ready.
+                </div>
+
+                <p>
+                    And sometimes, I think opportunities are a little like a piece
+                    of cake.
+                </p>
+
+                <p>
+                    Imagine seeing a piece of cake in front of you. You can keep
+                    looking at it and wondering whether you should taste it. You can
+                    wait for the perfect moment or worry about whether you will like it.
+                    Or you can simply take a bite.
+                </p>
+
+                <p>
+                    Maybe you will love it. Maybe you won't.
+                </p>
+
+                <p>
+                    But after taking that bite, you will know something you didn't
+                    know before.
+                </p>
+
+                <p>
+                    I think learning works in much the same way. We can spend a lot
+                    of time waiting until we feel completely prepared, but opportunities
+                    rarely arrive with a guarantee that everything will work out
+                    perfectly. Sometimes, we have to try, experience something, learn
+                    from it, and then decide what comes next.
+                </p>
+
+                <p>
+                    This doesn't mean we should make every decision without thinking.
+                    My decision to pursue an MBA came from observing, asking questions,
+                    comparing experiences, and thinking carefully about what I wanted
+                    to learn.
+                </p>
+
+                <p>
+                    For me, that is the difference between blindly following a path
+                    and consciously choosing one.
+                </p>
+
+                <p>
+                    I am still learning. I don't think that will ever stop.
+                </p>
+
+                <p>
+                    There will always be a new skill to develop, a new idea to understand,
+                    a new challenge to face, or something I can do better than I did
+                    yesterday.
+                </p>
+
+                <p>
+                    And maybe that is the point.
+                </p>
+
+                <div class="final-thought">
+                    <p>
+                        It wasn't about being ready to do something.
+                        It was about being ready to learn something.
+                    </p>
+                </div>
+
+                <p style="margin-top: 35px;">
+                    Because we may never feel completely ready.
+                </p>
+
+                <p>
+                    But we can always be ready to learn.
+                </p>
+
+            </div>
+
+            <section class="skills">
+
+                <div class="section-label">
+                    Skills Demonstrated
+                </div>
+
+                <div class="skills-list">
+
+                    <span class="skill">Content Writing</span>
+                    <span class="skill">Personal Essay</span>
+                    <span class="skill">Storytelling</span>
+                    <span class="skill">Clear Communication</span>
+                    <span class="skill">Editing</span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            © © 2026 Vijaya Barthwal • Content Writing Sample
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
