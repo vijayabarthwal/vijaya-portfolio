@@ -151,6 +151,11 @@ section p {
     font-weight: 700;
 }
 
+/* Extra spacing between the two learning sections */
+#skills h2:nth-of-type(2) {
+    margin-top: 65px;
+}
+
 .skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -248,7 +253,7 @@ section p {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto 20px;
+    margin: 24px auto 0;
     border-radius: 12px;
 }
 
@@ -303,6 +308,10 @@ section h3,
 
     section h2 {
         font-size: 30px;
+    }
+
+    #skills h2:nth-of-type(2) {
+        margin-top: 55px;
     }
 
     .skill h3,
