@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -111,6 +112,7 @@
 
         section {
             margin-top: 65px;
+            scroll-margin-top: 90px;
         }
 
         h2 {
@@ -153,6 +155,20 @@
             border: 1px solid #334155;
             border-radius: 14px;
             margin-top: 22px;
+        }
+
+        .sample-label {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: #38bdf8;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .video-card h3 {
+            margin-bottom: 10px;
         }
 
         .video-card video {
@@ -265,7 +281,11 @@
 
         <div class="buttons">
             <a class="button" href="../index.html">
-                Back to Portfolio
+                ← Back to Portfolio
+            </a>
+
+            <a class="button secondary" href="#videos">
+                ▶ Watch Videos
             </a>
         </div>
 
@@ -384,15 +404,26 @@
     </section>
 
 
-    <section>
+    <!-- Final Videos -->
+    <section id="videos">
 
-        <h2>🎥 Final Videos</h2>
+        <h2>🎥 Video Samples</h2>
+
+        <p>
+            Explore the completed motion graphics work below.
+            Each sample represents a different part of the creative project.
+        </p>
 
 
+        <!-- Sample 01 -->
         <div class="video-card">
 
+            <span class="sample-label">
+                Sample 01
+            </span>
+
             <h3>
-                Video 01 — Product Introduction
+                Product Introduction
             </h3>
 
             <p>
@@ -417,16 +448,22 @@
         </div>
 
 
+        <!-- Sample 02 -->
         <div class="video-card">
 
+            <span class="sample-label">
+                Sample 02
+            </span>
+
             <h3>
-                Video 02 — Motion Graphics Showcase
+                Motion Graphics Showcase
             </h3>
 
             <p>
                 A second creative video developed as part of the project,
-                focusing on visual storytelling, motion, transitions, and
-                presenting the product concept in an engaging format.
+                focusing on visual storytelling, motion, transitions,
+                typography, and presenting the product concept in an
+                engaging format.
             </p>
 
             <video
@@ -518,8 +555,8 @@
 
             <p>
                 This project helped me better understand how motion can be
-                used to communicate an idea rather than simply decorate a
-                video.
+                used to communicate an idea rather than simply decorate
+                a video.
             </p>
 
             <p>
@@ -563,6 +600,10 @@
 
             <a class="button" href="../index.html">
                 View Portfolio
+            </a>
+
+            <a class="button secondary" href="#videos">
+                ▶ Watch Videos
             </a>
 
         </div>
