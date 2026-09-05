@@ -1,419 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Personal Portfolio Website | Vijaya Barthwal</title>
+<title>Personal Portfolio Website | Vijaya Barthwal</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html{scroll-behavior:smooth}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #cbd5e1;
-            line-height: 1.7;
-        }
+body{
+    margin:0;
+    background:#080808;
+    color:#ccc;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.7;
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            padding: 18px 8%;
-            background: #0f172a;
-            border-bottom: 1px solid #334155;
-        }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        nav {
-            max-width: 1100px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:10;
+    padding:18px 6%;
+    background:rgba(8,8,8,.94);
+    border-bottom:1px solid #222;
+}
 
-        .logo {
-            color: #38bdf8;
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        .back-link {
-            color: #cbd5e1;
-            text-decoration: none;
-        }
+.logo{
+    color:#f5f5f5;
+    font-size:22px;
+    font-weight:800;
+}
 
-        .back-link:hover {
-            color: #38bdf8;
-        }
+.logo span{color:#e10600}
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 70px 8%;
-        }
+.back{
+    color:#999;
+    font-size:13px;
+}
 
-        .hero {
-            padding-bottom: 30px;
-        }
+.back:hover{color:#e10600}
 
-        .label {
-            color: #38bdf8;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+main{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 6%;
+}
 
-        h1 {
-            margin: 12px 0;
-            color: #f8fafc;
-            font-size: clamp(36px, 7vw, 60px);
-            line-height: 1.15;
-        }
+.label{
+    color:#e10600;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
 
-        .hero-text {
-            max-width: 800px;
-            font-size: 20px;
-            color: #cbd5e1;
-        }
+h1{
+    margin:12px 0 18px;
+    color:#f5f5f5;
+    font-size:clamp(42px,7vw,72px);
+    line-height:1;
+    letter-spacing:-3px;
+}
 
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 28px;
-        }
+.intro{
+    max-width:760px;
+    color:#999;
+    font-size:17px;
+}
 
-        .button {
-            display: inline-block;
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            background: #38bdf8;
-            color: #0f172a;
-        }
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
 
-        .button.secondary {
-            background: transparent;
-            color: #38bdf8;
-            border: 1px solid #38bdf8;
-        }
+.button{
+    display:inline-block;
+    padding:11px 17px;
+    background:#e10600;
+    border-radius:6px;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+}
 
-        section {
-            margin-top: 65px;
-        }
+.button.secondary{
+    background:transparent;
+    border:1px solid #444;
+}
 
-        h2 {
-            margin-bottom: 18px;
-            color: #38bdf8;
-            font-size: 30px;
-        }
+.button:hover{
+    background:#ff241f;
+}
 
-        .card {
-            padding: 26px;
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 14px;
-            margin-top: 18px;
-        }
+section{margin-top:60px}
 
-        .card strong {
-            color: #f8fafc;
-        }
+h2{
+    margin-bottom:18px;
+    color:#e10600;
+    font-size:27px;
+}
 
-        .highlight {
-            color: #38bdf8;
-            font-weight: bold;
-        }
+.card{
+    padding:24px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+}
 
-        .tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 18px;
-        }
+.card strong{color:#eee}
 
-        .tech {
-            padding: 8px 14px;
-            border: 1px solid #475569;
-            border-radius: 20px;
-            color: #e2e8f0;
-            background: #172033;
-        }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
 
-        .challenge-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
 
-        footer {
-            margin-top: 80px;
-            padding: 30px 8%;
-            text-align: center;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-        }
+.tag{
+    padding:6px 11px;
+    border:1px solid #333;
+    border-radius:20px;
+    color:#aaa;
+    font-size:11px;
+}
 
-        @media (max-width: 700px) {
-            header {
-                padding: 16px 6%;
-            }
+.highlight{
+    color:#e10600;
+    font-weight:bold;
+}
 
-            nav {
-                gap: 15px;
-            }
+footer{
+    margin-top:70px;
+    padding:30px 6%;
+    text-align:center;
+    border-top:1px solid #222;
+    color:#666;
+    font-size:11px;
+}
 
-            .back-link {
-                font-size: 14px;
-            }
-
-            main {
-                padding: 50px 6%;
-            }
-
-            .hero-text {
-                font-size: 18px;
-            }
-
-            .challenge-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                margin-top: 50px;
-            }
-        }
-    </style>
+@media(max-width:650px){
+    main{padding:55px 6%}
+    nav{gap:15px}
+    .back{font-size:11px}
+    h1{font-size:46px}
+    .intro{font-size:15px}
+    section{margin-top:50px}
+    .grid{grid-template-columns:1fr}
+    .card{padding:18px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <a class="logo" href="index.html">Vijaya.</a>
-        <a class="back-link" href="index.html">← Back to Portfolio</a>
-    </nav>
+<nav>
+<a class="logo" href="index.html">Vijaya<span>.</span></a>
+<a class="back" href="index.html">← Back to Portfolio</a>
+</nav>
 </header>
 
 <main>
 
-    <div class="hero">
-        <div class="label">Project Case Study</div>
+<div class="label">Project Case Study</div>
 
-        <h1>Personal Portfolio Website</h1>
+<h1>Personal Portfolio Website</h1>
 
-        <p class="hero-text">
-            A responsive personal portfolio website designed and developed
-            to showcase my education, skills, learning journey, practical
-            projects, and professional growth.
-        </p>
+<p class="intro">
+A responsive personal portfolio created to showcase my education,
+digital skills, practical projects, and professional growth while
+building my experience in web development.
+</p>
 
-        <div class="buttons">
-            <a class="button"
-               href="https://vijayabarthwal.github.io/vijaya-portfolio/"
-               target="_blank">
-                View Live Website
-            </a>
+<div class="buttons">
+<a class="button"
+   href="https://vijayabarthwal.github.io/vijaya-portfolio/"
+   target="_blank"
+   rel="noopener">
+   View Live Website ↗
+</a>
 
-            <a class="button secondary"
-               href="https://github.com/vijayabarthwal/vijaya-portfolio"
-               target="_blank">
-                View Source Code
-            </a>
-        </div>
-    </div>
+<a class="button secondary"
+   href="https://github.com/vijayabarthwal/vijaya-portfolio"
+   target="_blank"
+   rel="noopener">
+   View GitHub ↗
+</a>
+</div>
 
-    <section>
-        <h2>🎯 Project Goal</h2>
 
-        <div class="card">
-            <p>
-                I wanted to create a professional online presence where I
-                could bring my business education and growing digital skills
-                together in one place.
-            </p>
+<section>
+<h2>Project Goal</h2>
 
-            <p>
-                The goal was to build a website that could introduce me to
-                recruiters, showcase my practical work, and demonstrate my
-                ability to learn and apply web technologies.
-            </p>
-        </div>
-    </section>
+<div class="card">
+<p>
+I wanted to create a professional online presence that brings
+together my business education, digital skills, learning journey,
+and practical work in one place.
+</p>
+</div>
+</section>
 
-    <section>
-        <h2>💡 The Challenge</h2>
 
-        <div class="card">
-            <p>
-                As a beginner building my professional profile, I needed a
-                way to present my skills and learning journey without relying
-                only on a traditional resume.
-            </p>
+<section>
+<h2>The Challenge</h2>
 
-            <p>
-                I also wanted the website to be simple to navigate, visually
-                professional, responsive across devices, and easy to update
-                as I completed new projects.
-            </p>
-        </div>
-    </section>
+<div class="card">
+<p>
+The website needed to present my skills and projects clearly while
+remaining professional, easy to navigate, responsive across devices,
+and simple to update as I continued learning.
+</p>
+</div>
+</section>
 
-    <section>
-        <h2>🛠️ My Approach</h2>
 
-        <div class="challenge-grid">
+<section>
+<h2>My Approach</h2>
 
-            <div class="card">
-                <strong>1. Planned the structure</strong>
-                <p>
-                    Organized the website into clear sections for my
-                    introduction, education, skills, learning areas,
-                    projects, and contact information.
-                </p>
-            </div>
+<div class="grid">
 
-            <div class="card">
-                <strong>2. Built the interface</strong>
-                <p>
-                    Created the page structure with HTML and developed the
-                    visual layout and responsive styling with CSS.
-                </p>
-            </div>
+<div class="card">
+<strong>01 — Structure</strong>
+<p>
+Organized the portfolio into introduction, skills, projects,
+education, and contact sections.
+</p>
+</div>
 
-            <div class="card">
-                <strong>3. Added project information</strong>
-                <p>
-                    Presented practical projects and learning areas in a
-                    format that is easy for visitors and recruiters to scan.
-                </p>
-            </div>
+<div class="card">
+<strong>02 — Interface</strong>
+<p>
+Built the structure with HTML and created the visual design and
+responsive layout with CSS.
+</p>
+</div>
 
-            <div class="card">
-                <strong>4. Published and tested</strong>
-                <p>
-                    Used GitHub to manage the project and GitHub Pages to
-                    publish the website online. I also reviewed the live
-                    website and corrected issues during development.
-                </p>
-            </div>
+<div class="card">
+<strong>03 — Projects</strong>
+<p>
+Added practical projects and learning areas to create a clear,
+recruiter-friendly portfolio.
+</p>
+</div>
 
-        </div>
-    </section>
+<div class="card">
+<strong>04 — Publish & Test</strong>
+<p>
+Used GitHub and GitHub Pages to manage, publish, test, and improve
+the website.
+</p>
+</div>
 
-    <section>
-        <h2>💻 Technologies Used</h2>
+</div>
+</section>
 
-        <div class="card">
-            <p>
-                The project was built using the following technologies and
-                tools:
-            </p>
 
-            <div class="tech-list">
-                <span class="tech">HTML</span>
-                <span class="tech">CSS</span>
-                <span class="tech">GitHub</span>
-                <span class="tech">GitHub Pages</span>
-            </div>
-        </div>
-    </section>
+<section>
+<h2>Technologies</h2>
 
-    <section>
-        <h2>🧩 Challenges & Problem Solving</h2>
+<div class="card tags">
+<span class="tag">HTML</span>
+<span class="tag">CSS</span>
+<span class="tag">GitHub</span>
+<span class="tag">GitHub Pages</span>
+<span class="tag">Responsive Design</span>
+</div>
+</section>
 
-        <div class="card">
-            <p>
-                One of the important parts of this project was learning to
-                identify and correct problems rather than simply building
-                the first version and stopping there.
-            </p>
 
-            <p>
-                During development, I tested the live website, reviewed
-                changes before committing them to GitHub, and corrected
-                issues when they appeared.
-            </p>
+<section>
+<h2>Problem Solving</h2>
 
-            <p>
-                This helped me develop a more careful workflow:
-                <span class="highlight">
-                    build → test → identify the issue → fix → verify
-                </span>.
-            </p>
-        </div>
-    </section>
+<div class="card">
+<p>
+A key part of the project was learning to identify and correct
+problems during development rather than stopping at the first
+working version.
+</p>
 
-    <section>
-        <h2>📚 What I Learned</h2>
+<p>
+My workflow became:
+<span class="highlight">
+build → test → identify → fix → verify
+</span>
+</p>
+</div>
+</section>
 
-        <div class="card">
-            <p>
-                This project gave me practical experience with website
-                structure, responsive styling, GitHub repositories,
-                version-controlled changes, and publishing a live website.
-            </p>
 
-            <p>
-                More importantly, I learned how to turn an idea into a
-                working digital product and improve it through testing and
-                iteration.
-            </p>
-        </div>
-    </section>
+<section>
+<h2>What I Learned</h2>
 
-    <section>
-        <h2>🚀 Outcome</h2>
+<div class="card">
+<p>
+This project gave me practical experience with HTML, CSS, responsive
+design, GitHub, version control, and publishing a live website.
+</p>
 
-        <div class="card">
-            <p>
-                The finished website provides me with a professional online
-                portfolio that I can continue updating as I build more
-                practical projects and develop new skills.
-            </p>
+<p>
+More importantly, it taught me how to turn an idea into a working
+digital product and improve it through testing and iteration.
+</p>
+</div>
+</section>
 
-            <p>
-                It also serves as my first documented web development
-                project and a foundation for building a stronger project
-                portfolio.
-            </p>
-        </div>
-    </section>
 
-    <section>
-        <h2>🔗 Project Links</h2>
+<section>
+<h2>Outcome</h2>
 
-        <div class="buttons">
-            <a class="button"
-               href="https://vijayabarthwal.github.io/vijaya-portfolio/"
-               target="_blank">
-                Live Website
-            </a>
+<div class="card">
+<p>
+The finished portfolio provides a professional online presence that
+I can continue expanding with new projects, skills, and creative work.
+</p>
+</div>
 
-            <a class="button secondary"
-               href="https://github.com/vijayabarthwal/vijaya-portfolio"
-               target="_blank">
-                GitHub Repository
-            </a>
-        </div>
-    </section>
+<div class="buttons">
+<a class="button"
+   href="index.html">
+   ← Back to Portfolio
+</a>
+</div>
+</section>
 
 </main>
 
 <footer>
-    © 2026 Vijaya Barthwal · Built while learning and growing.
+© 2026 Vijaya Barthwal · Built while learning and growing.
 </footer>
 
 </body>
 </html>
+               
