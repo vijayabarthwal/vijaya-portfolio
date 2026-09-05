@@ -1,465 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>You Are Never Ready — And That's Okay | Vijaya Barthwal</title>
+<title>You Are Never Ready — And That's Okay | Vijaya Barthwal</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body{
+    margin:0;
+    background:#080808;
+    color:#ccc;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.8;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f1efe9;
-            color: #374151;
-            line-height: 1.8;
-        }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        .page {
-            max-width: 1000px;
-            margin: auto;
-            padding: 35px 24px 70px;
-        }
+.page{
+    max-width:950px;
+    margin:auto;
+    padding:30px 6% 60px;
+}
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #2563eb;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 700;
-        }
+.back{
+    display:inline-block;
+    margin-bottom:35px;
+    color:#999;
+    font-size:13px;
+    font-weight:bold;
+}
 
-        .back-link:hover {
-            color: #1d4ed8;
-        }
+.back:hover{color:#e10600}
 
-        .hero {
-            background: linear-gradient(135deg, #172033, #263b5a);
-            color: #ffffff;
-            padding: 65px 55px;
-            border-radius: 24px;
-            margin-bottom: 28px;
-            box-shadow: 0 18px 45px rgba(30, 58, 95, 0.18);
-        }
+.hero{
+    padding:55px 45px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:14px;
+}
 
-        .eyebrow {
-            color: #bfdbfe;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 18px;
-        }
+.label{
+    color:#e10600;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
 
-        .hero h1 {
-            max-width: 760px;
-            font-size: clamp(40px, 7vw, 68px);
-            line-height: 1.08;
-            letter-spacing: -1.5px;
-            margin-bottom: 22px;
-        }
+h1{
+    margin:12px 0 20px;
+    color:#f5f5f5;
+    font-size:clamp(40px,7vw,68px);
+    line-height:1.05;
+    letter-spacing:-2.5px;
+}
 
-        .hero-description {
-            max-width: 700px;
-            color: #dbeafe;
-            font-size: 19px;
-            line-height: 1.7;
-        }
+.hero p{
+    max-width:700px;
+    margin:0;
+    color:#999;
+    font-size:17px;
+}
 
-        .article {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 24px;
-            padding: 55px;
-            box-shadow: 0 12px 35px rgba(30, 58, 95, 0.08);
-        }
+.article{
+    margin-top:25px;
+    padding:45px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:14px;
+}
 
-        .section-label {
-            color: #2563eb;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.3px;
-            margin-bottom: 12px;
-        }
+h2{
+    color:#e10600;
+    font-size:25px;
+    margin:0 0 15px;
+}
 
-        .article h2 {
-            color: #111827;
-            font-size: 30px;
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
+.intro{
+    padding-bottom:30px;
+    margin-bottom:35px;
+    border-bottom:1px solid #292929;
+    color:#aaa;
+    font-size:17px;
+}
 
-        .intro {
-            font-size: 19px;
-            color: #526173;
-            line-height: 1.8;
-            padding-bottom: 35px;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #e5e7eb;
-        }
+.essay p{
+    margin:0 0 24px;
+    color:#ccc;
+    font-size:16px;
+}
 
-        .essay p {
-            color: #374151;
-            font-size: 17px;
-            line-height: 1.9;
-            margin-bottom: 25px;
-        }
+.quote{
+    margin:35px 0;
+    padding:22px 25px;
+    border-left:4px solid #e10600;
+    background:#171717;
+    color:#eee;
+    font-size:20px;
+    font-weight:bold;
+}
 
-        .pull-quote {
-            margin: 40px 0;
-            padding: 28px 30px;
-            background: #f8fafc;
-            border-left: 5px solid #2563eb;
-            border-radius: 0 14px 14px 0;
-            color: #172033;
-            font-size: 21px;
-            line-height: 1.6;
-            font-weight: 700;
-        }
+.final{
+    margin:40px 0 30px;
+    padding:30px;
+    background:#171717;
+    border-radius:10px;
+    text-align:center;
+    color:#eee;
+    font-size:22px;
+    font-weight:bold;
+}
 
-        .pull-quote span {
-            display: block;
-            margin-top: 10px;
-            color: #718096;
-            font-size: 13px;
-            font-weight: 600;
-        }
+.skills{
+    margin-top:45px;
+    padding-top:30px;
+    border-top:1px solid #292929;
+}
 
-        .final-thought {
-            margin-top: 45px;
-            padding: 40px;
-            border-radius: 18px;
-            background: #f1efe9;
-            text-align: center;
-        }
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:15px;
+}
 
-        .final-thought p {
-            color: #172033;
-            font-size: 25px;
-            line-height: 1.6;
-            font-weight: 700;
-            margin: 0;
-        }
+.tag{
+    padding:6px 11px;
+    border:1px solid #333;
+    border-radius:20px;
+    color:#aaa;
+    font-size:11px;
+}
 
-        .skills {
-            margin-top: 50px;
-            padding-top: 35px;
-            border-top: 1px solid #e5e7eb;
-        }
+footer{
+    margin-top:30px;
+    padding-top:25px;
+    border-top:1px solid #222;
+    text-align:center;
+    color:#666;
+    font-size:11px;
+}
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 18px;
-        }
-
-        .skill {
-            background: #eef4ff;
-            color: #1e40af;
-            padding: 9px 15px;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #718096;
-            font-size: 14px;
-        }
-
-        @media (max-width: 700px) {
-
-            .page {
-                padding: 22px 16px 50px;
-            }
-
-            .hero {
-                padding: 45px 28px;
-                border-radius: 20px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero-description {
-                font-size: 17px;
-            }
-
-            .article {
-                padding: 32px 24px;
-                border-radius: 20px;
-            }
-
-            .article h2 {
-                font-size: 27px;
-            }
-
-            .intro {
-                font-size: 17px;
-            }
-
-            .essay p {
-                font-size: 16px;
-                line-height: 1.85;
-            }
-
-            .pull-quote {
-                font-size: 19px;
-                padding: 23px;
-            }
-
-            .final-thought {
-                padding: 28px 20px;
-            }
-
-            .final-thought p {
-                font-size: 21px;
-            }
-        }
-    </style>
+@media(max-width:650px){
+    .page{padding:22px 5% 50px}
+    .hero{padding:35px 22px}
+    .article{padding:30px 22px}
+    h1{font-size:43px}
+    .hero p,.intro{font-size:15px}
+    .essay p{font-size:15px}
+    .quote{font-size:18px}
+    .final{font-size:20px;padding:24px 18px}
+}
+</style>
 </head>
 
 <body>
 
-    <div class="page">
+<div class="page">
 
-        <a href="index.html" class="back-link">
-            ← Back to Portfolio
-        </a>
+<a class="back" href="index.html">← Back to Portfolio</a>
 
-        <header class="hero">
+<header class="hero">
 
-            <div class="eyebrow">
-                Content Writing • Personal Essay
-            </div>
+<div class="label">Content Writing · Personal Essay</div>
 
-            <h1>
-                You Are Never Ready — And That's Okay
-            </h1>
+<h1>You Are Never Ready — And That's Okay</h1>
 
-            <p class="hero-description">
-                An original personal essay about uncertainty, learning,
-                making thoughtful choices, and growing through experience.
-            </p>
+<p>
+An original personal essay about uncertainty, learning,
+thoughtful decisions, and growing through experience.
+</p>
 
-        </header>
+</header>
 
-        <main class="article">
 
-            <div class="section-label">
-                About This Piece
-            </div>
+<main class="article">
 
-            <h2>
-                Learning Before Feeling Ready
-            </h2>
+<h2>Learning Before Feeling Ready</h2>
 
-            <p class="intro">
-                We often wait for the right moment before doing something
-                important. But sometimes, the right moment is simply the
-                moment when we decide to learn.
-            </p>
+<p class="intro">
+We often wait for the right moment before doing something important.
+But sometimes, the right moment is simply the moment when we decide
+to learn.
+</p>
 
-            <div class="section-label">
-                The Essay
-            </div>
 
-            <div class="essay">
+<div class="essay">
 
-                <p>
-                    We often wait for the right moment before doing something important.
-                    We tell ourselves that we need more knowledge, more confidence,
-                    more experience, or simply more time. We think that one day we will
-                    wake up and finally feel ready.
-                </p>
+<p>
+We often wait for the right moment before doing something important.
+We tell ourselves that we need more knowledge, more confidence,
+more experience, or simply more time. We think that one day we will
+wake up and finally feel ready.
+</p>
 
-                <p>
-                    But I have started to believe that this moment may never come.
-                </p>
+<p>
+But I have started to believe that this moment may never come.
+</p>
 
-                <p>
-                    A person is never completely ready for everything. There is always
-                    something more to learn, understand, practice, or improve. For me,
-                    learning is not something that should begin after we feel ready.
-                    Sometimes, learning is exactly what helps us become ready.
-                </p>
+<p>
+A person is never completely ready for everything. There is always
+something more to learn, understand, practice, or improve. For me,
+learning is not something that should begin after we feel ready.
+Sometimes, learning is exactly what helps us become ready.
+</p>
 
-                <p>
-                    I experienced this myself after completing my BBA.
-                </p>
+<p>
+I experienced this myself after completing my BBA.
+</p>
 
-                <p>
-                    After graduation, I saw many people around me taking different paths.
-                    Some started jobs immediately. Some changed jobs and moved into
-                    different roles. Others prepared for government examinations or
-                    started working toward different goals. Watching all of this made
-                    me think about my own future.
-                </p>
+<p>
+After graduation, I saw many people around me taking different paths.
+Some started jobs immediately. Some changed jobs and moved into
+different roles. Others prepared for government examinations or
+started working toward different goals. Watching all of this made
+me think about my own future.
+</p>
 
-                <p>
-                    At first, getting a job immediately after graduation seemed like
-                    the obvious choice. After all, starting a career early has its own
-                    advantages. But instead of simply following what everyone else was
-                    doing, I started observing the people around me and thinking about
-                    their experiences.
-                </p>
+<p>
+At first, getting a job immediately after graduation seemed like
+the obvious choice. But instead of simply following what everyone
+else was doing, I started observing the people around me and
+thinking about their experiences.
+</p>
 
-                <p>
-                    I asked myself questions.
-                </p>
+<p>
+I asked myself questions.
+</p>
 
-                <p>
-                    What was it like for someone who started working immediately after
-                    graduation? How was their experience different from someone who
-                    continued studying? What skills were they developing? What did they
-                    enjoy about their work? What challenges did they face? And most
-                    importantly, what kind of path would help me grow?
-                </p>
+<p>
+What was it like for someone who started working immediately after
+graduation? How was their experience different from someone who
+continued studying? What skills were they developing? What did they
+enjoy about their work? What challenges did they face? And most
+importantly, what kind of path would help me grow?
+</p>
 
-                <p>
-                    Eventually, I decided to pursue an MBA.
-                </p>
+<p>
+Eventually, I decided to pursue an MBA.
+</p>
 
-                <p>
-                    It wasn't because I thought an MBA would magically guarantee me
-                    a better job. It was because I felt there was still more for me
-                    to learn.
-                </p>
+<p>
+It wasn't because I thought an MBA would magically guarantee me
+a better job. It was because I felt there was still more for me
+to learn.
+</p>
 
-                <p>
-                    I wanted more knowledge, more exposure, and the opportunity to
-                    develop skills while learning from professors and the people
-                    around me. I wanted to understand not only what I wanted to do,
-                    but also why I wanted to do it.
-                </p>
+<p>
+I wanted more knowledge, more exposure, and the opportunity to
+develop skills while learning from professors and the people around
+me. I wanted to understand not only what I wanted to do, but also
+why I wanted to do it.
+</p>
 
-                <p>
-                    That experience changed the way I think about being “ready.”
-                </p>
+<p>
+That experience changed the way I think about being “ready.”
+</p>
 
-                <p>
-                    I realized that I wasn't necessarily feeling ready to enter the
-                    next stage of my career. But I was ready to learn.
-                </p>
+<p>
+I realized that I wasn't necessarily feeling ready to enter the
+next stage of my career. But I was ready to learn.
+</p>
 
-                <div class="pull-quote">
-                    Sometimes, learning is exactly what helps us become ready.
-                </div>
 
-                <p>
-                    And sometimes, I think opportunities are a little like a piece
-                    of cake.
-                </p>
+<div class="quote">
+Sometimes, learning is exactly what helps us become ready.
+</div>
 
-                <p>
-                    Imagine seeing a piece of cake in front of you. You can keep
-                    looking at it and wondering whether you should taste it. You can
-                    wait for the perfect moment or worry about whether you will like it.
-                    Or you can simply take a bite.
-                </p>
 
-                <p>
-                    Maybe you will love it. Maybe you won't.
-                </p>
+<p>
+And sometimes, I think opportunities are a little like a piece
+of cake.
+</p>
 
-                <p>
-                    But after taking that bite, you will know something you didn't
-                    know before.
-                </p>
+<p>
+Imagine seeing a piece of cake in front of you. You can keep looking
+at it and wondering whether you should taste it. You can wait for
+the perfect moment or worry about whether you will like it. Or you
+can simply take a bite.
+</p>
 
-                <p>
-                    I think learning works in much the same way. We can spend a lot
-                    of time waiting until we feel completely prepared, but opportunities
-                    rarely arrive with a guarantee that everything will work out
-                    perfectly. Sometimes, we have to try, experience something, learn
-                    from it, and then decide what comes next.
-                </p>
+<p>
+Maybe you will love it. Maybe you won't.
+</p>
 
-                <p>
-                    This doesn't mean we should make every decision without thinking.
-                    My decision to pursue an MBA came from observing, asking questions,
-                    comparing experiences, and thinking carefully about what I wanted
-                    to learn.
-                </p>
+<p>
+But after taking that bite, you will know something you didn't
+know before.
+</p>
 
-                <p>
-                    For me, that is the difference between blindly following a path
-                    and consciously choosing one.
-                </p>
+<p>
+I think learning works in much the same way. We can spend a lot
+of time waiting until we feel completely prepared, but opportunities
+rarely arrive with a guarantee that everything will work out
+perfectly. Sometimes, we have to try, experience something, learn
+from it, and then decide what comes next.
+</p>
 
-                <p>
-                    I am still learning. I don't think that will ever stop.
-                </p>
+<p>
+This doesn't mean we should make every decision without thinking.
+My decision to pursue an MBA came from observing, asking questions,
+comparing experiences, and thinking carefully about what I wanted
+to learn.
+</p>
 
-                <p>
-                    There will always be a new skill to develop, a new idea to understand,
-                    a new challenge to face, or something I can do better than I did
-                    yesterday.
-                </p>
+<p>
+For me, that is the difference between blindly following a path
+and consciously choosing one.
+</p>
 
-                <p>
-                    And maybe that is the point.
-                </p>
+<p>
+I am still learning. I don't think that will ever stop.
+</p>
 
-                <div class="final-thought">
-                    <p>
-                        It wasn't about being ready to do something.
-                        It was about being ready to learn something.
-                    </p>
-                </div>
+<p>
+There will always be a new skill to develop, a new idea to understand,
+a new challenge to face, or something I can do better than I did
+yesterday.
+</p>
 
-                <p style="margin-top: 35px;">
-                    Because we may never feel completely ready.
-                </p>
+<p>
+And maybe that is the point.
+</p>
 
-                <p>
-                    But we can always be ready to learn.
-                </p>
 
-            </div>
+<div class="final">
+It wasn't about being ready to do something.<br>
+It was about being ready to learn something.
+</div>
 
-            <section class="skills">
 
-                <div class="section-label">
-                    Skills Demonstrated
-                </div>
+<p>
+Because we may never feel completely ready.
+</p>
 
-                <div class="skills-list">
+<p>
+But we can always be ready to learn.
+</p>
 
-                    <span class="skill">Content Writing</span>
-                    <span class="skill">Personal Essay</span>
-                    <span class="skill">Storytelling</span>
-                    <span class="skill">Clear Communication</span>
-                    <span class="skill">Editing</span>
+</div>
 
-                </div>
 
-            </section>
+<div class="skills">
 
-        </main>
+<div class="label">Skills Demonstrated</div>
 
-        <footer class="footer">
-            © © 2026 Vijaya Barthwal • Content Writing Sample
-        </footer>
+<div class="tags">
+<span class="tag">Content Writing</span>
+<span class="tag">Personal Essay</span>
+<span class="tag">Storytelling</span>
+<span class="tag">Clear Communication</span>
+<span class="tag">Editing</span>
+</div>
 
-    </div>
+</div>
+
+</main>
+
+
+<footer>
+© 2026 Vijaya Barthwal · Content Writing Sample
+</footer>
+
+</div>
 
 </body>
-
 </html>
