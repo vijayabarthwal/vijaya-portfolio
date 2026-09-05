@@ -1,308 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Motivational Short | Case Study</title>
+    <title>Motivational Short | Vijaya Barthwal</title>
 
-  <meta
-    name="description"
-    content="A motivational short video created as a personal content creation and visual storytelling project."
-  >
+    <meta
+        name="description"
+        content="Case study for a motivational short-form video created by Vijaya Barthwal."
+    >
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f2ed;
-      color: #333;
-      line-height: 1.7;
-      padding: 30px 20px;
-    }
+        :root {
+            --bg: #080808;
+            --card: #111;
+            --card-2: #171717;
+            --text: #f5f5f5;
+            --muted: #a5a5a5;
+            --red: #e50914;
+            --border: rgba(255,255,255,.1);
+        }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 30px 18px;
+        }
 
-    .back-link {
-      display: inline-block;
-      margin-bottom: 25px;
-      color: #444;
-      text-decoration: none;
-      font-weight: 600;
-    }
+        .container {
+            width: min(900px, 100%);
+            margin: auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 45px;
+        }
 
-    .back-link:hover {
-      text-decoration: underline;
-    }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 38px;
+        }
 
-    .category {
-      color: #777;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
+        .back:hover {
+            color: var(--red);
+        }
 
-    h1 {
-      color: #222;
-      font-size: 36px;
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
+        .tag {
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-    .intro {
-      color: #666;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
+        h1 {
+            font-size: clamp(38px, 7vw, 58px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
 
-    h2 {
-      color: #222;
-      font-size: 24px;
-      margin-top: 40px;
-      margin-bottom: 15px;
-    }
+        .intro {
+            color: var(--muted);
+            font-size: 17px;
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
 
-    p {
-      margin-bottom: 15px;
-    }
+        section {
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+            margin-top: 30px;
+        }
 
-    ul {
-      padding-left: 22px;
-    }
+        h2 {
+            font-size: 23px;
+            margin-bottom: 14px;
+        }
 
-    li {
-      margin-bottom: 8px;
-    }
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--red);
+            margin-right: 9px;
+            vertical-align: -2px;
+        }
 
-    .video-container {
-      margin-top: 20px;
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+        p,
+        li {
+            color: var(--muted);
+        }
 
-    video {
-      display: block;
-      width: 100%;
-      max-height: 600px;
-    }
+        ul {
+            padding-left: 20px;
+        }
 
-    .video-link {
-      display: inline-block;
-      margin-top: 15px;
-      color: #444;
-      font-weight: 600;
-      text-decoration: none;
-    }
+        li {
+            margin-bottom: 8px;
+        }
 
-    .video-link:hover {
-      text-decoration: underline;
-    }
+        strong {
+            color: var(--text);
+        }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-    }
+        .video {
+            margin-top: 20px;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
 
-    .skill {
-      background: #eee9e2;
-      color: #444;
-      padding: 7px 13px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
+        video {
+            display: block;
+            width: 100%;
+            max-height: 620px;
+        }
 
-    .reflection {
-      background: #f7f4ef;
-      padding: 20px;
-      border-radius: 12px;
-    }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
 
-    footer {
-      margin-top: 45px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #777;
-      font-size: 14px;
-      text-align: center;
-    }
+        .skill {
+            background: var(--card-2);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 7px 13px;
+            color: #ddd;
+            font-size: 13px;
+        }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 15px;
-      }
+        .reflection {
+            background: var(--card-2);
+            border-left: 3px solid var(--red);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+        }
 
-      .container {
-        padding: 25px 20px;
-      }
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            margin-top: 45px;
+            padding-top: 20px;
+        }
 
-      h1 {
-        font-size: 28px;
-      }
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
 
-      .intro {
-        font-size: 16px;
-      }
+            .container {
+                padding: 28px 20px;
+            }
 
-      h2 {
-        font-size: 21px;
-      }
-    }
-  </style>
+            h1 {
+                font-size: 36px;
+            }
+
+            .intro {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <main class="container">
+<main class="container">
 
-    <a class="back-link" href="../index.html">
-      ← Back to Portfolio
+    <a class="back" href="../index.html">
+        ← Back to Portfolio
     </a>
 
-    <p class="category">Content Creation • Video Editing</p>
+    <div class="tag">Content Creation • Video Editing</div>
 
     <h1>Motivational Short</h1>
 
     <p class="intro">
-      A short motivational video created as a personal content creation
-      project, combining visual storytelling, creative writing, and video editing.
+        A short-form motivational video combining visual storytelling,
+        creative writing, pacing, and video editing.
     </p>
 
     <section>
-      <h2>Project Overview</h2>
-
-      <p>
-        This project is a short motivational video built around three
-        visual scenes: a sunrise, someone driving, and a quiet remote
-        forest landscape.
-      </p>
-
-      <p>
-        The goal was to create a simple visual story where each scene
-        communicates a different part of a motivational journey.
-      </p>
-    </section>
-
-    <section>
-      <h2>Objective</h2>
-
-      <p>
-        Create a short, engaging motivational video using simple visuals
-        and concise text while maintaining a natural flow from beginning
-        to end.
-      </p>
-    </section>
-
-    <section>
-      <h2>Creative Approach</h2>
-
-      <ul>
-        <li><strong>Sunrise:</strong> Every sunrise is a new beginning.</li>
-        <li><strong>Driving:</strong> Keep moving. Your journey is yours.</li>
-        <li><strong>Forest:</strong> Sometimes, you have to walk your own path.</li>
-      </ul>
-
-      <p>
-        The sequence moves from a new beginning, to taking action,
-        and finally toward independence and finding your own path.
-      </p>
-    </section>
-
-    <section>
-      <h2>My Process</h2>
-
-      <ul>
-        <li>Selected suitable visual clips.</li>
-        <li>Arranged the clips into a simple narrative.</li>
-        <li>Created short motivational text for each scene.</li>
-        <li>Matched the message with the mood of each visual.</li>
-        <li>Edited and reviewed the final short video.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Final Video</h2>
-
-      <div class="video-container">
-        <video controls preload="metadata">
-          <source
-            src="../InShot_20260822_020642345.mp4"
-            type="video/mp4"
-          >
-          Your browser does not support video playback.
-        </video>
-      </div>
-
-      <a
-        class="video-link"
-        href="../InShot_20260822_020642345.mp4"
-        target="_blank"
-        rel="noopener"
-      >
-        Open the video separately →
-      </a>
-    </section>
-
-    <section>
-      <h2>Skills Demonstrated</h2>
-
-      <div class="skills">
-        <span class="skill">Video Editing</span>
-        <span class="skill">Content Creation</span>
-        <span class="skill">Visual Storytelling</span>
-        <span class="skill">Creative Writing</span>
-        <span class="skill">Content Planning</span>
-      </div>
-    </section>
-
-    <section>
-      <h2>What I Learned</h2>
-
-      <div class="reflection">
-        <p>
-          This project helped me practice combining visuals, short-form
-          writing, timing, and storytelling to create a simple piece of
-          motivational content.
-        </p>
+        <h2>Project Overview</h2>
 
         <p>
-          I also learned that even a short video benefits from a clear
-          beginning, middle, and ending, with the text supporting rather
-          than distracting from the visuals.
+            This personal project tells a simple motivational journey through
+            three visual moments: sunrise, driving, and a quiet forest landscape.
+            Each scene represents a different stage of moving forward.
         </p>
-      </div>
     </section>
 
     <section>
-      <h2>Project Type</h2>
+        <h2>Creative Approach</h2>
 
-      <p>
-        Personal portfolio project created to demonstrate practical
-        content creation, video editing, and visual storytelling skills.
-      </p>
+        <ul>
+            <li><strong>Sunrise:</strong> A new beginning.</li>
+            <li><strong>Driving:</strong> Keep moving forward.</li>
+            <li><strong>Forest:</strong> Find and follow your own path.</li>
+        </ul>
     </section>
 
-    <footer>
-      © 2026 Vijaya Barthwal • Content Creation Project
-    </footer>
+    <section>
+        <h2>Process</h2>
 
-  </main>
+        <ul>
+            <li>Selected suitable visual clips.</li>
+            <li>Created concise motivational text.</li>
+            <li>Matched text and visuals to create a natural flow.</li>
+            <li>Edited and reviewed the final short-form video.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Final Video</h2>
+
+        <div class="video">
+            <video controls preload="metadata" playsinline>
+                <source
+                    src="../InShot_20260822_020642345.mp4"
+                    type="video/mp4"
+                >
+                Your browser does not support video playback.
+            </video>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <span class="skill">Video Editing</span>
+            <span class="skill">Content Creation</span>
+            <span class="skill">Visual Storytelling</span>
+            <span class="skill">Creative Writing</span>
+            <span class="skill">Content Planning</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>What I Learned</h2>
+
+        <div class="reflection">
+            <p>
+                This project strengthened my ability to combine visuals,
+                short-form writing, timing, and storytelling into a clear
+                and engaging piece of content.
+            </p>
+        </div>
+    </section>
+
+    <div class="footer">
+        © 2026 Vijaya Barthwal • Motivational Short
+    </div>
+
+</main>
 
 </body>
 </html>
+    
