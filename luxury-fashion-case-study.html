@@ -1,367 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Luxury Fashion Campaign | Vijaya Barthwal</title>
+<title>Luxury Fashion Campaign | Vijaya Barthwal</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body{
+    margin:0;
+    background:#080808;
+    color:#ccc;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.7;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f3ef;
-            color: #292929;
-            line-height: 1.7;
-        }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            padding: 18px 8%;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e0d8;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:10;
+    padding:18px 6%;
+    background:rgba(8,8,8,.94);
+    border-bottom:1px solid #222;
+}
 
-        nav {
-            max-width: 1000px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        .logo {
-            color: #2563eb;
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+.logo{
+    color:#f5f5f5;
+    font-size:22px;
+    font-weight:800;
+}
 
-        .back-link {
-            color: #555;
-            text-decoration: none;
-        }
+.logo span{color:#e10600}
 
-        .back-link:hover {
-            color: #2563eb;
-        }
+.back{
+    color:#999;
+    font-size:13px;
+}
 
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 70px 8%;
-        }
+.back:hover{color:#e10600}
 
-        .label {
-            color: #777;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+main{
+    max-width:950px;
+    margin:auto;
+    padding:70px 6%;
+}
 
-        h1 {
-            margin: 12px 0 20px;
-            color: #171717;
-            font-size: clamp(38px, 7vw, 62px);
-            line-height: 1.1;
-        }
+.label{
+    color:#e10600;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
 
-        .intro {
-            max-width: 760px;
-            font-size: 19px;
-            color: #555;
-        }
+h1{
+    margin:12px 0 18px;
+    color:#f5f5f5;
+    font-size:clamp(42px,7vw,70px);
+    line-height:1;
+    letter-spacing:-3px;
+}
 
-        section {
-            margin-top: 65px;
-        }
+.intro{
+    max-width:760px;
+    color:#999;
+    font-size:17px;
+}
 
-        h2 {
-            margin-bottom: 18px;
-            color: #171717;
-            font-size: 30px;
-        }
+section{margin-top:60px}
 
-        .card {
-            padding: 28px;
-            background: #ffffff;
-            border: 1px solid #e5e0d8;
-            border-radius: 14px;
-        }
+h2{
+    margin-bottom:18px;
+    color:#e10600;
+    font-size:27px;
+}
 
-        .tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
+.card{
+    padding:25px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+}
 
-        .tool {
-            padding: 8px 14px;
-            border: 1px solid #d8d2c8;
-            border-radius: 20px;
-            background: #faf9f7;
-            color: #444;
-        }
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
 
-        .campaign-image {
-            width: 100%;
-            display: block;
-            margin-top: 28px;
-            border-radius: 12px;
-            border: 1px solid #e5e0d8;
-        }
+.tag{
+    padding:6px 11px;
+    border:1px solid #333;
+    border-radius:20px;
+    color:#aaa;
+    font-size:11px;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 20px;
-            border-radius: 8px;
-            background: #2563eb;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.campaign-image{
+    width:100%;
+    display:block;
+    margin-top:20px;
+    border-radius:8px;
+    border:1px solid #292929;
+}
 
-        .button:hover {
-            opacity: 0.9;
-        }
+.button{
+    display:inline-block;
+    margin-top:25px;
+    padding:11px 17px;
+    background:#e10600;
+    border-radius:6px;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+}
 
-        footer {
-            margin-top: 80px;
-            padding: 30px 8%;
-            text-align: center;
-            border-top: 1px solid #e5e0d8;
-            color: #777;
-        }
+.button:hover{background:#ff241f}
 
-        @media (max-width: 700px) {
-            header {
-                padding: 16px 6%;
-            }
+footer{
+    margin-top:70px;
+    padding:30px 6%;
+    text-align:center;
+    border-top:1px solid #222;
+    color:#666;
+    font-size:11px;
+}
 
-            .back-link {
-                font-size: 14px;
-            }
-
-            main {
-                padding: 50px 6%;
-            }
-
-            .intro {
-                font-size: 18px;
-            }
-
-            .card {
-                padding: 22px;
-            }
-        }
-    </style>
+@media(max-width:650px){
+    main{padding:55px 6%}
+    h1{font-size:45px}
+    .intro{font-size:15px}
+    section{margin-top:50px}
+    .card{padding:18px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <a class="logo" href="index.html">Vijaya.</a>
-
-        <a class="back-link" href="index.html">
-            ← Back to Portfolio
-        </a>
-    </nav>
+<nav>
+<a class="logo" href="index.html">Vijaya<span>.</span></a>
+<a class="back" href="index.html">← Back to Portfolio</a>
+</nav>
 </header>
-
 
 <main>
 
-    <div class="label">
-        Project Case Study
-    </div>
+<div class="label">Project Case Study</div>
 
-    <h1>
-        Luxury Fashion Campaign
-    </h1>
+<h1>Luxury Fashion Campaign</h1>
 
-    <p class="intro">
-        An editorial fashion campaign created in Canva, exploring
-        luxury aesthetics, typography, visual hierarchy, imagery,
-        and sophisticated composition.
-    </p>
+<p class="intro">
+An editorial fashion campaign created in Canva, exploring luxury
+aesthetics, typography, visual hierarchy, imagery, and composition.
+</p>
 
 
-    <section>
+<section>
+<h2>Objective</h2>
 
-        <h2>🎯 Objective</h2>
-
-        <div class="card">
-
-            <p>
-                The objective was to create a premium-looking fashion
-                campaign that communicates a modern luxury identity
-                through strong imagery, typography, spacing, and
-                visual composition.
-            </p>
-
-        </div>
-
-    </section>
+<div class="card">
+<p>
+The goal was to create a premium fashion campaign that communicates
+a modern luxury identity through strong imagery, typography, spacing,
+and visual composition.
+</p>
+</div>
+</section>
 
 
-    <section>
+<section>
+<h2>Creative Direction</h2>
 
-        <h2>🎨 Creative Direction</h2>
+<div class="card">
+<p>
+I chose a clean editorial direction with restrained styling,
+strong typography, and a high-fashion visual approach.
+</p>
 
-        <div class="card">
-
-            <p>
-                I chose a clean editorial direction with a restrained
-                color palette, strong typography, and a high-fashion
-                visual style.
-            </p>
-
-            <p>
-                The design focuses on creating visual hierarchy so that
-                the campaign title, seasonal information, and fashion
-                imagery work together naturally.
-            </p>
-
-        </div>
-
-    </section>
+<p>
+The composition was designed to create a clear visual hierarchy
+between the campaign title, seasonal information, and imagery.
+</p>
+</div>
+</section>
 
 
-    <section>
+<section>
+<h2>Design Process</h2>
 
-        <h2>🛠️ Design Process</h2>
+<div class="card">
+<p>
+I combined the campaign title, seasonal text, fashion photography,
+spacing, and supporting elements into a balanced editorial layout.
+</p>
 
-        <div class="card">
-
-            <p>
-                I developed the composition by combining the campaign
-                title, seasonal text, fashion photography, spacing,
-                and supporting visual elements.
-            </p>
-
-            <p>
-                I refined the placement and proportions of the elements
-                to create a balanced editorial layout and maintain a
-                sophisticated overall appearance.
-            </p>
-
-        </div>
-
-    </section>
+<p>
+I refined the placement and proportions of each element to maintain
+a sophisticated and cohesive presentation.
+</p>
+</div>
+</section>
 
 
-    <section>
+<section>
+<h2>Tools & Skills</h2>
 
-        <h2>💻 Tools & Skills</h2>
-
-        <div class="card">
-
-            <div class="tools">
-
-                <span class="tool">Canva</span>
-
-                <span class="tool">Graphic Design</span>
-
-                <span class="tool">Editorial Design</span>
-
-                <span class="tool">Typography</span>
-
-                <span class="tool">Visual Hierarchy</span>
-
-                <span class="tool">Composition</span>
-
-            </div>
-
-        </div>
-
-    </section>
+<div class="card tags">
+<span class="tag">Canva</span>
+<span class="tag">Graphic Design</span>
+<span class="tag">Editorial Design</span>
+<span class="tag">Typography</span>
+<span class="tag">Visual Hierarchy</span>
+<span class="tag">Composition</span>
+</div>
+</section>
 
 
-    <section>
+<section>
+<h2>Final Design</h2>
 
-        <h2>✨ Final Design</h2>
+<div class="card">
 
-        <div class="card">
+<p>
+The completed campaign combines editorial typography, fashion
+imagery, and a minimal luxury aesthetic into one cohesive visual.
+</p>
 
-            <p>
-                The completed campaign combines editorial typography,
-                fashion imagery, and a minimal luxury aesthetic into
-                one cohesive visual.
-            </p>
+<img
+src="images/Luxury Fashion Campaign.png"
+alt="Luxury Fashion Campaign editorial design"
+class="campaign-image">
 
-            <img
-                src="images/Luxury Fashion Campaign.png"
-                alt="Luxury Fashion Campaign editorial design"
-                class="campaign-image">
-
-        </div>
-
-    </section>
+</div>
+</section>
 
 
-    <section>
+<section>
+<h2>What I Learned</h2>
 
-        <h2>📚 What I Learned</h2>
+<div class="card">
+<p>
+This project strengthened my understanding of how typography,
+spacing, imagery, and visual hierarchy work together to create
+stronger designs.
+</p>
 
-        <div class="card">
-
-            <p>
-                This project helped me understand how typography,
-                spacing, imagery, and visual hierarchy can work together
-                to create a stronger design.
-            </p>
-
-            <p>
-                I also gained practical experience creating an editorial
-                campaign layout in Canva while paying attention to
-                consistency and presentation.
-            </p>
-
-        </div>
-
-    </section>
+<p>
+It also gave me practical experience creating an editorial campaign
+layout in Canva with attention to consistency and presentation.
+</p>
+</div>
+</section>
 
 
-    <section>
+<section>
+<h2>Outcome</h2>
 
-        <h2>🚀 Outcome</h2>
+<div class="card">
+<p>
+The final campaign demonstrates my developing skills in graphic
+design, editorial composition, typography, and visual storytelling.
+</p>
 
-        <div class="card">
+<a class="button" href="index.html">
+← Back to Portfolio
+</a>
 
-            <p>
-                The final result is a fashion campaign concept that
-                demonstrates my developing skills in graphic design,
-                editorial composition, typography, and visual storytelling.
-            </p>
-
-            <a class="button" href="index.html">
-                ← Back to Portfolio
-            </a>
-
-        </div>
-
-    </section>
+</div>
+</section>
 
 </main>
 
-
 <footer>
-    © 2026 Vijaya Barthwal · Built while learning and growing.
+© 2026 Vijaya Barthwal · Built while learning and growing.
 </footer>
 
 </body>
