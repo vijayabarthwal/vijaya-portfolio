@@ -1,499 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Customer Inquiry Email Tracker | Vijaya Barthwal</title>
+<title>Customer Inquiry Email Tracker | Vijaya Barthwal</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+*{box-sizing:border-box}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body{
+    margin:0;
+    background:#080808;
+    color:#ccc;
+    font-family:Arial,Helvetica,sans-serif;
+    line-height:1.7;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f5f1;
-            color: #202020;
-            line-height: 1.7;
-        }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(247, 245, 241, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #dedbd4;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:10;
+    padding:18px 6%;
+    background:rgba(8,8,8,.94);
+    border-bottom:1px solid #222;
+}
 
-        nav {
-            max-width: 1120px;
-            margin: auto;
-            padding: 18px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
+nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        .logo {
-            color: #171717;
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
+.logo{
+    color:#f5f5f5;
+    font-size:22px;
+    font-weight:800;
+}
 
-        .back-link {
-            color: #555;
-            text-decoration: none;
-            font-size: 15px;
-        }
+.logo span{color:#e10600}
 
-        .back-link:hover {
-            color: #111;
-        }
+.back{
+    color:#999;
+    font-size:13px;
+}
 
-        main {
-            max-width: 1050px;
-            margin: auto;
-            padding: 80px 6%;
-        }
+.back:hover{color:#e10600}
 
-        .hero {
-            max-width: 850px;
-            margin-bottom: 70px;
-        }
+main{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 6%;
+}
 
-        .eyebrow {
-            display: inline-block;
-            margin-bottom: 18px;
-            color: #8a6b3d;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+.label{
+    color:#e10600;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
 
-        h1 {
-            margin: 0 0 22px;
-            color: #171717;
-            font-size: clamp(40px, 7vw, 72px);
-            line-height: 1.05;
-            letter-spacing: -2.5px;
-        }
+h1{
+    margin:12px 0 18px;
+    color:#f5f5f5;
+    font-size:clamp(40px,7vw,68px);
+    line-height:1;
+    letter-spacing:-2.5px;
+}
 
-        .hero-text {
-            max-width: 760px;
-            margin: 0;
-            color: #62605c;
-            font-size: 20px;
-        }
+.intro{
+    max-width:760px;
+    color:#999;
+    font-size:17px;
+}
 
-        .meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 30px;
-        }
+section{margin-top:60px}
 
-        .tag {
-            padding: 8px 14px;
-            border: 1px solid #d8d3ca;
-            border-radius: 30px;
-            background: #fffdf9;
-            color: #4d4a45;
-            font-size: 14px;
-        }
+h2{
+    margin-bottom:18px;
+    color:#e10600;
+    font-size:27px;
+}
 
-        section {
-            margin-top: 65px;
-        }
+.card{
+    padding:25px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+}
 
-        h2 {
-            margin: 0 0 20px;
-            color: #222;
-            font-size: 30px;
-            line-height: 1.2;
-            letter-spacing: -0.8px;
-        }
+.workflow{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
 
-        .card {
-            padding: 30px;
-            margin-top: 18px;
-            background: #fffdf9;
-            border: 1px solid #dedbd4;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(40, 35, 25, 0.05);
-        }
+.step{
+    padding:22px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:12px;
+}
 
-        .card p {
-            margin: 0 0 18px;
-            color: #5f5c57;
-        }
+.step-number{
+    color:#e10600;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
 
-        .card p:last-child {
-            margin-bottom: 0;
-        }
+.step h3{
+    margin:9px 0;
+    color:#eee;
+    font-size:19px;
+}
 
-        .workflow {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 22px;
-        }
+.step p{
+    margin:0;
+    color:#999;
+    font-size:14px;
+}
 
-        .step {
-            padding: 25px;
-            background: #fffdf9;
-            border: 1px solid #dedbd4;
-            border-radius: 14px;
-        }
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
 
-        .step-number {
-            color: #8a6b3d;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+.tag{
+    padding:6px 11px;
+    border:1px solid #333;
+    border-radius:20px;
+    color:#aaa;
+    font-size:11px;
+}
 
-        .step h3 {
-            margin: 10px 0 8px;
-            color: #222;
-            font-size: 20px;
-        }
+.highlight{
+    color:#e10600;
+    font-weight:bold;
+}
 
-        .step p {
-            margin: 0;
-            color: #68645e;
-            font-size: 15px;
-        }
+.button{
+    display:inline-block;
+    margin-top:25px;
+    padding:11px 17px;
+    background:#e10600;
+    border-radius:6px;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+}
 
-        .highlight {
-            color: #8a6b3d;
-            font-weight: bold;
-        }
+.button:hover{background:#ff241f}
 
-        .tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
+footer{
+    margin-top:70px;
+    padding:30px 6%;
+    text-align:center;
+    border-top:1px solid #222;
+    color:#666;
+    font-size:11px;
+}
 
-        .tech {
-            padding: 9px 15px;
-            border-radius: 20px;
-            background: #f0ece4;
-            color: #403d38;
-            font-size: 14px;
-        }
-
-        .result-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            margin-top: 20px;
-        }
-
-        .result {
-            padding: 25px;
-            background: #f0ece4;
-            border-radius: 14px;
-        }
-
-        .result strong {
-            display: block;
-            margin-bottom: 8px;
-            color: #282623;
-        }
-
-        .result p {
-            margin: 0;
-            color: #625e58;
-            font-size: 15px;
-        }
-
-        .status {
-            padding: 22px 25px;
-            margin-top: 22px;
-            border-left: 4px solid #8a6b3d;
-            background: #f1eee8;
-            border-radius: 8px;
-        }
-
-        .status strong {
-            color: #292622;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 25px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 20px;
-            border-radius: 8px;
-            background: #222;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            background: #444;
-        }
-
-        .button.secondary {
-            background: transparent;
-            color: #333;
-            border: 1px solid #bdb8af;
-        }
-
-        .button.secondary:hover {
-            background: #eeeae2;
-        }
-
-        footer {
-            margin-top: 90px;
-            padding: 30px 6%;
-            text-align: center;
-            border-top: 1px solid #dedbd4;
-            color: #77736c;
-            font-size: 14px;
-        }
-
-        @media (max-width: 750px) {
-            nav {
-                padding: 16px 5%;
-            }
-
-            main {
-                padding: 55px 5%;
-            }
-
-            h1 {
-                letter-spacing: -1.5px;
-            }
-
-            .hero-text {
-                font-size: 18px;
-            }
-
-            .workflow,
-            .result-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card,
-            .step {
-                padding: 23px;
-            }
-        }
-    </style>
+@media(max-width:650px){
+    main{padding:55px 6%}
+    h1{font-size:44px}
+    .intro{font-size:15px}
+    section{margin-top:50px}
+    .workflow{grid-template-columns:1fr}
+    .card,.step{padding:18px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <a class="logo" href="index.html">Vijaya.</a>
-        <a class="back-link" href="index.html">← Back to Portfolio</a>
-    </nav>
+<nav>
+<a class="logo" href="index.html">Vijaya<span>.</span></a>
+<a class="back" href="index.html">← Back to Portfolio</a>
+</nav>
 </header>
 
 <main>
 
-    <!-- HERO -->
-    <div class="hero">
+<div class="label">AI & Automation · Case Study</div>
 
-        <span class="eyebrow">AI & Automation • Case Study</span>
+<h1>Customer Inquiry Email Tracker</h1>
 
-        <h1>Customer Inquiry Email Tracker</h1>
-
-        <p class="hero-text">
-            An automated Gmail-to-Google Sheets workflow designed to
-            capture, organize, and track customer inquiry emails using
-            Zapier.
-        </p>
-
-        <div class="meta">
-            <span class="tag">Gmail</span>
-            <span class="tag">Zapier</span>
-            <span class="tag">Google Sheets</span>
-            <span class="tag">Workflow Automation</span>
-        </div>
-
-    </div>
+<p class="intro">
+An automated Gmail-to-Google Sheets workflow built with Zapier
+to capture, organize, and track customer inquiry emails.
+</p>
 
 
-    <!-- PROJECT OVERVIEW -->
-    <section>
+<section>
+<h2>Project Overview</h2>
 
-        <h2>Project Overview</h2>
+<div class="card">
+<p>
+The goal was to reduce repetitive manual work when collecting
+customer inquiries from email.
+</p>
 
-        <div class="card">
-
-            <p>
-                The goal of this project was to create a simple automation
-                that could reduce the repetitive work involved in collecting
-                customer inquiry emails.
-            </p>
-
-            <p>
-                Instead of manually copying information from incoming emails
-                into a spreadsheet, the workflow connects
-                <span class="highlight">Gmail → Zapier → Google Sheets</span>
-                so relevant messages can be organized into a structured
-                tracking system.
-            </p>
-
-        </div>
-
-    </section>
+<p>
+The workflow connects
+<span class="highlight">Gmail → Zapier → Google Sheets</span>
+to automatically organize relevant email information into a
+structured tracking system.
+</p>
+</div>
+</section>
 
 
-    <!-- THE PROBLEM -->
-    <section>
+<section>
+<h2>The Problem</h2>
 
-        <h2>The Problem</h2>
-
-        <div class="card">
-
-            <p>
-                Customer inquiries arriving through email can easily become
-                difficult to track when they are mixed with other messages.
-                Manually transferring information into a spreadsheet also
-                creates repetitive work and increases the possibility of
-                missing or inconsistently recording an inquiry.
-            </p>
-
-            <p>
-                The challenge was to design a workflow that could automatically
-                identify relevant emails and move their information into a
-                centralized tracking sheet.
-            </p>
-
-        </div>
-
-    </section>
+<div class="card">
+<p>
+Customer inquiries can become difficult to track when they are mixed
+with other emails. Manually copying information into a spreadsheet
+also takes time and can lead to missed or inconsistent records.
+</p>
+</div>
+</section>
 
 
-    <!-- WORKFLOW -->
-    <section>
+<section>
+<h2>How the Workflow Works</h2>
 
-        <h2>How the Workflow Works</h2>
+<div class="workflow">
 
-        <div class="workflow">
+<div class="step">
+<span class="step-number">01</span>
+<h3>Gmail Trigger</h3>
+<p>
+Identifies incoming messages that match the configured criteria.
+</p>
+</div>
 
-            <div class="step">
-                <span class="step-number">Step 01</span>
-                <h3>Gmail Trigger</h3>
-                <p>
-                    The workflow monitors Gmail for messages matching the
-                    configured search criteria.
-                </p>
-            </div>
+<div class="step">
+<span class="step-number">02</span>
+<h3>Zapier</h3>
+<p>
+Processes the matching email and passes the relevant information
+to the next step.
+</p>
+</div>
 
-            <div class="step">
-                <span class="step-number">Step 02</span>
-                <h3>Zapier Automation</h3>
-                <p>
-                    Zapier receives the matching email information and
-                    passes the relevant fields to the next step.
-                </p>
-            </div>
+<div class="step">
+<span class="step-number">03</span>
+<h3>Google Sheets</h3>
+<p>
+Stores the information in a structured tracking sheet for review.
+</p>
+</div>
 
-            <div class="step">
-                <span class="step-number">Step 03</span>
-                <h3>Google Sheets</h3>
-                <p>
-                    Email information is organized into a structured
-                    spreadsheet for easier tracking and review.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
+</div>
+</section>
 
 
-    <!-- DATA CAPTURE -->
-    <section>
+<section>
+<h2>Information Captured</h2>
 
-        <h2>Information Captured</h2>
-
-        <div class="card">
-
-            <p>
-                The tracking sheet was structured to store useful information
-                from each matching message, including:
-            </p>
-
-            <div class="tech-list">
-                <span class="tech">Date</span>
-                <span class="tech">Sender</span>
-                <span class="tech">Subject</span>
-                <span class="tech">Email Body</span>
-                <span class="tech">Email ID</span>
-            </div>
-
-        </div>
-
-    </section>
+<div class="card tags">
+<span class="tag">Date</span>
+<span class="tag">Sender</span>
+<span class="tag">Subject</span>
+<span class="tag">Email Body</span>
+<span class="tag">Email ID</span>
+</div>
+</section>
 
 
-    <!-- TECHNOLOGIES -->
-    <section>
+<section>
+<h2>Tools & Skills</h2>
 
-        <h2>Technologies Used</h2>
-
-        <div class="card">
-
-            <p>
-                The project combines commonly used digital productivity
-                platforms into a single automated workflow.
-            </p>
-
-            <div class="tech-list">
-                <span class="tech">Gmail</span>
-                <span class="tech">Zapier</span>
-                <span class="tech">Google Sheets</span>
-                <span class="tech">Workflow Design</span>
-                <span class="tech">Automation</span>
-            </div>
-
-        </div>
-
-    </section>
+<div class="card tags">
+<span class="tag">Gmail</span>
+<span class="tag">Zapier</span>
+<span class="tag">Google Sheets</span>
+<span class="tag">Workflow Design</span>
+<span class="tag">Automation</span>
+</div>
+</section>
 
 
-    <!-- PROCESS -->
-    <section>
+<section>
+<h2>Testing & Problem Solving</h2>
 
-        <h2>My Approach</h2>
+<div class="card">
+<p>
+I tested the workflow with multiple emails and reviewed the resulting
+records in Google Sheets to verify that the information was being
+captured and organized correctly.
+</p>
 
-        <div class="card">
+<p>
+This project helped me develop a practical workflow of
+<span class="highlight">build → test → identify → fix → verify</span>.
+</p>
+</div>
+</section>
 
-            <p>
-                I approached the project by first defining the information
-                that needed to be captured, then connecting the email trigger
-                to the spreadsheet destination.
-            </p>
 
-            <p>
-                I tested the workflow with multiple emails and reviewed the
-                resulting records in Google Sheets. This helped me understand
-               
+<section>
+<h2>Outcome</h2>
+
+<div class="card">
+<p>
+The project demonstrates how everyday email-based tasks can be
+turned into a more organized and repeatable workflow using
+no-code automation tools.
+</p>
+</div>
+
+<a class="button" href="index.html">
+← Back to Portfolio
+</a>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 Vijaya Barthwal · Built while learning and growing.
+</footer>
+
+</body>
+</html>
