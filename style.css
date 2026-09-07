@@ -570,7 +570,17 @@ main,
     border-radius: 11px;
     transition: .3s;
 }
+.skill-card:first-child {
+    border-color: rgba(225, 6, 0, 0.35);
+}
 
+.skill-card:first-child h3 {
+    color: #f2f2f2;
+}
+
+.skill-card:first-child .skill-tags span {
+    border-color: rgba(225, 6, 0, 0.35);
+}
 .skill-card:hover {
     transform: translateY(-5px);
     border-color: rgba(225,6,0,.45);
@@ -595,7 +605,7 @@ main,
 }
 
 .skill-card p {
-    color: #777;
+    color: #a3a3a3;
     font-size: 12px;
     line-height: 1.7;
 }
@@ -610,11 +620,12 @@ main,
 .skill-tags span {
     padding: 5px 8px;
     background: #1c1c1c;
-    border: 1px solid #2c2c2c;
+    border: 1px solid #383838;
     border-radius: 4px;
-    color: #888;
+    color: #b0b0b0;
     font-size: 8px;
     text-transform: uppercase;
+
 }
 
 
