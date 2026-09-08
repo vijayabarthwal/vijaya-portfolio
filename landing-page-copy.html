@@ -1,1596 +1,1036 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="SkillSprint — simple 20-minute lessons for practical digital, creative, career, AI, productivity and everyday skills.">
-
-    <title>SkillSprint | Learn in 20 Minutes</title>
-
-    <style>
-
-        /* =====================================================
-           RESET
-        ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-
-            background: #f7f3eb;
-            color: #172033;
-            line-height: 1.6;
-        }
-
-        button,
-        input {
-            font: inherit;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-
-        /* =====================================================
-           NAVIGATION
-        ===================================================== */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(247, 243, 235, 0.94);
-            backdrop-filter: blur(12px);
-
-            border-bottom: 1px solid #e5dfd3;
-        }
-
-        .nav-inner {
-            width: min(1180px, 92%);
-            margin: auto;
-
-            min-height: 72px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 20px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .brand-mark {
-            width: 38px;
-            height: 38px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 12px;
-
-            background: #ff8a3d;
-            color: white;
-
-            font-weight: 900;
-        }
-
-        .back-link {
-            color: #566074;
-            font-size: 0.92rem;
-            font-weight: 600;
-
-            transition: 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: #ff6f21;
-        }
-
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            width: min(1180px, 92%);
-            margin: auto;
-
-            padding: 90px 0 70px;
-
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            align-items: center;
-
-            gap: 70px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            padding: 7px 13px;
-
-            background: #fff0df;
-            color: #c85c18;
-
-            border-radius: 999px;
-
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            margin-top: 20px;
-
-            font-size: clamp(3rem, 7vw, 5.8rem);
-            line-height: 0.95;
-            letter-spacing: -4px;
-
-            max-width: 720px;
-        }
-
-        .hero h1 span {
-            color: #ff7130;
-        }
-
-        .hero-text {
-            margin-top: 24px;
-
-            max-width: 620px;
-
-            color: #667085;
-            font-size: 1.12rem;
-        }
-
-        .hero-actions {
-            margin-top: 30px;
-
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .primary-button,
-        .secondary-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 13px 20px;
-
-            border-radius: 12px;
-
-            font-weight: 750;
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-        .primary-button {
-            background: #172033;
-            color: white;
-
-            border: 2px solid #172033;
-        }
-
-        .secondary-button {
-            background: white;
-            color: #172033;
-
-            border: 2px solid #ddd6c9;
-        }
-
-        .primary-button:hover,
-        .secondary-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .primary-button:hover {
-            box-shadow: 0 10px 24px rgba(23, 32, 51, 0.16);
-        }
-
-
-        /* =====================================================
-           HERO TIMER CARD
-        ===================================================== */
-
-        .hero-card {
-            position: relative;
-
-            background: #172033;
-            color: white;
-
-            border-radius: 30px;
-
-            padding: 34px;
-
-            min-height: 360px;
-
-            overflow: hidden;
-
-            box-shadow: 0 25px 60px rgba(23, 32, 51, 0.18);
-        }
-
-        .hero-card::before {
-            content: "";
-
-            position: absolute;
-
-            width: 220px;
-            height: 220px;
-
-            border-radius: 50%;
-
-            background: #ff8a3d;
-
-            right: -80px;
-            top: -80px;
-
-            opacity: 0.9;
-        }
-
-        .hero-card::after {
-            content: "";
-
-            position: absolute;
-
-            width: 150px;
-            height: 150px;
-
-            border-radius: 50%;
-
-            background: #ffd166;
-
-            left: -60px;
-            bottom: -70px;
-        }
-
-        .hero-card-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .mini-label {
-            color: #b9c1d0;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .big-time {
-            margin-top: 28px;
-
-            font-size: clamp(4rem, 9vw, 6rem);
-            line-height: 1;
-
-            font-weight: 900;
-            letter-spacing: -5px;
-        }
-
-        .hero-card-title {
-            margin-top: 20px;
-
-            font-size: 1.25rem;
-            font-weight: 750;
-        }
-
-        .hero-card-text {
-            margin-top: 8px;
-
-            color: #b9c1d0;
-            font-size: 0.92rem;
-        }
-
-
-        /* =====================================================
-           SECTION
-        ===================================================== */
-
-        .section {
-            width: min(1180px, 92%);
-            margin: auto;
-
-            padding: 75px 0;
-        }
-
-        .section-heading {
-            max-width: 680px;
-            margin-bottom: 35px;
-        }
-
-        .section-heading .eyebrow {
-            margin-bottom: 14px;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            line-height: 1.05;
-            letter-spacing: -2px;
-        }
-
-        .section-heading p {
-            margin-top: 12px;
-            color: #70798a;
-        }
-
-
-        /* =====================================================
-           SEARCH
-        ===================================================== */
-
-        .search-box {
-            margin-bottom: 30px;
-
-            position: relative;
-        }
-
-        .search-box input {
-            width: 100%;
-
-            padding: 17px 20px 17px 50px;
-
-            border: 1px solid #ddd6c9;
-            border-radius: 15px;
-
-            background: white;
-
-            outline: none;
-
-            color: #172033;
-        }
-
-        .search-box input:focus {
-            border-color: #ff8a3d;
-
-            box-shadow:
-                0 0 0 4px rgba(255, 138, 61, 0.12);
-        }
-
-        .search-icon {
-            position: absolute;
-
-            left: 18px;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            color: #8a93a2;
-        }
-
-
-        /* =====================================================
-           CATEGORY FILTERS
-        ===================================================== */
-
-        .filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-
-            margin-bottom: 32px;
-        }
-
-        .filter-button {
-            border: 1px solid #ddd6c9;
-
-            background: white;
-            color: #596274;
-
-            padding: 9px 14px;
-
-            border-radius: 999px;
-
-            font-size: 0.86rem;
-            font-weight: 700;
-
-            transition: 0.2s ease;
-        }
-
-        .filter-button:hover,
-        .filter-button.active {
-            background: #172033;
-            color: white;
-            border-color: #172033;
-        }
-
-
-        /* =====================================================
-           LESSON GRID
-        ===================================================== */
-
-        .lesson-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 18px;
-        }
-
-        .lesson-card {
-            background: white;
-
-            border: 1px solid #e4ddd1;
-
-            border-radius: 20px;
-
-            padding: 23px;
-
-            display: flex;
-            flex-direction: column;
-
-            min-height: 245px;
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-        .lesson-card:hover {
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 16px 35px rgba(23, 32, 51, 0.08);
-        }
-
-        .lesson-icon {
-            width: 48px;
-            height: 48px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 14px;
-
-            background: #fff1df;
-
-            font-size: 1.35rem;
-        }
-
-        .lesson-category {
-            margin-top: 17px;
-
-            color: #ff7130;
-
-            font-size: 0.72rem;
-            font-weight: 800;
-
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .lesson-card h3 {
-            margin-top: 5px;
-
-            font-size: 1.22rem;
-            line-height: 1.2;
-        }
-
-        .lesson-card p {
-            margin-top: 8px;
-
-            color: #70798a;
-            font-size: 0.9rem;
-        }
-
-        .lesson-bottom {
-            margin-top: auto;
-            padding-top: 18px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 12px;
-        }
-
-        .lesson-time {
-            color: #687184;
-
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .start-lesson {
-            border: 0;
-
-            background: #172033;
-            color: white;
-
-            padding: 9px 13px;
-
-            border-radius: 9px;
-
-            font-size: 0.78rem;
-            font-weight: 750;
-        }
-
-        .start-lesson:hover {
-            background: #ff7130;
-        }
-
-        .no-results {
-            display: none;
-
-            padding: 30px;
-
-            text-align: center;
-
-            color: #737c8d;
-
-            background: white;
-            border: 1px solid #e4ddd1;
-
-            border-radius: 16px;
-        }
-
-
-        /* =====================================================
-           LEARNING EXPERIENCE
-        ===================================================== */
-
-        .learning-section {
-            background: #172033;
-            color: white;
-
-            margin-top: 30px;
-        }
-
-        .learning-inner {
-            width: min(1000px, 92%);
-            margin: auto;
-
-            padding: 75px 0;
-        }
-
-        .learning-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-
-            gap: 30px;
-        }
-
-        .learning-top h2 {
-            margin-top: 12px;
-
-            font-size: clamp(2rem, 5vw, 3.4rem);
-
-            line-height: 1.05;
-            letter-spacing: -2px;
-        }
-
-        .learning-description {
-            margin-top: 14px;
-
-            color: #b9c1d0;
-            max-width: 620px;
-        }
-
-        .lesson-status {
-            padding: 9px 13px;
-
-            background: #263047;
-
-            border-radius: 999px;
-
-            color: #dce1ea;
-
-            font-size: 0.78rem;
-            font-weight: 750;
-
-            white-space: nowrap;
-        }
-
-
-        /* =====================================================
-           LEARNING PANEL
-        ===================================================== */
-
-        .learning-panel {
-            margin-top: 35px;
-
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-
-            gap: 20px;
-        }
-
-        .timer-panel,
-        .activity-panel {
-            background: #202a40;
-
-            border: 1px solid #344057;
-
-            border-radius: 22px;
-
-            padding: 28px;
-        }
-
-        .timer-panel {
-            text-align: center;
-        }
-
-        .timer-label {
-            color: #aeb7c7;
-
-            font-size: 0.76rem;
-            font-weight: 800;
-
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        #lessonTimer {
-            margin-top: 15px;
-
-            font-size: clamp(3.5rem, 8vw, 5.5rem);
-
-            line-height: 1;
-
-            font-weight: 900;
-
-            letter-spacing: -4px;
-        }
-
-        .timer-progress {
-            height: 8px;
-
-            margin-top: 25px;
-
-            background: #313c54;
-
-            border-radius: 999px;
-
-            overflow: hidden;
-        }
-
-        #timerProgress {
-            width: 0%;
-            height: 100%;
-
-            background: #ff8a3d;
-
-            transition: width 0.5s linear;
-        }
-
-        .timer-controls {
-            margin-top: 25px;
-
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            gap: 8px;
-        }
-
-        .timer-controls button {
-            border: 1px solid #46516a;
-
-            background: transparent;
-            color: white;
-
-            padding: 9px 13px;
-
-            border-radius: 9px;
-
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .timer-controls button:hover {
-            background: #344057;
-        }
-
-
-        /* =====================================================
-           ACTIVITY
-        ===================================================== */
-
-        .activity-panel h3 {
-            font-size: 1.3rem;
-        }
-
-        .activity-panel > p {
-            margin-top: 8px;
-
-            color: #b9c1d0;
-
-            font-size: 0.92rem;
-        }
-
-        .lesson-steps {
-            margin-top: 22px;
-
-            display: grid;
-            gap: 10px;
-        }
-
-        .step {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-
-            padding: 13px;
-
-            border-radius: 12px;
-
-            background: #29344b;
-        }
-
-        .step-number {
-            width: 28px;
-            height: 28px;
-
-            flex: 0 0 28px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 8px;
-
-            background: #ff8a3d;
-            color: white;
-
-            font-size: 0.75rem;
-            font-weight: 850;
-        }
-
-        .step strong {
-            display: block;
-            font-size: 0.87rem;
-        }
-
-        .step span {
-            display: block;
-
-            margin-top: 2px;
-
-            color: #aeb7c7;
-
-            font-size: 0.78rem;
-        }
-
-        .complete-button {
-            width: 100%;
-
-            margin-top: 20px;
-
-            padding: 13px;
-
-            border: 0;
-            border-radius: 11px;
-
-            background: #ffd166;
-            color: #172033;
-
-            font-weight: 850;
-        }
-
-        .complete-button:hover {
-            background: #ffdf91;
-        }
-
-
-        /* =====================================================
-           COMPLETION MESSAGE
-        ===================================================== */
-
-        .completion-message {
-            display: none;
-
-            margin-top: 18px;
-
-            padding: 17px;
-
-            border-radius: 12px;
-
-            background: #183b35;
-
-            color: #baf2dc;
-
-            text-align: center;
-
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-
-        /* =====================================================
-           HOW IT WORKS
-        ===================================================== */
-
-        .process-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 18px;
-        }
-
-        .process-card {
-            padding: 25px;
-
-            background: #fff;
-
-            border: 1px solid #e4ddd1;
-
-            border-radius: 20px;
-        }
-
-        .process-number {
-            font-size: 0.75rem;
-            font-weight: 850;
-
-            color: #ff7130;
-        }
-
-        .process-card h3 {
-            margin-top: 13px;
-
-            font-size: 1.2rem;
-        }
-
-        .process-card p {
-            margin-top: 8px;
-
-            color: #70798a;
-
-            font-size: 0.9rem;
-        }
-
-
-        /* =====================================================
-           ACCESSIBILITY / TRUST
-        ===================================================== */
-
-        .access-box {
-            margin-top: 35px;
-
-            padding: 30px;
-
-            border-radius: 24px;
-
-            background: #fff0df;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-
-            gap: 30px;
-        }
-
-        .access-box h3 {
-            font-size: 1.5rem;
-        }
-
-        .access-box p {
-            margin-top: 8px;
-            color: #6d6870;
-        }
-
-        .access-list {
-            display: grid;
-            gap: 10px;
-
-            align-content: center;
-        }
-
-        .access-list div {
-            padding: 10px 13px;
-
-            background: white;
-
-            border-radius: 10px;
-
-            color: #4f5868;
-
-            font-size: 0.85rem;
-            font-weight: 650;
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            margin-top: 30px;
-
-            background: #111827;
-            color: white;
-        }
-
-        .footer-inner {
-            width: min(1180px, 92%);
-            margin: auto;
-
-            padding: 38px 0;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 20px;
-        }
-
-        .footer-inner p {
-            color: #9ca6b7;
-            font-size: 0.82rem;
-        }
-
-        .footer-link {
-            color: white;
-            font-size: 0.82rem;
-            font-weight: 700;
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .hero {
-                grid-template-columns: 1fr;
-
-                padding-top: 65px;
-
-                gap: 40px;
-            }
-
-            .lesson-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-            .learning-panel {
-                grid-template-columns: 1fr;
-            }
-
-            .access-box {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-        @media (max-width: 650px) {
-
-            .nav-inner {
-                min-height: 64px;
-            }
-
-            .brand {
-                font-size: 1.05rem;
-            }
-
-            .brand-mark {
-                width: 34px;
-                height: 34px;
-                       }
-
-            .hero {
-                padding: 55px 0 45px;
-            }
-
-            .hero h1 {
-                letter-spacing: -2.5px;
-            }
-
-            .hero-text {
-                font-size: 1rem;
-            }
-
-            .hero-card {
-                padding: 25px;
-                min-height: 310px;
-            }
-
-            .section {
-                padding: 55px 0;
-            }
-
-            .lesson-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .learning-top {
-                flex-direction: column;
-            }
-
-            .learning-panel {
-                gap: 14px;
-            }
-
-            .timer-panel,
-            .activity-panel {
-                padding: 21px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkillSprint | Learn in 20 Minutes</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f3eb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+/* NAV */
+
+nav {
+    padding: 18px 0;
+    background: #f7f3eb;
+    border-bottom: 1px solid #e4ded3;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.logo span {
+    color: #f28c28;
+}
+
+nav a {
+    color: #172033;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* HERO */
+
+.hero {
+    padding: 70px 0 55px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background: #fff0d8;
+    color: #a75b0b;
+    padding: 7px 13px;
+    border-radius: 50px;
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    margin: 18px 0;
+}
+
+.hero p {
+    font-size: 1.08rem;
+    color: #5e6675;
+    max-width: 650px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.primary-btn,
+.secondary-btn {
+    border: 0;
+    padding: 13px 19px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.primary-btn {
+    background: #f28c28;
+    color: #172033;
+}
+
+.secondary-btn {
+    background: #172033;
+    color: white;
+}
+
+.hero-card {
+    background: #172033;
+    color: white;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 20px 45px rgba(23,32,51,.15);
+}
+
+.hero-card small {
+    color: #ffb15c;
+    font-weight: 700;
+}
+
+.hero-time {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 60px 0;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 5px 0;
+    font-size: 2rem;
+}
+
+.section-heading p {
+    color: #687080;
+}
+
+/* SEARCH */
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #d8d1c5;
+    border-radius: 12px;
+    background: white;
+    outline: none;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.filter {
+    border: 1px solid #d5cfc4;
+    background: white;
+    color: #172033;
+    padding: 9px 14px;
+    border-radius: 50px;
+}
+
+.filter.active {
+    background: #172033;
+    color: white;
+}
+
+/* LESSON CARDS */
+
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.lesson-card {
+    background: white;
+    border: 1px solid #e2ddd4;
+    border-radius: 17px;
+    padding: 21px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(23,32,51,.08);
+}
+
+.lesson-icon {
+    font-size: 1.7rem;
+}
+
+.lesson-category {
+    display: block;
+    margin-top: 10px;
+    color: #f28c28;
+    font-size: .78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.lesson-card h3 {
+    margin: 5px 0;
+}
+
+.lesson-card p {
+    color: #697180;
+}
+
+.lesson-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.lesson-time {
+    font-size: .8rem;
+    color: #6d7480;
+}
+
+.start-lesson {
+    border: 0;
+    background: #172033;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.no-results {
+    display: none;
+    padding: 25px;
+    text-align: center;
+    color: #697180;
+}
+
+/* LEARNING LAB */
+
+#learning {
+    background: #172033;
+    color: white;
+}
+
+.learning-box {
+    max-width: 900px;
+    margin: auto;
+}
+
+.learning-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: start;
+}
+
+.learning-top h2 {
+    margin: 5px 0;
+}
+
+.status {
+    color: #ffb15c;
+    font-weight: 700;
+}
+
+.levels,
+.modes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 20px 0;
+}
+
+.level-btn,
+.mode-btn {
+    border: 1px solid #566078;
+    background: transparent;
+    color: white;
+    padding: 9px 14px;
+    border-radius: 50px;
+}
+
+.level-btn.active,
+.mode-btn.active {
+    background: #f28c28;
+    color: #172033;
+    border-color: #f28c28;
+}
+
+.lesson-panel {
+    background: white;
+    color: #172033;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.lesson-panel h3 {
+    margin-top: 0;
+}
+
+.step-list li {
+    margin: 10px 0;
+}
+
+.video-box,
+.visual-box,
+.practice-box {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 13px;
+}
+
+.video-box {
+    background: #eef2f8;
+}
+
+.visual-box {
+    background: #f3eefc;
+}
+
+.practice-box {
+    background: #fff1dc;
+}
+
+.video-box a {
+    color: #172033;
+    font-weight: 700;
+}
+
+.visual-placeholder {
+    margin-top: 12px;
+    padding: 30px 15px;
+    text-align: center;
+    border: 2px dashed #b6a9c9;
+    border-radius: 10px;
+}
+
+/* TIMER */
+
+.timer-box {
+    text-align: center;
+    padding: 35px 0;
+}
+
+.timer-label {
+    color: #aeb7c7;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+#timer {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 8px 0 18px;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.timer-buttons button {
+    border: 0;
+    padding: 11px 17px;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+#startTimer {
+    background: #f28c28;
+}
+
+#resetTimer {
+    background: #dce1e9;
+}
+
+/* PROGRESS */
+
+.progress-area {
+    margin: 10px 0 30px;
+}
+
+.progress-track {
+    height: 12px;
+    background: #3a455b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: #f28c28;
+    transition: width .3s;
+}
+
+#progressText {
+    color: #bfc6d3;
+}
+
+/* QUIZ */
+
+.quiz {
+    background: white;
+    color: #172033;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.quiz h3 {
+    margin-top: 0;
+}
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 9px 0;
+    padding: 13px;
+    background: white;
+    border: 1px solid #d9dce3;
+    border-radius: 10px;
+}
+
+.quiz-option:hover {
+    background: #f5f6f8;
+}
+
+#quizFeedback {
+    font-weight: 700;
+    min-height: 25px;
+}
+
+/* COMPLETE */
+
+.complete {
+    display: none;
+    margin-top: 20px;
+    background: #eaf6ed;
+    color: #172033;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.complete h2 {
+    margin-top: 0;
+}
+
+.next-btn {
+    border: 0;
+    background: #172033;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+/* HOW IT WORKS */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.step-card {
+    background: white;
+    border: 1px solid #e2ddd4;
+    padding: 22px;
+    border-radius: 17px;
+}
+
+.step-number {
+    color: #f28c28;
+    font-weight: 800;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 0;
+    border-top: 1px solid #ded8ce;
+    text-align: center;
+    color: #687080;
+}
+
+footer a {
+    color: #172033;
+    font-weight: 700;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+    .hero-grid,
+    .lesson-grid,
+    .steps {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .hero-grid,
+    .lesson-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .learning-top {
+        flex-direction: column;
+    }
+
+    .lesson-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #timer {
+        font-size: 3rem;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<!-- NAV -->
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
-
-    <nav class="navbar">
-
-        <div class="nav-inner">
-
-            <a href="#" class="brand">
-
-                <span class="brand-mark">
-                    S
-                </span>
-
-                SkillSprint
-
-            </a>
-
-            <a href="index.html" class="back-link">
-                ← Back to Portfolio
-            </a>
-
-        </div>
-
-    </nav>
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">S<span>kill</span>Sprint</div>
+        <a href="https://vijayabarthwal.github.io/vijaya-portfolio/">
+            ← Portfolio
+        </a>
+    </div>
+</nav>
 
 
+<!-- HERO -->
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <header class="hero">
+<header class="hero">
+    <div class="container hero-grid">
 
         <div>
-
-            <span class="eyebrow">
-                ⚡ 20-minute learning
-            </span>
+            <span class="badge">⚡ 20-minute learning</span>
 
             <h1>
                 Learn one useful skill.
-                <span>In 20 minutes.</span>
+                In 20 minutes.
             </h1>
 
-            <p class="hero-text">
-                SkillSprint makes learning simple. Choose a beginner-friendly
-                lesson, spend twenty focused minutes learning and practicing,
-                and finish with something you can actually use.
+            <p>
+                Choose a beginner-friendly lesson, learn at your own pace,
+                practice something useful and finish with a quick challenge.
             </p>
 
-            <div class="hero-actions">
-
-                <a href="#skills"
-                   class="primary-button">
+            <div class="hero-buttons">
+                <a class="primary-btn" href="#lessons">
                     Explore Skills →
                 </a>
 
-                <a href="#how-it-works"
-                   class="secondary-button">
+                <a class="secondary-btn" href="#how">
                     How It Works
                 </a>
-
             </div>
-
         </div>
-
 
         <div class="hero-card">
+            <small>YOUR NEXT LEARNING SPRINT</small>
 
-            <div class="hero-card-content">
+            <div class="hero-time">20:00</div>
 
-                <span class="mini-label">
-                    Your next learning sprint
-                </span>
+            <p>
+                One skill. One short session.
+                No overwhelming courses.
+            </p>
+        </div>
 
-                <div class="big-time">
-                    20:00
-                </div>
+    </div>
+</header>
 
-                <div class="hero-card-title">
-                    One skill. One short session.
-                </div>
 
-                <p class="hero-card-text">
-                    No complicated courses. No overwhelming dashboards.
-                    Just focused learning you can finish today.
-                </p>
+<!-- LESSONS -->
 
-            </div>
+<section id="lessons">
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Choose something you want to learn.</h2>
+            <p>
+                Search for a skill and start with a beginner-friendly lesson.
+            </p>
+        </div>
+
+        <div class="search-box">
+            <input
+                id="search"
+                type="search"
+                placeholder="🔎 Search for a skill..."
+            >
+        </div>
+
+        <div class="filters">
+
+            <button class="filter active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter" data-filter="digital">
+                💻 Digital Skills
+            </button>
+
+            <button class="filter" data-filter="creative">
+                🎨 Creative
+            </button>
+
+            <button class="filter" data-filter="career">
+                💼 Career
+            </button>
+
+            <button class="filter" data-filter="ai">
+                🤖 AI & Technology
+            </button>
+
+            <button class="filter" data-filter="productivity">
+                🌱 Productivity
+            </button>
+
+            <button class="filter" data-filter="everyday">
+                📱 Everyday Digital
+            </button>
 
         </div>
 
-    </header>
 
+        <div class="lesson-grid" id="lessonGrid">
 
+            <!-- DIGITAL -->
 
-    <!-- =====================================================
-         SKILLS
-    ====================================================== -->
+            <article class="lesson-card"
+                data-category="digital"
+                data-title="Excel Basics">
 
-    <main id="skills">
+                <div class="lesson-icon">📊</div>
 
-        <section class="section">
-
-            <div class="section-heading">
-
-                <span class="eyebrow">
-                    Browse lessons
+                <span class="lesson-category">
+                    Digital Skills
                 </span>
 
-                <h2>
-                    Choose something you want to learn.
-                </h2>
+                <h3>Excel Basics</h3>
 
                 <p>
-                    Start with the basics. Every lesson is designed for
-                    beginners and can be completed in one focused sprint.
+                    Learn cells, rows, columns and simple formulas.
                 </p>
 
-            </div>
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
+                    </span>
+
+                    <button class="start-lesson"
+                        data-lesson="Excel Basics">
+                        Start Lesson →
+                    </button>
+                </div>
+
+            </article>
 
 
-            <!-- SEARCH -->
+            <article class="lesson-card"
+                data-category="digital"
+                data-title="Google Sheets">
 
-            <div class="search-box">
+                <div class="lesson-icon">📑</div>
 
-                <span class="search-icon">
-                    🔎
+                <span class="lesson-category">
+                    Digital Skills
                 </span>
 
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search for a skill..."
-                    aria-label="Search for a skill"
-                >
+                <h3>Google Sheets</h3>
 
-            </div>
+                <p>
+                    Create and organize a simple spreadsheet.
+                </p>
 
-
-            <!-- FILTERS -->
-
-            <div class="filters">
-
-                <button
-                    class="filter-button active"
-                    data-category="all">
-                    All
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-category="digital">
-                    💻 Digital Skills
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-category="creative">
-                    🎨 Creative
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-category="career">
-                    💼 Career
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-category="ai">
-                    🤖 AI & Technology
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-category="productivity">
-                    🌱 Productivity
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-category="everyday">
-                    📱 Everyday Digital
-                </button>
-
-            </div>
-
-
-            <!-- LESSON GRID -->
-
-            <div class="lesson-grid" id="lessonGrid">
-
-
-                <!-- DIGITAL -->
-
-                <article
-                    class="lesson-card"
-                    data-category="digital"
-                    data-title="Excel Basics">
-
-                    <div class="lesson-icon">
-                        📊
-                    </div>
-
-                    <span class="lesson-category">
-                        Digital Skills
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Excel Basics
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Google Sheets">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Understand cells, rows, columns and simple formulas.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Excel Basics">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <article
-                    class="lesson-card"
-                    data-category="digital"
-                    data-title="Google Sheets">
+            <article class="lesson-card"
+                data-category="digital"
+                data-title="Basic Web Design">
 
-                    <div class="lesson-icon">
-                        📑
-                    </div>
+                <div class="lesson-icon">🌐</div>
 
-                    <span class="lesson-category">
-                        Digital Skills
+                <span class="lesson-category">
+                    Digital Skills
+                </span>
+
+                <h3>Basic Web Design</h3>
+
+                <p>
+                    Discover how HTML and CSS create webpages.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Google Sheets
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Basic Web Design">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Learn the basics of creating and organizing a simple spreadsheet.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Google Sheets">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <article
-                    class="lesson-card"
-                    data-category="digital"
-                    data-title="Basic Web Design">
+            <!-- CREATIVE -->
 
-                    <div class="lesson-icon">
-                        🌐
-                    </div>
+            <article class="lesson-card"
+                data-category="creative"
+                data-title="Canva Basics">
 
-                    <span class="lesson-category">
-                        Digital Skills
+                <div class="lesson-icon">🎨</div>
+
+                <span class="lesson-category">
+                    Creative Skills
+                </span>
+
+                <h3>Canva Basics</h3>
+
+                <p>
+                    Create simple graphics, posts and visual designs.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Basic Web Design
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Canva Basics">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Discover how HTML and CSS work together to create a webpage.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Basic Web Design">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <!-- CREATIVE -->
+            <article class="lesson-card"
+                data-category="creative"
+                data-title="Graphic Design Basics">
 
-                <article
-                    class="lesson-card"
-                    data-category="creative"
-                    data-title="Graphic Design">
+                <div class="lesson-icon">✏️</div>
 
-                    <div class="lesson-icon">
-                        ✏️
-                    </div>
+                <span class="lesson-category">
+                    Creative Skills
+                </span>
 
-                    <span class="lesson-category">
-                        Creative Skills
+                <h3>Graphic Design Basics</h3>
+
+                <p>
+                    Understand hierarchy, spacing, contrast and balance.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Graphic Design Basics
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Graphic Design Basics">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Understand hierarchy, spacing, contrast and visual balance.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Graphic Design Basics">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <article
-                    class="lesson-card"
-                    data-category="creative"
-                    data-title="Video Editing">
+            <article class="lesson-card"
+                data-category="creative"
+                data-title="Video Editing Basics">
 
-                    <div class="lesson-icon">
-                        🎬
-                    </div>
+                <div class="lesson-icon">🎬</div>
 
-                    <span class="lesson-category">
-                        Creative Skills
+                <span class="lesson-category">
+                    Creative Skills
+                </span>
+
+                <h3>Video Editing Basics</h3>
+
+                <p>
+                    Learn cutting, arranging and exporting video.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Video Editing Basics
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Video Editing Basics">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Learn the basic workflow behind cutting, arranging and exporting video.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Video Editing Basics">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <!-- CAREER -->
+            <!-- CAREER -->
 
-                <article
-                    class="lesson-card"
-                    data-category="career"
-                    data-title="Resume Writing">
+            <article class="lesson-card"
+                data-category="career"
+                data-title="Resume Writing">
 
-                    <div class="lesson-icon">
-                        📄
-                    </div>
+                <div class="lesson-icon">📄</div>
 
-                    <span class="lesson-category">
-                        Career Skills
+                <span class="lesson-category">
+                    Career Skills
+                </span>
+
+                <h3>Resume Writing</h3>
+
+                <p>
+                    Turn your experience into clear resume points.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Resume Writing
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Resume Writing">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Learn how to turn your experience into clear, useful resume points.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Resume Writing">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <article
-                    class="lesson-card"
-                    data-category="career"
-                    data-title="Email Writing">
+            <article class="lesson-card"
+                data-category="career"
+                data-title="Professional Email Writing">
 
-                    <div class="lesson-icon">
-                        ✉️
-                    </div>
+                <div class="lesson-icon">✉️</div>
 
-                    <span class="lesson-category">
-                        Career Skills
+                <span class="lesson-category">
+                    Career Skills
+                </span>
+
+                <h3>Professional Email Writing</h3>
+
+                <p>
+                    Write clear, polite and professional emails.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Professional Email Writing
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Professional Email Writing">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Practice writing clear, polite and professional emails.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Professional Email Writing">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <article
-                    class="lesson-card"
-                    data-category="career"
-                    data-title="Interview Basics">
+            <article class="lesson-card"
+                data-category="career"
+                data-title="Interview Basics">
 
-                    <div class="lesson-icon">
-                        🎤
-                    </div>
+                <div class="lesson-icon">🎤</div>
 
-                    <span class="lesson-category">
-                        Career Skills
+                <span class="lesson-category">
+                    Career Skills
+                </span>
+
+                <h3>Interview Basics</h3>
+
+                <p>
+                    Learn a simple framework for common interview questions.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
                     </span>
 
-                    <h3>
-                        Interview Basics
-                    </h3>
+                    <button class="start-lesson"
+                        data-lesson="Interview Basics">
+                        Start Lesson →
+                    </button>
+                </div>
 
-                    <p>
-                        Learn a simple framework for answering common interview questions.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Interview Basics">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
+            </article>
 
 
-                <!-- AI -->
+            <!-- AI -->
 
-                <article
-                    class="lesson-card"
-                    data-category="ai"
-                    data-title="AI for Beginners">
+            <article class="lesson-card"
+                data-category="ai"
+                data-title="AI for Beginners">
 
-                    <div class="lesson-icon">
-                        🤖
-                    </div>
+                <div class="lesson-icon">🤖</div>
 
+                <span class="lesson-category">
+                    AI & Technology
+                </span>
+
+                <h3>AI for Beginners</h3>
+
+                <p>
+                    Understand generative AI and how beginners can use it.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
+                    </span>
+
+                    <button class="start-lesson"
+                        data-lesson="AI for Beginners">
+                        Start Lesson →
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="lesson-card"
+                data-category="ai"
+                data-title="Better AI Prompts">
+
+                <div class="lesson-icon">💬</div>
+
+                <span class="lesson-category">
+                    AI & Technology
+                </span>
+
+                <h3>Better AI Prompts</h3>
+
+                <p>
+                    Learn a simple structure for better AI questions.
+                </p>
+
+                <div class="lesson-bottom">
+                    <span class="lesson-time">
+                        20 min · Beginner
+                    </span>
+
+                    <button class="start-lesson"
+                        data-lesson="Better AI Prompts">
+                        Start Lesson →
+                    </button>
+                </div>
+
+            </article>
+
+
+            <article class="lesson-card"
+                data-category="ai"
+                data-title="Digital Safety Basics">
+
+                <div class="lesson-icon">🔐</div>
                     <span class="lesson-category">
                         AI & Technology
                     </span>
 
-                    <h3>
-                        AI for Beginners
-                    </h3>
+                    <h3>Digital Safety Basics</h3>
 
                     <p>
-                        Understand what generative AI is and how beginners can use it.
+                        Learn practical habits for safer online activity.
                     </p>
 
                     <div class="lesson-bottom">
@@ -1599,84 +1039,7 @@
                             20 min · Beginner
                         </span>
 
-                        <button
-                            class="start-lesson"
-                            data-lesson="AI for Beginners">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="lesson-card"
-                    data-category="ai"
-                    data-title="Better AI Prompts">
-
-                    <div class="lesson-icon">
-                        💬
-                    </div>
-
-                    <span class="lesson-category">
-                        AI & Technology
-                    </span>
-
-                    <h3>
-                        Better AI Prompts
-                    </h3>
-
-                    <p>
-                        Learn a simple structure for asking AI tools better questions.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
-                            data-lesson="Better AI Prompts">
-                            Start Lesson →
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="lesson-card"
-                    data-category="ai"
-                    data-title="Digital Safety">
-
-                    <div class="lesson-icon">
-                        🔐
-                    </div>
-
-                    <span class="lesson-category">
-                        AI & Technology
-                    </span>
-
-                    <h3>
-                        Digital Safety Basics
-                    </h3>
-
-                    <p>
-                        Learn practical habits for safer accounts, passwords and online activity.
-                    </p>
-
-                    <div class="lesson-bottom">
-
-                        <span class="lesson-time">
-                            20 min · Beginner
-                        </span>
-
-                        <button
-                            class="start-lesson"
+                        <button class="start-lesson"
                             data-lesson="Digital Safety Basics">
                             Start Lesson →
                         </button>
@@ -1688,25 +1051,20 @@
 
                 <!-- PRODUCTIVITY -->
 
-                <article
-                    class="lesson-card"
+                <article class="lesson-card"
                     data-category="productivity"
                     data-title="Time Management">
 
-                    <div class="lesson-icon">
-                        ⏰
-                    </div>
+                    <div class="lesson-icon">⏰</div>
 
                     <span class="lesson-category">
                         Productivity
                     </span>
 
-                    <h3>
-                        Time Management
-                    </h3>
+                    <h3>Time Management</h3>
 
                     <p>
-                        Build a simple daily plan around priorities instead of a long to-do list.
+                        Build a simple daily plan around priorities.
                     </p>
 
                     <div class="lesson-bottom">
@@ -1715,8 +1073,7 @@
                             20 min · Beginner
                         </span>
 
-                        <button
-                            class="start-lesson"
+                        <button class="start-lesson"
                             data-lesson="Time Management">
                             Start Lesson →
                         </button>
@@ -1726,25 +1083,20 @@
                 </article>
 
 
-                <article
-                    class="lesson-card"
+                <article class="lesson-card"
                     data-category="productivity"
-                    data-title="Better Note Taking">
+                    data-title="Better Note-Taking">
 
-                    <div class="lesson-icon">
-                        📝
-                    </div>
+                    <div class="lesson-icon">📝</div>
 
                     <span class="lesson-category">
                         Productivity
                     </span>
 
-                    <h3>
-                        Better Note-Taking
-                    </h3>
+                    <h3>Better Note-Taking</h3>
 
                     <p>
-                        Learn a simple method for capturing useful notes without writing everything down.
+                        Capture useful notes without writing everything down.
                     </p>
 
                     <div class="lesson-bottom">
@@ -1753,8 +1105,7 @@
                             20 min · Beginner
                         </span>
 
-                        <button
-                            class="start-lesson"
+                        <button class="start-lesson"
                             data-lesson="Better Note-Taking">
                             Start Lesson →
                         </button>
@@ -1764,25 +1115,20 @@
                 </article>
 
 
-                <article
-                    class="lesson-card"
+                <article class="lesson-card"
                     data-category="productivity"
                     data-title="Focus Techniques">
 
-                    <div class="lesson-icon">
-                        🎯
-                    </div>
+                    <div class="lesson-icon">🎯</div>
 
                     <span class="lesson-category">
                         Productivity
                     </span>
 
-                    <h3>
-                        Focus Techniques
-                    </h3>
+                    <h3>Focus Techniques</h3>
 
                     <p>
-                        Try practical ways to reduce distractions and work with more attention.
+                        Try practical ways to reduce distractions.
                     </p>
 
                     <div class="lesson-bottom">
@@ -1791,8 +1137,7 @@
                             20 min · Beginner
                         </span>
 
-                        <button
-                            class="start-lesson"
+                        <button class="start-lesson"
                             data-lesson="Focus Techniques">
                             Start Lesson →
                         </button>
@@ -1804,25 +1149,20 @@
 
                 <!-- EVERYDAY DIGITAL -->
 
-                <article
-                    class="lesson-card"
+                <article class="lesson-card"
                     data-category="everyday"
                     data-title="Smartphone Basics">
 
-                    <div class="lesson-icon">
-                        📱
-                    </div>
+                    <div class="lesson-icon">📱</div>
 
                     <span class="lesson-category">
                         Everyday Digital
                     </span>
 
-                    <h3>
-                        Smartphone Basics
-                    </h3>
+                    <h3>Smartphone Basics</h3>
 
                     <p>
-                        Get comfortable with common smartphone settings, apps and everyday actions.
+                        Get comfortable with common smartphone actions.
                     </p>
 
                     <div class="lesson-bottom">
@@ -1831,8 +1171,7 @@
                             20 min · Beginner
                         </span>
 
-                        <button
-                            class="start-lesson"
+                        <button class="start-lesson"
                             data-lesson="Smartphone Basics">
                             Start Lesson →
                         </button>
@@ -1842,25 +1181,20 @@
                 </article>
 
 
-                <article
-                    class="lesson-card"
+                <article class="lesson-card"
                     data-category="everyday"
-                    data-title="Digital Payments">
+                    data-title="Digital Payments Basics">
 
-                    <div class="lesson-icon">
-                        💳
-                    </div>
+                    <div class="lesson-icon">💳</div>
 
                     <span class="lesson-category">
                         Everyday Digital
                     </span>
 
-                    <h3>
-                        Digital Payments Basics
-                    </h3>
+                    <h3>Digital Payments Basics</h3>
 
                     <p>
-                        Understand the basic steps and safety habits behind digital payments.
+                        Understand basic digital payment steps and safety.
                     </p>
 
                     <div class="lesson-bottom">
@@ -1869,8 +1203,7 @@
                             20 min · Beginner
                         </span>
 
-                        <button
-                            class="start-lesson"
+                        <button class="start-lesson"
                             data-lesson="Digital Payments Basics">
                             Start Lesson →
                         </button>
@@ -1880,25 +1213,20 @@
                 </article>
 
 
-                <article
-                    class="lesson-card"
+                <article class="lesson-card"
                     data-category="everyday"
                     data-title="Digital Organization">
 
-                    <div class="lesson-icon">
-                        🗂️
-                    </div>
+                    <div class="lesson-icon">🗂️</div>
 
                     <span class="lesson-category">
                         Everyday Digital
                     </span>
 
-                    <h3>
-                        Digital Organization
-                    </h3>
+                    <h3>Digital Organization</h3>
 
                     <p>
-                        Learn simple ways to organize files, photos and important digital information.
+                        Organize files, photos and important information.
                     </p>
 
                     <div class="lesson-bottom">
@@ -1907,8 +1235,7 @@
                             20 min · Beginner
                         </span>
 
-                        <button
-                            class="start-lesson"
+                        <button class="start-lesson"
                             data-lesson="Digital Organization">
                             Start Lesson →
                         </button>
@@ -1917,7 +1244,6 @@
 
                 </article>
 
-
             </div>
 
 
@@ -1925,235 +1251,255 @@
                 No lessons found. Try another search.
             </div>
 
-        </section>
+        </div>
+    </section>
 
 
-        <!-- =================================================
-             LEARNING EXPERIENCE
-        ================================================== -->
+    <!-- LEARNING -->
 
-        <section class="learning-section"
-                 id="learning">
+    <section id="learning">
 
-            <div class="learning-inner">
+        <div class="container learning-box">
 
-                <div class="learning-top">
+            <div class="learning-top">
 
-                    <div>
+                <div>
 
-                        <span class="eyebrow">
-                            Your learning sprint
-                        </span>
-
-                        <h2 id="selectedLesson">
-                            Choose a lesson to begin.
-                        </h2>
-
-                        <p class="learning-description"
-                           id="lessonDescription">
-
-                            Select any lesson above. Your 20-minute learning
-                            session will appear here.
-
-                        </p>
-
-                    </div>
-
-                    <span class="lesson-status"
-                          id="lessonStatus">
-                        Not started
+                    <span class="status">
+                        YOUR LEARNING SPRINT
                     </span>
+
+                    <h2 id="lessonTitle">
+                        Choose a lesson to begin.
+                    </h2>
+
+                    <p id="lessonDescription">
+                        Select any lesson above and your learning experience
+                        will appear here.
+                    </p>
+
+                </div>
+
+                <strong id="lessonStatus">
+                    Not started
+                </strong>
+
+            </div>
+
+
+            <strong>Choose your level</strong>
+
+            <div class="levels">
+
+                <button class="level-btn active">
+                    🟢 Beginner
+                </button>
+
+                <button class="level-btn">
+                    🟡 Intermediate
+                </button>
+
+                <button class="level-btn">
+                    🔵 Advanced
+                </button>
+
+            </div>
+
+
+            <strong>Choose how you want to learn</strong>
+
+            <div class="modes">
+
+                <button class="mode-btn active"
+                    data-mode="steps">
+                    📖 Step-by-Step
+                </button>
+
+                <button class="mode-btn"
+                    data-mode="video">
+                    🎥 Watch Video
+                </button>
+
+                <button class="mode-btn"
+                    data-mode="visual">
+                    🖼️ Visual Guide
+                </button>
+
+            </div>
+
+
+            <div class="lesson-panel">
+
+                <h3 id="contentTitle">
+                    Start with the basics
+                </h3>
+
+                <div id="stepsContent">
+
+                    <p>
+                        Choose a lesson above to see its step-by-step guide.
+                    </p>
 
                 </div>
 
 
-                <div class="learning-panel">
+                <div class="video-box" id="videoContent">
+
+                    🎥 Select a lesson to see its optional video resource.
+
+                </div>
 
 
-                    <div class="timer-panel">
+                <div class="visual-box" id="visualContent">
 
-                        <span class="timer-label">
-                            Sprint Timer
-                        </span>
+                    🖼️ <strong>Visual Guide</strong>
 
-                        <div id="lessonTimer">
-                            20:00
-                        </div>
+                    <div class="visual-placeholder">
 
-                        <div class="timer-progress">
-
-                            <div id="timerProgress"></div>
-
-                        </div>
-
-                        <div class="timer-controls">
-
-                            <button id="startTimer">
-                                Start
-                            </button>
-
-                            <button id="pauseTimer">
-                                Pause
-                            </button>
-
-                            <button id="resetTimer">
-                                Reset
-                            </button>
-
-                        </div>
+                        A simple screenshot, diagram or illustrated guide
+                        can appear here.
 
                     </div>
 
-
-                    <div class="activity-panel">
-
-                        <h3>
-                            Your 20-minute roadmap
-                        </h3>
-
-                        <p>
-                            Move through the lesson in four simple stages.
-                        </p>
+                </div>
 
 
-                        <div class="lesson-steps">
+                <div class="practice-box">
 
-                            <div class="step">
+                    <strong>✏️ Try it yourself</strong>
 
-                                <div class="step-number">
-                                    1
-                                </div>
-
-                                <div>
-                                    <strong>
-                                        0–5 min · Understand
-                                    </strong>
-
-                                    <span>
-                                        Learn the core idea and important terms.
-                                    </span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="step">
-
-                                <div class="step-number">
-                                    2
-                                </div>
-
-                                <div>
-                                    <strong>
-                                        5–10 min · Explore
-                                    </strong>
-
-                                    <span>
-                                        Look at a practical example or tool.
-                                    </span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="step">
-
-                                <div class="step-number">
-                                    3
-                                </div>
-
-                                <div>
-                                    <strong>
-                                        10–15 min · Practice
-                                    </strong>
-
-                                    <span>
-                                        Try the idea yourself with a small task.
-                                    </span>
-                                </div>
-
-                            </div>
-
-
-                            <div class="step">
-
-                                <div class="step-number">
-                                    4
-                                </div>
-
-                                <div>
-                                    <strong>
-                                        15–20 min · Apply
-                                    </strong>
-
-                                    <span>
-                                                                                Finish with a mini challenge or review.
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <button
-                            class="complete-button"
-                            id="completeLesson">
-
-                            Mark Lesson Complete ✓
-
-                        </button>
-
-
-                        <div
-                            class="completion-message"
-                            id="completionMessage">
-
-                            🎉 Great job! You completed your SkillSprint lesson.
-
-                        </div>
-
-                    </div>
+                    <p id="practiceTask">
+                        Your practical task will appear here.
+                    </p>
 
                 </div>
 
             </div>
 
-        </section>
+
+            <!-- TIMER -->
+
+            <div class="timer-box">
+
+                <div class="timer-label">
+                    20-MINUTE SKILL SPRINT
+                </div>
+
+                <div id="timer">
+                    20:00
+                </div>
+
+                <div class="timer-buttons">
+
+                    <button id="startTimer">
+                        Start
+                    </button>
+
+                    <button id="pauseTimer">
+                        Pause
+                    </button>
+
+                    <button id="resetTimer">
+                        Reset
+                    </button>
+
+                </div>
+
+            </div>
 
 
+            <!-- PROGRESS -->
 
-        <!-- =================================================
-             HOW IT WORKS
-        ================================================== -->
+            <div class="progress-area">
 
-        <section class="section"
-                 id="how-it-works">
+                <strong>
+                    📊 Your learning progress
+                </strong>
 
-            <div class="section-heading">
+                <div class="progress-track">
 
-                <span class="eyebrow">
-                    Simple by design
-                </span>
+                    <div id="progressBar"></div>
 
-                <h2>
-                    Learning doesn't have to feel overwhelming.
-                </h2>
+                </div>
 
-                <p>
-                    SkillSprint is built around short, focused sessions
-                    that help beginners make steady progress.
+                <p id="progressText">
+                    0% complete
                 </p>
 
             </div>
 
 
-            <div class="process-grid">
+            <!-- QUIZ -->
 
-                <div class="process-card">
+            <div class="quiz">
 
-                    <span class="process-number">
+                <h3>
+                    🎯 Quick Skill Challenge
+                </h3>
+
+                <p id="quizQuestion">
+                    Complete your learning sprint to unlock the
+                    10-question challenge.
+                </p>
+
+                <div id="quizOptions"></div>
+
+                <p id="quizFeedback"></p>
+
+            </div>
+
+
+            <!-- COMPLETION -->
+
+            <div class="complete" id="completeBox">
+
+                <h2>
+                    🎉 Sprint Complete!
+                </h2>
+
+                <p id="scoreText">
+                    You completed your SkillSprint lesson.
+                </p>
+
+                <p>
+                    Your progress has been updated.
+                </p>
+
+                <button class="next-btn">
+                    Continue to Next Level →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section id="how">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Simple by design.
+                </h2>
+
+                <p>
+                    Learning doesn't have to feel overwhelming.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+
+                    <span class="step-number">
                         STEP 01
                     </span>
 
@@ -2162,125 +1508,70 @@
                     </h3>
 
                     <p>
-                        Choose something useful from the SkillSprint
-                        library that matches your current goal.
+                        Search the SkillSprint library and choose
+                        something useful.
                     </p>
 
                 </div>
 
 
-                <div class="process-card">
+                <div class="step-card">
 
-                    <span class="process-number">
+                    <span class="step-number">
                         STEP 02
                     </span>
 
                     <h3>
-                        Sprint for 20 minutes
+                        Learn for 20 minutes
                     </h3>
 
                     <p>
-                        Focus on one small lesson instead of trying
-                        to complete a huge course.
+                        Watch, read or use the visual guide,
+                        then practice the skill.
                     </p>
 
                 </div>
 
 
-                <div class="process-card">
+                <div class="step-card">
 
-                    <span class="process-number">
+                    <span class="step-number">
                         STEP 03
                     </span>
 
                     <h3>
-                        Use what you learned
+                        Test yourself
                     </h3>
 
                     <p>
-                        Finish with a small practical task so the
-                        lesson becomes something you can actually use.
+                        Finish with ten quick questions and
+                        see your progress.
                     </p>
 
                 </div>
 
             </div>
 
+        </div>
 
-            <div class="access-box">
-
-                <div>
-
-                    <h3>
-                        Built for beginners.
-                    </h3>
-
-                    <p>
-                        Whether you're starting your first digital skill,
-                        returning to learning after years, or simply want
-                        to understand a new tool, SkillSprint keeps the
-                        experience clear and approachable.
-                    </p>
-
-                </div>
+    </section>
 
 
-                <div class="access-list">
-
-                    <div>
-                        ✓ Simple language
-                    </div>
-
-                    <div>
-                        ✓ Beginner-friendly lessons
-                    </div>
-
-                    <div>
-                        ✓ Short focused sessions
-                    </div>
-
-                    <div>
-                        ✓ Practical learning
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- FOOTER -->
 
     <footer>
 
-        <div class="footer-inner">
+        <div class="container">
 
-            <div>
+            <strong>
+                SkillSprint
+            </strong>
 
-                <div class="brand">
+            <p>
+                Learn one useful skill at a time.
+            </p>
 
-                    <span class="brand-mark">
-                        S
-                    </span>
-
-                    SkillSprint
-
-                </div>
-
-                <p>
-                    Learn one useful skill at a time.
-                </p>
-
-            </div>
-
-            <a href="index.html"
-               class="footer-link">
+            <a href="https://vijayabarthwal.github.io/vijaya-portfolio/">
                 ← Back to Portfolio
             </a>
 
@@ -2289,412 +1580,762 @@
     </footer>
 
 
+<script>
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+/* LESSON DATA */
 
-    <script>
+const lessons = {
 
-        const lessonDescriptions = {
+    "Excel Basics": {
+        description:
+            "Learn the basics of spreadsheets through simple examples and practice.",
 
-            "Excel Basics":
-                "Learn how spreadsheets are structured and how simple formulas can help you work with information.",
+        steps: [
+            "Understand rows, columns and cells.",
+            "Enter simple information into a spreadsheet.",
+            "Resize a column or row.",
+            "Try a basic formula."
+        ],
 
-            "Google Sheets":
-                "Understand the basic workspace, cells, rows and columns and create a simple organized sheet.",
+        task:
+            "Create a small table with three columns and resize them so the information is easy to read.",
 
-            "Basic Web Design":
-                "Discover how HTML creates page structure and how CSS controls the visual appearance of a webpage.",
+        video:
+            "https://www.youtube.com/results?search_query=Excel+basics+for+beginners"
+    },
 
-            "Canva Basics":
-                "Explore the basic tools behind creating clean, simple and useful graphics.",
+    "Google Sheets": {
+        description:
+            "Learn how to create and organize a simple spreadsheet.",
 
-            "Graphic Design Basics":
-                "Learn four foundational design ideas: hierarchy, spacing, contrast and balance.",
+        steps: [
+            "Open a new spreadsheet.",
+            "Understand rows, columns and cells.",
+            "Enter and format simple information.",
+            "Try sorting a small list."
+        ],
 
-            "Video Editing Basics":
-                "Understand the basic workflow of importing clips, trimming footage, arranging a timeline and exporting.",
+        task:
+            "Create a small list of three items and organize it clearly.",
 
-            "Resume Writing":
-                "Learn how to write concise experience points that show what you did and what value you created.",
+        video:
+            "https://www.youtube.com/results?search_query=Google+Sheets+basics+for+beginners"
+    },
 
-            "Professional Email Writing":
-                "Practice a simple structure for writing clear, respectful and professional emails.",
+    "Canva Basics": {
+        description:
+            "Learn the basic tools behind simple graphics and social posts.",
 
-            "Interview Basics":
-                "Learn a simple framework for answering common interview questions with clarity and confidence.",
+        steps: [
+            "Open Canva and choose a simple design.",
+            "Explore templates and design elements.",
+            "Add and edit text.",
+            "Change colors and images."
+        ],
 
-            "AI for Beginners":
-                "Understand the basic idea behind generative AI and explore practical ways beginners can use it.",
+        task:
+            "Create a simple social-media graphic with a heading, image and call-to-action.",
 
-            "Better AI Prompts":
-                "Learn how context, instructions and desired output can make your AI requests more useful.",
+        video:
+            "https://www.youtube.com/results?search_query=Canva+basics+for+beginners"
+    },
 
-            "Digital Safety Basics":
-                "Learn everyday habits that can make your online accounts and digital activity safer.",
+    "Graphic Design Basics": {
+        description:
+            "Understand simple design principles that make visuals clearer.",
 
-            "Time Management":
-                "Build a simple daily plan that focuses on priorities instead of trying to complete everything.",
+        steps: [
+            "Understand visual hierarchy.",
+            "Use spacing to separate information.",
+            "Create contrast between important elements.",
+            "Keep the design visually balanced."
+        ],
 
-            "Better Note-Taking":
-                "Learn a practical approach to capturing important information without writing down every word.",
+        task:
+            "Create a simple graphic using one main heading, one image and one supporting line.",
 
-            "Focus Techniques":
-                "Explore simple techniques for reducing distractions and creating short periods of focused work.",
+        video:
+            "https://www.youtube.com/results?search_query=graphic+design+basics+for+beginners"
+    },
 
-            "Smartphone Basics":
-                "Become more comfortable with everyday smartphone settings, apps and basic navigation.",
+    "Video Editing Basics": {
+        description:
+            "Learn the basic workflow behind editing a short video.",
 
-            "Digital Payments Basics":
-                "Understand the basic flow of digital payments and important habits for using them safely.",
+        steps: [
+            "Import your video clips.",
+            "Understand the editing timeline.",
+            "Cut and arrange clips.",
+            "Add simple text or music."
+        ],
 
-            "Digital Organization":
-                "Learn simple ways to organize digital files, photos and important information."
+        task:
+            "Arrange two short clips into a simple sequence.",
 
-        };
+        video:
+            "https://www.youtube.com/results?search_query=video+editing+basics+for+beginners"
+    },
+
+    "AI for Beginners": {
+        description:
+            "Understand what generative AI is and how beginners can use it.",
+
+        steps: [
+            "Understand what generative AI does.",
+            "Write a clear request.",
+            "Add useful context.",
+            "Review and improve the response."
+        ],
+
+        task:
+            "Write a prompt asking an AI tool to explain a difficult topic in simple language.",
+
+        video:
+            "https://www.youtube.com/results?search_query=AI+for+beginners"
+    },
+
+    "Resume Writing": {
+        description:
+            "Learn how to turn experience into clear and useful resume points.",
+
+        steps: [
+            "Identify your strongest experience.",
+            "Use clear action words.",
+            "Focus on results and useful skills.",
+            "Keep each point concise."
+        ],
+
+        task:
+            "Rewrite one experience statement using a strong action word.",
+
+        video:
+            "https://www.youtube.com/results?search_query=resume+writing+for+beginners"
+    }
+
+};
 
 
-        const lessonButtons =
-            document.querySelectorAll(".start-lesson");
+/* LESSON SELECTION */
 
-        const selectedLesson =
-            document.getElementById("selectedLesson");
+let currentLesson = null;
 
-        const lessonDescription =
-            document.getElementById("lessonDescription");
+const lessonTitle =
+    document.getElementById("lessonTitle");
 
-        const lessonStatus =
-            document.getElementById("lessonStatus");
+const lessonDescription =
+    document.getElementById("lessonDescription");
 
-        const completionMessage =
-            document.getElementById("completionMessage");
+const contentTitle =
+    document.getElementById("contentTitle");
+
+const stepsContent =
+    document.getElementById("stepsContent");
+
+const videoContent =
+    document.getElementById("videoContent");
+
+const practiceTask =
+    document.getElementById("practiceTask");
 
 
-        lessonButtons.forEach(button => {
+document.querySelectorAll(".start-lesson")
+    .forEach(button => {
 
-            button.addEventListener("click", () => {
+        button.addEventListener("click", () => {
 
-                const lesson =
-                    button.dataset.lesson;
+            currentLesson =
+                button.dataset.lesson;
 
-                selectedLesson.textContent =
-                    lesson;
+            const data =
+                lessons[currentLesson];
+
+            lessonTitle.textContent =
+                currentLesson;
+
+            if (data) {
 
                 lessonDescription.textContent =
-                    lessonDescriptions[lesson] ||
-                    "A beginner-friendly SkillSprint lesson designed for a focused 20-minute session.";
+                    data.description;
 
-                lessonStatus.textContent =
-                    "Ready to start";
+                contentTitle.textContent =
+                    currentLesson + " · Step-by-Step";
 
-                completionMessage.style.display =
-                    "none";
+                stepsContent.innerHTML =
+                    "<ol class='step-list'>" +
+                    data.steps
+                        .map(step => `<li>${step}</li>`)
+                        .join("") +
+                    "</ol>";
 
-                resetTimer();
+                videoContent.innerHTML =
+                    `🎥 <strong>Optional video</strong><br><br>
+                    <a href="${data.video}" target="_blank">
+                    Watch an instructional video →
+                    </a>`;
 
-                document
-                    .getElementById("learning")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
+                practiceTask.textContent =
+                    data.task;
 
-            });
+            }
+
+            document
+                .getElementById("learning")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            resetTimer();
+            resetQuiz();
 
         });
 
-
-        const TOTAL_SECONDS = 20 * 60;
-
-        let remainingSeconds =
-            TOTAL_SECONDS;
-
-        let timerInterval = null;
+    });
 
 
-        const timerDisplay =
-            document.getElementById("lessonTimer");
+/* LEARNING MODES */
 
-        const timerProgress =
-            document.getElementById("timerProgress");
+document.querySelectorAll(".mode-btn")
+    .forEach(button => {
 
-        const startTimerButton =
-            document.getElementById("startTimer");
+        button.addEventListener("click", () => {
 
-        const pauseTimerButton =
-            document.getElementById("pauseTimer");
-
-        const resetTimerButton =
-            document.getElementById("resetTimer");
-
-
-        function updateTimerDisplay() {
-
-            const minutes =
-                Math.floor(
-                    remainingSeconds / 60
+            document
+                .querySelectorAll(".mode-btn")
+                .forEach(btn =>
+                    btn.classList.remove("active")
                 );
 
-            const seconds =
-                remainingSeconds % 60;
+            button.classList.add("active");
 
-            timerDisplay.textContent =
-                String(minutes).padStart(2, "0")
-                + ":"
-                + String(seconds).padStart(2, "0");
+            const mode =
+                button.dataset.mode;
+
+            document.getElementById("stepsContent")
+                .style.display =
+                mode === "steps"
+                    ? "block"
+                    : "none";
+
+            document.getElementById("videoContent")
+                .style.display =
+                mode === "video"
+                    ? "block"
+                    : "none";
+
+            document.getElementById("visualContent")
+                .style.display
+                    mode === "visual"
+            ? "block"
+            : "none";
+
+    });
+
+});
 
 
-            const completed =
-                TOTAL_SECONDS -
-                remainingSeconds;
+/* =========================================
+   LEVELS
+========================================= */
 
-            const progress =
-                (completed / TOTAL_SECONDS) * 100;
+document.querySelectorAll(".level-btn")
+    .forEach(button => {
 
-            timerProgress.style.width =
-                progress + "%";
+        button.addEventListener("click", () => {
+
+            document
+                .querySelectorAll(".level-btn")
+                .forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+            button.classList.add("active");
+
+        });
+
+    });
+
+
+/* =========================================
+   TIMER
+========================================= */
+
+let seconds = 1200;
+let timerInterval = null;
+
+const timer =
+    document.getElementById("timer");
+
+const progressBar =
+    document.getElementById("progressBar");
+
+const progressText =
+    document.getElementById("progressText");
+
+
+function updateTimer() {
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const remainingSeconds =
+        seconds % 60;
+
+    timer.textContent =
+        `${minutes}:${remainingSeconds
+            .toString()
+            .padStart(2, "0")}`;
+
+    const progress =
+        ((1200 - seconds) / 1200) * 100;
+
+    progressBar.style.width =
+        progress + "%";
+
+    progressText.textContent =
+        Math.round(progress) +
+        "% complete";
+
+}
+
+
+document.getElementById("startTimer")
+    .addEventListener("click", () => {
+
+        if (timerInterval) return;
+
+        timerInterval =
+            setInterval(() => {
+
+                if (seconds > 0) {
+
+                    seconds--;
+
+                    updateTimer();
+
+                }
+
+                if (seconds === 0) {
+
+                    clearInterval(timerInterval);
+
+                    timerInterval = null;
+
+                    startQuiz();
+
+                }
+
+            }, 1000);
+
+    });
+
+
+document.getElementById("pauseTimer")
+    .addEventListener("click", () => {
+
+        clearInterval(timerInterval);
+
+        timerInterval = null;
+
+    });
+
+
+document.getElementById("resetTimer")
+    .addEventListener("click", resetTimer);
+
+
+function resetTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+    seconds = 1200;
+
+    updateTimer();
+
+}
+
+
+updateTimer();
+
+
+/* =========================================
+   QUIZ
+========================================= */
+
+const questions = [
+
+    {
+        question:
+            "What is a cell in a spreadsheet?",
+
+        options: [
+            "A box where data can be entered",
+            "A video",
+            "A folder"
+        ],
+
+        answer: 0
+    },
+
+    {
+        question:
+            "Which tool is commonly used to create graphics?",
+
+        options: [
+            "Calculator",
+            "Canva",
+            "Calendar"
+        ],
+
+        answer: 1
+    },
+
+    {
+        question:
+            "Which makes instructions easier to follow?",
+
+        options: [
+            "Clear steps",
+            "Complicated words",
+            "No examples"
+        ],
+
+        answer: 0
+    },
+
+    {
+        question:
+            "What should you do after learning a new skill?",
+
+        options: [
+            "Practice it",
+            "Ignore it",
+            "Forget it"
+        ],
+
+        answer: 0
+    },
+
+    {
+        question:
+            "Which is a clearer AI prompt?",
+
+        options: [
+            "Help",
+            "Explain Excel formulas with a simple example",
+            "Do something"
+        ],
+
+        answer: 1
+    },
+
+    {
+        question:
+            "Why are visual guides useful?",
+
+        options: [
+            "They show where to look or click",
+            "They make lessons longer",
+            "They remove the need to practice"
+        ],
+
+        answer: 0
+    },
+
+    {
+        question:
+            "What is the purpose of a 20-minute sprint?",
+
+        options: [
+            "Focused learning",
+            "A difficult exam",
+            "Finishing an entire course"
+        ],
+
+        answer: 0
+    },
+
+    {
+        question:
+            "What should you do if a step is confusing?",
+
+        options: [
+            "Review the instruction",
+            "Give up immediately",
+            "Stop learning"
+        ],
+
+        answer: 0
+    },
+
+    {
+        question:
+            "What does a progress bar help you see?",
+
+        options: [
+            "How far you have come",
+            "Only your mistakes",
+            "Nothing useful"
+        ],
+
+        answer: 0
+    },
+
+    {
+        question:
+            "What is a good way to build a skill?",
+
+        options: [
+            "Learn and practice",
+            "Only watch videos",
+            "Never try it"
+        ],
+
+        answer: 0
+    }
+
+];
+
+
+let questionIndex = 0;
+let score = 0;
+
+
+function resetQuiz() {
+
+    questionIndex = 0;
+
+    score = 0;
+
+    document.getElementById("quizQuestion")
+        .textContent =
+        "Complete your 20-minute sprint to unlock the 10-question challenge.";
+
+    document.getElementById("quizOptions")
+        .innerHTML = "";
+
+    document.getElementById("quizFeedback")
+        .textContent = "";
+
+    document.getElementById("completeBox")
+        .style.display = "none";
+
+}
+
+
+function startQuiz() {
+
+    questionIndex = 0;
+
+    score = 0;
+
+    showQuestion();
+
+}
+
+
+function showQuestion() {
+
+    if (questionIndex >= questions.length) {
+
+        finishQuiz();
+
+        return;
+
+    }
+
+    const question =
+        questions[questionIndex];
+
+    document.getElementById("quizQuestion")
+        .textContent =
+        `${questionIndex + 1}/10 — ${question.question}`;
+
+    const options =
+        document.getElementById("quizOptions");
+
+    options.innerHTML = "";
+
+    question.options.forEach(
+        (option, index) => {
+
+            const button =
+                document.createElement("button");
+
+            button.className =
+                "quiz-option";
+
+            button.textContent =
+                option;
+
+            button.addEventListener(
+                "click",
+                () => answerQuestion(index)
+            );
+
+            options.appendChild(button);
 
         }
+    );
+
+}
 
 
-        function startTimer() {
+function answerQuestion(index) {
 
-            if (timerInterval !== null) {
-                return;
-            }
+    const question =
+        questions[questionIndex];
 
-            lessonStatus.textContent =
-                "Learning in progress";
+    if (index === question.answer) {
 
-            timerInterval =
-                setInterval(() => {
+        score++;
 
-                    if (remainingSeconds > 0) {
+        document.getElementById("quizFeedback")
+            .textContent =
+            "✅ Correct! Great job.";
 
-                        remainingSeconds--;
+    } else {
 
-                        updateTimerDisplay();
+        document.getElementById("quizFeedback")
+            .textContent =
+            "💡 Not quite — keep learning!";
 
-                    } else {
+    }
 
-                        clearInterval(timerInterval);
+    setTimeout(() => {
 
-                        timerInterval = null;
+        questionIndex++;
 
-                        lessonStatus.textContent =
-                            "Sprint complete 🎉";
+        showQuestion();
 
-                        completionMessage.style.display =
-                            "block";
+    }, 650);
 
-                    }
-
-                }, 1000);
-
-        }
+}
 
 
-        function pauseTimer() {
+function finishQuiz() {
 
-            if (timerInterval !== null) {
+    document.getElementById("quizQuestion")
+        .textContent =
+        "🎉 Challenge complete!";
 
-                clearInterval(timerInterval);
+    document.getElementById("quizOptions")
+        .innerHTML = "";
 
-                timerInterval = null;
+    document.getElementById("quizFeedback")
+        .textContent =
+        "You finished all 10 questions.";
 
-                lessonStatus.textContent =
-                    "Paused";
+    document.getElementById("scoreText")
+        .textContent =
+        `Your score: ${score}/10 · SkillSprint complete!`;
 
-            }
+    document.getElementById("completeBox")
+        .style.display =
+        "block";
 
-        }
+    progressBar.style.width =
+        "100%";
+
+    progressText.textContent =
+        "100% complete";
+
+}
 
 
-        function resetTimer() {
+/* =========================================
+   SEARCH
+========================================= */
 
-            clearInterval(timerInterval);
+const search =
+    document.getElementById("search");
 
-            timerInterval = null;
+const cards =
+    document.querySelectorAll(".lesson-card");
 
-            remainingSeconds =
-                TOTAL_SECONDS;
+const filters =
+    document.querySelectorAll(".filter");
 
-            updateTimerDisplay();
+const noResults =
+    document.getElementById("noResults");
 
-            lessonStatus.textContent =
-                "Ready to start";
+let selectedFilter = "all";
 
-            completionMessage.style.display =
+
+function filterLessons() {
+
+    const query =
+        search.value.toLowerCase().trim();
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        const title =
+            card.dataset.title.toLowerCase();
+
+        const category =
+            card.dataset.category;
+
+        const matchesSearch =
+            title.includes(query);
+
+        const matchesFilter =
+            selectedFilter === "all" ||
+            category === selectedFilter;
+
+        if (matchesSearch && matchesFilter) {
+
+            card.style.display =
+                "block";
+
+            visible++;
+
+        } else {
+
+            card.style.display =
                 "none";
 
         }
 
+    });
 
-        startTimerButton.addEventListener(
-            "click",
-            startTimer
+    noResults.style.display =
+        visible === 0
+            ? "block"
+            : "none";
+
+}
+
+
+search.addEventListener(
+    "input",
+    filterLessons
+);
+
+
+filters.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filters.forEach(btn =>
+            btn.classList.remove("active")
         );
 
-        pauseTimerButton.addEventListener(
-            "click",
-            pauseTimer
-        );
+        button.classList.add("active");
 
-        resetTimerButton.addEventListener(
-            "click",
-            resetTimer
-        );
+        selectedFilter =
+            button.dataset.filter;
 
+        filterLessons();
 
-        updateTimerDisplay();
+    });
 
+});
 
-        document
-            .getElementById("completeLesson")
-            .addEventListener("click", () => {
-
-                completionMessage.style.display =
-                    "block";
-
-                lessonStatus.textContent =
-                    "Completed ✓";
-
-                completionMessage.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest"
-                });
-
-            });
-
-
-        const filterButtons =
-            document.querySelectorAll(".filter-button");
-
-        const lessonCards =
-            document.querySelectorAll(".lesson-card");
-
-
-        filterButtons.forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                filterButtons.forEach(item => {
-
-                    item.classList.remove("active");
-
-                });
-
-                button.classList.add("active");
-
-                const category =
-                    button.dataset.category;
-
-                document
-                    .getElementById("searchInput")
-                    .value = "";
-
-                let visibleCards = 0;
-
-
-                lessonCards.forEach(card => {
-
-                    const matches =
-                        category === "all" ||
-                        card.dataset.category === category;
-
-                    card.style.display =
-                        matches ? "flex" : "none";
-
-                    if (matches) {
-                        visibleCards++;
-                    }
-
-                });
-
-
-                document
-                    .getElementById("noResults")
-                    .style.display =
-                        visibleCards === 0
-                        ? "block"
-                        : "none";
-
-            });
-
-        });
-
-
-        const searchInput =
-            document.getElementById("searchInput");
-
-        const noResults =
-            document.getElementById("noResults");
-
-
-        searchInput.addEventListener(
-            "input",
-            () => {
-
-                const query =
-                    searchInput.value
-                        .trim()
-                        .toLowerCase();
-
-
-                filterButtons.forEach(button => {
-
-                    button.classList.remove("active");
-
-                });
-
-                document
-                    .querySelector(
-                        '.filter-button[data-category="all"]'
-                    )
-                    .classList.add("active");
-
-
-                let visibleCards = 0;
-
-
-                lessonCards.forEach(card => {
-
-                    const title =
-                        card.dataset.title
-                            .toLowerCase();
-
-                    const text =
-                        card.textContent
-                            .toLowerCase();
-
-
-                    const matches =
-                        title.includes(query) ||
-                        text.includes(query);
-
-
-                    card.style.display =
-                        matches ? "flex" : "none";
-
-
-                    if (matches) {
-                        visibleCards++;
-                    }
-
-                });
-
-
-                noResults.style.display =
-                    visibleCards === 0
-                    ? "block"
-                    : "none";
-
-            }
-
-        );
-
-    </script>
+</script>
 
 </body>
 </html>
-        
+                
