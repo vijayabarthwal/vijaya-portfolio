@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SkillSprint Marketing Email — Content Writing Sample">
+
+    <meta name="author"
+          content="Vijaya Barthwal">
+
+    <title>SkillSprint | Marketing Email Sample</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #e9edf2;
+            color: #20252b;
+
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .top-bar {
+            width: min(760px, 92%);
+            margin: auto;
+
+            padding: 22px 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.2rem;
+            font-weight: 800;
+
+            letter-spacing: -0.04em;
+        }
+
+        .brand span {
+            color: #e85d3f;
+        }
+
+        .back-link {
+            color: #66707b;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #e85d3f;
+        }
+
+
+        /* =========================
+           EMAIL PREVIEW
+        ========================== */
+
+        .email-wrapper {
+            width: min(760px, 92%);
+
+            margin: 25px auto 70px;
+        }
+
+        .email-window {
+            background: #ffffff;
+
+            border: 1px solid #d7dce2;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 18px 45px rgba(31, 41, 55, 0.10);
+        }
+
+
+        /* =========================
+           EMAIL HEADER
+        ========================== */
+
+        .email-header {
+            padding: 20px 25px;
+
+            border-bottom: 1px solid #e6e9ed;
+
+            background: #fbfcfd;
+        }
+
+        .email-header-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            margin-bottom: 18px;
+        }
+
+        .email-label {
+            display: inline-block;
+
+            padding: 5px 9px;
+
+            border-radius: 5px;
+
+            background: #edf1f5;
+
+            color: #68727d;
+
+            font-size: 0.65rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+        }
+
+        .email-date {
+            color: #89919a;
+
+            font-size: 0.72rem;
+        }
+
+        .sender {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .sender-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: #20252b;
+
+            color: #ffffff;
+
+            font-size: 0.9rem;
+
+            font-weight: 900;
+        }
+
+        .sender-details strong {
+            display: block;
+
+            font-size: 0.85rem;
+        }
+
+        .sender-details span {
+            color: #89919a;
+
+            font-size: 0.72rem;
+        }
+
+
+        /* =========================
+           SUBJECT
+        ========================== */
+
+        .subject-area {
+            padding: 28px 25px 20px;
+        }
+
+        .subject-area small {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #89919a;
+
+            font-size: 0.68rem;
+
+            font-weight: 800;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+        }
+
+        .subject-area h1 {
+            max-width: 650px;
+
+            font-size: clamp(1.8rem, 4vw, 2.7rem);
+
+            line-height: 1.1;
+
+            letter-spacing: -0.045em;
+        }
+
+
+        /* =========================
+           EMAIL CONTENT
+        ========================== */
+
+        .email-content {
+            padding: 10px 25px 40px;
+        }
+
+        .opening {
+            margin-bottom: 28px;
+
+            font-size: 1rem;
+
+            color: #444c55;
+        }
+
+        .opening strong {
+            color: #20252b;
+        }
+
+        .message {
+            max-width: 620px;
+
+            margin-bottom: 30px;
+
+            color: #535b64;
+
+            font-size: 0.96rem;
+        }
+
+        .message p {
+            margin-bottom: 17px;
+        }
+
+
+        /* =========================
+           FEATURE BOX
+        ========================== */
+
+        .feature-box {
+            margin: 32px 0;
+
+            padding: 30px;
+
+            background: #f4f7f9;
+
+            border-left: 4px solid #e85d3f;
+
+            border-radius: 4px;
+        }
+
+        .feature-box small {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #e85d3f;
+
+            font-size: 0.67rem;
+
+            font-weight: 900;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+        }
+
+        .feature-box h2 {
+            margin-bottom: 10px;
+
+            font-size: 1.4rem;
+
+            letter-spacing: -0.035em;
+        }
+
+        .feature-box p {
+            color: #626a73;
+
+            font-size: 0.88rem;
+        }
+
+
+        /* =========================
+           BENEFITS
+        ========================== */
+
+        .benefits {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+            margin: 30px 0;
+        }
+
+        .benefit {
+            padding: 18px;
+
+            background: #fafbfc;
+
+            border: 1px solid #e3e7eb;
+
+            border-radius: 7px;
+        }
+
+        .benefit-number {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: #e85d3f;
+
+            font-size: 0.68rem;
+
+            font-weight: 900;
+        }
+
+        .benefit strong {
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-size: 0.84rem;
+        }
+
+        .benefit span {
+            display: block;
+
+            color: #747d86;
+
+            font-size: 0.76rem;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .email-cta {
+            padding: 30px 0 15px;
+
+            text-align: center;
+
+            border-top: 1px solid #e6e9ed;
+        }
+
+        .email-cta p {
+            margin-bottom: 18px;
+
+            color: #68717b;
+
+            font-size: 0.86rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+
+            padding: 13px 23px;
+
+            border-radius: 6px;
+
+            background: #e85d3f;
+
+            color: #ffffff;
+
+            font-size: 0.82rem;
+
+            font-weight: 850;
+
+            transition: 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+
+            background: #d94f32;
+        }
+
+
+        /* =========================
+           SIGN-OFF
+        ========================== */
+
+        .sign-off {
+            padding-top: 30px;
+
+            color: #606973;
+
+            font-size: 0.88rem;
+        }
+
+        .sign-off strong {
+            display: block;
+
+            margin-top: 7px;
+
+            color: #20252b;
+        }
+
+
+        /* =========================
+           EMAIL FOOTER
+        ========================== */
+
+        .email-footer {
+            padding: 22px 25px;
+
+            border-top: 1px solid #e6e9ed;
+
+            background: #fbfcfd;
+
+            text-align: center;
+
+            color: #8a929b;
+
+            font-size: 0.68rem;
+
+            line-height: 1.6;
+        }
+
+        .email-footer strong {
+            color: #59616a;
+        }
+
+
+        /* =========================
+           PORTFOLIO NOTE
+        ========================== */
+
+        .sample-note {
+            margin-top: 22px;
+
+            padding: 17px 20px;
+
+            border: 1px dashed #cbd1d8;
+
+            border-radius: 8px;
+
+            background: #f4f6f8;
+
+            color: #737c85;
+
+            text-align: center;
+
+            font-size: 0.72rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 650px) {
+
+            .top-bar {
+                padding: 18px 0;
+            }
+
+            .email-wrapper {
+                margin-top: 15px;
+            }
+
+            .email-header,
+            .subject-area,
+            .email-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .email-header-top {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 8px;
+            }
+
+            .subject-area {
+                padding-top: 24px;
+            }
+
+            .subject-area h1 {
+                font-size: 1.85rem;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-box {
+                padding: 24px;
+            }
+
+            .email-footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <div class="top-bar">
+
+        <a href="index.html" class="brand">
+            Skill<span>Sprint.</span>
+        </a>
+
+        <a href="index.html" class="back-link">
+            ← Back to Portfolio
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         EMAIL
+    ========================== -->
+
+    <main class="email-wrapper">
+
+        <article class="email-window">
+
+
+            <!-- EMAIL HEADER -->
+
+            <header class="email-header">
+
+                <div class="email-header-top">
+
+                    <span class="email-label">
+                        Marketing Email
+                    </span>
+
+                    <span class="email-date">
+                        SkillSprint Campaign · 2026
+                    </span>
+
+                </div>
+
+
+                <div class="sender">
+
+                    <div class="sender-icon">
+                        SS
+                    </div>
+
+                    <div class="sender-details">
+
+                        <strong>
+                            SkillSprint
+                        </strong>
+
+                        <span>
+                            hello@skillsprint.example
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- SUBJECT -->
+
+            <div class="subject-area">
+
+                <small>
+                    Subject
+                </small>
+
+                <h1>
+                    You don't have to be a tech expert to get started.
+                </h1>
+
+            </div>
+
+
+            <!-- EMAIL BODY -->
+
+            <div class="email-content">
+
+
+                <p class="opening">
+                    Hi there,
+                </p>
+
+
+                <div class="message">
+
+                    <p>
+                        New apps. New tools. New updates.
+                        Sometimes it feels like technology is
+                        moving faster than we can keep up.
+                    </p>
+
+                    <p>
+                        But learning something new doesn't
+                        have to mean spending hours watching
+                        tutorials or trying to understand
+                        everything at once.
+                    </p>
+
+                    <!-- FEATURE -->
+
+<div class="feature-box">
+
+    <small>
+        The SkillSprint idea
+    </small>
+
+    <h2>
+        One skill. Twenty minutes.
+    </h2>
+
+    <p>
+        Choose something useful, spend 20 focused
+        minutes learning it, and come back tomorrow
+        for another small step.
+    </p>
+
+</div>
+
+
+<!-- BENEFITS -->
+
+<div class="benefits">
+
+    <div class="benefit">
+
+        <span class="benefit-number">
+            01
+        </span>
+
+        <strong>
+            Learn at your pace
+        </strong>
+
+        <span>
+            No complicated schedules.
+            Just small, manageable sessions.
+        </span>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <span class="benefit-number">
+            02
+        </span>
+
+        <strong>
+            Build confidence
+        </strong>
+
+        <span>
+            Turn unfamiliar tools into
+            skills you can actually use.
+        </span>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <span class="benefit-number">
+            03
+        </span>
+
+        <strong>
+            Keep moving
+        </strong>
+
+        <span>
+            A little progress today gives
+            you something to build on tomorrow.
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN MESSAGE -->
+
+<div class="message">
+
+    <p>
+        Whether you're learning a digital tool,
+        exploring AI, improving your communication,
+        or simply trying something you've always
+        been curious about — you don't need to
+        master it in one day.
+    </p>
+
+    <p>
+        You just need to start.
+    </p>
+
+</div>
+
+
+<!-- CTA -->
+
+<div class="email-cta">
+
+    <p>
+        Ready to give your next 20 minutes a purpose?
+    </p>
+
+    <a href="landing-page-copy.html"
+       class="cta-button">
+        Start Your Sprint →
+    </a>
+
+</div>
+
+
+<!-- SIGN OFF -->
+
+<div class="sign-off">
+
+    Keep learning. Keep growing.
+
+    <strong>
+        — Team SkillSprint
+    </strong>
+
+</div>
+
+</div>
+
+
+<!-- EMAIL FOOTER -->
+
+<footer class="email-footer">
+
+    <strong>
+        SkillSprint
+    </strong>
+
+    <br>
+
+    Learn something useful.
+    One small step at a time.
+
+    <br><br>
+
+    This is a fictional marketing email created
+    as a content-writing portfolio sample.
+
+</footer>
+
+</article>
+
+
+<!-- PORTFOLIO NOTE -->
+
+<div class="sample-note">
+
+    Content Writing Sample · Marketing Email · SkillSprint Campaign
+
+</div>
+
+</main>
+
+</body>
+</html>
