@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SkillSprint — Learn a new skill in 20 minutes a day.">
+
+    <title>SkillSprint | Learn Something New</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: #f7f5ff;
+            color: #18161f;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAV */
+
+        nav {
+            width: min(1120px, 90%);
+            margin: auto;
+            padding: 25px 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+
+        .logo span {
+            color: #7657ff;
+        }
+
+        .back {
+            padding: 9px 15px;
+            border: 1px solid #d9d4e8;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background: #fff;
+        }
+
+        /* HERO */
+
+        .hero {
+            width: min(1120px, 90%);
+            margin: 55px auto 90px;
+
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-bottom: 22px;
+
+            padding: 7px 13px;
+            border-radius: 999px;
+
+            background: #e9e4ff;
+            color: #6045d8;
+
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(3.2rem, 7vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.07em;
+            margin-bottom: 28px;
+        }
+
+        h1 span {
+            color: #7657ff;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            font-size: 1.15rem;
+            color: #625e6d;
+            margin-bottom: 32px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 14px 21px;
+
+            border-radius: 999px;
+
+            background: #18161f;
+            color: #fff;
+
+            font-weight: 800;
+            font-size: 0.9rem;
+
+            transition: 0.25s ease;
+        }
+
+        .cta:hover {
+            transform: translateY(-3px);
+        }
+
+        /* HERO VISUAL */
+
+        .visual {
+            min-height: 430px;
+            border-radius: 35px;
+
+            background: #18161f;
+
+            position: relative;
+            overflow: hidden;
+
+            box-shadow: 0 30px 70px rgba(38, 28, 80, 0.18);
+        }
+
+        .circle {
+            position: absolute;
+
+            width: 240px;
+            height: 240px;
+
+            border-radius: 50%;
+
+            background: #ffd86b;
+
+            top: 45px;
+            right: 35px;
+        }
+
+        .number {
+            position: absolute;
+
+            left: 35px;
+            bottom: 35px;
+
+            font-size: 7rem;
+            line-height: 1;
+
+            font-weight: 900;
+
+            color: #fff;
+
+            letter-spacing: -0.09em;
+        }
+
+        .visual-text {
+            position: absolute;
+            left: 38px;
+            top: 40px;
+
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+        }
+
+        .mini-card {
+            position: absolute;
+
+            right: 30px;
+            bottom: 35px;
+
+            padding: 15px 18px;
+
+            border-radius: 16px;
+
+            background: #fff;
+
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        /* SECTIONS */
+
+        section.content {
+            width: min(1120px, 90%);
+            margin: 0 auto 100px;
+        }
+
+        .section-label {
+            margin-bottom: 15px;
+
+            color: #7657ff;
+
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            max-width: 700px;
+
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.05em;
+
+            margin-bottom: 45px;
+        }
+
+        /* BENEFITS */
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .benefit {
+            padding: 30px;
+
+            background: #fff;
+
+            border: 1px solid #e6e1ef;
+            border-radius: 24px;
+
+            transition: 0.25s ease;
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-number {
+            display: block;
+
+            margin-bottom: 25px;
+
+            font-size: 0.75rem;
+            font-weight: 900;
+
+            color: #7657ff;
+        }
+
+        .benefit h3 {
+            margin-bottom: 12px;
+
+            font-size: 1.25rem;
+            letter-spacing: -0.03em;
+        }
+
+        .benefit p {
+            color: #696473;
+            font-size: 0.95rem;
+        }
+
+        /* HOW IT WORKS */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .step {
+            padding: 28px;
+
+            border-radius: 24px;
+
+            background: #ece8ff;
+        }
+
+        .step strong {
+            display: block;
+
+            margin-bottom: 12px;
+
+            font-size: 1.3rem;
+        }
+
+        .step p {
+            color: #5f5a6d;
+            font-size: 0.92rem;
+        }
+
+        /* TESTIMONIAL */
+
+        .quote {
+            padding: 50px;
+
+            border-radius: 30px;
+
+            background: #18161f;
+            color: #fff;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote p {
+            max-width: 780px;
+
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            line-height: 1.3;
+
+            letter-spacing: -0.04em;
+        }
+
+        .quote small {
+            display: block;
+            margin-top: 25px;
+
+            color: #bbb6c8;
+            font-size: 0.8rem;
+        }
+
+        /* CTA */
+
+        .final-cta {
+            text-align: center;
+
+            padding: 75px 30px;
+
+            border-radius: 35px;
+
+            background: #ded7ff;
+        }
+
+        .final-cta h2 {
+            max-width: 700px;
+            margin: auto auto 18px;
+
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+        }
+
+        .final-cta p {
+            max-width: 550px;
+            margin: 0 auto 28px;
+
+            color: #5f5a6d;
+        }
+
+        /* FOOTER */
+
+        footer {
+            width: min(1120px, 90%);
+            margin: auto;
+
+            padding: 35px 0;
+
+            border-top: 1px solid #ddd8e8;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 0.78rem;
+            color: #77717f;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .benefits,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .visual {
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 18px 0;
+            }
+
+            .hero {
+                margin-top: 30px;
+                margin-bottom: 65px;
+            }
+
+            h1 {
+                font-size: clamp(3rem, 15vw, 5rem);
+            }
+
+            .hero-text {
+                font-size: 1rem;
+            }
+
+            .visual {
+                min-height: 300px;
+                border-radius: 25px;
+            }
+
+            .circle {
+                width: 170px;
+                height: 170px;
+            }
+
+            .number {
+                font-size: 5rem;
+            }
+
+            .quote {
+                padding: 32px;
+            }
+
+            .final-cta {
+                padding: 55px 22px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Skill<span>Sprint.</span>
+        </a>
+
+        <a href="index.html" class="back">
+            ← Back to Portfolio
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div>
+
+            <span class="tag">
+                Learn · Grow · Repeat
+            </span>
+
+            <h1>
+                Learn something
+                <span>new.</span>
+            </h1>
+
+            <p class="hero-text">
+                You don't need hours of free time to learn a skill.
+                SkillSprint helps you turn just 20 minutes a day
+                into a small step toward something bigger.
+            </p>
+
+            <a href="#how-it-works" class="cta">
+                See How It Works →
+            </a>
+
+        </div>
+
+
+        <div class="visual">
+
+            <div class="visual-text">
+                YOUR DAILY SKILL SIDEKICK
+            </div>
+
+            <div class="circle"></div>
+
+            <div class="number">
+                20
+            </div>
+
+            <div class="mini-card">
+                MINUTES A DAY ✦
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- WHY -->
+
+    <section class="content">
+
+        <p class="section-label">
+            Why SkillSprint?
+        </p>
+
+        <h2 class="section-title">
+            Learning shouldn't feel like another task on your to-do list.
+        </h2>
+
+
+        <div class="benefits">
+
+            <article class="benefit">
+
+                <span class="benefit-number">
+                    01
+                </span>
+
+                <h3>
+                    Small Sessions
+                </h3>
+
+                <p>
+                    Short lessons make it easier to learn without
+                    rearranging your entire day.
+                </p>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <span class="benefit-number">
+                    02
+                </span>
+
+                <h3>
+                    Learn Your Way
+                </h3>
+
+                <p>
+                    Explore skills that actually interest you,
+                    from creative tools to practical everyday skills.
+                </p>
+
+            </article>
+
+
+            <article class="benefit">
+
+                <span class="benefit-number">
+                    03
+                </span>
+
+                <h3>
+                    Keep Growing
+                </h3>
+
+                <p>
+                    One small lesson today can become a useful
+                    skill tomorrow.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="content" id="how-it-works">
+
+        <p class="section-label">
+            How it works
+        </p>
+
+        <h2 class="section-title">
+            No pressure. Just 20 minutes.
+        </h2>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <strong>
+                    01 — Pick
+                </strong>
+
+                <p>
+                    Choose a skill you're curious about.
+                    No complicated planning required.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    02 — Sprint
+                </strong>
+
+                <p>
+                    Spend 20 focused minutes learning,
+                    practicing, and exploring.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <strong>
+                    03 — Repeat
+                </strong>
+
+                <p>
+                    Come back tomorrow and take another
+                    small step forward.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HUMAN TESTIMONIAL -->
+
+    <section class="content">
+
+        <div class="quote">
+
+            <p>
+                “I never knew learning a skill could feel
+                this enjoyable and easy. Twenty minutes
+                doesn't feel like a big commitment, but
+                it makes me want to come back tomorrow
+                and learn a little more.”
+            </p>
+
+            <small>
+                — SkillSprint learner
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section class="content">
+
+        <div class="final-cta">
+
+            <p class="section-label">
+                Your next 20 minutes
+            </p>
+
+            <h2>
+                Start small.
+                Make it count.
+            </h2>
+
+            <p>
+                You don't have to know everything today.
+                Just learn one new thing.
+            </p>
+
+            <a href="#top" class="cta">
+                Start Your Sprint →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>
+            Content Writing · Landing Page Sample
+        </span>
+
+        <strong>
+            SkillSprint © 2026
+        </strong>
+
+    </footer>
+
+</body>
+</html>
