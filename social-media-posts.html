@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SkillSprint Social Media Posts — Content Writing Sample">
+
+    <meta name="author"
+          content="Vijaya Barthwal">
+
+    <title>SkillSprint | Social Media Posts</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: #f1f4f8;
+            color: #18212b;
+
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .topbar {
+            width: min(1100px, 90%);
+
+            margin: auto;
+
+            padding: 25px 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.35rem;
+
+            font-weight: 900;
+
+            letter-spacing: -0.06em;
+        }
+
+        .brand span {
+            color: #ff5c8a;
+        }
+
+        .back {
+            padding: 9px 15px;
+
+            border: 1px solid #d6dce4;
+
+            border-radius: 999px;
+
+            background: #ffffff;
+
+            color: #66717d;
+
+            font-size: 0.78rem;
+
+            font-weight: 750;
+
+            transition: 0.2s ease;
+        }
+
+        .back:hover {
+            color: #ff5c8a;
+
+            border-color: #ff5c8a;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================== */
+
+        .intro {
+            width: min(1100px, 90%);
+
+            margin: 60px auto 70px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            color: #ff5c8a;
+
+            font-size: 0.7rem;
+
+            font-weight: 900;
+
+            letter-spacing: 0.15em;
+
+            text-transform: uppercase;
+        }
+
+        .intro h1 {
+            max-width: 800px;
+
+            margin-bottom: 20px;
+
+            font-size: clamp(3rem, 7vw, 6rem);
+
+            line-height: 0.92;
+
+            letter-spacing: -0.075em;
+        }
+
+        .intro h1 span {
+            color: #ff5c8a;
+        }
+
+        .intro p {
+            max-width: 650px;
+
+            color: #68727e;
+
+            font-size: 1.05rem;
+        }
+
+
+        /* =========================
+           CAMPAIGN GRID
+        ========================== */
+
+        .campaign {
+            width: min(1100px, 90%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+
+        /* =========================
+           POST CARD
+        ========================== */
+
+        .post {
+            background: #ffffff;
+
+            border: 1px solid #dce1e7;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 12px 30px rgba(30, 42, 55, 0.06);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 18px 38px rgba(30, 42, 55, 0.10);
+        }
+
+
+        /* =========================
+           POST VISUAL
+        ========================== */
+
+        .post-visual {
+            min-height: 230px;
+
+            padding: 25px;
+
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            overflow: hidden;
+        }
+
+        .post-visual::after {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            right: -45px;
+            bottom: -55px;
+
+            background: rgba(255, 255, 255, 0.22);
+        }
+
+
+        /* INDIVIDUAL VISUALS */
+
+        .visual-one {
+            background: #17212b;
+
+            color: #ffffff;
+        }
+
+        .visual-two {
+            background: #d9f3ee;
+
+            color: #17212b;
+        }
+
+        .visual-three {
+            background: #ffdf68;
+
+            color: #17212b;
+        }
+
+        .visual-four {
+            background: #ff5c8a;
+
+            color: #ffffff;
+        }
+
+        .visual-five {
+            background: #8f7cf6;
+
+            color: #ffffff;
+        }
+
+
+        .platform {
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .platform strong {
+            font-size: 0.72rem;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+        }
+
+        .post-number {
+            font-size: 0.7rem;
+
+            font-weight: 850;
+
+            opacity: 0.65;
+        }
+
+        .visual-copy {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 430px;
+        }
+
+        .visual-copy h2 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+
+            line-height: 0.95;
+
+            letter-spacing: -0.065em;
+        }
+
+        .visual-copy p {
+            margin-top: 12px;
+
+            max-width: 360px;
+
+            font-size: 0.82rem;
+
+            opacity: 0.8;
+        }
+
+
+        /* =========================
+           POST CONTENT
+        ========================== */
+
+        .post-content {
+            padding: 26px;
+        }
+
+        .post-type {
+            margin-bottom: 10px;
+
+            color: #ff5c8a;
+
+            font-size: 0.65rem;
+
+            font-weight: 900;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+        .post-content h3 {
+            margin-bottom: 15px;
+
+            font-size: 1.25rem;
+
+            letter-spacing: -0.035em;
+        }
+
+        .caption {
+            color: #5e6873;
+
+            font-size: 0.9rem;
+
+            white-space: pre-line;
+        }
+
+
+        /* =========================
+           HASHTAGS
+        ========================== */
+
+        .hashtags {
+            margin-top: 20px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+        }
+
+        .hashtags span {
+            padding: 5px 8px;
+
+            border-radius: 5px;
+
+            background: #f1f3f6;
+
+            color: #707984;
+
+            font-size: 0.65rem;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           CAMPAIGN SUMMARY
+        ========================== */
+
+        .summary {
+            width: min(1100px, 90%);
+
+            margin: 75px auto 100px;
+
+            padding: 45px;
+
+            border-radius: 18px;
+
+            background: #18212b;
+
+            color: #ffffff;
+        }
+
+        .summary-label {
+            margin-bottom: 14px;
+
+            color: #ff5c8a;
+
+            font-size: 0.68rem;
+
+            font-weight: 900;
+
+            letter-spacing: 0.14em;
+
+            text-transform: uppercase;
+        }
+
+        .summary h2 {
+            max-width: 700px;
+
+            margin-bottom: 18px;
+
+            font-size: clamp(2rem, 4vw, 3.5rem);
+
+            line-height: 1;
+
+            letter-spacing: -0.06em;
+        }
+
+        .summary p {
+            max-width: 680px;
+
+            color: #b9c1ca;
+
+            font-size: 0.92rem;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            width: min(1100px, 90%);
+
+            margin: auto;
+
+            padding: 30px 0;
+
+            border-top: 1px solid #d6dce4;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #7a848e;
+
+            font-size: 0.72rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .campaign {
+                grid-template-columns: 1fr;
+            }
+
+            .intro {
+                margin-top: 45px;
+            }
+
+            .summary {
+                padding: 35px 28px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .topbar {
+                padding: 18px 0;
+            }
+
+            .back {
+                padding: 8px 12px;
+
+                font-size: 0.7rem;
+            }
+
+                        .intro {
+                width: 88%;
+
+                margin-top: 35px;
+
+                margin-bottom: 50px;
+            }
+
+            .intro h1 {
+                font-size: clamp(3.1rem, 15vw, 5rem);
+            }
+
+            .campaign {
+                width: 88%;
+            }
+
+            .post-visual {
+                min-height: 210px;
+            }
+
+            .post-content {
+                padding: 23px;
+            }
+
+            .summary {
+                width: 88%;
+
+                margin-top: 60px;
+
+                padding: 32px 23px;
+            }
+
+            footer {
+                width: 88%;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="topbar">
+
+        <a href="index.html" class="brand">
+            Skill<span>Sprint.</span>
+        </a>
+
+        <a href="index.html" class="back">
+            ← Back to Portfolio
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="intro">
+
+        <span class="eyebrow">
+            Content Writing · Social Campaign
+        </span>
+
+        <h1>
+            Small posts.
+            <span>Big ideas.</span>
+        </h1>
+
+        <p>
+            A small social media campaign created for SkillSprint,
+            adapting the same brand message into different formats,
+            audiences, and tones.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SOCIAL POSTS
+    ========================== -->
+
+    <main class="campaign">
+
+
+        <!-- POST 01 -->
+
+        <article class="post">
+
+            <div class="post-visual visual-one">
+
+                <div class="platform">
+
+                    <strong>
+                        Instagram · Reel Caption
+                    </strong>
+
+                    <span class="post-number">
+                        01
+                    </span>
+
+                </div>
+
+                <div class="visual-copy">
+
+                    <h2>
+                        You don't need
+                        more time.
+                    </h2>
+
+                    <p>
+                        Sometimes you just need
+                        20 focused minutes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <p class="post-type">
+                    Motivational Caption
+                </p>
+
+                <h3>
+                    Make a little time for yourself.
+                </h3>
+
+                <p class="caption">You don't need to become an expert overnight.
+
+You don't even need hours.
+
+Give yourself 20 minutes.
+
+Learn something you've been curious about.
+Practice something you want to improve.
+Take one small step.
+
+Then come back tomorrow and take another.
+
+Small progress still counts. ✦</p>
+
+                <div class="hashtags">
+
+                    <span>#SkillSprint</span>
+                    <span>#LearnEveryday</span>
+                    <span>#SmallSteps</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- POST 02 -->
+
+        <article class="post">
+
+            <div class="post-visual visual-two">
+
+                <div class="platform">
+
+                    <strong>
+                        LinkedIn · Professional
+                    </strong>
+
+                    <span class="post-number">
+                        02
+                    </span>
+
+                </div>
+
+                <div class="visual-copy">
+
+                    <h2>
+                        Learning is
+                        a habit.
+                    </h2>
+
+                    <p>
+                        Not another item
+                        on your to-do list.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <p class="post-type">
+                    Professional Post
+                </p>
+
+                <h3>
+                    What if learning didn't require a free afternoon?
+                </h3>
+
+                <p class="caption">We often wait for the “right time” to learn something new.
+
+When the schedule is lighter.
+When work slows down.
+When we finally have enough time.
+
+But learning can start much smaller.
+
+Twenty focused minutes can be enough to explore a tool, understand a concept, or practice a skill.
+
+The goal isn't to finish everything today.
+
+The goal is to keep moving.</p>
+
+                <div class="hashtags">
+
+                    <span>#Learning</span>
+                    <span>#ProfessionalGrowth</span>
+                    <span>#SkillSprint</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- POST 03 -->
+
+        <article class="post">
+
+            <div class="post-visual visual-three">
+
+                <div class="platform">
+
+                    <strong>
+                        Instagram · Carousel
+                    </strong>
+
+                    <span class="post-number">
+                        03
+                    </span>
+
+                </div>
+
+                <div class="visual-copy">
+
+                    <h2>
+                        3 ways to
+                        learn better.
+                    </h2>
+
+                    <p>
+                        Swipe through a
+                        simple learning reset.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <p class="post-type">
+                    Carousel Copy
+                </p>
+
+                <h3>
+                    A simple 3-slide learning carousel.
+                </h3>
+
+                <p class="caption">SLIDE 1
+Stop trying to learn everything at once.
+
+SLIDE 2
+Choose ONE thing.
+Give it 20 focused minutes.
+Put distractions away.
+
+SLIDE 3
+Don't worry about mastering it today.
+Come back tomorrow and build on what you learned.
+
+Small sessions.
+Real progress.</p>
+
+                <div class="hashtags">
+
+                    <span>#StudyTips</span>
+                    <span>#LearningTips</span>
+                    <span>#SkillSprint</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- POST 04 -->
+
+        <article class="post">
+
+            <div class="post-visual visual-four">
+
+                <div class="platform">
+
+                    <strong>
+                        Instagram · Promotional
+                    </strong>
+
+                    <span class="post-number">
+                        04
+                    </span>
+
+                </div>
+
+                <div class="visual-copy">
+
+                    <h2>
+                        What could
+                        you learn?
+                    </h2>
+
+                    <p>
+                        You might be only
+                        20 minutes away.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <p class="post-type">
+                    Promotional Caption
+                </p>
+
+                <h3>
+                    Your next skill could start today.
+                </h3>
+
+                <p class="caption">Maybe it's Canva.
+
+Maybe it's Excel.
+Maybe it's AI.
+Maybe it's something you've never tried before.
+
+Whatever you've been curious about, give it 20 minutes.
+
+No pressure.
+No giant learning plan.
+
+Just start.
+
+Your next skill might be closer than you think.
+
+→ Start your SkillSprint.</p>
+
+                <div class="hashtags">
+
+                    <span>#SkillSprint</span>
+                    <span>#LearnSomethingNew</span>
+                    <span>#DigitalSkills</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- POST 05 -->
+
+        <article class="post">
+
+            <div class="post-visual visual-five">
+
+                <div class="platform">
+
+                    <strong>
+                        Community · Engagement
+                    </strong>
+
+                    <span class="post-number">
+                        05
+                    </span>
+
+                </div>
+
+                <div class="visual-copy">
+
+                    <h2>
+                        What's one
+                        skill you'd learn?
+                    </h2>
+
+                    <p>
+                        Let's make tomorrow's
+                        20 minutes count.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="post-content">
+
+                <p class="post-type">
+                    Engagement Post
+                </p>
+
+                <h3>
+                    If you had 20 minutes today...
+                </h3>
+
+                <p class="caption">If you had just 20 minutes to learn something new today, what would you choose?
+
+A creative skill?
+A digital tool?
+Something for work?
+Something just for fun?
+
+Tell us below. 👇
+
+You might even inspire someone else's next SkillSprint.</p>
+
+                <div class="hashtags">
+
+                    <span>#SkillSprint</span>
+                    <span>#Community</span>
+                    <span>#WhatWouldYouLearn</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <!-- =========================
+         CAMPAIGN SUMMARY
+    ========================== -->
+
+    <section class="summary">
+
+        <p class="summary-label">
+            Campaign approach
+        </p>
+
+        <h2>
+            One message.
+            Different conversations.
+        </h2>
+
+        <p>
+            The campaign keeps SkillSprint's core idea consistent
+            while adapting the voice and format for different
+            social platforms and audience intentions — from
+            motivation and education to promotion and engagement.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <span>
+            Content Writing Sample · Social Media Posts
+        </span>
+
+        <strong>
+            SkillSprint © 2026
+        </strong>
+
+    </footer>
+
+</body>
+</html>
