@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
           content="SkillSprint — Learn a new skill in 20 minutes a day.">
 
+    <meta name="author"
+          content="Vijaya Barthwal">
+
     <title>SkillSprint | Learn Something New</title>
 
     <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -28,8 +38,9 @@
                 "Segoe UI",
                 sans-serif;
 
-            background: #f7f5ff;
-            color: #18161f;
+            background: #f5f0e8;
+            color: #17202a;
+
             line-height: 1.6;
         }
 
@@ -38,12 +49,20 @@
             color: inherit;
         }
 
-        /* NAV */
+        button {
+            font: inherit;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
 
         nav {
             width: min(1120px, 90%);
             margin: auto;
-            padding: 25px 0;
+
+            padding: 24px 0;
 
             display: flex;
             justify-content: space-between;
@@ -51,206 +70,293 @@
         }
 
         .logo {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 900;
-            letter-spacing: -0.05em;
+
+            letter-spacing: -0.06em;
         }
 
         .logo span {
-            color: #7657ff;
+            color: #ef6847;
         }
 
         .back {
-            padding: 9px 15px;
-            border: 1px solid #d9d4e8;
+            padding: 9px 16px;
+
+            border: 1px solid #d9d0c3;
             border-radius: 999px;
+
+            background: #fffaf3;
+
             font-size: 0.8rem;
-            font-weight: 700;
-            background: #fff;
-        }
-
-        /* HERO */
-
-        .hero {
-            width: min(1120px, 90%);
-            margin: 55px auto 90px;
-
-            display: grid;
-            grid-template-columns: 1fr 0.9fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .tag {
-            display: inline-block;
-            margin-bottom: 22px;
-
-            padding: 7px 13px;
-            border-radius: 999px;
-
-            background: #e9e4ff;
-            color: #6045d8;
-
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: clamp(3.2rem, 7vw, 6.5rem);
-            line-height: 0.95;
-            letter-spacing: -0.07em;
-            margin-bottom: 28px;
-        }
-
-        h1 span {
-            color: #7657ff;
-        }
-
-        .hero-text {
-            max-width: 600px;
-            font-size: 1.15rem;
-            color: #625e6d;
-            margin-bottom: 32px;
-        }
-
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-
-            padding: 14px 21px;
-
-            border-radius: 999px;
-
-            background: #18161f;
-            color: #fff;
-
-            font-weight: 800;
-            font-size: 0.9rem;
+            font-weight: 750;
 
             transition: 0.25s ease;
         }
 
-        .cta:hover {
-            transform: translateY(-3px);
+        .back:hover {
+            transform: translateY(-2px);
+            border-color: #ef6847;
         }
 
-        /* HERO VISUAL */
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            width: min(1120px, 90%);
+            margin: 60px auto 110px;
+
+            display: grid;
+            grid-template-columns: 1fr 0.85fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-flex;
+
+            padding: 7px 12px;
+
+            margin-bottom: 22px;
+
+            border-radius: 6px;
+
+            background: #17202a;
+            color: #fffaf3;
+
+            font-size: 0.7rem;
+            font-weight: 850;
+
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 720px;
+
+            font-size: clamp(3.4rem, 7vw, 6.7rem);
+
+            line-height: 0.9;
+
+            letter-spacing: -0.075em;
+
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            color: #ef6847;
+        }
+
+        .hero-text {
+            max-width: 590px;
+
+            margin-bottom: 32px;
+
+            color: #5e5a55;
+
+            font-size: 1.1rem;
+        }
+
+        .cta {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 21px;
+
+            border-radius: 8px;
+
+            background: #ef6847;
+            color: #fff;
+
+            font-size: 0.88rem;
+            font-weight: 850;
+
+            box-shadow: 5px 5px 0 #17202a;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .cta:hover {
+            transform: translate(2px, 2px);
+
+            box-shadow: 3px 3px 0 #17202a;
+        }
+
+
+        /* =========================
+           HERO VISUAL
+        ========================== */
 
         .visual {
             min-height: 430px;
-            border-radius: 35px;
-
-            background: #18161f;
 
             position: relative;
+
             overflow: hidden;
 
-            box-shadow: 0 30px 70px rgba(38, 28, 80, 0.18);
+            border: 1px solid #17202a;
+
+            background: #17202a;
+
+            border-radius: 18px;
+
+            box-shadow: 14px 14px 0 #ef6847;
         }
 
-        .circle {
+        .visual::before {
+            content: "";
+
             position: absolute;
 
-            width: 240px;
-            height: 240px;
+            width: 210px;
+            height: 210px;
 
             border-radius: 50%;
 
-            background: #ffd86b;
+            background: #f6c453;
 
-            top: 45px;
-            right: 35px;
+            top: -55px;
+            right: -40px;
+        }
+
+        .visual::after {
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            border: 3px solid #fffaf3;
+
+            transform: rotate(12deg);
+
+            left: 35px;
+            top: 125px;
+        }
+
+        .visual-text {
+            position: absolute;
+
+            left: 38px;
+            top: 35px;
+
+            z-index: 2;
+
+            color: #fffaf3;
+
+            font-size: 0.7rem;
+            font-weight: 850;
+
+            letter-spacing: 0.16em;
         }
 
         .number {
             position: absolute;
 
-            left: 35px;
-            bottom: 35px;
+            left: 32px;
+            bottom: 30px;
 
-            font-size: 7rem;
-            line-height: 1;
+            z-index: 2;
 
-            font-weight: 900;
+            color: #fffaf3;
 
-            color: #fff;
+            font-size: clamp(7rem, 15vw, 10rem);
 
-            letter-spacing: -0.09em;
-        }
+            line-height: 0.8;
 
-        .visual-text {
-            position: absolute;
-            left: 38px;
-            top: 40px;
+            font-weight: 950;
 
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 0.16em;
+            letter-spacing: -0.1em;
         }
 
         .mini-card {
             position: absolute;
 
-            right: 30px;
-            bottom: 35px;
+            right: 28px;
+            bottom: 30px;
 
-            padding: 15px 18px;
+            z-index: 3;
 
-            border-radius: 16px;
+            padding: 14px 16px;
 
-            background: #fff;
+            background: #fffaf3;
 
-            font-size: 0.78rem;
-            font-weight: 800;
+            border-radius: 7px;
+
+            color: #17202a;
+
+            font-size: 0.75rem;
+            font-weight: 900;
         }
 
-        /* SECTIONS */
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
 
         section.content {
             width: min(1120px, 90%);
-            margin: 0 auto 100px;
+
+            margin: 0 auto 110px;
         }
 
         .section-label {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
 
-            color: #7657ff;
+            color: #ef6847;
 
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 900;
+
             letter-spacing: 0.15em;
+
             text-transform: uppercase;
         }
 
         .section-title {
-            max-width: 700px;
-
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            line-height: 1.05;
-            letter-spacing: -0.05em;
+            max-width: 760px;
 
             margin-bottom: 45px;
+
+            font-size: clamp(2.2rem, 4vw, 4rem);
+
+            line-height: 1;
+
+            letter-spacing: -0.065em;
         }
 
-        /* BENEFITS */
+
+        /* =========================
+           BENEFITS
+        ========================== */
 
         .benefits {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 18px;
         }
 
         .benefit {
             padding: 30px;
 
-            background: #fff;
+            background: #fffaf3;
 
-            border: 1px solid #e6e1ef;
-            border-radius: 24px;
+            border: 1px solid #ddd3c5;
+
+            border-radius: 14px;
 
             transition: 0.25s ease;
         }
@@ -262,139 +368,299 @@
         .benefit-number {
             display: block;
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
+
+            color: #ef6847;
 
             font-size: 0.75rem;
             font-weight: 900;
-
-            color: #7657ff;
         }
 
         .benefit h3 {
             margin-bottom: 12px;
 
-            font-size: 1.25rem;
-            letter-spacing: -0.03em;
+            font-size: 1.2rem;
+
+            letter-spacing: -0.035em;
         }
 
         .benefit p {
-            color: #696473;
-            font-size: 0.95rem;
+            color: #6b665f;
+
+            font-size: 0.93rem;
         }
 
-        /* HOW IT WORKS */
+
+        /* =========================
+           HOW IT WORKS
+        ========================== */
 
         .steps {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 18px;
         }
 
         .step {
             padding: 28px;
 
-            border-radius: 24px;
+            background: #f6c453;
 
-            background: #ece8ff;
+            border-radius: 14px;
+
+            min-height: 185px;
         }
 
         .step strong {
             display: block;
 
-            margin-bottom: 12px;
+            margin-bottom: 13px;
 
-            font-size: 1.3rem;
+            color: #17202a;
+
+            font-size: 1.25rem;
+
+            letter-spacing: -0.03em;
         }
 
         .step p {
-            color: #5f5a6d;
+            color: #4e493f;
+
             font-size: 0.92rem;
         }
 
-        /* TESTIMONIAL */
+
+        /* =========================
+           SPRINT TIMER
+        ========================== */
+
+        .sprint-section {
+            scroll-margin-top: 30px;
+        }
+
+        .sprint-box {
+            padding: 48px 30px;
+
+            background: #17202a;
+
+            color: #fffaf3;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow: 12px 12px 0 #f6c453;
+        }
+
+        .sprint-box h3 {
+            margin-bottom: 8px;
+
+            font-size: 1.45rem;
+
+            letter-spacing: -0.035em;
+        }
+
+        .sprint-box > p {
+            margin-bottom: 30px;
+
+            color: #c8c4bd;
+
+            font-size: 0.93rem;
+        }
+
+        .timer {
+            margin-bottom: 27px;
+
+            font-size: clamp(4.5rem, 12vw, 7rem);
+
+            line-height: 0.9;
+
+            font-weight: 950;
+
+            letter-spacing: -0.08em;
+
+            color: #f6c453;
+        }
+
+        .timer-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .timer-button {
+            min-width: 125px;
+
+            padding: 12px 19px;
+
+            border: 1px solid #fffaf3;
+
+            border-radius: 7px;
+
+            background: #fffaf3;
+
+            color: #17202a;
+
+            font-size: 0.83rem;
+            font-weight: 850;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .timer-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .timer-button.secondary {
+            background: transparent;
+
+            color: #fffaf3;
+
+            border-color: #68645e;
+        }
+
+        .timer-message {
+            margin-top: 20px;
+
+            color: #aaa69e;
+
+            font-size: 0.82rem;
+        }
+
+
+        /* =========================
+           TESTIMONIAL
+        ========================== */
 
         .quote {
-            padding: 50px;
+            padding: 52px;
 
-            border-radius: 30px;
+            background: #fffaf3;
 
-            background: #18161f;
-            color: #fff;
+            border: 1px solid #ddd3c5;
 
-            position: relative;
-            overflow: hidden;
+            border-left: 7px solid #ef6847;
+
+            border-radius: 14px;
         }
 
         .quote p {
-            max-width: 780px;
+            max-width: 800px;
 
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            line-height: 1.3;
+            color: #17202a;
 
-            letter-spacing: -0.04em;
+            font-size: clamp(1.45rem, 3vw, 2.45rem);
+
+            line-height: 1.25;
+
+            letter-spacing: -0.045em;
         }
 
         .quote small {
             display: block;
+
             margin-top: 25px;
 
-            color: #bbb6c8;
+            color: #756f67;
+
             font-size: 0.8rem;
         }
 
-        /* CTA */
+
+        /* =========================
+           FINAL CTA
+        ========================== */
 
         .final-cta {
-            text-align: center;
-
             padding: 75px 30px;
 
-            border-radius: 35px;
+            text-align: center;
 
-            background: #ded7ff;
+            background: #ef6847;
+
+            color: #fffaf3;
+
+            border-radius: 18px;
+
+            box-shadow: 12px 12px 0 #17202a;
+        }
+
+        .final-cta .section-label {
+            color: #17202a;
         }
 
         .final-cta h2 {
-            max-width: 700px;
+            max-width: 720px;
+
             margin: auto auto 18px;
 
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            line-height: 1;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
 
-            letter-spacing: -0.06em;
+            line-height: 0.95;
+
+            letter-spacing: -0.07em;
         }
 
-        .final-cta p {
-            max-width: 550px;
+        .final-cta p:not(.section-label) {
+            max-width: 560px;
+
             margin: 0 auto 28px;
 
-            color: #5f5a6d;
+            color: #fff0e8;
         }
 
-        /* FOOTER */
+        .final-cta .cta {
+            background: #17202a;
+
+            box-shadow: 5px 5px 0 #f6c453;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
             width: min(1120px, 90%);
+
             margin: auto;
 
             padding: 35px 0;
 
-            border-top: 1px solid #ddd8e8;
+            border-top: 1px solid #d9d0c3;
 
             display: flex;
+
             justify-content: space-between;
 
+            gap: 20px;
+
             font-size: 0.78rem;
-            color: #77717f;
+
+            color: #777168;
         }
 
-        /* RESPONSIVE */
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
 
         @media (max-width: 850px) {
 
             .hero {
                 grid-template-columns: 1fr;
-                gap: 45px;
+
+                gap: 50px;
+
+                margin-top: 45px;
             }
 
             .benefits,
@@ -403,9 +669,18 @@
             }
 
             .visual {
-                min-height: 350px;
+                min-height: 370px;
+            }
+
+            .sprint-box {
+                box-shadow: 8px 8px 0 #f6c453;
+            }
+
+            .final-cta {
+                box-shadow: 8px 8px 0 #17202a;
             }
         }
+
 
         @media (max-width: 600px) {
 
@@ -413,13 +688,22 @@
                 padding: 18px 0;
             }
 
+            .back {
+                padding: 8px 12px;
+
+                font-size: 0.72rem;
+            }
+
             .hero {
+                width: 88%;
+
                 margin-top: 30px;
-                margin-bottom: 65px;
+
+                margin-bottom: 80px;
             }
 
             h1 {
-                font-size: clamp(3rem, 15vw, 5rem);
+                font-size: clamp(3.1rem, 16vw, 5rem);
             }
 
             .hero-text {
@@ -427,21 +711,63 @@
             }
 
             .visual {
-                min-height: 300px;
-                border-radius: 25px;
+                min-height: 310px;
+
+                border-radius: 15px;
+
+                box-shadow: 8px 8px 0 #ef6847;
             }
 
-            .circle {
-                width: 170px;
-                height: 170px;
+            .visual::before {
+                width: 155px;
+                height: 155px;
+            }
+
+            .visual::after {
+                width: 90px;
+                height: 90px;
+
+                left: 25px;
+                top: 105px;
             }
 
             .number {
-                font-size: 5rem;
+                left: 25px;
+                bottom: 25px;
+
+                font-size: 5.5rem;
+            }
+
+            .mini-card {
+                right: 20px;
+                bottom: 22px;
+
+                font-size: 0.68rem;
+            }
+
+            section.content {
+                margin-bottom: 80px;
+            }
+
+            .section-title {
+                margin-bottom: 32px;
+            }
+
+            .benefit,
+            .step {
+                padding: 25px;
+            }
+
+            .sprint-box {
+                padding: 40px 20px;
+            }
+
+            .timer {
+                font-size: 4.6rem;
             }
 
             .quote {
-                padding: 32px;
+                padding: 32px 25px;
             }
 
             .final-cta {
@@ -450,17 +776,22 @@
 
             footer {
                 flex-direction: column;
-                gap: 10px;
+
                 text-align: center;
+
+                align-items: center;
             }
         }
 
     </style>
 </head>
 
+
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <nav>
 
@@ -475,7 +806,9 @@
     </nav>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <header class="hero">
 
@@ -509,8 +842,6 @@
                 YOUR DAILY SKILL SIDEKICK
             </div>
 
-            <div class="circle"></div>
-
             <div class="number">
                 20
             </div>
@@ -524,7 +855,9 @@
     </header>
 
 
-    <!-- WHY -->
+    <!-- =========================
+         WHY SKILLSPRINT
+    ========================== -->
 
     <section class="content">
 
@@ -597,7 +930,9 @@
     </section>
 
 
-    <!-- HOW IT WORKS -->
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
 
     <section class="content" id="how-it-works">
 
@@ -657,72 +992,294 @@
 
     </section>
 
+<!-- =========================
+     SPRINT TIMER
+========================== -->
 
-    <!-- HUMAN TESTIMONIAL -->
+<section class="content sprint-section" id="sprint">
 
-    <section class="content">
+    <p class="section-label">
+        Your 20-minute sprint
+    </p>
 
-        <div class="quote">
+    <h2 class="section-title">
+        Ready? Let's make these minutes count.
+    </h2>
 
-            <p>
-                “I never knew learning a skill could feel
-                this enjoyable and easy. Twenty minutes
-                doesn't feel like a big commitment, but
-                it makes me want to come back tomorrow
-                and learn a little more.”
-            </p>
+    <div class="sprint-box">
 
-            <small>
-                — SkillSprint learner
-            </small>
+        <h3>
+            Focus on one small thing.
+        </h3>
+
+        <p>
+            Pick your skill, start the timer, and just begin.
+        </p>
+
+        <div class="timer" id="timer">
+            20:00
+        </div>
+
+        <div class="timer-buttons">
+
+            <button
+                type="button"
+                class="timer-button"
+                id="startTimer">
+                Start Sprint
+            </button>
+
+            <button
+                type="button"
+                class="timer-button secondary"
+                id="resetTimer">
+                Reset
+            </button>
 
         </div>
 
-    </section>
-
-
-    <!-- FINAL CTA -->
-
-    <section class="content">
-
-        <div class="final-cta">
-
-            <p class="section-label">
-                Your next 20 minutes
-            </p>
-
-            <h2>
-                Start small.
-                Make it count.
-            </h2>
-
-            <p>
-                You don't have to know everything today.
-                Just learn one new thing.
-            </p>
-
-            <a href="#top" class="cta">
-                Start Your Sprint →
-            </a>
-
+        <div class="timer-message" id="timerMessage">
+            Your sprint hasn't started yet.
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FOOTER -->
+<!-- =========================
+     TESTIMONIAL
+========================== -->
 
-    <footer>
+<section class="content">
 
-        <span>
-            Content Writing · Landing Page Sample
-        </span>
+    <div class="quote">
 
-        <strong>
-            SkillSprint © 2026
-        </strong>
+        <p>
+            “I never knew learning a skill could feel
+            this enjoyable and easy. Twenty minutes
+            doesn't feel like a big commitment, but
+            it makes me want to come back tomorrow
+            and learn a little more.”
+        </p>
 
-    </footer>
+        <small>
+            — SkillSprint learner
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL CTA
+========================== -->
+
+<section class="content">
+
+    <div class="final-cta">
+
+        <p class="section-label">
+            Your next 20 minutes
+        </p>
+
+        <h2>
+            Start small.
+            Make it count.
+        </h2>
+
+        <p>
+            You don't have to know everything today.
+            Just learn one new thing.
+        </p>
+
+        <a href="#sprint"
+           class="cta"
+           id="startSprintCta">
+            Start Your Sprint →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <span>
+        Content Writing · Landing Page Sample
+    </span>
+
+    <strong>
+        SkillSprint © 2026
+    </strong>
+
+</footer>
+
+
+<!-- =========================
+     SPRINT TIMER JAVASCRIPT
+========================== -->
+
+<script>
+
+    let timeLeft = 20 * 60;
+
+    let timerInterval = null;
+
+
+    const timerDisplay =
+        document.getElementById("timer");
+
+    const startButton =
+        document.getElementById("startTimer");
+
+    const resetButton =
+        document.getElementById("resetTimer");
+
+    const timerMessage =
+        document.getElementById("timerMessage");
+
+    const startSprintCta =
+        document.getElementById("startSprintCta");
+
+
+    function updateTimer() {
+
+        const minutes =
+            Math.floor(timeLeft / 60);
+
+        const seconds =
+            timeLeft % 60;
+
+        timerDisplay.textContent =
+            String(minutes).padStart(2, "0") +
+            ":" +
+            String(seconds).padStart(2, "0");
+    }
+
+
+    function startTimer() {
+
+        if (timerInterval !== null) {
+            return;
+        }
+
+        timerMessage.textContent =
+            "You're in your sprint. Keep going.";
+
+        startButton.textContent =
+            "Pause Sprint";
+
+
+        timerInterval = setInterval(function () {
+
+            if (timeLeft > 0) {
+
+                timeLeft--;
+
+                updateTimer();
+            }
+
+
+            if (timeLeft === 0) {
+
+                clearInterval(timerInterval);
+
+                timerInterval = null;
+
+                startButton.textContent =
+                    "Start Sprint";
+
+                timerMessage.textContent =
+                    "Sprint complete! You just invested 20 minutes in yourself.";
+            }
+
+        }, 1000);
+    }
+
+
+    function pauseTimer() {
+
+        clearInterval(timerInterval);
+
+        timerInterval = null;
+
+        startButton.textContent =
+            "Resume Sprint";
+
+        timerMessage.textContent =
+            "Sprint paused. Come back when you're ready.";
+    }
+
+
+    function resetTimer() {
+
+        clearInterval(timerInterval);
+
+        timerInterval = null;
+
+        timeLeft = 20 * 60;
+
+        updateTimer();
+
+        startButton.textContent =
+            "Start Sprint";
+
+        timerMessage.textContent =
+            "Your sprint hasn't started yet.";
+    }
+
+
+    startButton.addEventListener(
+        "click",
+        function () {
+
+            if (timerInterval === null) {
+
+                startTimer();
+
+            } else {
+
+                pauseTimer();
+
+            }
+
+        }
+    );
+
+
+    resetButton.addEventListener(
+        "click",
+        resetTimer
+    );
+
+
+    startSprintCta.addEventListener(
+        "click",
+        function () {
+
+            setTimeout(function () {
+
+                resetTimer();
+
+                startTimer();
+
+            }, 300);
+
+        }
+    );
+
+
+    updateTimer();
+
+</script>
 
 </body>
 </html>
+    
