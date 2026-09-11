@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UrbanThread Meta Ads Case Study | Vijaya Barthwal</title>
+
+    <meta name="description"
+          content="UrbanThread Meta Ads campaign case study by Vijaya Barthwal, covering campaign planning, ad copy, audience strategy, simulated performance, optimization, and key learnings.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid #252525;
+            background: #0b0b0b;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .logo span {
+            color: #ff3b30;
+        }
+
+        .back-link {
+            color: #cfcfcf;
+            font-size: .9rem;
+            transition: .2s ease;
+        }
+
+        .back-link:hover {
+            color: #ff3b30;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 90px 0 65px;
+            border-bottom: 1px solid #252525;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: #ff3b30;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(2.6rem, 7vw, 5.8rem);
+            line-height: .95;
+            letter-spacing: -3px;
+            max-width: 850px;
+            margin-bottom: 28px;
+        }
+
+        .hero p {
+            color: #bdbdbd;
+            max-width: 700px;
+            font-size: 1.05rem;
+        }
+
+        /* CREATIVE */
+        .creative {
+            padding: 60px 0;
+        }
+
+        .creative-card {
+            border: 1px solid #292929;
+            background: #111;
+            overflow: hidden;
+        }
+
+        .creative-card img {
+            width: 100%;
+            display: block;
+            max-height: 650px;
+            object-fit: contain;
+            background: #151515;
+        }
+
+        .creative-caption {
+            padding: 18px 22px;
+            color: #999;
+            font-size: .85rem;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 70px 0;
+            border-bottom: 1px solid #252525;
+        }
+
+        .section-label {
+            color: #ff3b30;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 35px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #c2c2c2;
+        }
+
+        /* OVERVIEW */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: #292929;
+            border: 1px solid #292929;
+        }
+
+        .info-box {
+            background: #111;
+            padding: 25px;
+        }
+
+        .info-box span {
+            display: block;
+            color: #777;
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 7px;
+        }
+
+        .info-box strong {
+            font-size: 1.05rem;
+        }
+
+        /* AD COPY */
+        .copy-box {
+            border-left: 3px solid #ff3b30;
+            background: #111;
+            padding: 30px;
+            margin-bottom: 22px;
+        }
+
+        .copy-label {
+            color: #888;
+            font-size: .72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .copy-box p {
+            color: #eee;
+        }
+
+        /* PERFORMANCE */
+        .performance-note {
+            display: inline-block;
+            border: 1px solid #ff3b30;
+            color: #ff6b63;
+            padding: 8px 13px;
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            background: #111;
+            border: 1px solid #292929;
+            padding: 23px;
+        }
+
+        .metric span {
+            display: block;
+            color: #777;
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .metric strong {
+            font-size: 1.35rem;
+        }
+
+        .summary {
+            margin-top: 30px;
+            padding: 25px;
+            background: #111;
+            border: 1px solid #292929;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background: #17100f;
+            border-left: 3px solid #ff3b30;
+            color: #bdbdbd;
+            font-size: .9rem;
+        }
+
+        /* LISTS */
+        .content-block {
+            margin-bottom: 38px;
+        }
+
+        .content-block:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        ul li {
+            color: #c2c2c2;
+            padding: 7px 0 7px 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff3b30;
+        }
+
+        /* STRATEGY */
+        .strategy-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .strategy-item {
+            display: grid;
+            grid-template-columns: 45px 1fr;
+            gap: 20px;
+            padding: 25px;
+            border: 1px solid #292929;
+            background: #111;
+        }
+
+        .strategy-number {
+            color: #ff3b30;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        .strategy-item p {
+            margin-top: 5px;
+        }
+
+        /* JOURNEY */
+        .journey {
+            padding: 25px;
+            background: #111;
+            border: 1px solid #292929;
+            font-size: 1rem;
+            text-align: center;
+            color: #eee;
+        }
+
+        .journey span {
+            color: #ff3b30;
+        }
+
+        /* TAKEAWAYS */
+        .takeaways {
+            display: grid;
+            gap: 15px;
+        }
+
+        .takeaway {
+            padding: 24px;
+            border: 1px solid #292929;
+            background: #111;
+        }
+
+        .takeaway strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* KEY TAKEAWAY */
+        .key-takeaway {
+            padding: 35px;
+            border: 1px solid #ff3b30;
+            background: #120d0d;
+        }
+
+        .key-takeaway p {
+            color: #e2e2e2;
+            font-size: 1.05rem;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 45px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-inner p {
+            font-size: .85rem;
+            color: #777;
+        }
+
+        .footer-link {
+            color: #ff3b30;
+            font-size: .9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            .overview-grid,
+            .metrics {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero {
+                padding: 65px 0 50px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .overview-grid,
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                min-height: 62px;
+            }
+
+            .back-link {
+                font-size: .78rem;
+            }
+
+            .copy-box,
+            .summary,
+            .key-takeaway {
+                padding: 22px;
+            }
+
+            .strategy-item {
+                grid-template-columns: 32px 1fr;
+                gap: 12px;
+            }
+
+            .journey {
+                line-height: 2;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <a href="index.html" class="logo">
+            Vijaya<span>.</span>
+        </a>
+
+        <a href="index.html#projects" class="back-link">
+            ← Back to Portfolio
+        </a>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="container">
+            <span class="eyebrow">Meta Ads · Marketing Campaign</span>
+
+            <h1>UrbanThread<br>Meta Ads</h1>
+
+            <p>
+                A self-created Meta Ads campaign demonstrating campaign
+                planning, audience research, creative strategy, ad copy,
+                performance measurement, and optimization for an e-commerce
+                fashion brand.
+            </p>
+        </div>
+    </div>
+
+    <!-- CREATIVE -->
+    <div class="creative">
+        <div class="container">
+            <div class="creative-card">
+                <img src="images/urbanthread-meta-ad.png"
+                     alt="UrbanThread Meta Ads creative">
+                <div class="creative-caption">
+                    UrbanThread campaign creative — self-created portfolio work.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAMPAIGN OVERVIEW -->
+    <section>
+        <div class="container">
+            <div class="section-label">01 · Overview</div>
+            <h2>Campaign Overview</h2>
+
+            <div class="overview-grid">
+
+                <div class="info-box">
+                    <span>Brand</span>
+                    <strong>UrbanThread</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Product</span>
+                    <strong>Oversized T-Shirts</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Campaign Goal</span>
+                    <strong>Drive website visits and sales.</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Target Audience</span>
+                    <strong>Young adults aged 18–30 interested in streetwear and casual fashion.</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Platform</span>
+                    <strong>Instagram + Facebook</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Campaign Type</span>
+                    <strong>Meta Ads</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Sample Budget</span>
+                    <strong>₹5,000 for 7 days</strong>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AD COPY -->
+    <section>
+        <div class="container">
+            <div class="section-label">02 · Ad Copy</div>
+            <h2>Ad Copy</h2>
+
+            <div class="copy-box">
+                <div class="copy-label">Primary Text</div>
+                <p>
+                    Your style. Your statement. Your UrbanThread.
+                    <br><br>
+                    Discover fresh streetwear made for everyday confidence.
+                    From casual looks to standout fits, find pieces that match
+                    your vibe. Upgrade your wardrobe and make your style speak.
+                    <br><br>
+                    Shop the latest UrbanThread collection today.
+                </p>
+            </div>
+
+            <div class="copy-box">
+                <div class="copy-label">Headline</div>
+                <p>Upgrade Your Everyday Style.</p>
+            </div>
+
+            <div class="copy-box">
+                <div class="copy-label">Call to Action</div>
+                <p>Shop Now.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERFORMANCE -->
+    <section>
+        <div class="container">
+            <div class="section-label">03 · Performance</div>
+            <h2>Campaign Performance</h2>
+
+            <div class="performance-note">
+                Sample / Simulated Results
+            </div>
+
+            <div class="metrics">
+
+                <div class="metric">
+                    <span>Campaign Duration</span>
+                    <strong>7 Days</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Total Budget</span>
+                    <strong>₹5,000</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Estimated Reach</span>
+                    <strong>18,500</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Impressions</span>
+                    <strong>24,800</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Link Clicks</span>
+                    <strong>620</strong>
+                </div>
+
+                <div class="metric">
+                    <span>CTR</span>
+                    <strong>2.50%</strong>
+                </div>
+
+                <div class="metric">
+                    <span>CPC</span>
+                    <strong>₹8.06</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Add to Carts</span>
+                    <strong>72</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Purchases</span>
+                    <strong>24</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Estimated Revenue</span>
+                    <strong>₹23,976</strong>
+                </div>
+
+                <div class="metric">
+                    <span>ROAS</span>
+                    <strong>4.80x</strong>
+                </div>
+
+            </div>
+
+            <div class="summary">
+                <h3>Performance Summary</h3>
+                <p>
+                    The campaign achieved strong engagement and generated
+                    website traffic at an efficient cost. The simulated
+                    results indicate that the creative and audience targeting
+                    could effectively support sales for UrbanThread.
+                </p>
+            </div>
+
+            <div class="disclaimer">
+                <strong>Note:</strong>
+                All performance figures above are simulated for portfolio
+                demonstration purposes and do not represent results from a
+                real paid advertising campaign.
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGETING -->
+    <section>
+        <div class="container">
+            <div class="section-label">04 · Audience</div>
+            <h2>Targeting &amp; Audience Strategy</h2>
+
+            <div class="content-block">
+                <h3>Primary Audience</h3>
+                <p>
+                    Young adults aged 18–30 in India who are interested in
+                    streetwear, casual fashion, and online shopping.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Audience Characteristics</h3>
+
+                <ul>
+                    <li>Interested in modern and trendy clothing</li>
+                    <li>Follows fashion and streetwear content</li>
+                    <li>Comfortable shopping online</li>
+                    <li>Looks for affordable and expressive everyday fashion</li>
+                    <li>Active on Instagram and Facebook</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Interest Targeting</h3>
+
+                <ul>
+                    <li>Streetwear</li>
+                    <li>Casual Fashion</li>
+                    <li>Fashion &amp; Clothing</li>
+                    <li>Online Shopping</li>
+                    <li>T-Shirts</li>
+                    <li>Urban Fashion</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Targeting Approach</h3>
+                <p>
+                    The campaign focuses on a younger, fashion-conscious
+                    audience that is likely to engage with visually appealing
+                    streetwear content and make online clothing purchases.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Creative Strategy</h3>
+                <p>
+                    The oversized T-shirt creative uses a bold visual identity
+                    and a short, memorable tagline to capture attention while
+                    scrolling. The messaging focuses on individuality,
+                    confidence, and everyday style.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Expected Customer Journey</h3>
+
+                <div class="journey">
+                    Ad Impression <span>→</span>
+                    Engagement <span>→</span>
+                    Website Visit <span>→</span>
+                    Product Interest <span>→</span>
+                    Add to Cart <span>→</span>
+                    Purchase
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPTIMIZATION -->
+    <section>
+        <div class="container">
+            <div class="section-label">05 · Optimization</div>
+            <h2>Campaign Optimization Strategy</h2>
+
+            <div class="strategy-grid">
+
+                <div class="strategy-item">
+                    <div class="strategy-number">01</div>
+                    <div>
+                        <h3>Monitor CTR</h3>
+                        <p>
+                            Track the Click-Through Rate to evaluate how
+                            effectively the creative and messaging attract
+                            attention.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="strategy-number">02</div>
+                    <div>
+                        <h3>Monitor CPC</h3>
+                        <p>
+                            Keep track of Cost Per Click and identify
+                            opportunities to reduce the cost of driving
+                            website traffic.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="strategy-number">03</div>
+                    <div>
+                        <h3>Evaluate Conversions</h3>
+                        <p>
+                            Compare Add-to-Cart and Purchase data to understand
+                            how effectively website visitors are converting
+                            into customers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="strategy-number">04</div>
+                    <div>
+                        <h3>Creative Testing</h3>
+                        <p>
+                            Test different visuals, taglines, headlines, and
+                            primary text to identify the combinations that
+                            generate the strongest engagement and conversions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="strategy-number">05</div>
+                    <div>
+                        <h3>Audience Testing</h3>
+                        <p>
+                            Compare different interest groups and audience
+                            segments to identify which audience produces the
+                            best results.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="strategy-number">06</div>
+                    <div>
+                        <h3>Budget Optimization</h3>
+                        <p>
+                            If one audience or creative performs significantly
+                            better, gradually shift more of the available
+                            budget toward the stronger-performing combination.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="strategy-item">
+                    <div class="strategy-number">07</div>
+                    <div>
+                        <h3>Retargeting</h3>
+                        <p>
+                            Create a retargeting audience for people who
+                            interacted with the advertisement or visited the
+                            website but did not complete a purchase.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="summary">
+                <h3>Optimization Goal</h3>
+                <p>
+                    Improve engagement, reduce acquisition costs, increase
+                    conversions, and maximize Return on Ad Spend (ROAS).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNINGS -->
+    <section>
+        <div class="container">
+            <div class="section-label">06 · Learnings</div>
+            <h2>Campaign Learnings &amp; Key Takeaways</h2>
+
+            <div class="takeaways">
+
+                <div class="takeaway">
+                    <strong>1. Strong Visuals Matter</strong>
+                    <p>
+                        A bold and simple creative can help capture attention
+                        in a highly competitive social media environment.
+                    </p>
+                </div>
+
+                <div class="takeaway">
+                    <strong>2. Audience Relevance is Important</strong>
+                    <p>
+                        Targeting people whose interests and shopping behavior
+                        match the product can improve the quality of traffic
+                        and engagement.
+                    </p>
+                </div>
+
+                <div class="takeaway">
+                    <strong>3. Clear Messaging Improves Action</strong>
+                    <p>
+                        A concise primary message combined with a strong
+                        headline and clear CTA can guide users toward the
+                        desired action.
+                    </p>
+                </div>
+
+                <div class="takeaway">
+                    <strong>4. Performance Data Drives Decisions</strong>
+                    <p>
+                        Metrics such as CTR, CPC, Add-to-Cart, Purchases, and
+                        ROAS help identify what is working and where
+                        improvements are needed.
+                    </p>
+                </div>
+
+                <div class="takeaway">
+                    <strong>5. Testing Improves Campaign Performance</strong>
+                    <p>
+                        Testing different creatives, audiences, and messaging
+                        can help identify the combinations that deliver
+                        stronger results.
+                    </p>
+                </div>
+
+                <div class="takeaway">
+                    <strong>6. Retargeting Can Recover Lost Conversions</strong>
+                    <p>
+                        Users who interact with an advertisement but do not
+                        purchase can be reached again through retargeting
+                        campaigns.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY TAKEAWAY -->
+    <section>
+        <div class="container">
+            <div class="section-label">07 · Conclusion</div>
+            <h2>Key Takeaway</h2>
+
+            <div class="key-takeaway">
+                <p>
+                    This campaign demonstrates how a structured Meta Ads
+                    strategy can combine audience research, creative
+                    development, persuasive ad copy, performance measurement,
+                    and continuous optimization to support an e-commerce
+                    sales objective.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO NOTE -->
+    <section>
+        <div class="container">
+            <div class="section-label">08 · Portfolio Note</div>
+            <h2>About This Project</h2>
+
+            <p>
+                This UrbanThread campaign is a self-created marketing project
+                designed to demonstrate Meta Ads campaign planning and digital
+                marketing skills. Performance figures included in this
+                project are simulated for portfolio purposes.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <p>© 2026 Vijaya Barthwal. UrbanThread Meta Ads Case Study.</p>
+
+        <a href="index.html#projects" class="footer-link">
+            ← Back to Projects
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>
