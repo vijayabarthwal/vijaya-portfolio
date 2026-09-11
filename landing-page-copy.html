@@ -3,3030 +3,3006 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SkillSprint | Learn in 20 Minutes</title>
+<meta name="description" content="SkillSprint — Learn one useful skill in 20 minutes.">
+<title>SkillSprint — Learn One Useful Skill</title>
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:Inter,Arial,sans-serif;
-    background:#f7f8fc;
-    color:#182033;
-    line-height:1.6;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f6f7fb;
+  color:#1f2937;
+  line-height:1.6;
 }
 
 button,
 input,
-textarea,
 select{
-    font:inherit;
+  font:inherit;
 }
 
 button{
-    cursor:pointer;
+  cursor:pointer;
 }
 
 .container{
-    width:min(1120px,92%);
-    margin:auto;
+  width:min(1150px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  background:#ffffff;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:1.45rem;
+  font-weight:800;
+  color:#111827;
+  text-decoration:none;
+}
+
+.logo span{
+  color:#6d5dfc;
+}
+
+.nav-link{
+  text-decoration:none;
+  color:#4b5563;
+  font-weight:600;
 }
 
 /* HERO */
+
 .hero{
-    background:linear-gradient(135deg,#171b3b,#313b86);
-    color:white;
-    padding:72px 0 65px;
-    text-align:center;
+  background:linear-gradient(135deg,#eef2ff,#ffffff);
+  padding:70px 0 60px;
+  text-align:center;
 }
 
 .hero h1{
-    font-size:clamp(2.3rem,6vw,4.6rem);
-    line-height:1.05;
-    margin-bottom:18px;
+  font-size:clamp(2.2rem,6vw,4rem);
+  line-height:1.1;
+  color:#111827;
+  margin-bottom:18px;
 }
 
 .hero p{
-    max-width:680px;
-    margin:0 auto 30px;
-    font-size:1.1rem;
-    opacity:.92;
+  max-width:680px;
+  margin:0 auto 28px;
+  color:#6b7280;
+  font-size:1.08rem;
 }
 
-.hero-badge{
-    display:inline-block;
-    padding:8px 16px;
-    border-radius:999px;
-    background:rgba(255,255,255,.13);
-    margin-bottom:20px;
-    font-size:.9rem;
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
-.timer{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    margin:28px auto;
-    border:7px solid rgba(255,255,255,.22);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
+.btn{
+  border:0;
+  border-radius:12px;
+  padding:13px 22px;
+  font-weight:700;
+  transition:.2s ease;
 }
 
-.timer strong{
-    font-size:2.2rem;
+.btn:hover{
+  transform:translateY(-2px);
 }
 
-.timer span{
-    font-size:.8rem;
-    opacity:.8;
+.btn-primary{
+  background:#6d5dfc;
+  color:#fff;
 }
 
-.primary-btn{
-    border:0;
-    border-radius:12px;
-    padding:13px 23px;
-    background:white;
-    color:#23295f;
-    font-weight:800;
+.btn-secondary{
+  background:#fff;
+  color:#374151;
+  border:1px solid #d1d5db;
 }
 
-.primary-btn:hover{
-    transform:translateY(-2px);
+.timer-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#111827;
+  color:#fff;
+  padding:8px 15px;
+  border-radius:999px;
+  margin-bottom:22px;
+  font-weight:700;
 }
 
-/* LESSON BROWSER */
-.browser{
-    padding:55px 0;
+/* MAIN */
+
+section{
+  padding:55px 0;
 }
 
 .section-title{
-    text-align:center;
-    margin-bottom:28px;
+  text-align:center;
+  margin-bottom:30px;
 }
 
 .section-title h2{
-    font-size:2rem;
-    margin-bottom:8px;
+  font-size:2rem;
+  color:#111827;
+  margin-bottom:8px;
 }
 
 .section-title p{
-    color:#687086;
+  color:#6b7280;
+}
+
+/* CONTROLS */
+
+.controls{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:30px;
 }
 
 .search-box{
-    margin:0 auto 22px;
-    max-width:700px;
+  width:100%;
+  padding:14px 16px;
+  border:1px solid #d1d5db;
+  border-radius:12px;
+  outline:none;
+  margin-bottom:15px;
 }
 
-.search-box input{
-    width:100%;
-    border:1px solid #dfe3ee;
-    border-radius:14px;
-    padding:15px 18px;
-    outline:none;
-    background:white;
+.search-box:focus{
+  border-color:#6d5dfc;
 }
 
-.filters{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin-bottom:30px;
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
 }
 
-.filter{
-    border:1px solid #dce1ed;
-    background:white;
-    padding:9px 14px;
-    border-radius:999px;
-    color:#4c566d;
+.category-btn{
+  border:1px solid #d1d5db;
+  background:#fff;
+  color:#374151;
+  border-radius:999px;
+  padding:8px 14px;
+  font-weight:600;
 }
 
-.filter.active,
-.filter:hover{
-    background:#252d69;
-    color:white;
+.category-btn.active{
+  background:#6d5dfc;
+  border-color:#6d5dfc;
+  color:#fff;
 }
+
+/* LESSON GRID */
 
 .lesson-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .lesson-card{
-    background:white;
-    border:1px solid #e6e8f0;
-    border-radius:18px;
-    padding:23px;
-    box-shadow:0 8px 25px rgba(20,30,70,.05);
-    transition:.2s;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:18px;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  min-height:270px;
+  transition:.2s ease;
 }
 
 .lesson-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(20,30,70,.09);
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.07);
 }
 
 .lesson-icon{
-    font-size:2rem;
-    margin-bottom:12px;
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  background:#eef2ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  margin-bottom:15px;
 }
 
 .lesson-card h3{
-    margin-bottom:7px;
+  color:#111827;
+  margin-bottom:8px;
 }
 
 .lesson-card p{
-    color:#697286;
-    font-size:.93rem;
-    min-height:70px;
+  color:#6b7280;
+  font-size:.95rem;
+  flex:1;
 }
 
-.lesson-category{
-    display:inline-block;
-    margin:12px 0;
-    font-size:.76rem;
-    background:#f0f2ff;
-    color:#424d9a;
-    padding:5px 9px;
-    border-radius:7px;
+.lesson-meta{
+  margin:12px 0;
+  color:#6b7280;
+  font-size:.85rem;
 }
 
 .start-lesson{
-    width:100%;
-    border:0;
-    border-radius:10px;
-    padding:11px;
-    background:#252d69;
-    color:white;
-    font-weight:700;
+  width:100%;
+  border:0;
+  border-radius:11px;
+  background:#111827;
+  color:#fff;
+  padding:12px;
+  font-weight:700;
 }
 
-.completed-badge{
-    display:none;
-    color:#13834d;
-    font-weight:700;
-    margin-top:10px;
-}
-
-.lesson-card.completed .completed-badge{
-    display:block;
+.start-lesson:hover{
+  background:#6d5dfc;
 }
 
 .no-results{
-    display:none;
-    text-align:center;
-    color:#697286;
-    padding:30px;
+  display:none;
+  text-align:center;
+  color:#6b7280;
+  padding:30px;
 }
 
-/* LEARNING */
-.learning{
-    background:white;
-    padding:65px 0;
+/* LEARNING AREA */
+
+.learning-section{
+  background:#ffffff;
+  border-top:1px solid #e5e7eb;
+  border-bottom:1px solid #e5e7eb;
 }
 
-.lesson-header{
-    background:#f4f5ff;
-    border-radius:20px;
-    padding:28px;
-    margin-bottom:25px;
+.learning-panel{
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:22px;
+  padding:28px;
 }
 
-.lesson-header h2{
-    font-size:2rem;
-    margin-bottom:7px;
+.lesson-heading{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-start;
+  margin-bottom:22px;
 }
 
-.lesson-header p{
-    color:#667085;
+.lesson-heading h2{
+  font-size:2rem;
+  color:#111827;
 }
 
-.lesson-status{
-    display:inline-block;
-    margin-top:12px;
-    font-weight:700;
-    color:#5360a7;
+.lesson-heading p{
+  color:#6b7280;
 }
 
-.progress-wrap{
-    margin:20px 0;
+.status{
+  white-space:nowrap;
+  background:#ecfdf5;
+  color:#047857;
+  border-radius:999px;
+  padding:7px 12px;
+  font-size:.85rem;
+  font-weight:700;
 }
 
-.progress-track{
-    height:10px;
-    background:#e8eaf2;
-    border-radius:20px;
-    overflow:hidden;
+/* LEVELS */
+
+.levels{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:20px;
 }
 
-.progress-bar{
-    height:100%;
-    width:0;
-    background:#5865d8;
-    transition:.3s;
+.level{
+  border:1px solid #d1d5db;
+  background:#fff;
+  border-radius:10px;
+  padding:9px 15px;
+  font-weight:700;
 }
 
-.progress-text{
-    display:block;
-    margin-top:6px;
-    color:#6a7284;
-    font-size:.85rem;
+.level.active{
+  background:#111827;
+  color:#fff;
+  border-color:#111827;
 }
 
-.levels,
+/* MODES */
+
 .modes{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin:20px 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:20px;
 }
 
-.level-btn,
-.mode-btn{
-    border:1px solid #dce1ed;
-    background:white;
-    padding:10px 15px;
-    border-radius:10px;
-    color:#4c566d;
+.mode{
+  border:1px solid #d1d5db;
+  background:#fff;
+  border-radius:10px;
+  padding:9px 14px;
+  font-weight:700;
 }
 
-.level-btn.active,
-.mode-btn.active{
-    background:#252d69;
-    color:white;
+.mode.active{
+  background:#6d5dfc;
+  color:#fff;
+  border-color:#6d5dfc;
 }
 
-.learning-card{
-    background:#fbfbfe;
-    border:1px solid #e5e7ef;
-    border-radius:18px;
-    padding:28px;
-    margin-bottom:20px;
+/* CONTENT */
+
+.learning-content{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:24px;
+  margin-bottom:20px;
 }
 
-.learning-card h3{
-    margin-bottom:17px;
-    font-size:1.35rem;
+.learning-content h3{
+  margin-bottom:15px;
+  color:#111827;
 }
 
 .step-list{
-    list-style:none;
-    display:grid;
-    gap:12px;
+  padding-left:24px;
 }
 
 .step-list li{
-    background:white;
-    border:1px solid #e8eaf0;
-    border-radius:12px;
-    padding:13px 15px;
+  margin-bottom:10px;
 }
 
-.step-list li::before{
-    content:"✓";
-    font-weight:900;
-    color:#5964cf;
-    margin-right:10px;
+.quick-box{
+  font-size:1.02rem;
 }
 
-.quick-list{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+.video-box a{
+  display:inline-block;
+  margin-top:12px;
+  text-decoration:none;
+  color:#6d5dfc;
+  font-weight:700;
 }
 
-.quick-item{
-    padding:15px;
-    background:white;
-    border-radius:12px;
-    border:1px solid #e7e9ef;
-}
-
-.visual-box{
-    text-align:center;
-    padding:25px;
+.visual-guide{
+  background:#f3f4f6;
+  border-radius:14px;
+  padding:20px;
 }
 
 .visual-flow{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
 }
 
-.visual-node{
-    background:white;
-    border:2px solid #dfe3f1;
-    padding:14px 18px;
-    border-radius:12px;
-    font-weight:700;
+.visual-step{
+  background:#fff;
+  border:1px solid #d1d5db;
+  padding:12px 15px;
+  border-radius:10px;
+  font-weight:700;
 }
 
 .arrow{
-    font-size:1.5rem;
-    color:#626ccf;
+  color:#6d5dfc;
+  font-weight:900;
 }
 
-.video-box{
-    background:#202542;
-    color:white;
-    border-radius:16px;
-    padding:30px;
-    text-align:center;
+.practice{
+  background:#eef2ff;
+  border:1px solid #c7d2fe;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:20px;
 }
 
-.video-box .video-icon{
-    font-size:3rem;
-    margin-bottom:10px;
-}
-
-.task-box{
-    background:#fff8e8;
-    border:1px solid #f3dfaa;
-    border-radius:15px;
-    padding:22px;
-}
-
-.task-box strong{
-    display:block;
-    margin-bottom:7px;
+.practice h3{
+  margin-bottom:8px;
 }
 
 /* TIMER */
+
 .timer-panel{
-    text-align:center;
-    background:#f4f5ff;
-    padding:25px;
-    border-radius:18px;
-    margin:25px 0;
+  background:#111827;
+  color:#fff;
+  border-radius:16px;
+  padding:22px;
+  margin-bottom:20px;
+  text-align:center;
 }
 
 .timer-display{
-    font-size:2.6rem;
-    font-weight:900;
-    color:#252d69;
-    margin:8px 0 15px;
+  font-size:3rem;
+  font-weight:800;
+  letter-spacing:2px;
+  margin:10px 0 15px;
 }
 
-.timer-actions{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
+.timer-controls{
+  display:flex;
+  justify-content:center;
+  gap:9px;
+  flex-wrap:wrap;
 }
 
-.small-btn{
-    border:0;
-    background:#252d69;
-    color:white;
-    padding:10px 18px;
-    border-radius:9px;
+.timer-controls button{
+  border:0;
+  border-radius:9px;
+  padding:9px 15px;
+  font-weight:700;
 }
 
-.small-btn.secondary{
-    background:#e6e8f2;
-    color:#252d69;
+.progress-wrap{
+  background:#374151;
+  height:10px;
+  border-radius:99px;
+  overflow:hidden;
+  margin-top:15px;
+}
+
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:#a78bfa;
+  transition:width:.3s ease;
 }
 
 /* QUIZ */
-.quiz-section{
-    margin-top:30px;
+
+.quiz{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:24px;
+}
+
+.quiz h3{
+  margin-bottom:10px;
 }
 
 .quiz-question{
-    font-size:1.15rem;
-    font-weight:800;
-    margin-bottom:18px;
+  font-weight:700;
+  margin:15px 0;
 }
 
 .quiz-options{
-    display:grid;
-    gap:10px;
+  display:grid;
+  gap:10px;
 }
 
 .quiz-option{
-    width:100%;
-    text-align:left;
-    background:white;
-    border:1px solid #dfe3ed;
-    border-radius:11px;
-    padding:13px;
+  width:100%;
+  text-align:left;
+  border:1px solid #d1d5db;
+  background:#fff;
+  border-radius:10px;
+  padding:12px 14px;
 }
 
 .quiz-option:hover{
-    border-color:#5965d3;
-    background:#f7f8ff;
+  border-color:#6d5dfc;
+}
+
+.quiz-option.correct{
+  background:#ecfdf5;
+  border-color:#10b981;
+}
+
+.quiz-option.wrong{
+  background:#fef2f2;
+  border-color:#ef4444;
 }
 
 .quiz-feedback{
-    min-height:28px;
-    margin-top:14px;
-    font-weight:700;
+  min-height:28px;
+  margin-top:12px;
+  font-weight:700;
 }
 
-.score-text{
-    font-weight:800;
-    margin-top:15px;
+.quiz-start{
+  border:0;
+  background:#6d5dfc;
+  color:#fff;
+  padding:11px 18px;
+  border-radius:10px;
+  font-weight:700;
 }
 
-/* COMPLETE */
-.complete-box{
-    display:none;
-    text-align:center;
-    background:#f1fff7;
-    border:1px solid #c9f0dc;
-    border-radius:18px;
-    padding:30px;
-    margin-top:25px;
+.quiz-result{
+  text-align:center;
+  padding:15px;
 }
 
-.next-lesson{
-    margin-top:16px;
-    border:0;
-    background:#252d69;
-    color:white;
-    padding:12px 20px;
-    border-radius:10px;
-    font-weight:700;
+.complete{
+  display:none;
+  text-align:center;
+  background:#ecfdf5;
+  border:1px solid #a7f3d0;
+  border-radius:16px;
+  padding:25px;
+  margin-top:20px;
 }
 
-/* CELEBRATION */
-.celebration-overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(13,18,43,.78);
-    z-index:9999;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.celebration{
-    position:relative;
-    width:min(470px,100%);
-    background:white;
-    border-radius:26px;
-    padding:34px 25px;
-    text-align:center;
-    box-shadow:0 25px 80px rgba(0,0,0,.25);
-    animation:pop .35s ease;
-}
-
-@keyframes pop{
-    from{
-        transform:scale(.75);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-
-.confetti{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-}
-
-.confetti span{
-    position:absolute;
-    width:8px;
-    height:14px;
-    background:#5965d3;
-    animation:fall 2.4s linear infinite;
-}
-
-.confetti span:nth-child(1){left:10%;animation-delay:.1s}
-.confetti span:nth-child(2){left:25%;animation-delay:.4s}
-.confetti span:nth-child(3){left:45%;animation-delay:.8s}
-.confetti span:nth-child(4){left:65%;animation-delay:.2s}
-.confetti span:nth-child(5){left:82%;animation-delay:.6s}
-
-@keyframes fall{
-    from{top:-20px;transform:rotate(0)}
-    to{top:110%;transform:rotate(360deg)}
-}
-
-/* ORIGINAL ANIME-INSPIRED CHARACTER */
-.cheer-character{
-    width:105px;
-    height:105px;
-    margin:0 auto 15px;
-    position:relative;
-}
-
-.character-head{
-    width:72px;
-    height:72px;
-    background:#ffd6bd;
-    border-radius:50%;
-    position:absolute;
-    left:16px;
-    top:22px;
-    border:3px solid #272b54;
-    z-index:2;
-}
-
-.character-hair{
-    width:78px;
-    height:48px;
-    background:#25294f;
-    border-radius:50% 50% 38% 38%;
-    position:absolute;
-    left:13px;
-    top:12px;
-    z-index:3;
-}
-
-.eye{
-    width:7px;
-    height:11px;
-    background:#25294f;
-    border-radius:50%;
-    position:absolute;
-    top:50px;
-    z-index:4;
-}
-
-.eye.left{left:35px}
-.eye.right{right:35px}
-
-.smile{
-    width:20px;
-    height:10px;
-    border-bottom:3px solid #25294f;
-    border-radius:50%;
-    position:absolute;
-    left:41px;
-    top:65px;
-    z-index:4;
-}
-
-.arm{
-    width:34px;
-    height:12px;
-    background:#5965d3;
-    border-radius:20px;
-    position:absolute;
-    top:55px;
-}
-
-.arm.left{
-    left:0;
-    transform:rotate(-40deg);
-}
-
-.arm.right{
-    right:0;
-    transform:rotate(40deg);
-}
-
-.character-body{
-    width:55px;
-    height:35px;
-    background:#5965d3;
-    border-radius:15px 15px 7px 7px;
-    position:absolute;
-    bottom:0;
-    left:25px;
-}
-
-.celebration h2{
-    font-size:1.8rem;
-    color:#252d69;
-}
-
-.celebration-score{
-    font-size:2rem;
-    font-weight:900;
-    margin:10px;
-}
-
-.close-celebration{
-    border:0;
-    background:#252d69;
-    color:white;
-    padding:11px 25px;
-    border-radius:10px;
-    margin-top:18px;
-    font-weight:700;
+.complete h3{
+  color:#047857;
+  margin-bottom:8px;
 }
 
 /* FEEDBACK */
+
 .feedback{
-    padding:65px 0;
-    background:#f4f5fa;
+  margin-top:20px;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:24px;
 }
 
-.feedback-form{
-    max-width:650px;
-    margin:auto;
-    background:white;
-    padding:28px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(20,30,70,.05);
+.feedback textarea{
+  width:100%;
+  min-height:110px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  padding:12px;
+  resize:vertical;
+  margin:12px 0;
 }
 
-.form-group{
-    margin-bottom:17px;
-}
-
-.form-group label{
-    display:block;
-    font-weight:700;
-    margin-bottom:7px;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    border:1px solid #dfe3ed;
-    border-radius:10px;
-    padding:12px;
-    outline:none;
-}
-
-.form-group textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-.submit-feedback{
-    width:100%;
-    border:0;
-    background:#252d69;
-    color:white;
-    padding:13px;
-    border-radius:10px;
-    font-weight:800;
-}
-
-.feedback-message{
-    display:none;
-    margin-top:15px;
-    color:#13834d;
-    font-weight:700;
-    text-align:center;
+.feedback button{
+  border:0;
+  border-radius:10px;
+  padding:11px 18px;
+  background:#111827;
+  color:#fff;
+  font-weight:700;
 }
 
 /* FOOTER */
+
 footer{
-    background:#171b3b;
-    color:white;
-    text-align:center;
-    padding:30px 15px;
+  background:#111827;
+  color:#d1d5db;
+  padding:35px 0;
+  text-align:center;
 }
 
 footer a{
-    color:white;
-    text-decoration:none;
-    font-weight:700;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
 }
 
-/* MOBILE */
-@media(max-width:850px){
-    .lesson-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+/* POPUP */
+
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(17,24,39,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:20px;
 }
 
-@media(max-width:600px){
-    .hero{
-        padding:55px 0;
-    }
+.popup.show{
+  display:flex;
+}
 
-    .lesson-grid{
-        grid-template-columns:1fr;
-    }
+.popup-box{
+  width:min(430px,100%);
+  background:#fff;
+  border-radius:22px;
+  padding:35px 25px;
+  text-align:center;
+}
 
-    .quick-list{
-        grid-template-columns:1fr;
-    }
+.popup-character{
+  font-size:4rem;
+  margin-bottom:10px;
+}
 
-    .learning-card{
-        padding:20px;
-    }
+.popup-box h2{
+  color:#111827;
+  margin-bottom:8px;
+}
 
-    .lesson-header h2{
-        font-size:1.55rem;
-    }
+.popup-score{
+  font-size:2rem;
+  font-weight:800;
+  color:#6d5dfc;
+  margin:12px 0;
+}
 
-    .visual-flow{
-        flex-direction:column;
-    }
+.popup-box button{
+  border:0;
+  border-radius:10px;
+  background:#111827;
+  color:#fff;
+  padding:11px 20px;
+  font-weight:700;
+}
 
-    .arrow{
-        transform:rotate(90deg);
-    }
+/* HIDDEN */
+
+.hidden{
+  display:none!important;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+  .lesson-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+  .nav{
+    min-height:60px;
+  }
+
+  .hero{
+    padding:50px 0;
+  }
+
+  section{
+    padding:40px 0;
+  }
+
+  .lesson-grid{
+    grid-template-columns:1fr;
+  }
+
+  .learning-panel{
+    padding:18px;
+  }
+
+  .lesson-heading{
+    flex-direction:column;
+  }
+
+  .status{
+    white-space:normal;
+  }
+
+  .timer-display{
+    font-size:2.5rem;
+  }
+
+  .visual-flow{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .arrow{
+    text-align:center;
+    transform:rotate(90deg);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<header class="hero">
-    <div class="container">
-
-        <div class="hero-badge">
-            ⚡ SkillSprint · Learn. Practice. Improve.
-        </div>
-
-        <h1>Learn one useful skill.<br>In 20 minutes.</h1>
-
-        <p>
-            Focus on one practical skill, learn the essentials,
-            test your knowledge, and leave with something you can actually use.
-        </p>
-
-        <div class="timer">
-            <strong id="heroTimer">20:00</strong>
-            <span>20-minute sprint</span>
-        </div>
-
-        <button class="primary-btn"
-                onclick="document.getElementById('lessons').scrollIntoView()">
-            Browse Lessons
-        </button>
-
-    </div>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">Skill<span>Sprint</span></a>
+    <a href="index.html" class="nav-link">← Back to Portfolio</a>
+  </div>
 </header>
 
+<main>
 
-<!-- LESSON BROWSER -->
-<section class="browser" id="lessons">
-<div class="container">
+<section class="hero">
+  <div class="container">
+    <div class="timer-badge">⏱️ 20-Minute Learning</div>
 
-    <div class="section-title">
-        <h2>Choose Your Skill</h2>
-        <p>Pick one lesson and make your next 20 minutes count.</p>
+    <h1>Learn one useful skill.<br>In 20 minutes.</h1>
+
+    <p>
+      SkillSprint is a simple learning space where you can choose a practical
+      skill, follow clear steps, practise it, and test what you learned.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#skills" class="btn btn-primary">Browse Skills</a>
+      <a href="#learning" class="btn btn-secondary">Start Learning</a>
     </div>
-
-    <div class="search-box">
-        <input
-            id="search"
-            type="search"
-            placeholder="Search a skill..."
-        >
-    </div>
-
-    <div class="filters">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="digital">💻 Digital Skills</button>
-        <button class="filter" data-filter="creative">🎨 Creative</button>
-        <button class="filter" data-filter="career">💼 Career</button>
-        <button class="filter" data-filter="ai">🤖 AI & Technology</button>
-        <button class="filter" data-filter="productivity">🌱 Productivity</button>
-        <button class="filter" data-filter="everyday">📱 Everyday Digital</button>
-    </div>
-
-    <div class="lesson-grid" id="lessonGrid">
-
-        <article class="lesson-card"
-                 data-title="Excel Basics"
-                 data-category="digital">
-            <div class="lesson-icon">📊</div>
-            <h3>Excel Basics</h3>
-            <p>Understand cells, formulas, formatting, sorting and simple calculations.</p>
-            <span class="lesson-category">Digital Skills</span>
-            <button class="start-lesson" data-lesson="Excel Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Google Sheets"
-                 data-category="digital">
-            <div class="lesson-icon">📗</div>
-            <h3>Google Sheets</h3>
-            <p>Learn how to organize information, use formulas and collaborate online.</p>
-            <span class="lesson-category">Digital Skills</span>
-            <button class="start-lesson" data-lesson="Google Sheets">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Basic Web Design"
-                 data-category="digital">
-            <div class="lesson-icon">🌐</div>
-            <h3>Basic Web Design</h3>
-            <p>Understand the building blocks of a clean, readable and useful webpage.</p>
-            <span class="lesson-category">Digital Skills</span>
-            <button class="start-lesson" data-lesson="Basic Web Design">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Canva Basics"
-                 data-category="creative">
-            <div class="lesson-icon">🎨</div>
-            <h3>Canva Basics</h3>
-            <p>Create simple professional graphics using layouts, text, images and hierarchy.</p>
-            <span class="lesson-category">Creative</span>
-            <button class="start-lesson" data-lesson="Canva Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Graphic Design Basics"
-                 data-category="creative">
-            <div class="lesson-icon">🖌️</div>
-            <h3>Graphic Design Basics</h3>
-            <p>Learn hierarchy, contrast, alignment, spacing and visual balance.</p>
-            <span class="lesson-category">Creative</span>
-            <button class="start-lesson" data-lesson="Graphic Design Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Video Editing Basics"
-                 data-category="creative">
-            <div class="lesson-icon">🎬</div>
-            <h3>Video Editing Basics</h3>
-            <p>Understand the editing workflow, cuts, transitions, audio and export.</p>
-            <span class="lesson-category">Creative</span>
-            <button class="start-lesson" data-lesson="Video Editing Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Resume Writing"
-                 data-category="career">
-            <div class="lesson-icon">📄</div>
-            <h3>Resume Writing</h3>
-            <p>Build a clear, relevant and achievement-focused resume.</p>
-            <span class="lesson-category">Career</span>
-            <button class="start-lesson" data-lesson="Resume Writing">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Professional Email Writing"
-                 data-category="career">
-            <div class="lesson-icon">✉️</div>
-            <h3>Professional Email Writing</h3>
-            <p>Write concise, respectful and effective professional emails.</p>
-            <span class="lesson-category">Career</span>
-            <button class="start-lesson" data-lesson="Professional Email Writing">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Interview Basics"
-                 data-category="career">
-            <div class="lesson-icon">🎤</div>
-            <h3>Interview Basics</h3>
-            <p>Prepare stronger answers, body language and interview structure.</p>
-            <span class="lesson-category">Career</span>
-            <button class="start-lesson" data-lesson="Interview Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="AI for Beginners"
-                 data-category="ai">
-            <div class="lesson-icon">🤖</div>
-            <h3>AI for Beginners</h3>
-            <p>Understand what AI is, where it helps and how to use it responsibly.</p>
-            <span class="lesson-category">AI & Technology</span>
-            <button class="start-lesson" data-lesson="AI for Beginners">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Better AI Prompts"
-                 data-category="ai">
-            <div class="lesson-icon">✨</div>
-            <h3>Better AI Prompts</h3>
-            <p>Learn how to give AI clearer instructions and get more useful results.</p>
-            <span class="lesson-category">AI & Technology</span>
-            <button class="start-lesson" data-lesson="Better AI Prompts">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Digital Safety Basics"
-                 data-category="ai">
-            <div class="lesson-icon">🔐</div>
-            <h3>Digital Safety Basics</h3>
-            <p>Protect accounts, recognize scams and build safer online habits.</p>
-            <span class="lesson-category">AI & Technology</span>
-            <button class="start-lesson" data-lesson="Digital Safety Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Time Management"
-                 data-category="productivity">
-            <div class="lesson-icon">⏰</div>
-            <h3>Time Management</h3>
-            <p>Prioritize important work, reduce distractions and plan realistic days.</p>
-            <span class="lesson-category">Productivity</span>
-            <button class="start-lesson" data-lesson="Time Management">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Better Note-Taking"
-                 data-category="productivity">
-            <div class="lesson-icon">📝</div>
-            <h3>Better Note-Taking</h3>
-            <p>Capture main ideas, keywords and useful information without writing everything.</p>
-            <span class="lesson-category">Productivity</span>
-            <button class="start-lesson" data-lesson="Better Note-Taking">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Focus Techniques"
-                 data-category="productivity">
-            <div class="lesson-icon">🎯</div>
-            <h3>Focus Techniques</h3>
-            <p>Use simple techniques to work with fewer distractions and better attention.</p>
-            <span class="lesson-category">Productivity</span>
-            <button class="start-lesson" data-lesson="Focus Techniques">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Smartphone Basics"
-                 data-category="everyday">
-            <div class="lesson-icon">📱</div>
-            <h3>Smartphone Basics</h3>
-            <p>Learn essential settings, apps, storage, permissions and useful shortcuts.</p>
-            <span class="lesson-category">Everyday Digital</span>
-            <button class="start-lesson" data-lesson="Smartphone Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Digital Payments Basics"
-                 data-category="everyday">
-            <div class="lesson-icon">💳</div>
-            <h3>Digital Payments Basics</h3>
-            <p>Understand safe digital payments, verification and common payment risks.</p>
-            <span class="lesson-category">Everyday Digital</span>
-            <button class="start-lesson" data-lesson="Digital Payments Basics">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-        <article class="lesson-card"
-                 data-title="Digital Organization"
-                 data-category="everyday">
-            <div class="lesson-icon">🗂️</div>
-            <h3>Digital Organization</h3>
-            <p>Organize files, folders, downloads and digital information more efficiently.</p>
-            <span class="lesson-category">Everyday Digital</span>
-            <button class="start-lesson" data-lesson="Digital Organization">Start Lesson</button>
-            <div class="completed-badge">✓ Completed</div>
-        </article>
-
-    </div>
-
-    <div class="no-results" id="noResults">
-        No lessons found. Try another search or category.
-    </div>
-
-</div>
+  </div>
 </section>
 
+<section id="skills">
+  <div class="container">
 
-<!-- LEARNING AREA -->
-<section class="learning" id="learning">
+    <div class="section-title">
+      <h2>Choose a Skill</h2>
+      <p>Start with something useful and beginner-friendly.</p>
+    </div>
 
-<div class="container">
+    <div class="controls">
 
-    <div class="lesson-header">
-        <h2 id="lessonTitle">Choose a lesson to begin</h2>
-        <p id="lessonDescription">
-            Your selected lesson will appear here.
+      <input
+        type="search"
+        id="searchInput"
+        class="search-box"
+        placeholder="Search skills..."
+        aria-label="Search skills"
+      >
+
+      <div class="categories">
+
+        <button class="category-btn active" data-category="all">
+          All
+        </button>
+
+        <button class="category-btn" data-category="digital">
+          💻 Digital Skills
+        </button>
+
+        <button class="category-btn" data-category="creative">
+          🎨 Creative
+        </button>
+
+        <button class="category-btn" data-category="career">
+          💼 Career
+        </button>
+
+        <button class="category-btn" data-category="ai">
+          🤖 AI & Technology
+        </button>
+
+        <button class="category-btn" data-category="productivity">
+          🌱 Productivity
+        </button>
+
+        <button class="category-btn" data-category="everyday">
+          📱 Everyday Digital
+        </button>
+
+      </div>
+    </div>
+
+    <div id="lessonGrid" class="lesson-grid"></div>
+
+    <div id="noResults" class="no-results">
+      No matching skills found.
+    </div>
+
+  </div>
+</section>
+
+<section id="learning" class="learning-section">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Your Learning Space</h2>
+      <p>Select a lesson above to begin.</p>
+    </div>
+
+    <div class="learning-panel">
+
+      <div class="lesson-heading">
+
+        <div>
+          <h2 id="lessonTitle">Select a Skill</h2>
+          <p id="lessonDescription">
+            Choose one of the skills above and click Start Lesson.
+          </p>
+        </div>
+
+        <div id="lessonStatus" class="status">
+          Waiting for lesson
+        </div>
+
+      </div>
+
+      <div class="levels">
+
+        <button class="level active" data-level="beginner">
+          Beginner
+        </button>
+
+        <button class="level" data-level="intermediate">
+          Intermediate
+        </button>
+
+        <button class="level" data-level="advanced">
+          Advanced
+        </button>
+
+      </div>
+
+      <div class="modes">
+
+        <button class="mode active" data-mode="steps">
+          📚 Step-by-Step
+        </button>
+
+        <button class="mode" data-mode="quick">
+          ⚡ Quick Learning
+        </button>
+
+        <button class="mode" data-mode="video">
+          🎥 Watch Video
+        </button>
+
+        <button class="mode" data-mode="visual">
+          👀 Visual Guide
+        </button>
+
+      </div>
+
+      <div id="stepsContent" class="learning-content">
+        <h3 id="contentTitle">Step-by-Step</h3>
+
+        <p>
+          Select a lesson to see your learning roadmap.
         </p>
-        <span class="lesson-status" id="lessonStatus">
-            Ready to learn
-        </span>
-    </div>
+      </div>
 
-    <div class="progress-wrap">
-        <div class="progress-track">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-        <span class="progress-text" id="progressText">0% complete</span>
-    </div>
-
-    <!-- LEVELS -->
-    <h3>Choose Your Level</h3>
-
-    <div class="levels">
-        <button class="level-btn active" data-level="beginner">
-            🟢 Beginner
-        </button>
-
-        <button class="level-btn" data-level="intermediate">
-            🟡 Intermediate
-        </button>
-
-        <button class="level-btn" data-level="advanced">
-            🔵 Advanced
-        </button>
-    </div>
-
-
-    <!-- MODES -->
-    <div class="modes">
-
-        <button class="mode-btn active" data-mode="steps">
-            📚 Step-by-Step
-        </button>
-
-        <button class="mode-btn" data-mode="quick">
-            ⚡ Quick Learning
-        </button>
-
-        <button class="mode-btn" data-mode="video">
-            ▶️ Watch / Video Guide
-        </button>
-
-        <button class="mode-btn" data-mode="visual">
-            👀 Visual Guide
-        </button>
-
-    </div>
-
-
-    <!-- STEP MODE -->
-    <div class="learning-card" id="stepsContent">
-        <h3>📚 Step-by-Step</h3>
-        <ol class="step-list" id="stepList"></ol>
-    </div>
-
-
-    <!-- QUICK MODE -->
-    <div class="learning-card" id="quickContent" style="display:none;">
+      <div id="quickContent" class="learning-content hidden">
         <h3>⚡ Quick Learning</h3>
-        <div class="quick-list" id="quickList"></div>
-    </div>
 
+        <p>
+          Your quick-learning summary will appear here.
+        </p>
+      </div>
 
-    <!-- VIDEO MODE -->
-    <div class="learning-card" id="videoContent" style="display:none;">
-        <div class="video-box">
-            <div class="video-icon">▶️</div>
-            <h3>Watch / Practice Guide</h3>
-            <p id="videoText">
-                Your focused practice guide will appear here.
-            </p>
-        </div>
-    </div>
+      <div id="videoContent" class="learning-content hidden">
+        <h3>🎥 Watch Video</h3>
 
+        <p>
+          A useful video resource will appear here when you select a lesson.
+        </p>
+      </div>
 
-    <!-- VISUAL MODE -->
-    <div class="learning-card" id="visualContent" style="display:none;">
+      <div id="visualContent" class="learning-content hidden">
         <h3>👀 Visual Guide</h3>
 
-        <div class="visual-box">
-            <p id="visualText"></p>
-
-            <div class="visual-flow" id="visualFlow"></div>
+        <div class="visual-guide">
+          Select a lesson to see its visual learning flow.
         </div>
-    </div>
+      </div>
 
+      <div class="practice">
 
-    <!-- PRACTICAL TASK -->
-    <div class="learning-card">
-        <div class="task-box">
-            <strong>🎯 Try It Yourself</strong>
-            <p id="taskText">
-                Select a lesson to receive a practical task.
-            </p>
-        </div>
-    </div>
+        <h3>🎯 Practical Task</h3>
 
-
-    <!-- TIMER -->
-    <div class="timer-panel">
-
-        <h3>⏱️ Your 20-Minute Sprint</h3>
-
-        <div class="timer-display" id="learningTimer">
-            20:00
-        </div>
-
-        <div class="timer-actions">
-            <button class="small-btn" id="startTimer">
-                Start Sprint
-            </button>
-
-            <button class="small-btn secondary" id="pauseTimer">
-                Pause
-            </button>
-
-            <button class="small-btn secondary" id="resetTimer">
-                Reset
-            </button>
-        </div>
-
-    </div>
-
-
-    <!-- QUIZ -->
-    <div class="learning-card quiz-section">
-
-        <h3>🧠 Knowledge Check</h3>
-
-        <p style="color:#697286;margin-bottom:20px;">
-            Complete the five-question challenge to test what you learned.
+        <p id="practiceTask">
+          Select a lesson to receive your practical task.
         </p>
 
-        <div id="quizArea">
+      </div>
 
-            <div class="quiz-question" id="quizQuestion">
-                Select a lesson to begin your quiz.
-            </div>
+      <div class="timer-panel">
 
-            <div class="quiz-options" id="quizOptions"></div>
+        <div>20-Minute SkillSprint Timer</div>
 
-            <div class="quiz-feedback" id="quizFeedback"></div>
+        <div id="timerDisplay" class="timer-display">
+          20:00
+        </div>
 
-            <div class="score-text" id="scoreText"></div>
+        <div class="timer-controls">
+
+          <button id="startTimer">
+            Start
+          </button>
+
+          <button id="pauseTimer">
+            Pause
+          </button>
+
+          <button id="resetTimer">
+            Reset
+          </button>
 
         </div>
 
-    </div>
+        <div class="progress-wrap">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
 
+      </div>
 
-    <!-- COMPLETION -->
-    <div class="complete-box" id="completeBox">
+      <div class="quiz">
 
-        <h3>🎉 SkillSprint Complete!</h3>
+        <h3>🧠 5-Question Skill Quiz</h3>
 
-        <p id="completionMessage">
-            Great work. You completed this learning sprint.
+        <p id="quizQuestion">
+          Select a lesson and start the quiz when you're ready.
         </p>
 
-        <button class="next-lesson" id="nextLesson">
-            Continue to Next Skill →
+        <div id="quizOptions" class="quiz-options"></div>
+
+        <div id="quizFeedback" class="quiz-feedback"></div>
+
+        <button id="startQuiz" class="quiz-start">
+          Start 5-Question Quiz
         </button>
 
-    </div>
+        <div id="quizResult" class="quiz-result hidden"></div>
 
-</div>
-</section>
+      </div>
 
+      <div id="complete" class="complete">
 
-<!-- FEEDBACK -->
-<section class="feedback">
+        <h3>🎉 Skill Completed!</h3>
 
-<div class="container">
-
-    <div class="section-title">
-        <h2>💬 Tell Me What You Think</h2>
         <p>
-            Your feedback helps make SkillSprint better for future learners.
+          Great work. You completed this SkillSprint lesson.
         </p>
+
+      </div>
+
+      <div class="feedback">
+
+        <h3>💬 Help Improve SkillSprint</h3>
+
+        <p>
+          Tell us what you thought about this learning experience.
+        </p>
+
+        <form
+          id="feedbackForm"
+          action="https://formspree.io/f/xwlkzyaz"
+          method="POST"
+        >
+
+          <textarea
+            name="message"
+            id="feedbackMessage"
+            placeholder="Your feedback..."
+            required
+          ></textarea>
+
+          <input
+            type="hidden"
+            name="lesson"
+            id="feedbackLesson"
+            value=""
+          >
+
+          <button type="submit">
+            Send Feedback
+          </button>
+
+        </form>
+
+        <p id="feedbackMessageStatus"></p>
+
+      </div>
+
     </div>
 
+  </div>
 
-    <form
-        class="feedback-form"
-        id="feedbackForm"
-        action="https://formspree.io/f/xwlkzyaz"
-        method="POST"
-    >
-
-        <div class="form-group">
-
-            <label for="feedbackRating">
-                How was your experience?
-            </label>
-
-            <select id="feedbackRating" name="rating" required>
-
-                <option value="">
-                    Select a rating
-                </option>
-
-                <option value="5">
-                    ⭐⭐⭐⭐⭐ Excellent
-                </option>
-
-                <option value="4">
-                    ⭐⭐⭐⭐ Very Good
-                </option>
-
-                <option value="3">
-                    ⭐⭐⭐ Good
-                </option>
-
-                <option value="2">
-                    ⭐⭐ Needs Improvement
-                </option>
-
-                <option value="1">
-                    ⭐ Not Helpful
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="feedbackText">
-                Your feedback
-            </label>
-
-            <textarea
-                id="feedbackText"
-                name="message"
-                placeholder="What did you like? What should we improve?"
-                required
-            ></textarea>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label for="feedbackName">
-                Your name (optional)
-            </label>
-
-            <input
-                id="feedbackName"
-                name="name"
-                type="text"
-                placeholder="Your name"
-            >
-
-        </div>
-
-
-        <!-- These hidden fields tell you what the visitor was using -->
-        <input
-            type="hidden"
-            id="feedbackLesson"
-            name="lesson"
-            value="General"
-        >
-
-        <input
-            type="hidden"
-            id="feedbackLevel"
-            name="level"
-            value="Beginner"
-        >
-
-        <input
-            type="hidden"
-            name="_subject"
-            value="New SkillSprint Feedback"
-        >
-
-
-        <button
-            class="submit-feedback"
-            type="submit"
-        >
-            Send Feedback
-        </button>
-
-
-        <div class="feedback-message" id="feedbackMessage">
-            ✅ Thank you! Your feedback has been sent.
-        </div>
-
-    </form>
-
-</div>
 </section>
 
+</main>
 
-<!-- FOOTER -->
 <footer>
+  <div class="container">
     <p>
-        SkillSprint · Learn something useful in 20 minutes.
+      © 2026 SkillSprint · Learn something useful, one sprint at a time.
     </p>
 
     <p style="margin-top:8px;">
-        <a href="index.html">← Back to Portfolio</a>
+      <a href="index.html">Back to Portfolio</a>
     </p>
+  </div>
 </footer>
 
+<div id="completionPopup" class="popup">
 
-<!-- CELEBRATION POPUP -->
-<div class="celebration-overlay" id="celebrationOverlay">
+  <div class="popup-box">
 
-    <div class="celebration">
+    <div class="popup-character">🧑‍💻🎉</div>
 
-        <div class="confetti">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <h2>You Did It!</h2>
 
+    <p>
+      Your SkillSprint character is cheering for you!
+    </p>
 
-        <div class="cheer-character">
-
-            <div class="character-hair"></div>
-
-            <div class="character-head"></div>
-
-            <div class="eye left"></div>
-            <div class="eye right"></div>
-
-            <div class="smile"></div>
-
-            <div class="arm left"></div>
-            <div class="arm right"></div>
-
-            <div class="character-body"></div>
-
-        </div>
-
-
-        <h2>🎉 You Did It!</h2>
-
-        <p>
-            Your SkillSprint character is cheering for you!
-        </p>
-
-        <div class="celebration-score" id="celebrationScore">
-            5 / 5
-        </div>
-
-        <p id="celebrationLesson"></p>
-
-        <p style="margin-top:10px;color:#687086;">
-            Keep learning. Keep growing. 🚀
-        </p>
-
-        <button
-            class="close-celebration"
-            id="closeCelebration"
-        >
-            Continue Learning
-        </button>
-
+    <div id="popupScore" class="popup-score">
+      5 / 5
     </div>
+
+    <button id="closePopup">
+      Continue Learning
+    </button>
+
+  </div>
 
 </div>
 
-
 <script>
+"use strict";
 
-/* =====================================================
+/* =========================================================
    SKILL DATA
-===================================================== */
+   ========================================================= */
 
 const lessons = {
 
-"Excel Basics":{
-description:"Build a practical foundation in spreadsheets, calculations and organized data.",
-levels:{
-beginner:{
-steps:[
-"Understand that a spreadsheet is made from rows, columns and cells.",
-"Identify a cell by its column letter and row number.",
-"Enter text, numbers and dates into separate cells.",
-"Use clear column headings so your information is easy to understand.",
-"Select a range of cells when you want to work with multiple values.",
-"Use simple formulas beginning with the = sign.",
-"Use SUM to quickly add a group of numbers.",
-"Format important values so they are easier to read.",
-"Sort simple lists when you need information in a useful order.",
-"Practice by creating a small personal expense table."
-],
-quick:["Cell = one box","Rows run horizontally","Columns run vertically","Formulas begin with =","SUM adds numbers"],
-task:"Create a five-row expense sheet with Date, Item and Amount columns. Add the amounts using SUM.",
-visual:"Organize → Enter → Calculate → Format → Check"
-},
-intermediate:{
-steps:[
-"Plan the structure of your worksheet before entering large amounts of data.",
-"Use consistent headings and data types across a table.",
-"Write formulas using cell references instead of repeatedly typing numbers.",
-"Use relative references when a formula needs to move with copied cells.",
-"Use absolute references when one value must stay fixed.",
-"Sort data carefully using the complete table range.",
-"Filter data to temporarily focus on specific records.",
-"Use conditional formatting to highlight useful patterns.",
-"Create a simple chart when visual comparison is easier than a table.",
-"Review formulas and totals before sharing your spreadsheet."
-],
-quick:["Plan the table","Reference cells","Know relative vs absolute","Filter to focus","Visualize important data"],
-task:"Create a sales table and use a formula, filter and simple chart to identify your best-selling item.",
-visual:"Raw Data → Clean Table → Formula → Filter → Insight"
-},
-advanced:{
-steps:[
-"Design a spreadsheet around the decision you want the data to support.",
-"Separate raw data from calculations and presentation areas.",
-"Use consistent naming and clean data structures.",
-"Combine formulas logically instead of building unnecessarily complicated expressions.",
-"Use lookup functions when information needs to be matched across tables.",
-"Use conditional logic to classify records automatically.",
-"Use Pivot Tables to summarize larger datasets.",
-"Use charts that communicate one clear business question.",
-"Check for duplicates, missing values and unusual results.",
-"Document important assumptions so another person can understand your model."
-],
-quick:["Separate raw data","Automate repeated logic","Use lookups","Summarize with Pivot Tables","Validate results"],
-task:"Build a small sales analysis with a clean data table, lookup, category logic and summary chart.",
-visual:"Question → Data → Cleaning → Analysis → Decision"
-},
-quiz:[
-["Which symbol normally begins an Excel formula?",["#","=","@","&"],1,"Excel formulas normally begin with the equals sign."],
-["Which function adds a range of numbers?",["COUNT","SUM","TEXT","SORT"],1,"SUM is used to add numbers."],
-["What is a cell?",["A whole worksheet","One spreadsheet box","A chart","A file"],1,"A cell is an individual location formed by a row and column."],
-["What does filtering help you do?",["Delete the file","Show selected records","Change the computer","Print automatically"],1,"Filtering temporarily shows records matching chosen conditions."],
-["Why use a chart?",["To hide data","To make the file larger","To communicate patterns visually","To delete formulas"],2,"Charts can make comparisons and patterns easier to understand."]
-]},
+  "Excel Basics": {
+    icon:"📊",
+    category:"digital",
+    description:"Learn the essential Excel skills needed to organise information, calculate values, and create simple spreadsheets.",
 
-"Google Sheets":{
-description:"Learn the essentials of working with spreadsheets collaboratively in the browser.",
-levels:{
-beginner:{
-steps:["Open a new spreadsheet and identify the rows, columns and cells.","Give the spreadsheet a meaningful name.","Enter information into cells using clear headings.","Use simple formulas beginning with =.","Use SUM for basic totals.","Adjust column width so information is readable.","Apply basic formatting to headings.","Use sharing controls carefully.","Understand that changes can be saved automatically online.","Practice creating a small weekly budget."],
-quick:["Browser spreadsheet","Clear headings","= starts formulas","SUM totals","Share carefully"],
-task:"Create a weekly budget with five expenses and calculate the total.",
-visual:"Create → Enter → Calculate → Format → Share"
-},
-intermediate:{
-steps:["Plan your table before adding information.","Use formulas with cell references.","Copy formulas when appropriate.","Sort records using the complete table.","Apply filters to focus on information.","Use conditional formatting to highlight values.","Create a simple chart.","Use comments when collaborating.","Check sharing permissions before sending a link.","Review the sheet for errors."],
-quick:["Plan first","Use references","Filter","Format patterns","Check permissions"],
-task:"Create a simple project tracker with status values and use formatting to highlight completed work.",
-visual:"Data → Formula → Filter → Collaboration → Review"
-},
-advanced:{
-steps:["Separate raw information from reporting areas.","Build reusable formulas.","Use lookup logic to connect related tables.","Use conditional calculations.","Create summary views for decision-making.","Use Pivot Tables where appropriate.","Use protected ranges for important formulas.","Control editor, commenter and viewer access.","Check data quality before presenting results.","Document important assumptions."],
-quick:["Structure data","Automate","Connect tables","Summarize","Control access"],
-task:"Build a mini project dashboard using a data table, calculated status and summary chart.",
-visual:"Raw Data → Logic → Summary → Dashboard → Decision"
-},
-quiz:[
-["Google Sheets is primarily a...?",["Browser-based spreadsheet","Video editor","Photo editor","Game"],0,"Google Sheets is an online spreadsheet application."],
-["Which symbol starts a formula?",["!","=","?","%"],1,"The equals sign begins formulas."],
-["What should you check before sharing a sheet?",["Wallpaper","Permissions","Battery color","Font only"],1,"Sharing permissions determine who can access or edit the sheet."],
-["What does a filter do?",["Deletes rows","Focuses displayed records","Changes passwords","Closes the sheet"],1,"Filters help display only records matching selected conditions."],
-["Why use comments during collaboration?",["To communicate context","To delete data","To change hardware","To lock the browser"],0,"Comments help collaborators discuss information and decisions."]
-]},
+    levels:{
 
-"Basic Web Design":{
-description:"Understand the foundations of creating a clean and useful webpage.",
-levels:{
-beginner:{
-steps:["Understand that HTML structures webpage content.","Recognize headings, paragraphs, links and images.","Use headings in a logical hierarchy.","Keep text easy to scan.","Use meaningful link labels.","Choose readable font sizes.","Leave enough spacing between sections.","Make buttons easy to recognize.","Think about how the page looks on mobile.","Test every important link before publishing."],
-quick:["HTML = structure","Headings create hierarchy","Readable text","Clear buttons","Test mobile"],
-task:"Sketch a simple personal webpage with a heading, paragraph, button and three sections.",
-visual:"Structure → Content → Style → Interaction → Test"
-},
-intermediate:{
-steps:["Plan the page hierarchy before writing code.","Use semantic HTML elements where possible.","Create consistent spacing and typography.","Use visual hierarchy to guide attention.","Keep navigation predictable.","Use responsive layouts for different screens.","Optimize images for faster loading.","Design forms with clear labels.","Provide visible focus states for interactive elements.","Test the page on multiple screen sizes."],
-quick:["Semantic HTML","Hierarchy","Responsive","Optimize images","Test screens"],
-task:"Create a three-section landing page and check it on both desktop and mobile widths.",
-visual:"Wireframe → HTML → CSS → Responsive → Test"
-},
-advanced:{
-steps:["Start from user goals rather than decoration.","Create a clear information architecture.","Use reusable design patterns.","Build layouts that adapt naturally to different screens.","Maintain accessible color contrast and keyboard interaction.","Reduce unnecessary visual and technical complexity.","Optimize assets and loading performance.","Use meaningful metadata and page titles.","Test real user flows rather than only individual components.","Measure improvements with evidence."],
-quick:["Design for goals","Accessible","Responsive","Fast","Measure"],
-task:"Audit a webpage and identify three usability issues, then propose a measurable improvement for each.",
-visual:"User Goal → Architecture → Interface → Accessibility → Evidence"
-},
-quiz:[
-["What is HTML mainly used for?",["Structure","Music","Spreadsheets","Email"],0,"HTML provides the structure and meaning of webpage content."],
-["Why are headings useful?",["They create hierarchy","They delete images","They increase battery","They hide links"],0,"Headings help organize and scan content."],
-["What does responsive design mean?",["Adapting to screen sizes","Deleting CSS","Using only desktop","Removing images"],0,"Responsive design allows layouts to adapt across devices."],
-["Why optimize images?",["Improve loading performance","Change passwords","Add formulas","Delete text"],0,"Large images can slow a page, so optimization improves loading."],
-["What should you test before publishing?",["Important user flows","Only the logo","Nothing","The keyboard battery"],0,"Testing important flows helps catch real usability problems."]
-]},
+      beginner:{
+        steps:[
+          "Open Excel and understand the workbook, worksheet, rows, columns, and cells.",
+          "Enter text, numbers, and dates into cells.",
+          "Select individual cells and ranges.",
+          "Adjust column width and row height.",
+          "Use simple formatting such as bold, borders, and number formats.",
+          "Create a basic SUM formula.",
+          "Use simple multiplication and subtraction formulas.",
+          "Copy formulas to nearby cells.",
+          "Sort a small table of information.",
+          "Save the workbook with a clear filename."
+        ],
+        quick:"Excel basics are mainly about entering information, formatting it clearly, and using simple formulas to calculate values.",
+        visual:["Open Excel","Enter Data","Format","Calculate","Save"],
+        task:"Create a small monthly expense table with five expenses and calculate the total using SUM."
+      },
 
-"Canva Basics":{
-description:"Learn the fundamentals of creating clean social posts, presentations and simple graphics.",
-levels:{
-beginner:{
-steps:["Start with the purpose of the design.","Choose the correct template or canvas size.","Keep one main message.","Use a readable heading.","Limit the number of fonts.","Choose colors with enough contrast.","Use images that support the message.","Align elements consistently.","Leave breathing room around content.","Export using the format required by the platform."],
-quick:["One message","Readable type","Few fonts","Good contrast","Enough spacing"],
-task:"Create a simple social media graphic with one headline, one supporting line and one image.",
-visual:"Message → Layout → Type → Image → Export"
-},
-intermediate:{
-steps:["Create a visual hierarchy before decorating.","Use grids and alignment tools.","Choose a consistent color system.","Use font pairing carefully.","Crop images intentionally.","Balance text and visual elements.","Keep margins consistent.","Create variations without losing brand consistency.","Check readability at phone size.","Export multiple versions when needed."],
-quick:["Hierarchy","Grid","Color system","Font pairing","Mobile check"],
-task:"Create two versions of the same social post while keeping the same visual identity.",
-visual:"Hierarchy → Grid → Brand → Variation → Review"
-},
-advanced:{
-steps:["Design around a specific audience and objective.","Build reusable visual systems.","Use spacing as a deliberate design tool.","Create consistent components across multiple assets.","Use contrast to direct attention.","Make accessibility part of design decisions.","Prepare platform-specific dimensions.","Maintain editable source files.","Review designs at realistic viewing sizes.","Evaluate whether the design communicates without explanation."],
-quick:["Audience","System","Contrast","Accessibility","Communication"],
-task:"Create a mini three-post campaign where all designs clearly belong to the same brand system.",
-visual:"Audience → System → Campaign → Adapt → Evaluate"
-},
-quiz:[
-["What should a design communicate first?",["The main message","Every possible detail","Random decoration","Nothing"],0,"A clear main message helps the viewer understand the purpose."],
-["Why is alignment important?",["It creates visual order","It deletes text","It changes passwords","It adds sound"],0,"Alignment creates consistency and visual structure."],
-["Why limit fonts?",["To improve consistency and readability","To make files disappear","To increase battery","To hide images"],0,"Too many fonts can make a design feel inconsistent."],
-["What does contrast help with?",["Visual distinction and readability","File deletion","Email sending","Spreadsheet formulas"],0,"Contrast helps important elements stand apart."],
-["Why check a design at phone size?",["Many users view content on mobile","It changes the logo","It adds music","It removes color"],0,"Mobile viewing can reveal readability and layout problems."]
-]},
+      intermediate:{
+        steps:[
+          "Create a structured data table.",
+          "Use relative cell references.",
+          "Use absolute references when a value must remain fixed.",
+          "Apply conditional formatting.",
+          "Use IF formulas.",
+          "Use COUNT and AVERAGE.",
+          "Sort data using multiple columns.",
+          "Filter records.",
+          "Create a simple chart.",
+          "Review the sheet for errors and clarity."
+        ],
+        quick:"Intermediate Excel focuses on formulas, data organisation, filtering, conditional formatting, and basic visualisation.",
+        visual:["Table","Formulas","Filters","Formatting","Chart"],
+        task:"Create a small sales table, calculate average sales, filter the records, and create one chart."
+      },
 
-"Graphic Design Basics":{
-description:"Build a practical foundation in hierarchy, contrast, alignment, spacing and composition.",
-levels:{
-beginner:{
-steps:["Identify the main message of a design.","Create one clear focal point.","Use size to establish hierarchy.","Use contrast to separate important elements.","Align related elements.","Group related information together.","Leave enough empty space.","Avoid unnecessary decoration.","Use consistent colors.","Review whether the design is understandable quickly."],
-quick:["Hierarchy","Contrast","Alignment","Grouping","Whitespace"],
-task:"Take a messy poster and redesign it using one headline, two supporting points and one clear call to action.",
-visual:"Focus → Contrast → Align → Group → Simplify"
-},
-intermediate:{
-steps:["Create a hierarchy before choosing decorative details.","Use grids to maintain alignment.","Control spacing systematically.","Pair typefaces with complementary roles.","Use color intentionally.","Balance visual weight.","Create consistent margins.","Use repetition to build rhythm.","Check contrast for readability.","Test the design at its actual viewing size."],
-quick:["Grid","Spacing","Type roles","Visual weight","Rhythm"],
-task:"Design a simple event poster using a grid and three levels of text hierarchy.",
-visual:"Grid → Hierarchy → Balance → Rhythm → Review"
-},
-advanced:{
-steps:["Start by defining audience, message and desired action.","Create a visual system rather than isolated decoration.","Use proportion and scale deliberately.","Control attention using contrast and positioning.","Create repeatable components.","Consider accessibility and readability.","Maintain consistency across a campaign.","Use whitespace to control pace.","Test multiple versions against the communication goal.","Choose the strongest version based on clarity rather than personal preference."],
-quick:["Audience","System","Scale","Attention","Clarity"],
-task:"Create two poster concepts for the same event and choose one using a clear communication criterion.",
-visual:"Goal → System → Composition → Variations → Decision"
-},
-quiz:[
-["What is visual hierarchy?",["Ordering attention","Deleting files","Writing code","Sending email"],0,"Hierarchy guides the viewer through information in an intended order."],
-["What does contrast help create?",["Difference and emphasis","More storage","A password","A spreadsheet"],0,"Contrast helps important elements stand out."],
-["What is whitespace?",["Intentional empty space","Broken design","Hidden text","An image"],0,"Whitespace gives content room and improves readability."],
-["Why use alignment?",["To create structure","To remove colors","To increase file size","To add audio"],0,"Alignment creates visual order."],
-["What should guide design decisions?",["Communication goal","Random decoration","Personal preference only","Number of fonts"],0,"Effective design serves the communication goal."]
-]},
+      advanced:{
+        steps:[
+          "Plan a clean spreadsheet structure.",
+          "Create reusable tables.",
+          "Combine functions where appropriate.",
+          "Use lookup concepts.",
+          "Build logical IF conditions.",
+          "Clean inconsistent data.",
+          "Use advanced filtering.",
+          "Create a dashboard-style summary.",
+          "Review formulas and dependencies.",
+          "Present the final workbook professionally."
+        ],
+        quick:"Advanced Excel involves combining formulas, data cleaning, analysis, and clear reporting.",
+        visual:["Raw Data","Clean","Analyse","Visualise","Report"],
+        task:"Build a mini sales dashboard using a dataset with products, quantities, prices, and dates."
+      }
 
-"Video Editing Basics":{
-description:"Learn the essential workflow for turning raw clips into a clear, engaging video.",
-levels:{
-beginner:{
-steps:["Organize your video clips before editing.","Create a project with the correct format.","Place useful clips on the timeline.","Trim unwanted beginnings and endings.","Use cuts to control pacing.","Keep dialogue understandable.","Balance music with speech.","Use simple transitions only when useful.","Add readable text when needed.","Watch the final video before exporting."],
-quick:["Organize","Trim","Cut","Audio","Review"],
-task:"Create a 20–30 second video from three clips with clean cuts and understandable audio.",
-visual:"Clips → Trim → Arrange → Audio → Export"
-},
-intermediate:{
-steps:["Define the purpose and audience of the video.","Select only clips that support the story.","Create a rough sequence before polishing.","Use pacing to maintain attention.","Cut on meaningful actions or ideas.","Use B-roll to support spoken content.","Clean background noise where possible.","Keep text consistent.","Use transitions sparingly.","Review the complete story without stopping."],
-quick:["Purpose","Story","Pacing","B-roll","Audio"],
-task:"Edit a short story using an opening hook, supporting footage and a clear ending.",
-visual:"Hook → Story → Support → Pace → Ending"
-},
-advanced:{
-steps:["Start with a clear narrative objective.","Build a rough cut before detailed editing.","Use pacing intentionally to shape emotion and attention.","Match visuals to spoken information.","Use sound design as part of storytelling.","Maintain continuity across shots.","Create a consistent visual language.","Use color correction carefully.","Optimize export settings for the destination platform.","Evaluate retention and clarity rather than editing only for decoration."],
-quick:["Narrative","Rough cut","Pacing","Sound","Retention"],
-task:"Create a short promotional edit with a hook, problem, solution and call to action.",
-visual:"Objective → Rough Cut → Story → Polish → Publish"
-},
-quiz:[
-["What is trimming?",["Removing unwanted parts of a clip","Adding a password","Changing a spreadsheet","Sending email"],0,"Trimming removes unwanted portions from the beginning or end of a clip."],
-["Why organize clips?",["To edit more efficiently","To delete the project","To change fonts","To add formulas"],0,"Organization makes editing faster and reduces mistakes."],
-["What should music do under dialogue?",["Support without overpowering speech","Always be louder","Replace the dialogue","Stop the video"],0,"Background music should support the story while keeping speech clear."],
-["What is B-roll?",["Supporting footage","A password","A spreadsheet","A subtitle font"],0,"B-roll provides additional visuals that support the main footage."],
-["Why review the entire final video?",["To catch story and technical problems","To add random effects","To delete clips","To change the keyboard"],0,"A full review catches issues that may not be visible during individual edits."]
-]},
+    },
 
-"Resume Writing":{
-description:"Create a clear, relevant resume that helps recruiters quickly understand your value.",
-levels:{
-beginner:{
-steps:["Start with accurate contact information.","Write a concise professional summary when useful.","List education clearly.","Add relevant skills.","Describe projects using action-oriented language.","Use bullet points instead of long paragraphs.","Keep formatting consistent.","Prioritize relevant experience.","Check spelling and grammar.","Save and export a clean PDF."],
-quick:["Clear contact","Relevant skills","Action verbs","Bullets","Proofread"],
-task:"Rewrite one project description using an action verb, task and result.",
-visual:"Profile → Skills → Evidence → Formatting → Review"
-},
-intermediate:{
-steps:["Read the target job description first.","Identify keywords related to required skills.","Match relevant experience to the role.","Turn responsibilities into achievement statements.","Quantify results when accurate.","Organize sections by relevance.","Remove unnecessary information.","Keep formatting easy to scan.","Tailor the resume for the role.","Proofread against the job description before applying."],
-quick:["Target role","Keywords","Achievements","Numbers","Tailor"],
-task:"Take one existing project and write three achievement-focused bullets tailored to a job.",
-visual:"Job → Keywords → Evidence → Tailor → Apply"
-},
-advanced:{
-steps:["Analyze the role's core competencies.","Build evidence around the competencies most important to the employer.","Prioritize measurable outcomes.","Use strong verbs without exaggerating.","Create a consistent professional narrative.","Adapt the top third of the resume to the role.","Balance keyword relevance with natural language.","Remove duplicated information.","Review the resume from a recruiter's scanning perspective.","Maintain a master version so tailoring remains efficient."],
-quick:["Competencies","Evidence","Outcomes","Narrative","Tailoring"],
-task:"Build a targeted resume version for a real role using evidence from three projects or experiences.",
-visual:"Role → Competencies → Evidence → Narrative → Recruiter Scan"
-},
-quiz:[
-["What should a resume prioritize?",["Relevant evidence","Every life detail","Random hobbies","Long stories"],0,"A resume should emphasize evidence relevant to the target role."],
-["Why use bullet points?",["They improve scanning","They hide information","They add passwords","They delete projects"],0,"Bullets make information easier to scan."],
-["What is tailoring?",["Adapting the resume to a role","Changing your name","Deleting education","Adding random skills"],0,"Tailoring means emphasizing information relevant to a particular role."],
-["Why quantify achievements when possible?",["It provides evidence of impact","It makes the file colorful","It hides mistakes","It adds music"],0,"Numbers can make achievements more concrete."],
-["What should you do before sending?",["Proofread","Delete the PDF","Remove contact details","Add unrelated information"],0,"Proofreading helps catch errors before submission."]
-]},
+    quiz:[
+      ["Which formula adds numbers together?","SUM","ADD","TOTAL","PLUS"],
+      ["What is a cell?","A single spreadsheet location","A whole workbook","A chart","A file folder"],
+      ["Which feature helps arrange data from smallest to largest?","Sort","Paint","Freeze","Merge"],
+      ["What does a chart help you do?","Visualise data","Delete data","Rename Excel","Close a workbook"],
+      ["What is a worksheet?","A spreadsheet page","A keyboard key","A formula","A folder"]
+    ]
+  },
 
-"Professional Email Writing":{
-description:"Write professional emails that are clear, respectful and easy to act on.",
-levels:{
-beginner:{
-steps:["Use a clear subject line.","Start with an appropriate greeting.","State the purpose early.","Keep sentences concise.","Use polite and professional language.","Separate different points into paragraphs.","Make your request specific.","Include necessary context.","End with a professional closing.","Proofread before sending."],
-quick:["Clear subject","Purpose first","Concise","Specific request","Proofread"],
-task:"Write an email requesting information from a company in fewer than 120 words.",
-visual:"Subject → Greeting → Purpose → Request → Closing"
-},
-intermediate:{
-steps:["Decide what action you need from the reader.","Put the most important information first.","Use bullets for multiple details.","Avoid unnecessary background.","Choose a tone appropriate to the relationship.","Give deadlines only when genuinely necessary.","Attach and reference files clearly.","Make the next action obvious.","Review for ambiguity.","Use a professional signature."],
-quick:["Action first","Bullets","Tone","Next step","Signature"],
-task:"Write a project-update email containing status, two issues and one clear next action.",
-visual:"Context → Status → Issues → Action → Deadline"
-},
-advanced:{
-steps:["Identify the reader's priorities before writing.","Reduce cognitive load through structure.","Use precise language instead of vague requests.","Frame problems with evidence and proposed solutions.","Make decisions and dependencies explicit.","Use headings or bullets for complex information.","Control tone carefully in difficult situations.","State what you need and by when.","Review how the email could be interpreted.","Edit once for clarity and once for brevity."],
-quick:["Reader","Precision","Evidence","Tone","Brevity"],
-task:"Write a concise escalation email that explains a problem, evidence, impact and proposed solution.",
-visual:"Reader → Problem → Evidence → Impact → Solution"
-},
-quiz:[
-["What makes a good subject line?",["Clear purpose","A random emoji","No information","A full paragraph"],0,"A subject line should help the reader understand the email's purpose."],
-["Where should the main purpose usually appear?",["Early","At the very end","Only in attachment","Never"],0,"Readers benefit when the purpose is stated early."],
-["When are bullets useful?",["For multiple related points","Never","Only for greetings","Only for signatures"],0,"Bullets make multiple details easier to scan."],
-["What should a request contain?",["A clear action","Confusion","Unrelated stories","No context"],0,"A clear request helps the reader know what to do."],
-["Why proofread?",["To catch errors and ambiguity","To make email longer","To remove subject lines","To hide the request"],0,"Proofreading improves clarity and professionalism."]
-]},
+  "Google Sheets": {
+    icon:"📋",
+    category:"digital",
+    description:"Learn how to organise information, collaborate, and perform simple calculations using Google Sheets.",
+    levels:{
+      beginner:{
+        steps:[
+          "Open Google Sheets and create a new spreadsheet.",
+          "Understand rows, columns, and cells.",
+          "Enter text, numbers, and dates.",
+          "Resize columns.",
+          "Format headings.",
+          "Create a simple SUM formula.",
+          "Copy information between cells.",
+          "Sort a small table.",
+          "Share a spreadsheet.",
+          "Rename and organise the file."
+        ],
+        quick:"Google Sheets lets you organise data online and collaborate with other people.",
+        visual:["Open Sheet","Enter","Format","Calculate","Share"],
+        task:"Create a five-item shopping list with prices and calculate the total."
+      },
+      intermediate:{
+        steps:[
+          "Create a structured data range.",
+          "Use formulas.",
+          "Use IF logic.",
+          "Use filters.",
+          "Use sorting.",
+          "Apply conditional formatting.",
+          "Create a chart.",
+          "Use sharing permissions.",
+          "Review collaborative changes.",
+          "Organise the final sheet."
+        ],
+        quick:"Intermediate Sheets combines formulas, filtering, formatting, charts, and collaboration.",
+        visual:["Data","Formula","Filter","Chart","Collaborate"],
+        task:"Create a simple task tracker with status and conditional formatting."
+      },
+      advanced:{
+        steps:[
+          "Design a structured spreadsheet.",
+          "Clean incoming data.",
+          "Use multiple formulas.",
+          "Use lookup concepts.",
+          "Create summary sections.",
+          "Build charts.",
+          "Manage permissions.",
+          "Use multiple sheets.",
+          "Create a dashboard.",
+          "Document the spreadsheet."
+        ],
+        quick:"Advanced Sheets is useful for collaborative analysis and reporting.",
+        visual:["Collect","Clean","Analyse","Dashboard","Share"],
+        task:"Create a small business performance dashboard using multiple sheets."
+      }
+    },
+    quiz:[
+      ["Google Sheets is mainly used for?","Spreadsheets","Video editing","Photo editing","Email only"],
+      ["Which formula adds values?","SUM","LINK","TEXT","OPEN"],
+      ["What does sharing allow?","Collaboration","Printing only","Deleting Google","Changing browsers"],
+      ["What is a cell?","A spreadsheet location","A website","A folder","A password"],
+      ["Why use filters?","To display selected records","To close the file","To change the browser","To install software"]
+    ]
+  },
 
-"Interview Basics":{
-description:"Build a practical interview foundation covering preparation, answers, confidence and follow-up.",
-levels:{
-beginner:{
-steps:["Research the company and role.","Understand the basic responsibilities.","Prepare a short self-introduction.","Think of examples from your experience.","Answer questions directly.","Use specific examples rather than vague claims.","Maintain professional body language.","Listen fully before answering.","Ask one or two thoughtful questions.","Thank the interviewer professionally."],
-quick:["Research","Introduction","Examples","Listen","Questions"],
-task:"Practice a 60-second answer to 'Tell me about yourself.'",
-visual:"Research → Prepare → Answer → Ask → Follow Up"
-},
-intermediate:{
-steps:["Study the job description for key competencies.","Prepare STAR-style examples.","Connect your examples to the role.","Practice common behavioral questions.","Prepare evidence of your strengths.","Prepare a response for a weakness or challenge.","Practice concise answers.","Use confident but natural body language.","Prepare role-specific questions.","Review your performance after practice."],
-quick:["Competencies","STAR","Evidence","Concise","Practice"],
-task:"Prepare three STAR stories: teamwork, problem-solving and achievement.",
-visual:"Competency → Situation → Action → Result → Reflection"
-},
-advanced:{
-steps:["Map your experience to the employer's business needs.","Build several flexible stories rather than memorized scripts.","Use metrics when they are accurate and relevant.","Show judgment, ownership and learning.","Handle follow-up questions without losing the main point.","Clarify ambiguous questions before answering.","Balance confidence with evidence.","Demonstrate understanding of the role's challenges.","Ask questions that reveal genuine business curiosity.","Reflect after the interview and improve specific weak areas."],
-quick:["Business needs","Flexible stories","Evidence","Judgment","Reflection"],
-task:"Prepare a mock interview with five questions and evaluate each answer for clarity, evidence and relevance.",
-visual:"Business Need → Evidence → Story → Follow-up → Reflection"
-},
-quiz:[
-["What does STAR commonly stand for?",["Situation, Task, Action, Result","Skill, Time, Answer, Review","Start, Talk, Ask, Repeat","Story, Test, Apply, Read"],0,"STAR stands for Situation, Task, Action and Result."],
-["Why use examples in interviews?",["They provide evidence","They waste time","They hide skills","They replace listening"],0,"Examples demonstrate skills more convincingly than unsupported claims."],
-["What should you do if a question is unclear?",["Clarify it","Guess immediately","Ignore it","Leave"],0,"Clarifying an ambiguous question helps you give a relevant answer."],
-["Why research the role?",["To connect answers to real requirements","To memorize the company logo","To avoid questions","To skip preparation"],0,"Research helps you make your answers relevant."],
-["What should you do after practice?",["Reflect and improve","Forget everything","Stop learning","Delete examples"],0,"Reflection helps identify specific improvements."]
-]},
+  "Basic Web Design": {
+    icon:"🌐",
+    category:"digital",
+    description:"Understand the basics of HTML, CSS, page structure, and simple responsive web design.",
+    levels:{
+      beginner:{
+        steps:[
+          "Understand what HTML does.",
+          "Create a basic HTML document.",
+          "Add headings and paragraphs.",
+          "Create links.",
+          "Add images.",
+          "Understand what CSS does.",
+          "Change text size and spacing.",
+          "Add background and borders.",
+          "Create simple buttons.",
+          "Open and test the page in a browser."
+        ],
+        quick:"HTML creates structure while CSS controls the appearance of a webpage.",
+        visual:["HTML","Structure","CSS","Style","Browser"],
+        task:"Create a simple personal introduction webpage with a heading, paragraph, link, and button."
+      },
+      intermediate:{
+        steps:[
+          "Create semantic page sections.",
+          "Use reusable CSS classes.",
+          "Work with spacing and sizing.",
+          "Use Flexbox.",
+          "Create card layouts.",
+          "Style forms.",
+          "Add hover effects.",
+          "Use responsive breakpoints.",
+          "Test different screen sizes.",
+          "Clean the code."
+        ],
+        quick:"Intermediate web design focuses on layout, reusable styles, and responsive behaviour.",
+        visual:["Structure","Classes","Layout","Responsive","Test"],
+        task:"Build a responsive three-card skills section."
+      },
+      advanced:{
+        steps:[
+          "Plan a component structure.",
+          "Use semantic HTML.",
+          "Create scalable CSS.",
+          "Use CSS variables.",
+          "Build responsive layouts.",
+          "Improve accessibility.",
+          "Optimise images.",
+          "Test mobile layouts.",
+          "Review browser compatibility.",
+          "Polish the final interface."
+        ],
+        quick:"Advanced web design combines structure, responsive systems, accessibility, and maintainable styling.",
+        visual:["Plan","Build","Responsive","Accessible","Polish"],
+        task:"Create a responsive landing page with hero, cards, CTA, and footer."
+      }
+    },
+    quiz:[
+      ["What creates webpage structure?","HTML","CSS","Excel","MP4"],
+      ["What controls visual styling?","CSS","HTML only","PDF","CSV"],
+      ["Which tag creates a link?","a","p","div","img"],
+      ["What does responsive mean?","Adapts to screen sizes","Loads music","Deletes CSS","Uses Excel"],
+      ["Where do you normally view a webpage?","Browser","Calculator","Spreadsheet","Camera"]
+    ]
+  },
 
-"AI for Beginners":{
-description:"Understand the basics of artificial intelligence and use AI tools thoughtfully.",
-levels:{
-beginner:{
-steps:["Understand that AI systems process patterns in data.","Learn that different AI tools have different strengths.","Use clear prompts or instructions.","Give the tool useful context.","Ask for a specific output format.","Check important information instead of blindly trusting it.","Avoid sharing sensitive personal information.","Use AI as an assistant rather than an unquestioned authority.","Experiment with simple tasks.","Reflect on whether AI actually improved your work."],
-quick:["AI finds patterns","Give context","Be specific","Verify","Protect privacy"],
-task:"Ask an AI tool to explain a topic at beginner level, then verify two important facts independently.",
-visual:"Goal → Prompt → Output → Verify → Use"
-},
-intermediate:{
-steps:["Define the task before opening an AI tool.","Provide context and constraints.","Specify the audience and desired tone.","Request structured output.","Break complex tasks into stages.","Ask AI to critique or improve a draft.","Compare multiple outputs when quality matters.","Verify factual or high-stakes claims.","Remove confidential information.","Keep the human decision-maker in control."],
-quick:["Context","Constraints","Structure","Iterate","Verify"],
-task:"Use AI to improve a short piece of writing through two rounds of prompting, then compare the versions.",
-visual:"Task → Context → Draft → Critique → Improve"
-},
-advanced:{
-steps:["Treat AI output as probabilistic rather than automatically correct.","Design prompts around objectives, constraints and evaluation criteria.","Break complex workflows into verifiable stages.","Use examples when demonstrating the desired format.","Build checks for factual accuracy.","Protect confidential and personal information.","Compare outputs for consistency.","Use AI for acceleration while retaining human judgment.","Document important assumptions.","Evaluate the final result against the original objective."],
-quick:["Probabilistic","Criteria","Stages","Checks","Human judgment"],
-task:"Design a small AI workflow that produces a draft, critiques it, verifies key claims and produces a final version.",
-visual:"Objective → Generate → Critique → Verify → Decide"
-},
-quiz:[
-["Should AI output always be trusted?",["No","Yes","Only if long","Only if confident"],0,"AI output should be checked, especially for important information."],
-["Why provide context in a prompt?",["It helps the tool understand the task","It deletes data","It changes hardware","It guarantees truth"],0,"Context helps AI produce a more relevant response."],
-["What should you avoid sharing with AI tools?",["Sensitive information","Public facts","General questions","Creative ideas"],0,"Sensitive personal or confidential information should be protected."],
-["What is a useful role for AI?",["Assistant","Unquestioned authority","Password manager by default","Replacement for all judgment"],0,"AI can assist with tasks while humans retain judgment."],
-["Why verify important claims?",["AI can make mistakes","AI never works","Verification is decorative","It makes text longer"],0,"AI systems can produce inaccurate information."]
-]},
+  "Canva Basics": {
+    icon:"🎨",
+    category:"creative",
+    description:"Learn the basics of creating clean social posts, presentations, and simple graphics in Canva.",
+    levels:{
+      beginner:{
+        steps:[
+          "Open Canva and choose a design type.",
+          "Understand templates and blank designs.",
+          "Add and edit text.",
+          "Change fonts.",
+          "Add shapes.",
+          "Upload an image.",
+          "Resize and position elements.",
+          "Use alignment tools.",
+          "Choose a simple colour combination.",
+          "Export the design."
+        ],
+        quick:"Canva is easiest when you start with a clear layout, readable text, and a small number of visual elements.",
+        visual:["Choose","Add","Arrange","Style","Export"],
+        task:"Create a simple motivational Instagram post using one headline, one image, and one supporting line."
+      },
+      intermediate:{
+        steps:[
+          "Choose a consistent visual style.",
+          "Create a hierarchy between headline and body text.",
+          "Use grids.",
+          "Align elements precisely.",
+          "Use brand colours.",
+          "Create reusable layouts.",
+          "Work with transparent elements.",
+          "Prepare social-media sizes.",
+          "Check readability.",
+          "Export the correct format."
+        ],
+        quick:"Intermediate Canva work focuses on consistency, hierarchy, alignment, and reusable designs.",
+        visual:["Style","Hierarchy","Grid","Brand","Export"],
+        task:"Create three matching social posts for the same fictional brand."
+      },
+      advanced:{
+        steps:[
+          "Define a visual identity.",
+          "Create a reusable design system.",
+          "Use consistent typography.",
+          "Build content templates.",
+          "Create campaign variations.",
+          "Maintain spacing consistency.",
+          "Optimise designs for different platforms.",
+          "Review accessibility.",
+          "Prepare export versions.",
+          "Organise source files."
+        ],
+        quick:"Advanced Canva work is about building consistent visual systems rather than isolated graphics.",
+        visual:["Identity","System","Templates","Campaign","Delivery"],
+        task:"Create a five-post mini campaign using one consistent visual identity."
+      }
+    },
+    quiz:[
+      ["Canva is mainly used for?","Visual design","Coding only","Accounting","Database management"],
+      ["Why use alignment?","To create cleaner layouts","To delete images","To write code","To record audio"],
+      ["What is typography?","The style and arrangement of text","A video format","A spreadsheet","A password"],
+      ["Why use templates?","To start from an existing layout","To delete work","To install Canva","To create databases"],
+      ["What should good design prioritise?","Clarity","Maximum clutter","Tiny text","Random spacing"]
+    ]
+  },
 
-"Better AI Prompts":{
-description:"Learn a simple framework for writing clearer prompts and improving AI responses.",
-levels:{
-beginner:{
-steps:["Start by stating what you want.","Add the necessary context.","Tell AI who the response is for.","Specify the format you want.","Mention important constraints.","Give an example when useful.","Avoid combining unrelated tasks unnecessarily.","Read the first result critically.","Ask for a revision when needed.","Save prompts that repeatedly work well."],
-quick:["Goal","Context","Audience","Format","Constraints"],
-task:"Turn 'write a post' into a detailed prompt containing goal, audience, tone and format.",
-visual:"Goal + Context + Audience + Format + Constraints"
-},
-intermediate:{
-steps:["Define the desired outcome before writing the prompt.","Assign a useful role when it genuinely improves context.","Provide relevant source material.","Specify what must and must not be included.","Ask for a structured response.","Set quality criteria.","Break complex work into steps.","Use feedback to refine the prompt.","Compare outputs against the criteria.","Reuse successful prompt patterns."],
-quick:["Outcome","Source","Rules","Structure","Criteria"],
-task:"Create a prompt that asks AI to turn rough notes into a professional article with clear sections and tone requirements.",
-visual:"Outcome → Context → Rules → Output → Evaluate"
-},
-advanced:{
-steps:["Design prompts around measurable outcomes.","Separate instructions, context and evaluation criteria.","Use examples to reduce ambiguity.","Define edge cases when necessary.","Ask for assumptions to be stated.","Use staged workflows for complex tasks.","Build verification into the process.","Iterate based on output quality rather than intuition alone.","Create reusable templates.","Measure whether the prompt consistently produces useful results."],
-quick:["Outcome","Instructions","Examples","Evaluation","Iteration"],
-task:"Build a reusable prompt template for one recurring task and define three criteria for judging the output.",
-visual:"Objective → Instructions → Examples → Evaluation → Iteration"
-},
-quiz:[
-["What is one of the most important parts of a prompt?",["A clear goal","Random words","No context","A hidden message"],0,"A clear goal tells the AI what outcome you want."],
-["Why specify format?",["To control how the result is organized","To delete information","To make AI slower","To hide errors"],0,"Format instructions make the output easier to use."],
-["What are constraints?",["Rules or limits","Passwords","Images only","Random ideas"],0,"Constraints tell AI what boundaries the response should follow."],
-["Why provide examples?",["They reduce ambiguity","They guarantee truth","They delete context","They stop all errors"],0,"Examples can clarify the desired output."],
-["What should you do with a weak response?",["Refine the prompt","Accept it automatically","Delete the task","Stop thinking"],0,"Prompt iteration can improve output quality."]
-]},
+  "Graphic Design Basics": {
+    icon:"🖌️",
+    category:"creative",
+    description:"Understand basic graphic-design principles including hierarchy, contrast, alignment, colour, and spacing.",
+    levels:{
+      beginner:{
+        steps:[
+          "Understand visual hierarchy.",
+          "Learn the role of contrast.",
+          "Use alignment.",
+          "Understand spacing.",
+          "Choose readable fonts.",
+          "Use a limited colour palette.",
+          "Balance visual elements.",
+          "Use images carefully.",
+          "Create a clear focal point.",
+          "Review the final composition."
+        ],
+        quick:"Good graphic design helps people understand information quickly through hierarchy, spacing, alignment, and contrast.",
+        visual:["Hierarchy","Contrast","Alignment","Spacing","Balance"],
+        task:"Redesign a simple event poster using clear hierarchy and spacing."
+      },
+      intermediate:{
+        steps:[
+          "Create a visual hierarchy.",
+          "Combine typefaces carefully.",
+          "Use grids.",
+          "Create contrast.",
+          "Balance white space.",
+          "Use colour intentionally.",
+          "Create consistent layouts.",
+          "Use imagery consistently.",
+          "Review visual flow.",
+          "Export correctly."
+        ],
+        quick:"Intermediate design combines multiple principles into a consistent visual system.",
+        visual:["Grid","Type","Colour","Image","Balance"],
+        task:"Create a promotional poster and matching social post."
+      },
+      advanced:{
+        steps:[
+          "Define a visual concept.",
+          "Build a design system.",
+          "Create layout rules.",
+          "Develop typography hierarchy.",
+          "Develop colour rules.",
+          "Create reusable components.",
+          "Adapt designs across formats.",
+          "Check accessibility.",
+          "Prepare production files.",
+          "Present design rationale."
+        ],
+        quick:"Advanced graphic design focuses on systems, consistency, adaptation, and communication.",
+        visual:["Concept","System","Layouts","Adapt","Deliver"],
+        task:"Design a mini visual identity with typography, colours, and three applications."
+      }
+    },
+    quiz:[
+      ["What is visual hierarchy?","Order of visual importance","A file type","A camera setting","A password"],
+      ["What improves readability?","Contrast","Clutter","Tiny text","Random spacing"],
+      ["Why use white space?","To improve clarity","To remove content","To hide errors","To create noise"],
+      ["What does alignment help create?","Order","Randomness","Audio","Video"],
+      ["Why limit fonts?","For consistency","For confusion","For slower loading","For passwords"]
+    ]
+  },
 
-"Digital Safety Basics":{
-description:"Build safer everyday habits for passwords, scams, links, devices and personal information.",
-levels:{
-beginner:{
-steps:["Use strong and unique passwords.","Avoid sharing passwords with others.","Turn on multi-factor authentication where available.","Check links before opening them.","Be cautious with urgent messages.","Do not share one-time passwords.","Keep devices and apps updated.","Use screen locks.","Review account activity when something seems unusual.","Ask for help when a message looks suspicious."],
-quick:["Unique passwords","MFA","Check links","Never share OTPs","Update devices"],
-task:"Review three accounts and identify which ones still need stronger passwords or multi-factor authentication.",
-visual:"Password → Verify → Update → Check → Protect"
-},
-intermediate:{
-steps:["Use a password manager for unique credentials.","Learn common phishing warning signs.","Verify requests using a separate trusted channel.","Review application permissions.","Keep backups of important files.","Use secure networks for sensitive activity.","Check financial alerts regularly.","Remove unused accounts and apps.","Understand recovery options.","Create a simple personal security checklist."],
-quick:["Password manager","Phishing","Permissions","Backups","Recovery"],
-task:"Create a personal digital-safety checklist with five habits you will follow every month.",
-visual:"Credentials → Devices → Permissions → Backups → Recovery"
-},
-advanced:{
-steps:["Think in terms of threat models rather than generic fear.","Protect high-value accounts first.","Use hardware or strong multi-factor authentication where appropriate.","Separate important identities and recovery channels when practical.","Review account sessions and permissions.","Minimize unnecessary personal data exposure.","Maintain reliable backups.","Recognize social-engineering patterns.","Prepare an incident response plan for compromised accounts.","Review security habits periodically."],
-quick:["Threat model","High-value accounts","MFA","Minimize exposure","Incident plan"],
-task:"Create a basic threat model for your most important online account and identify three realistic protections.",
-visual:"Asset → Threat → Weakness → Protection → Response"
-},
-quiz:[
-["Should you share an OTP with someone who calls you?",["No","Yes","Only at night","Only if they know your name"],0,"One-time passwords should never be shared."],
-["What is multi-factor authentication?",["More than one verification factor","A password list","A browser theme","A file format"],0,"MFA adds another verification factor beyond a password."],
-["What is phishing?",["A deceptive attempt to steal information","A spreadsheet function","A design method","A video effect"],0,"Phishing uses deceptive messages or sites to obtain information."],
-["Why update software?",["Updates can fix security weaknesses","It changes your name","It deletes all passwords","It guarantees safety"],0,"Updates often include security fixes."],
-["What should you do with a suspicious request?",["Verify through a trusted channel","Send your OTP","Click immediately","Forward passwords"],0,"Independent verification can help detect scams."]
-]},
+  "Video Editing Basics": {
+    icon:"🎬",
+    category:"creative",
+    description:"Learn the basic workflow for turning raw clips into a simple, clean video.",
+    levels:{
+      beginner:{
+        steps:[
+          "Create a new editing project.",
+          "Import video clips.",
+          "Place clips on a timeline.",
+          "Trim unwanted sections.",
+          "Arrange clips in order.",
+          "Add simple transitions.",
+          "Add text.",
+          "Adjust basic audio.",
+          "Preview the complete video.",
+          "Export the final video."
+        ],
+        quick:"Basic video editing is about selecting useful clips, arranging them clearly, and removing unnecessary material.",
+        visual:["Import","Timeline","Trim","Text","Export"],
+        task:"Create a 30-second video from three short clips with a title and simple ending."
+      },
+      intermediate:{
+        steps:[
+          "Organise footage.",
+          "Build a rough cut.",
+          "Improve pacing.",
+          "Add B-roll.",
+          "Balance audio.",
+          "Use transitions selectively.",
+          "Add captions.",
+          "Use simple colour correction.",
+          "Review timing.",
+          "Export for the target platform."
+        ],
+        quick:"Intermediate editing focuses on pacing, audio, supporting footage, captions, and consistency.",
+        visual:["Footage","Rough Cut","Pacing","Audio","Final"],
+        task:"Edit a one-minute social video with B-roll, captions, and background music."
+      },
+      advanced:{
+        steps:[
+          "Plan the story.",
+          "Organise footage efficiently.",
+          "Build a strong rough cut.",
+          "Refine pacing.",
+          "Use sound design.",
+          "Use colour correction.",
+          "Create motion elements.",
+          "Improve captions.",
+          "Review the complete narrative.",
+          "Export platform-specific versions."
+        ],
+        quick:"Advanced editing combines storytelling, pacing, sound, colour, and motion.",
+        visual:["Story","Edit","Sound","Colour","Polish"],
+        task:"Create a polished 60–90 second promotional video with a clear narrative."
+      }
+    },
+    quiz:[
+      ["What is a timeline?","Where clips are arranged","A camera","A microphone","A file folder"],
+      ["Why trim clips?","To remove unnecessary footage","To add passwords","To delete the project","To increase noise"],
+      ["What is B-roll?","Supporting footage","A spreadsheet","A font","A file extension"],
+      ["Why check audio?","To make speech and sound clear","To change the filename","To add images","To resize the monitor"],
+      ["What happens during export?","The edited project is rendered into a final file","The camera records","The browser closes","The keyboard changes"]
+    ]
+  },
 
-"Time Management":{
-description:"Learn practical ways to prioritize work, reduce friction and use your time intentionally.",
-levels:{
-beginner:{
-steps:["Write down what needs to be done.","Separate urgent from important tasks.","Choose a small number of priorities.","Break large tasks into smaller actions.","Estimate how long tasks may take.","Start with one task instead of multitasking.","Use a timer for focused work.","Leave space for unexpected work.","Review what you completed.","Adjust tomorrow's plan based on what you learned."],
-quick:["List","Prioritize","Break down","Focus","Review"],
-task:"Plan tomorrow using three priorities and one focused work block for each.",
-visual:"List → Prioritize → Schedule → Focus → Review"
-},
-intermediate:{
-steps:["Identify tasks that create the most value.","Use time blocks for important work.","Group similar small tasks together.","Protect focused work from unnecessary interruptions.","Set realistic deadlines.","Use a simple capture system for new tasks.","Delegate or remove low-value work when possible.","Build buffer time into the schedule.","Review your week rather than only each day.","Change the system when it repeatedly fails."],
-quick:["Value","Time blocks","Batch","Buffers","Review"],
-task:"Create a one-day schedule with two deep-work blocks and a separate communication block.",
-visual:"Value → Blocks → Focus → Buffer → Review"
-},
-advanced:{
-steps:["Connect time allocation to meaningful goals.","Estimate capacity rather than filling every minute.","Protect high-value cognitive work.","Design routines that reduce repeated decisions.","Use constraints to prevent overcommitment.","Review recurring work for automation or removal.","Track where time actually goes when planning repeatedly fails.","Manage energy as well as hours.","Build recovery and flexibility into the system.","Review outcomes rather than judging productivity by busyness."],
-quick:["Goals","Capacity","Cognitive work","Automation","Outcomes"],
-task:"Audit one week of your time and identify one activity to remove, automate, delegate or redesign.",
-visual:"Goals → Capacity → Allocation → Outcomes → Improve"
-},
-quiz:[
-["What should you do first with a large task?",["Break it into actions","Ignore it","Add more tasks","Multitask"],0,"Breaking a large task into smaller actions makes it easier to start."],
-["Why use time blocks?",["To protect focused work","To fill every minute","To avoid priorities","To increase notifications"],0,"Time blocks reserve attention for important work."],
-["What is batching?",["Grouping similar tasks","Deleting tasks","Sleeping all day","Changing passwords"],0,"Batching can reduce the switching cost between similar tasks."],
-["Why include buffer time?",["Unexpected work happens","It makes work impossible","It deletes deadlines","It removes priorities"],0,"Buffer time gives the schedule flexibility."],
-["Should productivity mean being busy all day?",["No","Yes","Always","Only on weekends"],0,"Productivity is better judged by meaningful outcomes than busyness."]
-]},
+  "Resume Writing": {
+    icon:"📄",
+    category:"career",
+    description:"Learn how to structure a clear, relevant, and professional resume.",
+    levels:{
+      beginner:{
+        steps:[
+          "Understand the purpose of a resume.",
+          "Create a clear header.",
+          "Write a short professional summary.",
+          "List relevant skills.",
+          "Add education.",
+          "Add experience or projects.",
+          "Use action-oriented language.",
+          "Keep formatting consistent.",
+          "Proofread the document.",
+          "Save a professional PDF."
+        ],
+        quick:"A strong resume makes your relevant skills, experience, and achievements easy to understand quickly.",
+        visual:["Header","Summary","Skills","Experience","Proofread"],
+        task:"Create a one-page resume outline for your target role."
+      },
+      intermediate:{
+        steps:[
+          "Identify the target role.",
+          "Tailor the summary.",
+          "Prioritise relevant skills.",
+          "Write achievement-focused bullets.",
+          "Add measurable outcomes where truthful.",
+          "Organise projects.",
+          "Remove irrelevant details.",
+          "Check formatting.",
+          "Proofread carefully.",
+          "Create a role-specific version."
+        ],
+        quick:"Intermediate resume writing means tailoring your resume to the opportunity instead of sending one generic version everywhere.",
+        visual:["Target","Tailor","Prioritise","Prove","Polish"],
+        task:"Take one existing project and rewrite its bullets to emphasise measurable outcomes."
+      },
+      advanced:{
+        steps:[
+          "Analyse the job description.",
+          "Identify important keywords.",
+          "Map evidence to requirements.",
+          "Write concise achievement bullets.",
+          "Build a strong professional profile.",
+          "Prioritise high-value projects.",
+          "Optimise structure for scanning.",
+          "Check consistency.",
+          "Proofread thoroughly.",
+          "Prepare a final application package."
+        ],
+        quick:"Advanced resume work connects your actual evidence to the employer's requirements with concise, credible language.",
+        visual:["Job","Keywords","Evidence","Resume","Application"],
+        task:"Tailor your resume to a real job description using only truthful skills and experience."
+      }
+    },
+    quiz:[
+      ["What is the main purpose of a resume?","Present relevant qualifications","Tell a fictional story","Replace an interview","List every detail"],
+      ["Why tailor a resume?","To match the opportunity","To make it longer","To hide skills","To remove experience"],
+      ["What makes a bullet stronger?","Specific evidence","Vague claims","Long paragraphs","Random words"],
+      ["What file format is commonly used for a final resume?","PDF","MP3","PNG only","ZIP only"],
+      ["Why proofread?","To remove errors","To add clutter","To change your career","To increase file size"]
+    ]
+  },
 
-"Better Note-Taking":{
-description:"Capture the main idea, useful details and keywords without trying to write everything.",
-levels:{
-beginner:{
-steps:["Understand that notes are for remembering and using information later.","Listen or read for the main idea first.","Identify the most important supporting points.","Write short phrases instead of copying full sentences.","Use headings to separate topics.","Use bullet points for individual ideas.","Circle or highlight important keywords.","Leave space for questions or missing information.","Review your notes soon after learning.","Rewrite unclear points in your own words."],
-quick:["Main idea","Keywords","Short phrases","Headings","Review"],
-task:"Read a short article and write only five short bullet points capturing the main ideas.",
-visual:"Main Idea → Key Points → Keywords → Questions → Review"
-},
-intermediate:{
-steps:["Preview the material before taking notes.","Create a structure using headings.","Separate main ideas from examples.","Use abbreviations for repeated terms.","Capture relationships between ideas.","Mark questions separately from facts.","Summarize sections in your own words.","Avoid recording information that does not support the purpose.","Review and fill gaps after learning.","Use your notes to create a short summary."],
-quick:["Preview","Structure","Main vs example","Questions","Summarize"],
-task:"Watch or read a short lesson and produce notes with three headings, five key points and two questions.",
-visual:"Preview → Structure → Capture → Connect → Summarize"
-},
-advanced:{
-steps:["Define the purpose of the notes before starting.","Identify the argument, framework or decision being presented.","Capture relationships rather than isolated facts.","Distinguish evidence from conclusions.","Use concise language while preserving important meaning.","Record unresolved questions and assumptions.","Connect new ideas to existing knowledge.","Review notes for missing logic or unsupported claims.","Convert notes into an actionable summary.","Use the notes later to teach the concept to someone else."],
-quick:["Purpose","Relationships","Evidence","Assumptions","Teach back"],
-task:"Take notes from a complex article and produce a one-page decision summary containing evidence, assumptions and open questions.",
-visual:"Purpose → Ideas → Evidence → Relationships → Action"
-},
-quiz:[
-["What should you focus on first when taking notes?",["The main idea","Every single word","Decorative formatting","Page numbers only"],0,"The main idea gives your notes a useful structure."],
-["Why use short phrases?",["They are faster and easier to review","They hide meaning","They increase typing","They remove headings"],0,"Short phrases reduce writing effort while preserving key information."],
-["Why use headings?",["To organize ideas","To delete notes","To add passwords","To change fonts"],0,"Headings separate topics and make notes easier to navigate."],
-["What should you do after learning?",["Review the notes","Never look at them","Delete them","Rewrite every word"],0,"Review helps strengthen understanding and identify gaps."],
-["Why write ideas in your own words?",["It supports understanding","It makes notes longer","It hides information","It prevents learning"],0,"Paraphrasing encourages active understanding."]
-]},
+  "Professional Email Writing": {
+    icon:"✉️",
+    category:"career",
+    description:"Learn how to write clear, polite, concise, and professional emails.",
+    levels:{
+      beginner:{
+        steps:[
+          "Write a clear subject line.",
+          "Use an appropriate greeting.",
+          "State your purpose early.",
+          "Keep sentences clear.",
+          "Use polite language.",
+          "Organise information into short paragraphs.",
+          "Make requests specific.",
+          "End professionally.",
+          "Check attachments.",
+          "Proofread before sending."
+        ],
+        quick:"A professional email should make the purpose and required action clear without unnecessary words.",
+        visual:["Subject","Greeting","Purpose","Request","Close"],
+        task:"Write an email requesting information from a company."
+      },
+      intermediate:{
+        steps:[
+          "Identify the recipient.",
+          "Choose the correct tone.",
+          "Write a precise subject.",
+          "Lead with the purpose.",
+          "Provide necessary context.",
+          "Use bullet points where helpful.",
+          "State deadlines clearly.",
+          "Add relevant attachments.",
+          "Review tone.",
+          "Proofread."
+        ],
+        quick:"Intermediate email writing focuses on context, tone, structure, and clear next actions.",
+        visual:["Recipient","Tone","Context","Action","Review"],
+        task:"Write a professional follow-up email after a job application."
+      },
+      advanced:{
+        steps:[
+          "Define the communication objective.",
+          "Adapt tone to the audience.",
+          "Lead with the key information.",
+          "Reduce unnecessary context.",
+          "Structure complex information.",
+          "Make responsibilities explicit.",
+          "Handle sensitive wording carefully.",
+          "Create a clear call to action.",
+          "Proofread for ambiguity.",
+          "Review the final message."
+        ],
+        quick:"Advanced professional communication is concise, audience-aware, and action-oriented.",
+        visual:["Objective","Audience","Message","Action","Review"],
+        task:"Write a concise stakeholder update containing status, issue, action, and next step."
+      }
+    },
+    quiz:[
+      ["What should a subject line do?","Clearly describe the email purpose","Tell a joke","Be empty","Use random words"],
+      ["Why keep emails concise?","To make the message easy to understand","To hide information","To sound rude","To increase length"],
+      ["What should a professional request include?","A clear action","Nothing specific","Only emojis","A long story"],
+      ["Why proofread emails?","To catch errors","To add confusion","To remove the subject","To change the recipient"],
+      ["What is tone?","The style or attitude of communication","A file type","A password","A font"]
+    ]
+  },
 
-"Focus Techniques":{
-description:"Learn practical techniques for protecting attention and reducing distractions.",
-levels:{
-beginner:{
-steps:["Choose one task before starting.","Remove obvious distractions.","Put your phone away when possible.","Set a short focused work period.","Keep only necessary tabs open.","Write down unrelated thoughts instead of switching tasks.","Take a short break after focused work.","Return to the same task after the break.","Notice what distracted you.","Adjust the environment for the next session."],
-quick:["One task","Remove distractions","Short sprint","Capture thoughts","Review"],
-task:"Complete one 20-minute distraction-free task and record what interrupted your attention.",
-visual:"Choose → Remove → Focus → Break → Return"
-},
-intermediate:{
-steps:["Identify your biggest sources of interruption.","Match task difficulty to your energy level.","Use focus blocks for demanding work.","Batch notifications and communication.","Keep a capture list for distracting thoughts.","Use environmental cues for focus.","Define what 'done' means before starting.","Take deliberate breaks.","Measure completion rather than time alone.","Refine the environment based on evidence."],
-quick:["Interruptions","Energy","Focus blocks","Notifications","Done definition"],
-task:"Run two focused work blocks and compare what environment produced better concentration.",
-visual:"Environment → Block → Focus → Break → Compare"
-},
-advanced:{
-steps:["Design attention around the type of work being performed.","Protect high-cognitive-load tasks from context switching.","Reduce recurring sources of friction.","Create default focus routines.","Use communication windows instead of constant checking.","Measure interruption patterns.","Build recovery into demanding schedules.","Distinguish boredom from genuine inability to focus.","Adjust task design when attention repeatedly fails.","Optimize for sustained useful output rather than extreme concentration."],
-quick:["Cognitive load","Context switching","Routines","Communication windows","Output"],
-task:"Track interruptions during a work session and redesign your environment to eliminate the two most frequent causes.",
-visual:"Work Type → Friction → Routine → Focus → Output"
-},
-quiz:[
-["What is context switching?",["Moving repeatedly between different tasks","Changing a password","Formatting text","Saving a file"],0,"Context switching occurs when attention moves between tasks."],
-["Why put distractions away?",["To reduce attention triggers","To make work harder","To delete files","To increase notifications"],0,"Removing triggers reduces opportunities for distraction."],
-["What is a focus block?",["A protected period for one task","A browser error","A password","A meeting room"],0,"A focus block reserves time and attention for a specific task."],
-["Why define 'done'?",["It creates a clear target","It removes the task","It changes the keyboard","It adds notifications"],0,"A clear definition of done helps focus effort."],
-["What should you measure?",["Useful completion and interruption patterns","Only screen brightness","Only time online","Number of tabs"],0,"Completion and interruption patterns give useful evidence about focus."]
-]},
+  "Interview Basics": {
+    icon:"🎤",
+    category:"career",
+    description:"Learn a practical framework for answering common interview questions confidently.",
+    levels:{
+      beginner:{
+        steps:[
+          "Understand what an interview is assessing.",
+          "Prepare a short introduction.",
+          "Review your resume.",
+          "Prepare your strengths.",
+          "Prepare one weakness honestly.",
+          "Prepare project examples.",
+          "Practise common questions.",
+          "Use clear body language.",
+          "Ask one thoughtful question.",
+          "Thank the interviewer."
+        ],
+        quick:"Good interview preparation means knowing your own experience and communicating it clearly.",
+        visual:["Prepare","Introduce","Answer","Ask","Close"],
+        task:"Practise a 60-second answer to 'Tell me about yourself.'"
+      },
+      intermediate:{
+        steps:[
+          "Research the role.",
+          "Research the organisation.",
+          "Prepare STAR examples.",
+          "Connect answers to the role.",
+          "Practise behavioural questions.",
+          "Prepare achievement examples.",
+          "Improve speaking pace.",
+          "Practise follow-up questions.",
+          "Prepare questions for the interviewer.",
+          "Review your performance."
+        ],
+        quick:"Intermediate preparation combines role research, structured examples, and confident communication.",
+        visual:["Research","STAR","Connect","Practise","Review"],
+        task:"Prepare three STAR stories covering teamwork, problem-solving, and achievement."
+      },
+      advanced:{
+        steps:[
+          "Analyse the role requirements.",
+          "Map your evidence to each requirement.",
+          "Prepare concise stories.",
+          "Anticipate follow-up questions.",
+          "Practise difficult questions.",
+          "Improve executive communication.",
+          "Demonstrate role understanding.",
+          "Use evidence naturally.",
+          "Prepare strategic questions.",
+          "Reflect after practice interviews."
+        ],
+        quick:"Advanced interviewing is about connecting credible evidence to the employer's needs while communicating with confidence.",
+        visual:["Role","Evidence","Story","Follow-up","Impact"],
+        task:"Run a mock interview and record five answers for later review."
+      }
+    },
+    quiz:[
+      ["What does STAR commonly help structure?","Interview answers","Emails","Spreadsheets","Graphic designs"],
+      ["What should you know before an interview?","The role","Only the company logo","Nothing","A random script"],
+      ["Why use examples?","To support your claims","To make answers vague","To avoid questions","To increase silence"],
+      ["What is useful at the end of an interview?","A thoughtful question","Leaving without speaking","Ignoring the interviewer","Changing the topic"],
+      ["What should body language generally communicate?","Confidence and attentiveness","Disinterest","Confusion","Avoidance"]
+    ]
+  },
 
-"Smartphone Basics":{
-description:"Understand essential smartphone settings, apps, storage, permissions and safer everyday use.",
-levels:{
-beginner:{
-steps:["Learn how to lock and unlock your phone securely.","Understand Wi-Fi and mobile data.","Find and organize your important apps.","Adjust basic sound and brightness settings.","Learn how to take and find screenshots.","Check available storage.","Keep important apps updated.","Use screen lock protection.","Learn how to restart the device.","Know where basic settings are located."],
-quick:["Lock","Wi-Fi","Apps","Storage","Updates"],
-task:"Open your phone settings and locate Wi-Fi, storage, app permissions and security settings.",
-visual:"Settings → Apps → Storage → Security → Updates"
-},
-intermediate:{
-steps:["Review app permissions.","Remove apps you no longer use.","Organize apps into logical groups.","Manage notification settings.","Use cloud or local backups where appropriate.","Check battery usage for unusual drain.","Understand mobile data usage.","Review account recovery options.","Use device-finding features when available.","Keep the operating system updated."],
-quick:["Permissions","Notifications","Backup","Battery","Find device"],
-task:"Review five installed apps and remove unnecessary permissions or apps.",
-visual:"Apps → Permissions → Notifications → Backup → Security"
-},
-advanced:{
-steps:["Review the security model of your device.","Minimize unnecessary permissions.","Use strong device authentication.","Separate sensitive and ordinary activities when appropriate.","Maintain reliable backups.","Review account sessions and connected devices.","Control lock-screen information.","Use trusted software sources.","Prepare a recovery plan for loss or theft.","Review privacy settings periodically."],
-quick:["Authentication","Permissions","Backups","Sessions","Recovery"],
-task:"Create a phone-security checklist covering authentication, permissions, backups and recovery.",
-visual:"Authenticate → Minimize → Backup → Monitor → Recover"
-},
-quiz:[
-["Where can you usually manage app permissions?",["Settings","Camera only","Gallery only","Calculator"],0,"App permissions are generally managed through device settings."],
-["Why use a screen lock?",["To protect device access","To increase storage","To add music","To delete apps"],0,"A screen lock helps prevent unauthorized access."],
-["Why update apps?",["Updates can improve security and functionality","They always delete data","They change your name","They remove Wi-Fi"],0,"Updates can contain fixes and improvements."],
-["What does a backup help with?",["Recovering important information","Increasing brightness","Deleting accounts","Changing wallpaper"],0,"Backups can help restore information after loss or device failure."],
-["Why review permissions?",["To limit unnecessary access","To make apps larger","To remove Wi-Fi","To increase notifications"],0,"Reviewing permissions helps reduce unnecessary access to device information."]
-]},
+  "AI for Beginners": {
+    icon:"🤖",
+    category:"ai",
+    description:"Understand what AI tools are, how to use them responsibly, and how to get useful results.",
+    levels:{
+      beginner:{
+        steps:[
+          "Understand the basic idea of artificial intelligence.",
+          "Learn what generative AI means.",
+          "Choose a clear task.",
+          "Write a simple prompt.",
+          "Review the response.",
+          "Ask for clarification.",
+          "Provide useful context.",
+          "Check important facts.",
+          "Protect private information.",
+          "Use AI as an assistant rather than unquestioned authority."
+        ],
+        quick:"AI tools work best when you provide clear instructions, useful context, and review the result.",
+        visual:["Task","Prompt","Response","Check","Improve"],
+        task:"Ask an AI tool to explain a topic you are learning and then verify two important facts."
+      },
+      intermediate:{
+        steps:[
+          "Define the desired output.",
+          "Provide context.",
+          "Specify audience.",
+          "Specify format.",
+          "Give examples.",
+          "Break complex tasks into stages.",
+          "Review generated content.",
+          "Correct errors.",
+          "Iterate the prompt.",
+          "Save useful prompt patterns."
+        ],
+        quick:"Intermediate AI use is about controlling the task, context, format, and review process.",
+        visual:["Goal","Context","Format","Review","Iterate"],
+        task:"Create a structured prompt that asks AI to produce a study plan in a table."
+      },
+      advanced:{
+        steps:[
+          "Define the workflow.",
+          "Break the task into components.",
+          "Create reusable prompt structures.",
+          "Specify constraints.",
+          "Use examples strategically.",
+          "Evaluate outputs systematically.",
+          "Check factual claims.",
+          "Protect confidential information.",
+          "Refine the workflow.",
+          "Document the successful process."
+        ],
+        quick:"Advanced AI use focuses on repeatable workflows, evaluation, constraints, and responsible use.",
+        visual:["Workflow","Prompt","Generate","Evaluate","Optimise"],
+        task:"Design a reusable AI workflow for creating and reviewing a weekly learning plan."
+      }
+    },
+    quiz:[
+      ["What is a prompt?","An instruction given to an AI system","A spreadsheet","A password","A video"],
+      ["Why review AI output?","AI can make mistakes","AI is always perfect","Review is impossible","It changes the browser"],
+      ["What improves an AI response?","Clear context","Random instructions","No information","Conflicting requests"],
+      ["Should sensitive private information be shared carelessly?","No","Yes","Always","Only publicly"],
+      ["What is generative AI designed to do?","Generate content","Only calculate taxes","Only store files","Only browse"]
+    ]
+  },
 
-"Digital Payments Basics":{
-description:"Learn safer habits for using digital payment systems and recognizing payment scams.",
-levels:{
-beginner:{
-steps:["Use only trusted payment applications.","Check the recipient before confirming.","Never share an OTP or PIN.","Keep your payment app updated.","Check transaction details before paying.","Save or review transaction confirmations.","Use screen locks and device security.","Be careful with unknown payment requests.","Report suspicious transactions quickly.","Contact the official bank or payment provider when unsure."],
-quick:["Trusted app","Check recipient","Never share PIN","Verify amount","Report quickly"],
-task:"Review the safety settings on your primary payment app and identify one improvement.",
-visual:"Open → Verify → Pay → Confirm → Monitor"
-},
-intermediate:{
-steps:["Verify the recipient name before sending money.","Understand that receiving a request is not the same as receiving money.","Avoid unknown links claiming to provide refunds.","Use official customer-support channels.","Check transaction history regularly.","Set appropriate notification alerts.","Do not install remote-control apps because a stranger asks you to.","Protect device and account credentials.","Report fraud immediately.","Keep evidence of suspicious messages or transactions."],
-quick:["Verify recipient","Requests aren't payments","Avoid links","Official support","Report fraud"],
-task:"Create a five-point checklist for verifying a payment request before approving it.",
-visual:"Request → Identity → Amount → Channel → Confirm"
-},
-advanced:{
-steps:["Understand the difference between authentication and authorization.","Treat social engineering as a major payment risk.","Verify unusual requests through independent channels.","Review account activity for anomalies.","Use transaction limits and alerts where available.","Protect recovery credentials.","Understand dispute and reporting procedures.","Maintain evidence when fraud occurs.","Separate legitimate support from impersonation attempts.","Review payment security habits regularly."],
-quick:["Authentication","Social engineering","Independent verification","Alerts","Evidence"],
-task:"Design a response plan for a suspicious payment request, including verification, refusal and reporting.",
-visual:"Signal → Verify → Refuse → Report → Recover"
-},
-quiz:[
-["Should you share a payment PIN with someone?",["Never","Yes","Only by phone","Only if they ask politely"],0,"Payment PINs should remain private."],
-["What should you check before paying?",["Recipient and amount","Wallpaper","Battery percentage only","Font size"],0,"Checking recipient and amount helps prevent mistakes and fraud."],
-["Are payment requests automatically proof of receiving money?",["No","Yes","Always","Only at night"],0,"A request for payment is not proof that money was received."],
-["Where should you seek payment support?",["Official channels","Random callers","Unknown links","Social comments"],0,"Official support channels are safer than unverified contacts."],
-["What should you do after suspected fraud?",["Report quickly","Wait indefinitely","Share your PIN","Delete all evidence"],0,"Quick reporting can help with response and documentation."]
-]},
+  "Better AI Prompts": {
+    icon:"🧠",
+    category:"ai",
+    description:"Learn how to write clearer prompts that produce more useful and controllable AI responses.",
+    levels:{
+      beginner:{
+        steps:[
+          "State the task.",
+          "Give relevant context.",
+          "Specify the desired format.",
+          "State the audience.",
+          "Add important constraints.",
+          "Ask for examples.",
+          "Avoid vague wording.",
+          "Review the result.",
+          "Correct misunderstandings.",
+          "Improve the prompt."
+        ],
+        quick:"A useful prompt tells the AI what to do, why it matters, and what the desired answer should look like.",
+        visual:["Task","Context","Format","Constraints","Result"],
+        task:"Write a prompt asking AI to explain a difficult topic for a beginner using five bullet points."
+      },
+      intermediate:{
+        steps:[
+          "Define the objective.",
+          "Provide background.",
+          "Assign a useful perspective when appropriate.",
+          "Specify output structure.",
+          "Give examples.",
+          "Set length limits.",
+          "State exclusions.",
+          "Request checks.",
+          "Review output.",
+          "Iterate."
+        ],
+        quick:"Intermediate prompting gives AI enough structure to reduce ambiguity and improve consistency.",
+        visual:["Objective","Context","Structure","Constraints","Iterate"],
+        task:"Create a prompt that converts a long paragraph into a concise study guide."
+      },
+      advanced:{
+        steps:[
+          "Define the complete task.",
+          "Break it into stages.",
+          "Specify decision criteria.",
+          "Define output schemas.",
+          "Provide representative examples.",
+          "Set quality constraints.",
+          "Ask for validation.",
+          "Review edge cases.",
+          "Refine instructions.",
+          "Create a reusable template."
+        ],
+        quick:"Advanced prompting treats prompts as reusable instructions and workflows rather than one-off questions.",
+        visual:["Task","Stages","Criteria","Validate","Template"],
+        task:"Create a reusable prompt template for analysing a project and producing a portfolio-ready case study."
+      }
+    },
+    quiz:[
+      ["Which prompt is generally better?","Clear and specific","Vague","Random","Incomplete"],
+      ["Why specify output format?","To control the response structure","To confuse AI","To delete content","To change hardware"],
+      ["Why provide context?","It helps the AI understand the task","It removes the task","It guarantees perfection","It disables AI"],
+      ["What should you do with a poor response?","Improve the prompt","Accept it blindly","Delete the computer","Stop thinking"],
+      ["What is a constraint?","A rule or limitation","A picture","A password","A browser"]
+    ]
+  },
 
-"Digital Organization":{
-description:"Create a simple system for files, folders, downloads and digital information.",
-levels:{
-beginner:{
-steps:["Create folders based on meaningful categories.","Use descriptive file names.","Avoid keeping everything in Downloads.","Delete files you no longer need.","Move important files into stable folders.","Use dates consistently when useful.","Keep personal and work files separate.","Back up important documents.","Search before creating duplicate files.","Review your folders regularly."],
-quick:["Folders","Names","Clean Downloads","Backups","Review"],
-task:"Organize ten existing files into logical folders and rename the most confusing three.",
-visual:"Collect → Sort → Rename → Store → Backup"
-},
-intermediate:{
-steps:["Design a folder structure around how you retrieve information.","Use consistent naming conventions.","Create archive folders for completed work.","Separate source files from final versions.","Use version naming carefully.","Avoid unnecessary folder depth.","Back up important files.","Use search strategically.","Remove duplicate files.","Review the system after a month of real use."],
-quick:["Retrieval","Naming","Archive","Versions","Search"],
-task:"Create a folder system for a project with Sources, Working Files, Final, Assets and Archive.",
-visual:"Project → Sources → Work → Final → Archive"
-},
-advanced:{
-steps:["Design information architecture around retrieval needs.","Define naming conventions before a project grows.","Separate active, archived and reference material.","Use metadata or consistent dates when helpful.","Minimize duplicate sources of truth.","Create backup and recovery rules.","Control access to sensitive files.","Document the structure for collaborators.","Audit the system periodically.","Change the system when retrieval becomes slow or confusing."],
-quick:["Architecture","Source of truth","Archive","Access","Audit"],
-task:"Design a reusable digital-file system for a long-term project and write five naming rules.",
-visual:"Needs → Structure → Naming → Access → Recovery"
-},
-quiz:[
-["Why use descriptive file names?",["They make files easier to find","They increase battery","They delete files","They change formats"],0,"Descriptive names improve retrieval."],
-["Why keep important files backed up?",["To recover from loss","To make files colorful","To increase notifications","To remove folders"],0,"Backups provide another copy if the original is lost or damaged."],
-["What is an archive folder useful for?",["Completed or inactive material","Passwords only","Random files","Temporary browser tabs"],0,"Archives keep inactive material without cluttering active work."],
-["Why avoid unnecessary duplicate files?",["They create confusion about the correct version","They improve organization","They increase security automatically","They reduce storage needs"],0,"Duplicates can make it unclear which version is authoritative."],
-["What should a good folder system optimize for?",["Easy retrieval","Maximum folder count","Random naming","Decoration"],0,"A useful organization system makes information easy to retrieve."]
-]}
+  "Digital Safety Basics": {
+    icon:"🔐",
+    category:"everyday",
+    description:"Learn everyday habits for safer passwords, accounts, links, devices, and online information.",
+    levels:{
+      beginner:{
+        steps:[
+          "Use strong unique passwords.",
+          "Avoid sharing passwords.",
+          "Enable two-factor authentication.",
+          "Check suspicious links.",
+          "Avoid unknown attachments.",
+          "Keep devices updated.",
+          "Use screen locks.",
+          "Be careful on public networks.",
+          "Review account activity.",
+          "Report suspicious activity."
+        ],
+        quick:"Digital safety starts with strong unique passwords, two-factor authentication, updates, and caution around suspicious messages.",
+        visual:["Password","2FA","Links","Updates","Report"],
+        task:"Review one important account and enable two-factor authentication if available."
+      },
+      intermediate:{
+        steps:[
+          "Review password reuse.",
+          "Use a password manager.",
+          "Recognise phishing patterns.",
+          "Check sender details.",
+          "Review privacy settings.",
+          "Secure recovery options.",
+          "Update software.",
+          "Review active sessions.",
+          "Back up important files.",
+          "Create an incident plan."
+        ],
+        quick:"Intermediate security focuses on reducing account exposure and recognising common social-engineering attempts.",
+        visual:["Audit","Secure","Detect","Backup","Respond"],
+        task:"Perform a basic security check on your main email account."
+      },
+      advanced:{
+        steps:[
+          "Map important accounts.",
+          "Prioritise critical assets.",
+          "Use strong authentication.",
+          "Review permissions.",
+          "Monitor unusual activity.",
+          "Maintain backups.",
+          "Secure recovery methods.",
+          "Reduce unnecessary data sharing.",
+          "Review connected applications.",
+          "Create a recovery checklist."
+        ],
+        quick:"Advanced personal security is about reducing attack surfaces and preparing for recovery.",
+        visual:["Map","Protect","Monitor","Backup","Recover"],
+        task:"Create a personal digital-security checklist covering accounts, devices, backups, and recovery."
+      }
+    },
+    quiz:[
+      ["What makes a password safer?","Strong and unique","Shared","Very short","Public"],
+      ["What does 2FA add?","An additional verification step","A new browser","More advertisements","A spreadsheet"],
+      ["What is phishing?","A deceptive attempt to obtain information","Photo editing","Video compression","File storage"],
+      ["Should suspicious links be opened immediately?","No","Yes","Always","Without checking"],
+      ["Why update software?","To improve security and fix issues","To delete accounts","To remove passwords","To slow devices"]
+    ]
+  },
+
+  "Time Management": {
+    icon:"⏰",
+    category:"productivity",
+    description:"Learn simple techniques for planning tasks, prioritising work, and using focused time effectively.",
+    levels:{
+      beginner:{
+        steps:[
+          "List today's tasks.",
+          "Identify the most important task.",
+          "Estimate task duration.",
+          "Break large tasks into smaller actions.",
+          "Set a start time.",
+          "Remove obvious distractions.",
+          "Work on one task at a time.",
+          "Take planned breaks.",
+          "Review completed work.",
+          "Plan tomorrow."
+        ],
+        quick:"Effective time management starts with choosing priorities and turning large tasks into small actions.",
+        visual:["List","Prioritise","Plan","Focus","Review"],
+        task:"Create a 20-minute plan for one task you have been postponing."
+      },
+      intermediate:{
+        steps:[
+          "Identify weekly priorities.",
+          "Estimate effort.",
+          "Group similar tasks.",
+          "Create focused work blocks.",
+          "Protect important time.",
+          "Reduce context switching.",
+          "Set realistic deadlines.",
+          "Review progress.",
+          "Adjust the plan.",
+          "Reflect on what worked."
+        ],
+        quick:"Intermediate planning focuses on protecting attention and matching tasks to realistic time blocks.",
+        visual:["Priorities","Blocks","Focus","Review","Adjust"],
+        task:"Plan one day using three focused work blocks and specific outcomes."
+      },
+      advanced:{
+        steps:[
+          "Define important outcomes.",
+          "Separate urgent from important.",
+          "Plan around energy levels.",
+          "Create recurring systems.",
+          "Reduce unnecessary commitments.",
+          "Batch repetitive tasks.",
+          "Protect deep-work time.",
+          "Review performance.",
+          "Adjust priorities.",
+          "Build sustainable routines."
+        ],
+        quick:"Advanced time management is about systems and priorities rather than simply filling a calendar.",
+        visual:["Outcomes","Priorities","Systems","Deep Work","Review"],
+        task:"Create a weekly system for balancing learning, applications, projects, and personal tasks."
+      }
+    },
+    quiz:[
+      ["What should you identify first?","Priority","Every possible detail","Distractions","Random tasks"],
+      ["Why break large tasks down?","To make them manageable","To make them impossible","To increase confusion","To avoid action"],
+      ["What is context switching?","Moving repeatedly between different tasks","Taking a break","Writing notes","Planning"],
+      ["Why schedule focused blocks?","To protect attention","To create noise","To avoid priorities","To increase multitasking"],
+      ["Why review your plan?","To improve future planning","To delete work","To avoid learning","To increase distractions"]
+    ]
+  },
+
+  "Better Note-Taking": {
+    icon:"📝",
+    category:"productivity",
+    description:"Learn simple ways to capture, organise, and review useful information.",
+    levels:{
+      beginner:{
+        steps:[
+          "Choose one place for notes.",
+          "Write the topic clearly.",
+          "Capture important ideas.",
+          "Use headings.",
+          "Use short phrases.",
+          "Separate examples from main ideas.",
+          "Highlight key terms.",
+          "Summarise the lesson.",
+          "Review the notes.",
+          "Remove unnecessary information."
+        ],
+        quick:"Good notes capture ideas rather than attempting to copy every word.",
+        visual:["Topic","Ideas","Headings","Summary","Review"],
+        task:"Take notes from a short video or article using five headings."
+      },
+      intermediate:{
+        steps:[
+          "Identify the purpose of the notes.",
+          "Use a consistent structure.",
+          "Separate facts and questions.",
+          "Use bullet points.",
+          "Create summaries.",
+          "Link related ideas.",
+          "Add examples.",
+          "Mark unclear areas.",
+          "Review after learning.",
+          "Convert notes into questions."
+        ],
+        quick:"Intermediate note-taking focuses on organising ideas so they can be reviewed and used later.",
+        visual:["Purpose","Capture","Organise","Connect","Review"],
+        task:"Convert one page of notes into ten revision questions."
+      },
+      advanced:{
+        steps:[
+          "Define the information goal.",
+          "Build a reusable note structure.",
+          "Capture key concepts.",
+          "Connect related concepts.",
+          "Separate evidence and interpretation.",
+          "Add references.",
+          "Create summaries.",
+          "Identify knowledge gaps.",
+          "Review periodically.",
+          "Turn notes into useful outputs."
+        ],
+        quick:"Advanced notes become a personal knowledge system when ideas are connected, reviewed, and reused.",
+        visual:["Capture","Connect","Reference","Review","Reuse"],
+        task:"Create a structured knowledge page for a topic you are actively learning."
+      }
+    },
+    quiz:[
+      ["What should notes capture?","Important ideas","Every word","Random information","Only decoration"],
+      ["Why use headings?","To organise information","To hide information","To increase length","To delete notes"],
+      ["Why review notes?","To reinforce learning","To erase learning","To avoid practice","To create distractions"],
+      ["What can questions do?","Help active recall","Delete notes","Change fonts","Create passwords"],
+      ["Should notes be easy to review?","Yes","No","Never","Only sometimes"]
+    ]
+  },
+
+  "Focus Techniques": {
+    icon:"🎯",
+    category:"productivity",
+    description:"Learn practical ways to reduce distractions and work with focused attention.",
+    levels:{
+      beginner:{
+        steps:[
+          "Choose one task.",
+          "Define a small outcome.",
+          "Remove obvious distractions.",
+          "Set a short timer.",
+          "Start immediately.",
+          "Keep unrelated ideas in a note.",
+          "Avoid unnecessary switching.",
+          "Take a short break.",
+          "Review progress.",
+          "Repeat when useful."
+        ],
+        quick:"Focus improves when you reduce distractions and give yourself one clear task at a time.",
+        visual:["Choose","Remove","Focus","Break","Repeat"],
+        task:"Complete one 20-minute task with notifications turned off."
+      },
+      intermediate:{
+        steps:[
+          "Define the desired outcome.",
+          "Prepare the workspace.",
+          "Block distracting websites.",
+          "Set a focus interval.",
+          "Use a task list.",
+          "Capture interruptions.",
+          "Take deliberate breaks.",
+          "Review progress.",
+          "Adjust the environment.",
+          "Repeat the routine."
+        ],
+        quick:"Intermediate focus combines environment design, timed work, and interruption management.",
+        visual:["Prepare","Block","Focus","Capture","Review"],
+        task:"Run two focused work sessions and record what distracted you."
+      },
+      advanced:{
+        steps:[
+          "Identify your biggest attention leaks.",
+          "Design an ideal work environment.",
+          "Schedule deep work.",
+          "Reduce notifications.",
+          "Batch communication.",
+          "Create interruption rules.",
+          "Use recovery breaks.",
+          "Measure meaningful output.",
+          "Adjust the system.",
+          "Build a sustainable focus routine."
+        ],
+        quick:"Advanced focus is an environmental and scheduling system, not just willpower.",
+        visual:["Diagnose","Design","Deep Work","Measure","Improve"],
+        task:"Design a repeatable focus system for your most important weekly project."
+      }
+    },
+    quiz:[
+      ["What should you focus on first?","One clear task","Everything at once","Notifications","Random tasks"],
+      ["Why reduce notifications?","To reduce interruptions","To increase distractions","To remove files","To change settings"],
+      ["What is a focus interval?","A planned period of concentrated work","A password","A file","A browser"],
+      ["Why capture interruptions?","So they do not derail the current task","To forget them","To create noise","To delete tasks"],
+      ["What should breaks be?","Deliberate","Constantly distracting","Random only","Avoided completely"]
+    ]
+  },
+
+  "Smartphone Basics": {
+    icon:"📱",
+    category:"everyday",
+    description:"Learn essential smartphone functions including settings, apps, storage, and everyday controls.",
+    levels:{
+      beginner:{
+        steps:[
+          "Understand the home screen.",
+          "Open and close apps.",
+          "Adjust volume.",
+          "Connect to Wi-Fi.",
+          "Use mobile data.",
+          "Change basic settings.",
+          "Take a screenshot.",
+          "Manage notifications.",
+          "Check storage.",
+          "Lock the phone securely."
+        ],
+        quick:"Smartphone basics are about understanding common controls, connectivity, apps, notifications, and security.",
+        visual:["Home","Apps","Settings","Connectivity","Security"],
+        task:"Find and review Wi-Fi, notification, storage, and screen-lock settings on your phone."
+      },
+      intermediate:{
+        steps:[
+          "Organise apps.",
+          "Manage permissions.",
+          "Review storage.",
+          "Back up important information.",
+          "Manage notifications.",
+          "Use accessibility features.",
+          "Connect Bluetooth devices.",
+          "Update apps.",
+          "Review privacy settings.",
+          "Secure the device."
+        ],
+        quick:"Intermediate smartphone skills focus on organisation, permissions, backups, privacy, and device management.",
+        visual:["Organise","Permissions","Backup","Privacy","Secure"],
+        task:"Review permissions for five apps and remove unnecessary access where appropriate."
+      },
+      advanced:{
+        steps:[
+          "Review account security.",
+          "Manage backups.",
+          "Audit application permissions.",
+          "Optimise storage.",
+          "Review privacy controls.",
+          "Manage connected devices.",
+          "Use accessibility features.",
+          "Prepare for device loss.",
+          "Secure recovery options.",
+          "Maintain the device."
+        ],
+        quick:"Advanced smartphone management combines security, privacy, backups, storage, and recovery planning.",
+        visual:["Audit","Backup","Privacy","Recovery","Maintain"],
+        task:"Create a smartphone security and backup checklist."
+      }
+    },
+    quiz:[
+      ["What connects a phone to a wireless network?","Wi-Fi","Excel","PDF","Camera"],
+      ["Why review app permissions?","To control access","To delete the phone","To change the screen","To increase noise"],
+      ["What does a screenshot capture?","The current screen","The battery","The SIM card","The password"],
+      ["Why back up important data?","For recovery","To remove apps","To increase notifications","To slow the phone"],
+      ["Why use a screen lock?","To protect the device","To increase volume","To change Wi-Fi","To create photos"]
+    ]
+  },
+
+  "Digital Payments Basics": {
+    icon:"💳",
+    category:"everyday",
+    description:"Understand basic digital-payment habits, transaction checks, and safer payment practices.",
+    levels:{
+      beginner:{
+        steps:[
+          "Understand common digital-payment methods.",
+          "Check the recipient before paying.",
+          "Review the amount.",
+          "Use trusted payment applications.",
+          "Protect payment credentials.",
+          "Never share verification codes.",
+          "Check transaction status.",
+          "Keep receipts or references.",
+          "Report suspicious transactions.",
+          "Review account activity."
+        ],
+        quick:"Safe digital payments depend on checking the recipient and amount and protecting authentication information.",
+        visual:["Recipient","Amount","Authenticate","Confirm","Check"],
+        task:"Review the security settings of your payment application without sharing any private information."
+      },
+      intermediate:{
+        steps:[
+          "Verify payment requests.",
+          "Recognise suspicious messages.",
+          "Check payment handles or details.",
+          "Review transaction history.",
+          "Set appropriate notifications.",
+          "Protect the device.",
+          "Use secure networks.",
+          "Keep applications updated.",
+          "Know how to report problems.",
+          "Review account security."
+        ],
+        quick:"Intermediate payment safety focuses on verification, account monitoring, and recognising scams.",
+        visual:["Verify","Pay","Confirm","Monitor","Report"],
+        task:"Create a checklist for verifying a digital-payment request before approving it."
+      },
+      advanced:{
+        steps:[
+          "Review all payment channels.",
+          "Secure associated accounts.",
+          "Enable appropriate authentication.",
+          "Monitor transactions.",
+          "Recognise social engineering.",
+          "Limit unnecessary exposure.",
+          "Maintain recovery information.",
+          "Review connected services.",
+          "Know reporting channels.",
+          "Create an incident-response checklist."
+        ],
+        quick:"Advanced payment safety combines authentication, monitoring, scam awareness, and recovery planning.",
+        visual:["Secure","Monitor","Detect","Respond","Recover"],
+        task:"Build a personal digital-payment safety checklist."
+      }
+    },
+    quiz:[
+      ["What should you check before paying?","Recipient and amount","Only the colour","Nothing","The weather"],
+      ["Should verification codes be shared?","No","Yes","Always","Publicly"],
+      ["Why check transaction history?","To identify unexpected activity","To change passwords","To install apps","To increase payments"],
+      ["What should suspicious payment requests receive?","Verification before action","Immediate approval","Public sharing","No attention"],
+      ["Why keep payment apps updated?","For security and fixes","To remove money","To change the bank","To increase spam"]
+    ]
+  },
+
+  "Digital Organization": {
+    icon:"🗂️",
+    category:"everyday",
+    description:"Learn how to organise digital files, folders, documents, and information so they are easier to find.",
+    levels:{
+      beginner:{
+        steps:[
+          "Create a simple folder structure.",
+          "Use descriptive filenames.",
+          "Avoid duplicate files.",
+          "Group related documents.",
+          "Delete unnecessary files.",
+          "Use consistent naming.",
+          "Organise downloads.",
+          "Back up important files.",
+          "Review storage.",
+          "Keep the system simple."
+        ],
+        quick:"Digital organisation becomes easier when folders and filenames follow a simple consistent system.",
+        visual:["Folders","Names","Group","Backup","Review"],
+        task:"Create a clean folder structure for your personal projects."
+      },
+      intermediate:{
+        steps:[
+          "Define major categories.",
+          "Create consistent naming rules.",
+          "Organise project files.",
+          "Separate current and archived files.",
+          "Remove duplicates.",
+          "Use cloud storage carefully.",
+          "Create backups.",
+          "Review shared files.",
+          "Maintain versions.",
+          "Perform a monthly cleanup."
+        ],
+        quick:"Intermediate organisation uses naming conventions, archives, versions, and regular reviews.",
+        visual:["Categories","Names","Projects","Archive","Backup"],
+        task:"Organise one project folder into clear source, working, final, and archive sections."
+      },
+      advanced:{
+        steps:[
+          "Design an information architecture.",
+          "Create naming conventions.",
+          "Define project structures.",
+          "Manage versions.",
+          "Separate active and archived data.",
+          "Automate repetitive organisation where possible.",
+          "Review permissions.",
+          "Maintain backups.",
+          "Document the system.",
+          "Review and improve the structure."
+        ],
+        quick:"Advanced digital organisation creates a repeatable information system that remains useful as files grow.",
+        visual:["Architecture","Structure","Versions","Backup","Maintain"],
+        task:"Design a reusable digital-file system for your portfolio and future projects."
+      }
+    },
+    quiz:[
+      ["What makes a filename useful?","Descriptive information","Random characters","No name","Only symbols"],
+      ["Why use folders?","To organise files","To delete files","To increase noise","To change software"],
+      ["Why archive old files?","To keep active work easier to manage","To lose files","To increase duplicates","To remove backups"],
+      ["Why back up important files?","For recovery","To make them disappear","To change their names","To reduce security"],
+      ["What should an organisation system be?","Simple and consistent","Random","Impossible to understand","Different every day"]
+    ]
+  }
 
 };
 
-
-/* =====================================================
+/* =========================================================
    STATE
-===================================================== */
+   ========================================================= */
 
 let currentLesson = null;
 let currentLevel = "beginner";
-
-let quizQuestions = [];
-let quizIndex = 0;
-let score = 0;
+let currentQuiz = [];
+let currentQuizIndex = 0;
+let currentScore = 0;
 
 let timerSeconds = 1200;
 let timerInterval = null;
+let timerRunning = false;
 
+let selectedCategory = "all";
 
-/* =====================================================
-   ELEMENTS
-===================================================== */
-
-const lessonTitle =
-    document.getElementById("lessonTitle");
-
-const lessonDescription =
-    document.getElementById("lessonDescription");
-
-const lessonStatus =
-    document.getElementById("lessonStatus");
-
-const stepList =
-    document.getElementById("stepList");
-
-const quickList =
-    document.getElementById("quickList");
-
-const visualText =
-    document.getElementById("visualText");
-
-const visualFlow =
-    document.getElementById("visualFlow");
-
-const videoText =
-    document.getElementById("videoText");
-
-const taskText =
-    document.getElementById("taskText");
-
-const progressBar =
-    document.getElementById("progressBar");
-
-const progressText =
-    document.getElementById("progressText");
-
-const quizQuestion =
-    document.getElementById("quizQuestion");
-
-const quizOptions =
-    document.getElementById("quizOptions");
-
-const quizFeedback =
-    document.getElementById("quizFeedback");
-
-const scoreText =
-    document.getElementById("scoreText");
-
-const completeBox =
-    document.getElementById("completeBox");
-
-const celebrationOverlay =
-    document.getElementById("celebrationOverlay");
-
-const celebrationScore =
-    document.getElementById("celebrationScore");
-
-const celebrationLesson =
-    document.getElementById("celebrationLesson");
-
-
-/* =====================================================
-   STORAGE
-===================================================== */
+/* =========================================================
+   SAFE STORAGE
+   ========================================================= */
 
 function getCompletedLessons(){
 
+  try{
+
     return JSON.parse(
-        localStorage.getItem("skillsprintCompleted")
-        || "[]"
+      localStorage.getItem("skillsprintCompleted") || "[]"
     );
 
-}
+  }catch(error){
 
+    return [];
+
+  }
+
+}
 
 function saveCompletedLesson(name){
 
-    const completed =
-        getCompletedLessons();
+  try{
+
+    const completed = getCompletedLessons();
 
     if(!completed.includes(name)){
-        completed.push(name);
+      completed.push(name);
     }
 
     localStorage.setItem(
-        "skillsprintCompleted",
-        JSON.stringify(completed)
+      "skillsprintCompleted",
+      JSON.stringify(completed)
     );
 
-}
+  }catch(error){
 
+    console.warn("Local storage unavailable.");
 
-function trackEvent(eventName){
-
-    const events =
-        JSON.parse(
-            localStorage.getItem("skillsprintEvents")
-            || "[]"
-        );
-
-    events.push({
-        event:eventName,
-        lesson:currentLesson,
-        level:currentLevel,
-        time:new Date().toISOString()
-    });
-
-    localStorage.setItem(
-        "skillsprintEvents",
-        JSON.stringify(events)
-    );
+  }
 
 }
 
+/* =========================================================
+   RENDER LESSON CARDS
+   ========================================================= */
 
-/* =====================================================
-   LESSON CARDS
-===================================================== */
+function renderLessons(){
 
-function updateLessonCards(){
+  const grid = document.getElementById("lessonGrid");
+  const noResults = document.getElementById("noResults");
+  const search = document
+    .getElementById("searchInput")
+    .value
+    .trim()
+    .toLowerCase();
 
-    const completed =
-        getCompletedLessons();
+  grid.innerHTML = "";
 
-    document.querySelectorAll(".lesson-card")
-        .forEach(card => {
+  const completed = getCompletedLessons();
 
-            if(
-                completed.includes(
-                    card.dataset.title
-                )
-            ){
-                card.classList.add("completed");
-            }
+  let count = 0;
 
-        });
+  Object.entries(lessons).forEach(([name,data])=>{
 
-}
+    const matchesSearch =
+      name.toLowerCase().includes(search) ||
+      data.description.toLowerCase().includes(search);
 
+    const matchesCategory =
+      selectedCategory === "all" ||
+      data.category === selectedCategory;
 
-/* =====================================================
-   LOAD LESSON
-===================================================== */
-
-function loadLesson(name){
-
-    currentLesson = name;
-
-    currentLevel = "beginner";
-
-    const data =
-        lessons[name];
-
-    lessonTitle.textContent =
-        name;
-
-    lessonDescription.textContent =
-        data.description;
-
-    lessonStatus.textContent =
-        "🟢 Beginner · Ready to learn";
-
-    setLevel("beginner");
-
-    resetQuiz();
-
-    resetTimer();
-
-    completeBox.style.display =
-        "none";
-
-    document.getElementById("learning")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-    trackEvent("lesson_started");
-
-}
-
-
-/* =====================================================
-   LEVEL
-===================================================== */
-
-function setLevel(level){
-
-    if(!currentLesson){
-        return;
+    if(!matchesSearch || !matchesCategory){
+      return;
     }
 
-    currentLevel = level;
+    count++;
 
-    document.querySelectorAll(".level-btn")
-        .forEach(btn => {
+    const card = document.createElement("article");
+    card.className = "lesson-card";
 
-            btn.classList.toggle(
-                "active",
-                btn.dataset.level === level
-            );
+    const completedText =
+      completed.includes(name)
+      ? " ✓ Completed"
+      : "";
 
-        });
+    card.innerHTML = `
+      <div class="lesson-icon">${data.icon}</div>
 
-    const data =
-        lessons[currentLesson]
-            .levels[level];
+      <h3>${name}</h3>
 
-    lessonStatus.textContent =
-        `${level === "beginner" ? "🟢" : level === "intermediate" ? "🟡" : "🔵"} ${capitalize(level)} · Learning mode`;
+      <p>${data.description}</p>
 
-    stepList.innerHTML = "";
+      <div class="lesson-meta">
+        Beginner friendly · 20 minutes${completedText}
+      </div>
 
-    data.steps.forEach(step => {
+      <button
+        type="button"
+        class="start-lesson"
+        data-lesson="${name}"
+      >
+        Start Lesson →
+      </button>
+    `;
 
-        const li =
-            document.createElement("li");
+    grid.appendChild(card);
 
-        li.textContent =
-            step;
+  });
 
-        stepList.appendChild(li);
-
-    });
-
-
-    quickList.innerHTML = "";
-
-    data.quick.forEach(item => {
-
-        const div =
-            document.createElement("div");
-
-        div.className =
-            "quick-item";
-
-        div.textContent =
-            "⚡ " + item;
-
-        quickList.appendChild(div);
-
-    });
-
-
-    visualText.textContent =
-        data.visual;
-
-    visualFlow.innerHTML = "";
-
-    data.visual
-        .split("→")
-        .map(item => item.trim())
-        .forEach((item,index,arr) => {
-
-            const node =
-                document.createElement("div");
-
-            node.className =
-                "visual-node";
-
-            node.textContent =
-                item;
-
-            visualFlow.appendChild(node);
-
-            if(index < arr.length - 1){
-
-                const arrow =
-                    document.createElement("div");
-
-                arrow.className =
-                    "arrow";
-
-                arrow.textContent =
-                    "→";
-
-                visualFlow.appendChild(arrow);
-
-            }
-
-        });
-
-
-    videoText.textContent =
-        `Focus for a few minutes on ${currentLesson}.
-        Read the Step-by-Step section, try the practical task,
-        then use the five-question Knowledge Check to test yourself.`;
-
-    taskText.textContent =
-        data.task;
-
-
-    resetQuiz();
-
-    updateProgress();
+  noResults.style.display =
+    count === 0 ? "block" : "none";
 
 }
 
+/* =========================================================
+   SELECT LESSON
+   ========================================================= */
 
-function capitalize(text){
+function selectLesson(name){
 
-    return text.charAt(0).toUpperCase()
-        + text.slice(1);
+  if(!lessons[name]){
+    console.error("Lesson not found:",name);
+    return;
+  }
+
+  currentLesson = name;
+
+  const data = lessons[name];
+
+  document.getElementById("lessonTitle").textContent =
+    name + " · " +
+    currentLevel.charAt(0).toUpperCase() +
+    currentLevel.slice(1);
+
+  document.getElementById("lessonDescription").textContent =
+    data.description;
+
+  document.getElementById("lessonStatus").textContent =
+    "Ready to learn";
+
+  document.getElementById("feedbackLesson").value =
+    name;
+
+  renderLearningContent();
+
+  resetQuiz();
+
+  resetTimer();
+
+  document.getElementById("learning").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 
 }
 
+/* =========================================================
+   RENDER LEARNING CONTENT
+   ========================================================= */
 
-/* =====================================================
-   MODES
-===================================================== */
+function renderLearningContent(){
+
+  if(!currentLesson){
+    return;
+  }
+
+  const data = lessons[currentLesson];
+  const levelData = data.levels[currentLevel];
+
+  document.getElementById("contentTitle").textContent =
+    currentLesson + " · Step-by-Step";
+
+  document.getElementById("stepsContent").innerHTML = `
+    <h3 id="contentTitle">
+      ${currentLesson} · Step-by-Step
+    </h3>
+
+    <ol class="step-list">
+      ${levelData.steps.map(step=>`<li>${step}</li>`).join("")}
+    </ol>
+  `;
+
+  document.getElementById("quickContent").innerHTML = `
+    <h3>⚡ Quick Learning</h3>
+
+    <div class="quick-box">
+      ${levelData.quick}
+    </div>
+  `;
+
+  document.getElementById("videoContent").innerHTML = `
+    <h3>🎥 Watch Video</h3>
+
+    <p>
+      Use this topic as your search phrase to find a current
+      beginner-friendly tutorial:
+    </p>
+
+    <a
+      href="https://www.youtube.com/results?search_query=${encodeURIComponent(currentLesson + " beginner tutorial")}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Search YouTube Tutorials →
+    </a>
+  `;
+
+  document.getElementById("visualContent").innerHTML = `
+    <h3>👀 Visual Guide</h3>
+
+    <div class="visual-guide">
+
+      <p>
+        Follow this simple learning flow:
+      </p>
+
+      <div class="visual-flow">
+
+        ${levelData.visual.map((item,index)=>`
+          <div class="visual-step">
+            ${item}
+          </div>
+
+          ${
+            index < levelData.visual.length - 1
+            ? `<div class="arrow">→</div>`
+            : ""
+          }
+
+        `).join("")}
+
+      </div>
+
+    </div>
+  `;
+
+  document.getElementById("practiceTask").textContent =
+    levelData.task;
+
+}
+
+/* =========================================================
+   MODE SWITCHING
+   ========================================================= */
 
 function setMode(mode){
 
-    document.querySelectorAll(".mode-btn")
-        .forEach(btn => {
+  const contents = {
+    steps:"stepsContent",
+    quick:"quickContent",
+    video:"videoContent",
+    visual:"visualContent"
+  };
 
-            btn.classList.toggle(
-                "active",
-                btn.dataset.mode === mode
-            );
+  Object.values(contents).forEach(id=>{
+    document.getElementById(id).classList.add("hidden");
+  });
 
-        });
+  document.getElementById(contents[mode])
+    .classList.remove("hidden");
 
-
-    document.getElementById("stepsContent")
-        .style.display =
-            mode === "steps"
-                ? "block"
-                : "none";
-
-    document.getElementById("quickContent")
-        .style.display =
-            mode === "quick"
-                ? "block"
-                : "none";
-
-    document.getElementById("videoContent")
-        .style.display =
-            mode === "video"
-                ? "block"
-                : "none";
-
-    document.getElementById("visualContent")
-        .style.display =
-            mode === "visual"
-                ? "block"
-                : "none";
+  document.querySelectorAll(".mode").forEach(button=>{
+    button.classList.toggle(
+      "active",
+      button.dataset.mode === mode
+    );
+  });
 
 }
 
-
-/* =====================================================
-   PROGRESS
-===================================================== */
-
-function updateProgress(){
-
-    if(!currentLesson){
-
-        progressBar.style.width =
-            "0%";
-
-        progressText.textContent =
-            "0% complete";
-
-        return;
-
-    }
-
-    const completed =
-        getCompletedLessons();
-
-    if(completed.includes(currentLesson)){
-
-        progressBar.style.width =
-            "100%";
-
-        progressText.textContent =
-            "100% complete";
-
-    }else{
-
-        progressBar.style.width =
-            "20%";
-
-        progressText.textContent =
-            `${capitalize(currentLevel)} learning · Quiz pending`;
-
-    }
-
-}
-
-
-/* =====================================================
+/* =========================================================
    QUIZ
-===================================================== */
+   ========================================================= */
 
 function resetQuiz(){
 
-    if(!currentLesson){
+  currentQuiz = [];
+  currentQuizIndex = 0;
+  currentScore = 0;
 
-        quizQuestions = [];
+  document.getElementById("quizQuestion").textContent =
+    currentLesson
+    ? "Ready for your five-question challenge."
+    : "Select a lesson and start the quiz when you're ready.";
 
-        quizQuestion.textContent =
-            "Select a lesson to begin your quiz.";
+  document.getElementById("quizOptions").innerHTML = "";
 
-        quizOptions.innerHTML = "";
+  document.getElementById("quizFeedback").textContent = "";
 
-        quizFeedback.textContent = "";
+  document.getElementById("quizResult").classList.add("hidden");
 
-        scoreText.textContent = "";
+  document.getElementById("quizResult").innerHTML = "";
 
-        return;
+  document.getElementById("startQuiz").classList.remove("hidden");
 
-    }
-
-    quizQuestions =
-        lessons[currentLesson].quiz;
-
-    quizIndex = 0;
-
-    score = 0;
-
-    completeBox.style.display =
-        "none";
-
-    showQuestion();
+  document.getElementById("complete").style.display = "none";
 
 }
 
+function startQuiz(){
 
-function showQuestion(){
+  if(!currentLesson){
+    alert("Please select a lesson first.");
+    return;
+  }
 
-    quizFeedback.textContent = "";
+  currentQuiz = lessons[currentLesson].quiz;
 
-    scoreText.textContent =
-        `Question ${Math.min(quizIndex + 1,5)} of 5`;
+  currentQuizIndex = 0;
+  currentScore = 0;
 
-    quizOptions.innerHTML = "";
+  document.getElementById("startQuiz")
+    .classList.add("hidden");
 
-    if(quizIndex >= quizQuestions.length){
-
-        finishQuiz();
-
-        return;
-
-    }
-
-    const question =
-        quizQuestions[quizIndex];
-
-    quizQuestion.textContent =
-        question[0];
-
-    question[1].forEach(
-        (option,index) => {
-
-            const button =
-                document.createElement("button");
-
-            button.className =
-                "quiz-option";
-
-            button.textContent =
-                option;
-
-            button.addEventListener(
-                "click",
-                () => answerQuestion(index)
-            );
-
-            quizOptions.appendChild(button);
-
-        }
-    );
+  showQuizQuestion();
 
 }
 
+function showQuizQuestion(){
 
-function answerQuestion(index){
+  if(currentQuizIndex >= currentQuiz.length){
 
-    const question =
-        quizQuestions[quizIndex];
+    finishQuiz();
+    return;
 
-    document.querySelectorAll(".quiz-option")
-        .forEach(btn => {
-            btn.disabled = true;
+  }
+
+  const question = currentQuiz[currentQuizIndex];
+
+  document.getElementById("quizQuestion").textContent =
+    `Question ${currentQuizIndex + 1} of ${currentQuiz.length}: ${question[0]}`;
+
+  const options = [
+    question[1],
+    question[2],
+    question[3],
+    question[4]
+  ];
+
+  const shuffled = [...options].sort(
+    ()=>Math.random() - .5
+  );
+
+  const container =
+    document.getElementById("quizOptions");
+
+  container.innerHTML = "";
+
+  shuffled.forEach(option=>{
+
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className = "quiz-option";
+    button.textContent = option;
+
+    button.addEventListener("click",()=>{
+
+      const buttons =
+        container.querySelectorAll(".quiz-option");
+
+      buttons.forEach(b=>{
+        b.disabled = true;
+      });
+
+      if(option === question[1]){
+
+        button.classList.add("correct");
+
+        currentScore++;
+
+        document.getElementById("quizFeedback")
+          .textContent = "✓ Correct!";
+
+      }else{
+
+        button.classList.add("wrong");
+
+        buttons.forEach(b=>{
+          if(b.textContent === question[1]){
+            b.classList.add("correct");
+          }
         });
 
+        document.getElementById("quizFeedback")
+          .textContent =
+          `The correct answer is: ${question[1]}`;
 
-    if(index === question[2]){
+      }
 
-        score++;
+      currentQuizIndex++;
 
-        quizFeedback.textContent =
-            "✅ Correct! " + question[3];
+      setTimeout(()=>{
+        document.getElementById("quizFeedback")
+          .textContent = "";
 
-    }else{
+        showQuizQuestion();
 
-        quizFeedback.textContent =
-            "💡 Not quite. " + question[3];
+      },900);
 
-    }
+    });
 
+    container.appendChild(button);
 
-    setTimeout(() => {
-
-        quizIndex++;
-
-        showQuestion();
-
-    },1100);
+  });
 
 }
-
 
 function finishQuiz(){
 
-    quizQuestion.textContent =
-        "🎉 Challenge Complete!";
+  document.getElementById("quizQuestion").textContent =
+    "Quiz complete!";
 
-    quizOptions.innerHTML = "";
+  document.getElementById("quizOptions").innerHTML = "";
 
-    quizFeedback.textContent =
-        "You completed all five questions.";
+  const result =
+    document.getElementById("quizResult");
 
-    scoreText.textContent =
-        `Your score: ${score}/5`;
+  result.classList.remove("hidden");
 
-    completeBox.style.display =
-        "block";
+  result.innerHTML = `
+    <strong>Your Score: ${currentScore} / ${currentQuiz.length}</strong>
+    <br><br>
+    ${
+      currentScore >= 4
+      ? "Excellent work! 🎉"
+      : currentScore >= 3
+      ? "Good job! Review the lesson once more and try again."
+      : "Keep practising. You can try the quiz again."
+    }
+  `;
 
-    progressBar.style.width =
-        "100%";
+  if(currentScore >= 4){
 
-    progressText.textContent =
-        "100% complete";
+    document.getElementById("complete")
+      .style.display = "block";
 
-    saveCompletedLesson(
-        currentLesson
-    );
+    document.getElementById("lessonStatus")
+      .textContent = "Completed ✓";
 
-    lessonStatus.textContent =
-        `Completed ✓ · ${capitalize(currentLevel)}`;
+    saveCompletedLesson(currentLesson);
 
-    trackEvent("quiz_completed");
+    renderLessons();
 
-    showCelebration();
+    document.getElementById("popupScore")
+      .textContent =
+      `${currentScore} / ${currentQuiz.length}`;
 
-    updateLessonCards();
+    setTimeout(()=>{
 
-}
+      document.getElementById("completionPopup")
+        .classList.add("show");
 
+    },400);
 
-/* =====================================================
-   CELEBRATION
-===================================================== */
-
-function showCelebration(){
-
-    celebrationScore.textContent =
-        `${score} / 5`;
-
-    celebrationLesson.textContent =
-        `${currentLesson} · ${capitalize(currentLevel)}`;
-
-    celebrationOverlay.style.display =
-        "flex";
+  }
 
 }
 
-
-document.getElementById("closeCelebration")
-    .addEventListener("click",() => {
-
-        celebrationOverlay.style.display =
-            "none";
-
-    });
-
-
-/* =====================================================
-   NEXT LESSON
-===================================================== */
-
-document.getElementById("nextLesson")
-    .addEventListener("click",() => {
-
-        const cards =
-            Array.from(
-                document.querySelectorAll(".lesson-card")
-            );
-
-        const currentIndex =
-            cards.findIndex(
-                card =>
-                    card.dataset.title === currentLesson
-            );
-
-        const nextCard =
-            cards[currentIndex + 1]
-            || cards[0];
-
-        if(nextCard){
-
-            nextCard
-                .querySelector(".start-lesson")
-                .click();
-
-        }
-
-    });
-
-
-/* =====================================================
+/* =========================================================
    TIMER
-===================================================== */
+   ========================================================= */
 
 function updateTimerDisplay(){
 
-    const minutes =
-        Math.floor(timerSeconds / 60)
-            .toString()
-            .padStart(2,"0");
+  const minutes =
+    Math.floor(timerSeconds / 60)
+      .toString()
+      .padStart(2,"0");
 
-    const seconds =
-        (timerSeconds % 60)
-            .toString()
-            .padStart(2,"0");
+  const seconds =
+    (timerSeconds % 60)
+      .toString()
+      .padStart(2,"0");
 
-    const display =
-        `${minutes}:${seconds}`;
+  document.getElementById("timerDisplay")
+    .textContent =
+    `${minutes}:${seconds}`;
 
-    document.getElementById("learningTimer")
-        .textContent = display;
+  const percentage =
+    ((1200 - timerSeconds) / 1200) * 100;
 
-    document.getElementById("heroTimer")
-        .textContent = display;
+  document.getElementById("progressBar")
+    .style.width =
+    Math.max(0,Math.min(100,percentage)) + "%";
 
 }
-
 
 function startTimer(){
 
-    if(!currentLesson){
+  if(timerRunning){
+    return;
+  }
 
-        alert(
-            "Please select a lesson first."
-        );
+  timerRunning = true;
 
-        return;
+  timerInterval = setInterval(()=>{
+
+    if(timerSeconds <= 0){
+
+      clearInterval(timerInterval);
+
+      timerInterval = null;
+      timerRunning = false;
+
+      document.getElementById("lessonStatus")
+        .textContent = "20 minutes completed";
+
+      alert(
+        "Your 20-minute SkillSprint is complete! 🎉"
+      );
+
+      return;
 
     }
 
-    if(timerInterval){
-        return;
-    }
-
-    trackEvent("timer_started");
-
-    timerInterval =
-        setInterval(() => {
-
-            if(timerSeconds > 0){
-
-                timerSeconds--;
-
-                updateTimerDisplay();
-
-            }else{
-
-                clearInterval(
-                    timerInterval
-                );
-
-                timerInterval = null;
-
-                quizFeedback.textContent =
-                    "⏰ Your 20-minute sprint is complete. Great work! Now test your knowledge.";
-
-                trackEvent(
-                    "timer_completed"
-                );
-
-            }
-
-        },1000);
-
-}
-
-
-function pauseTimer(){
-
-    clearInterval(
-        timerInterval
-    );
-
-    timerInterval = null;
-
-}
-
-
-function resetTimer(){
-
-    clearInterval(
-        timerInterval
-    );
-
-    timerInterval = null;
-
-    timerSeconds = 1200;
+    timerSeconds--;
 
     updateTimerDisplay();
 
-}
-
-
-document.getElementById("startTimer")
-    .addEventListener(
-        "click",
-        startTimer
-    );
-
-document.getElementById("pauseTimer")
-    .addEventListener(
-        "click",
-        pauseTimer
-    );
-
-document.getElementById("resetTimer")
-    .addEventListener(
-        "click",
-        resetTimer
-    );
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-const search =
-    document.getElementById("search");
-
-const cards =
-    document.querySelectorAll(".lesson-card");
-
-const filters =
-    document.querySelectorAll(".filter");
-
-const noResults =
-    document.getElementById("noResults");
-
-let selectedFilter =
-    "all";
-
-
-function filterLessons(){
-
-    const query =
-        search.value
-            .toLowerCase()
-            .trim();
-
-    let visible = 0;
-
-    cards.forEach(card => {
-
-        const title =
-            card.dataset.title
-                .toLowerCase();
-
-        const category =
-            card.dataset.category;
-
-        const matchesSearch =
-            title.includes(query);
-
-        const matchesFilter =
-            selectedFilter === "all"
-            || category === selectedFilter;
-
-
-        if(
-            matchesSearch
-            && matchesFilter
-        ){
-
-            card.style.display =
-                "block";
-
-            visible++;
-
-        }else{
-
-            card.style.display =
-                "none";
-
-        }
-
-    });
-
-
-    noResults.style.display =
-        visible === 0
-            ? "block"
-            : "none";
+  },1000);
 
 }
 
+function pauseTimer(){
 
-search.addEventListener(
-    "input",
-    filterLessons
-);
+  if(timerInterval){
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
 
+  timerRunning = false;
 
-filters.forEach(button => {
+}
 
-    button.addEventListener(
-        "click",
-        () => {
+function resetTimer(){
 
-            filters.forEach(btn =>
-                btn.classList.remove(
-                    "active"
-                )
-            );
+  pauseTimer();
 
-            button.classList.add(
-                "active"
-            );
+  timerSeconds = 1200;
 
-            selectedFilter =
-                button.dataset.filter;
+  updateTimerDisplay();
 
-            filterLessons();
+}
 
-        }
-    );
+/* =========================================================
+   EVENT HANDLERS
+   ========================================================= */
+
+/*
+  Delegated listener intentionally used here.
+  This makes Start Lesson buttons reliable even when
+  the lesson cards are dynamically rendered.
+*/
+
+document.addEventListener("click",function(event){
+
+  const lessonButton =
+    event.target.closest(".start-lesson");
+
+  if(lessonButton){
+
+    event.preventDefault();
+
+    const name =
+      lessonButton.getAttribute("data-lesson");
+
+    if(name){
+      selectLesson(name);
+    }
+
+    return;
+  }
+
+  const categoryButton =
+    event.target.closest(".category-btn");
+
+  if(categoryButton){
+
+    selectedCategory =
+      categoryButton.dataset.category;
+
+    document.querySelectorAll(".category-btn")
+      .forEach(button=>{
+        button.classList.toggle(
+          "active",
+          button === categoryButton
+        );
+      });
+
+    renderLessons();
+
+    return;
+  }
+
+  const levelButton =
+    event.target.closest(".level");
+
+  if(levelButton){
+
+    currentLevel =
+      levelButton.dataset.level;
+
+    document.querySelectorAll(".level")
+      .forEach(button=>{
+        button.classList.toggle(
+          "active",
+          button === levelButton
+        );
+      });
+
+    if(currentLesson){
+
+      document.getElementById("lessonTitle")
+        .textContent =
+        currentLesson +
+        " · " +
+        currentLevel.charAt(0).toUpperCase() +
+        currentLevel.slice(1);
+
+      renderLearningContent();
+      resetQuiz();
+
+    }
+
+    return;
+  }
+
+  const modeButton =
+    event.target.closest(".mode");
+
+  if(modeButton){
+
+    setMode(modeButton.dataset.mode);
+
+    return;
+  }
 
 });
 
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
-/* =====================================================
-   LESSON BUTTONS
-===================================================== */
+document
+  .getElementById("searchInput")
+  .addEventListener("input",renderLessons);
 
-document.querySelectorAll(".start-lesson")
-    .forEach(button => {
+/* =========================================================
+   TIMER BUTTONS
+   ========================================================= */
 
-        button.addEventListener(
-            "click",
-            () => {
+document
+  .getElementById("startTimer")
+  .addEventListener("click",startTimer);
 
-                loadLesson(
-                    button.dataset.lesson
-                );
+document
+  .getElementById("pauseTimer")
+  .addEventListener("click",pauseTimer);
 
-            }
-        );
+document
+  .getElementById("resetTimer")
+  .addEventListener("click",resetTimer);
 
-    });
+/* =========================================================
+   QUIZ BUTTON
+   ========================================================= */
 
+document
+  .getElementById("startQuiz")
+  .addEventListener("click",startQuiz);
 
-/* =====================================================
-   LEVEL BUTTONS
-===================================================== */
+/* =========================================================
+   POPUP
+   ========================================================= */
 
-document.querySelectorAll(".level-btn")
-    .forEach(button => {
+document
+  .getElementById("closePopup")
+  .addEventListener("click",()=>{
 
-        button.addEventListener(
-            "click",
-            () => {
+    document
+      .getElementById("completionPopup")
+      .classList.remove("show");
 
-                if(!currentLesson){
+  });
 
-                    alert(
-                        "Please select a lesson first."
-                    );
+document
+  .getElementById("completionPopup")
+  .addEventListener("click",event=>{
 
-                    return;
+    if(event.target.id === "completionPopup"){
 
-                }
-
-                setLevel(
-                    button.dataset.level
-                );
-
-            }
-        );
-
-    });
-
-
-/* =====================================================
-   MODE BUTTONS
-===================================================== */
-
-document.querySelectorAll(".mode-btn")
-    .forEach(button => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                setMode(
-                    button.dataset.mode
-                );
-
-            }
-        );
-
-    });
-
-
-/* =====================================================
-   FEEDBACK
-===================================================== */
-
-const feedbackForm =
-    document.getElementById("feedbackForm");
-
-
-feedbackForm.addEventListener(
-    "submit",
-    async event => {
-
-        event.preventDefault();
-
-        const lessonField =
-            document.getElementById(
-                "feedbackLesson"
-            );
-
-        const levelField =
-            document.getElementById(
-                "feedbackLevel"
-            );
-
-
-        lessonField.value =
-            currentLesson || "General";
-
-        levelField.value =
-            capitalize(
-                currentLevel
-            );
-
-
-        const formData =
-            new FormData(
-                feedbackForm
-            );
-
-
-        try{
-
-            const response =
-                await fetch(
-                    feedbackForm.action,
-                    {
-                        method:"POST",
-                        body:formData,
-                        headers:{
-                            "Accept":
-                                "application/json"
-                        }
-                    }
-                );
-
-
-            if(response.ok){
-
-                document.getElementById(
-                    "feedbackMessage"
-                ).style.display =
-                    "block";
-
-                feedbackForm.reset();
-
-                trackEvent(
-                    "feedback_submitted"
-                );
-
-            }else{
-
-                alert(
-                    "Something went wrong while sending feedback. Please try again."
-                );
-
-            }
-
-        }catch(error){
-
-            alert(
-                "Unable to send feedback right now. Please check your internet connection."
-            );
-
-        }
+      event.currentTarget
+        .classList.remove("show");
 
     }
-);
 
+  });
 
-/* =====================================================
-   INITIALIZE
-===================================================== */
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
 
-updateLessonCards();
+document
+  .getElementById("feedbackForm")
+  .addEventListener("submit",()=>{
 
-setMode("steps");
+    document
+      .getElementById("feedbackMessageStatus")
+      .textContent =
+      "Thank you for your feedback!";
+
+  });
+
+/* =========================================================
+   INITIALISE
+   ========================================================= */
+
+renderLessons();
 
 updateTimerDisplay();
+
+setMode("steps");
 
 </script>
 
